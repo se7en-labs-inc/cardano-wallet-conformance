@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "environment": "candidate-local-conway-linux-v1",
+  "target": "http://127.0.0.1:18792/v2/",
+  "reference_target": "http://127.0.0.1:18793/v2/",
+  "faucet": "http://127.0.0.1:18779/",
+  "base_configs": "/absolute/path/to/pinned/cluster-configs",
+  "candidate_launch": {
+    "executable": "/absolute/path/to/new-wallet",
+    "arguments": ["serve", "--node-socket", "{node_socket}", "--testnet", "{byron_genesis}", "--database", "{database}", "--port", "18792"],
+    "environment": {}
+  },
+  "adapter": {
+    "executable": "/absolute/path/to/new-wallet-test-adapter",
+    "arguments": []
+  },
+  "reference_launch": {
+    "executable": "/absolute/path/to/pinned-haskell-cardano-wallet",
+    "arguments": ["serve", "--node-socket", "{node_socket}", "--testnet", "{byron_genesis}", "--database", "{database}", "--port", "18793", "--ui-port", "18813", "--pool-metadata-fetching", "none", "+RTS", "-N2"],
+    "environment": {}
+  },
+  "cluster_launch": {
+    "executable": "/absolute/path/to/pinned-local-cluster",
+    "arguments": ["--cluster-configs", "{cluster_configs}", "--cluster", "{cluster}", "--cluster-logs", "{logs}", "--socket-path", "{socket}", "--monitoring-port", "18779", "--faucet-funds", "{funds}", "+RTS", "-N2"],
+    "environment": {"PATH": "/absolute/path/to/pinned-cli-bin:/absolute/path/to/pinned-node-bin:/run/current-system/sw/bin"}
+  },
+  "cardano_node": "/absolute/path/to/pinned-cardano-node",
+  "cardano_cli": "/absolute/path/to/pinned-cardano-cli",
+  "key_oracle": "/absolute/path/to/pinned-haskell-key-adapter",
+  "openssl": "/absolute/path/to/pinned-openssl",
+  "trusted_sha256": {
+    "factory": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "reference-wallet": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "node": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "cli": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "key-oracle": "REPLACE_WITH_EXECUTABLE_SHA256",
+    "openssl": "REPLACE_WITH_EXECUTABLE_SHA256"
+  },
+  "timeout_seconds": 180
+}

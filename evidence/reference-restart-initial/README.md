@@ -1,0 +1,9 @@
+# Initial owned wallet restart run: preserved failure
+
+Source634d1f5160 on pinned Haskell2fc5c383, Conway cluster/node11.1.3 and CLI11.2.3.0. Environment source-2fc5c383-conway-node11.1.3-restart-initial. The suite created its own foreground wallet in a fresh0700workspace through launch.json; its private database/logs remain at /tmp/wc-restart-1yWRhW/owned-wallet and are not copied into public evidence.
+
+The funded basic workflow passed: real funding, construction, signing, submission, independent node confirmation/accounting and recipient restoration. The restart profile constructed and signed an additional unsigned control, then failed on its initial account-key snapshot. Overall63checks:62pass/1fail. The assertion incorrectly equated a mnemonic wallet ID with an account-key hash. Haskell Server.hs1088 uses the ROOT public-key digest for mnemonic wallets;1136 uses the ACCOUNT digest for watch-only wallets. Both exact source excerpts are retained. identity-correction.proposed.json awaits user approval; no correction has been applied.
+
+No process crash/restart occurred and neither restart semantic case is claimed. The known many-input parser regression remains pending separately. Targeted process tests6PASS and harness integration tests34PASS; Cargo fmt, all-target/all-feature Clippy, bins build, treefmt and isolated Nix Clippy/fmt checks pass. Full cargo test/Nix package checks are not reported passing while the known parser regression remains unresolved. This report contains a failure and cannot improve the historical581/643 passing checkpoint or be merged with another fingerprint.
+
+The live command exited terminal1 after deleting both owned wallets; its process owner stopped/reaped the service. The cluster received SIGTERM and its session exited130. shutdown.txt verifies absence of the cluster and all five observed node PIDs; wallet-processes-after.txt confirms no cardano-wallet process remained. No unrelated processes were stopped.

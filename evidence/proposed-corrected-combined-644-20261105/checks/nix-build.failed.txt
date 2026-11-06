@@ -1,0 +1,33 @@
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+error: Cannot build '/nix/store/10m7b91yrx5kfk2a8cd3ghln3vka51sr-wallet-conformance-0.1.0.drv'.
+       Reason: builder failed with exit code 101.
+       Output paths:
+         /nix/store/arhf4n8cnp8cjz7bc1w8lwp4063aqwk6-wallet-conformance-0.1.0
+       Last 25 log lines:
+       > test transaction::input_set_tests::input_set_rejects_duplicates_missing_break_and_malformed_tuples ... ok
+       > test signed_size::tests::repeated_credentials_still_require_per_reference_mock_witnesses ... ok
+       > test owned_process::tests::drop_reaps_running_fixture_and_preserves_private_artifacts ... ok
+       > test api::tests::approved_response_substitutions_are_exactly_operation_scoped ... ok
+       >
+       > failures:
+       >
+       > ---- live::rollback::tests::native_fixture_replay_uses_identical_bytes_and_requires_exact_confirmation stdout ----
+       >
+       > thread 'live::rollback::tests::native_fixture_replay_uses_identical_bytes_and_requires_exact_confirmation' (1086) panicked at src/live/rollback.rs:1442:13:
+       > assertion `left == right` failed: replay: Err(cannot start trusted cardano-cli node query
+       >
+       > Caused by:
+       >     No such file or directory (os error 2))
+       >   left: false
+       >  right: true
+       > note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+       >
+       >
+       > failures:
+       >     live::rollback::tests::native_fixture_replay_uses_identical_bytes_and_requires_exact_confirmation
+       >
+       > test result: FAILED. 131 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.94s
+       >
+       > error: test failed, to rerun pass `--lib`
+       For full logs, run:
+         nix log /nix/store/10m7b91yrx5kfk2a8cd3ghln3vka51sr-wallet-conformance-0.1.0.drv

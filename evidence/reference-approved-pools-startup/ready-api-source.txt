@@ -1,0 +1,5 @@
+import qualified Data.Map as Map
+
+type ReadyAPI = "ready" :> Get '[JSON] Bool
+type StepAPI = "control" :> "step" :> PostNoContent
+type SwitchAPI =

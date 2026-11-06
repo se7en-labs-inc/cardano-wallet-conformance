@@ -1,0 +1,31 @@
+mkControlHandlers
+    :: Monitor IO a History
+    -> ControlHandlers
+mkControlHandlers monitor =
+    ControlHandlers
+        { handleReady = do
+            s <- history . fst <$> observe monitor
+            pure $ isJust $ find (isReady . snd) s
+        , handleStep = step monitor
+        , handleSwitch = do
+            switch monitor
+            snd <$> observe monitor
+        , handleObserve = observe monitor
+        }
+
+-- | Handlers for the monitoring API, opaque.
+data ControlHandlers = ControlHandlers
+    { handleReady :: IO Bool
+    , handleStep :: IO ()
+    , handleSwitch :: IO MonitorState
+    , handleObserve :: IO (History, MonitorState)
+    }
+
+mkControlServer
+    :: ControlHandlers
+    -> ServerT ControlAPI Handler
+mkControlServer ControlHandlers{..} =
+    liftIO (handleReady)
+        :<|> liftIO (handleStep $> NoContent)
+        :<|> liftIO (ApiT <$> handleSwitch)
+        :<|> liftIO (ApiT <$> handleObserve)

@@ -1,0 +1,14 @@
+diff --git a/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs b/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
+--- a/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
++++ b/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
+@@ -113,8 +113,9 @@ resubmitTx
+     -> DeltaTxSubmissions
+ resubmitTx (TxId -> txId) resubmitted walletSubmissions =
+     fromMaybe [] $ do
+-        (TxStatusMeta datas meta) <-
++        entry@(TxStatusMeta datas meta) <-
+             Map.lookup txId $ walletSubmissions ^. transactionsL
++        if isInSubmission entry then pure () else Nothing
+         (_, sealed) <- getTx datas
+         pure $ case expirySlot datas of
+             Nothing -> []

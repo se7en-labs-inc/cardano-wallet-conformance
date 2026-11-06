@@ -1,0 +1,20 @@
+combineChainData registrationMap retirementMap prodMap metaMap delistedSet =
+    Map.map mkPoolDbData
+        $ Map.merge
+            registeredNoProductions
+            notRegisteredButProducing
+            bothPresent
+            registrationMap
+            prodMap
+  where
+    registeredNoProductions = traverseMissing $ \_k cert ->
+        pure (cert, Quantity 0)
+
+    -- Ignore blocks produced by BFT nodes.
+    notRegisteredButProducing = dropMissing
+
+    bothPresent = zipWithMatched $ const (,)
+
+    mkPoolDbData
+        :: (PoolRegistrationCertificate, Quantity "block" Word64)
+        -> PoolDbData

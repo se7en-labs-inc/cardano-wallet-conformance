@@ -1,0 +1,1245 @@
+{
+  "cases": [
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-putWallet",
+      "operation": "putWallet",
+      "request": {
+        "body": {
+          "name": "unknown"
+        },
+        "method": "PUT",
+        "path": "/wallets/0000000000000000000000000000000000000000"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-putByronWallet",
+      "operation": "putByronWallet",
+      "request": {
+        "body": {
+          "name": "unknown"
+        },
+        "method": "PUT",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-putSharedWallet",
+      "operation": "putSharedWallet",
+      "request": {
+        "body": {
+          "name": "unknown"
+        },
+        "method": "PUT",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-putWalletPassphrase",
+      "operation": "putWalletPassphrase",
+      "request": {
+        "body": {
+          "new_passphrase": "${passphrase}",
+          "old_passphrase": "${passphrase}"
+        },
+        "method": "PUT",
+        "path": "/wallets/0000000000000000000000000000000000000000/passphrase"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-putByronWalletPassphrase",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "body": {
+          "new_passphrase": "${passphrase}",
+          "old_passphrase": "${passphrase}"
+        },
+        "method": "PUT",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/passphrase"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-createShelleyWalletMigrationPlan",
+      "operation": "createShelleyWalletMigrationPlan",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/migrations/plan"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-createByronWalletMigrationPlan",
+      "operation": "createByronWalletMigrationPlan",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/migrations/plan"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-migrateShelleyWallet",
+      "operation": "migrateShelleyWallet",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ],
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/migrations"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-migrateByronWallet",
+      "operation": "migrateByronWallet",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ],
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/migrations"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-postTransaction",
+      "operation": "postTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-postByronTransaction",
+      "operation": "postByronTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/transactions"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-postTransactionFee",
+      "operation": "postTransactionFee",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/payment-fees"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-postByronTransactionFee",
+      "operation": "postByronTransactionFee",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/payment-fees"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-selectCoins",
+      "operation": "selectCoins",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/coin-selections/random"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-byronSelectCoins",
+      "operation": "byronSelectCoins",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/coin-selections/random"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-constructTransaction",
+      "operation": "constructTransaction",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-constructSharedTransaction",
+      "operation": "constructSharedTransaction",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/transactions-construct"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-decodeTransaction",
+      "operation": "decodeTransaction",
+      "request": {
+        "body": {
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-decode"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-decodeSharedTransaction",
+      "operation": "decodeSharedTransaction",
+      "request": {
+        "body": {
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/transactions-decode"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-signTransaction",
+      "operation": "signTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-sign"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-signSharedTransaction",
+      "operation": "signSharedTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/transactions-sign"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-submitTransaction",
+      "operation": "submitTransaction",
+      "request": {
+        "body": {
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-submit"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-submitSharedTransaction",
+      "operation": "submitSharedTransaction",
+      "request": {
+        "body": {
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/transactions-submit"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-balanceTransaction",
+      "operation": "balanceTransaction",
+      "request": {
+        "body": {
+          "transaction": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6"
+        },
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-balance"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-patchSharedWalletInPayment",
+      "operation": "patchSharedWalletInPayment",
+      "request": {
+        "body": {
+          "cosigner#1": "acct_shared_xvk1r9wjtp352ak26cd0983rk7448q6xwaft3az0tpmwzuayeexl9necdh28c6v68p98sxsqe6w87fc8a2s5x2hng5hlmvg8hs0ufh6fxfceghtyp"
+        },
+        "method": "PATCH",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/payment-script-template"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-patchSharedWalletInDelegation",
+      "operation": "patchSharedWalletInDelegation",
+      "request": {
+        "body": {
+          "cosigner#1": "acct_shared_xvk1r9wjtp352ak26cd0983rk7448q6xwaft3az0tpmwzuayeexl9necdh28c6v68p98sxsqe6w87fc8a2s5x2hng5hlmvg8hs0ufh6fxfceghtyp"
+        },
+        "method": "PATCH",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/delegation-script-template"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-joinDRep",
+      "operation": "joinDRep",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}"
+        },
+        "method": "PUT",
+        "path": "/dreps/abstain/wallets/0000000000000000000000000000000000000000"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-unknown-joinStakePool",
+      "operation": "joinStakePool",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}"
+        },
+        "method": "PUT",
+        "path": "/stake-pools/00000000000000000000000000000000000000000000000000000000/wallets/0000000000000000000000000000000000000000"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "assertions": {
+        "/name": "conformance"
+      },
+      "capture": {
+        "extended_shelley": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-create-extended_shelley",
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/time": "services can observe different tips"
+      },
+      "operation": "postWallet",
+      "request": {
+        "body": {
+          "address_pool_gap": 20,
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "expected_status": 409,
+      "id": "extended-duplicate-extended_shelley",
+      "operation": "postWallet",
+      "request": {
+        "body": {
+          "address_pool_gap": 20,
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "assertions": {
+        "/balance/total/quantity": 0,
+        "/name": "conformance-random"
+      },
+      "capture": {
+        "extended_random": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-create-extended_random",
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "operation": "postByronWallet",
+      "request": {
+        "body": {
+          "mnemonic_sentence": "${mnemonic12}",
+          "name": "conformance-random",
+          "passphrase": "${passphrase}",
+          "style": "random"
+        },
+        "method": "POST",
+        "path": "/byron-wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "expected_status": 409,
+      "id": "extended-duplicate-extended_random",
+      "operation": "postByronWallet",
+      "request": {
+        "body": {
+          "mnemonic_sentence": "${mnemonic12}",
+          "name": "conformance-random",
+          "passphrase": "${passphrase}",
+          "style": "random"
+        },
+        "method": "POST",
+        "path": "/byron-wallets"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "assertions": {
+        "/balance/total/quantity": 0,
+        "/name": "conformance-icarus"
+      },
+      "capture": {
+        "extended_icarus": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-create-extended_icarus",
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "operation": "postByronWallet",
+      "request": {
+        "body": {
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance-icarus",
+          "passphrase": "${passphrase}",
+          "style": "icarus"
+        },
+        "method": "POST",
+        "path": "/byron-wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "expected_status": 409,
+      "id": "extended-duplicate-extended_icarus",
+      "operation": "postByronWallet",
+      "request": {
+        "body": {
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance-icarus",
+          "passphrase": "${passphrase}",
+          "style": "icarus"
+        },
+        "method": "POST",
+        "path": "/byron-wallets"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "assertions": {
+        "/account_index": "0H",
+        "/balance/total/quantity": 0
+      },
+      "capture": {
+        "extended_shared": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-create-extended_shared",
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "operation": "postSharedWallet",
+      "request": {
+        "body": {
+          "account_index": "0H",
+          "delegation_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          },
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance-shared",
+          "passphrase": "${passphrase}",
+          "payment_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/shared-wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "expected_status": 409,
+      "id": "extended-duplicate-extended_shared",
+      "operation": "postSharedWallet",
+      "request": {
+        "body": {
+          "account_index": "0H",
+          "delegation_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          },
+          "mnemonic_sentence": "${mnemonic}",
+          "name": "conformance-shared",
+          "passphrase": "${passphrase}",
+          "payment_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          }
+        },
+        "method": "POST",
+        "path": "/shared-wallets"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "absent": [
+        "/passphrase"
+      ],
+      "assertions": {
+        "/name": "conformance"
+      },
+      "capture": {
+        "extended_watch": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-create-watch-only",
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/time": "services can observe different tips"
+      },
+      "operation": "postWallet",
+      "request": {
+        "body": {
+          "account_public_key": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+          "address_pool_gap": 20,
+          "name": "conformance"
+        },
+        "method": "POST",
+        "path": "/wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-policy-absent",
+      "operation": "getPolicyKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${extended_watch}/policy-key"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-policy-id-absent",
+      "operation": "postPolicyId",
+      "request": {
+        "body": {
+          "policy_script_template": "cosigner#0"
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_watch}/policy-id"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 202,
+      "id": "extended-policy-create",
+      "operation": "postPolicyKey",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/policy-key"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 200,
+      "id": "extended-policy-read",
+      "operation": "getPolicyKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${extended_shelley}/policy-key"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 202,
+      "id": "extended-policy-id",
+      "operation": "postPolicyId",
+      "request": {
+        "body": {
+          "policy_script_template": {
+            "all": [
+              "cosigner#0"
+            ]
+          }
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/policy-id"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 200,
+      "id": "extended-stake-keys",
+      "operation": "listStakeKeys",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${extended_shelley}/stake-keys"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-stake-fee-unfunded",
+      "operation": "getDelegationFee",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${extended_shelley}/delegation-fees"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "capture": {
+        "extended_random_address": "/id"
+      },
+      "expected_status": 201,
+      "id": "extended-random-address",
+      "operation": "createAddress",
+      "request": {
+        "body": {
+          "address_index": 12345,
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_random}/addresses"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "capture": {
+        "extended_foreign_address": "/0/id"
+      },
+      "expected_status": 200,
+      "id": "extended-icarus-addresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${extended_icarus}/addresses"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-icarus-random-address-forbidden",
+      "operation": "createAddress",
+      "request": {
+        "body": {
+          "address_index": 12345,
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/addresses"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-random-import-owned",
+      "operation": "importAddress",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${extended_random}/addresses/${extended_random_address}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-random-import-owned-bulk",
+      "operation": "importAddresses",
+      "request": {
+        "body": {
+          "addresses": [
+            "${extended_random_address}"
+          ]
+        },
+        "method": "PUT",
+        "path": "/byron-wallets/${extended_random}/addresses"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-random-import-foreign",
+      "operation": "importAddress",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${extended_random}/addresses/${extended_foreign_address}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-random-import-foreign-bulk",
+      "operation": "importAddresses",
+      "request": {
+        "body": {
+          "addresses": [
+            "${extended_foreign_address}"
+          ]
+        },
+        "method": "PUT",
+        "path": "/byron-wallets/${extended_random}/addresses"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shared-active-payment-patch",
+      "operation": "patchSharedWalletInPayment",
+      "request": {
+        "body": {
+          "cosigner#1": "acct_shared_xvk1r9wjtp352ak26cd0983rk7448q6xwaft3az0tpmwzuayeexl9necdh28c6v68p98sxsqe6w87fc8a2s5x2hng5hlmvg8hs0ufh6fxfceghtyp"
+        },
+        "method": "PATCH",
+        "path": "/shared-wallets/${extended_shared}/payment-script-template"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shared-active-delegation-patch",
+      "operation": "patchSharedWalletInDelegation",
+      "request": {
+        "body": {
+          "cosigner#1": "acct_shared_xvk1r9wjtp352ak26cd0983rk7448q6xwaft3az0tpmwzuayeexl9necdh28c6v68p98sxsqe6w87fc8a2s5x2hng5hlmvg8hs0ufh6fxfceghtyp"
+        },
+        "method": "PATCH",
+        "path": "/shared-wallets/${extended_shared}/delegation-script-template"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 400,
+      "id": "extended-smash-invalid-url",
+      "operation": "getCurrentSmashHealth",
+      "request": {
+        "method": "GET",
+        "path": "/smash/health?url=invalid"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 404,
+      "id": "extended-drep-absent",
+      "operation": "getDRep",
+      "request": {
+        "method": "GET",
+        "path": "/dreps/abstain"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-settings-none",
+      "operation": "putSettings",
+      "request": {
+        "body": {
+          "settings": {
+            "pool_metadata_source": "none"
+          }
+        },
+        "method": "PUT",
+        "path": "/settings"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-maintenance",
+      "operation": "postMaintenanceAction",
+      "request": {
+        "body": {
+          "maintenance_action": "gc_stake_pools"
+        },
+        "method": "POST",
+        "path": "/stake-pools/maintenance-actions"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-selection-empty",
+      "operation": "selectCoins",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/coin-selections/random"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-byron-selection-empty",
+      "operation": "byronSelectCoins",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/coin-selections/random"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-payment-empty",
+      "operation": "postTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/transactions"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-byron-payment-empty",
+      "operation": "postByronTransaction",
+      "request": {
+        "body": {
+          "passphrase": "${passphrase}",
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/transactions"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-fee-empty",
+      "operation": "postTransactionFee",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/payment-fees"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-byron-fee-empty",
+      "operation": "postByronTransactionFee",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/payment-fees"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-construct-empty",
+      "operation": "constructTransaction",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/transactions-construct"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shared-construct-empty",
+      "operation": "constructSharedTransaction",
+      "request": {
+        "body": {
+          "payments": [
+            {
+              "address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf",
+              "amount": {
+                "quantity": 1000000,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        },
+        "method": "POST",
+        "path": "/shared-wallets/${extended_shared}/transactions-construct"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-migration-plan-empty",
+      "operation": "createShelleyWalletMigrationPlan",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ]
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/migrations/plan"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-byron-migration-plan-empty",
+      "operation": "createByronWalletMigrationPlan",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ]
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/migrations/plan"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-shelley-migration-empty",
+      "operation": "migrateShelleyWallet",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ],
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${extended_shelley}/migrations"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 403,
+      "id": "extended-byron-migration-empty",
+      "operation": "migrateByronWallet",
+      "request": {
+        "body": {
+          "addresses": [
+            "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf"
+          ],
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/byron-wallets/${extended_icarus}/migrations"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    }
+  ],
+  "cleanup": [
+    {
+      "expected_status": 204,
+      "id": "extended-cleanup-extended_shelley",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${extended_shelley}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-cleanup-extended_random",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${extended_random}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-cleanup-extended_icarus",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${extended_icarus}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-cleanup-extended_shared",
+      "operation": "deleteSharedWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/shared-wallets/${extended_shared}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    },
+    {
+      "expected_status": 204,
+      "id": "extended-cleanup-extended_watch",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${extended_watch}"
+      },
+      "source": "Pinned Haskell handlers; valid public encodings and owned empty wallets; exact differential responses and independent status/schema checks"
+    }
+  ],
+  "name": "Valid-body unknown-wallet, owned policy/address and unfunded status matrix"
+}

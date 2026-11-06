@@ -1,0 +1,8 @@
+{
+  "failure_report":"evidence/reference-precedence-corrected/live.json",
+  "failure":"Final exact history equality after unsigned construction; all status/schema/error/minimum/node-UTxO/balance checks before it passed",
+  "audit":"Owned wallet history before/after unchanged except depth.quantity46->54; both have one transaction. Raw public histories captured in artifacts/history-depth-audit; owned wallet deleted204.",
+  "source":"Pinned DB/Store/Transactions/TransactionInfo.hs181-187 and255-261 compute depth=max(0,tipH-transactionHeight); Shelley/Server.hs2811 exports that value for InLedger",
+  "proposed_change":"Bracket each funded history read with wallet tip heights and an independent node height. Require in_ledger status, block unit, and depth matching max(0,h-insertedHeight) for an h within the observed wallet-tip interval and not ahead of the node. Require nondecreasing depth in this non-rollback profile. Compare all history fields exactly after removing only depth.quantity, retaining transaction IDs/order/count, depth.unit, status, amounts, fees, metadata, CBOR, times and outputs. Keep exact empty-history checks, balances, node UTxOs and all error envelopes unchanged. Preserve failed report and add regressions for invalid depth/unit/transaction changes, then rerun coherent evidence.",
+  "catalogue_required":643
+}

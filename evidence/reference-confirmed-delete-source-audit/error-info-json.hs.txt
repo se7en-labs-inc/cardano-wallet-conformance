@@ -1,0 +1,16 @@
+instance FromJSON ApiErrorInfo where
+    parseJSON = genericParseJSON apiErrorInfoOptions
+
+instance ToJSON ApiErrorInfo where
+    toJSON = genericToJSON apiErrorInfoOptions
+
+apiErrorInfoOptions :: Options
+apiErrorInfoOptions =
+    defaultSumTypeOptions
+        { sumEncoding =
+            TaggedObject
+                { tagFieldName = "code"
+                , contentsFieldName = "info"
+                }
+        }
+

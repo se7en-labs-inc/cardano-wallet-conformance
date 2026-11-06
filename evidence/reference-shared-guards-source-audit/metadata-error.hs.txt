@@ -1,0 +1,16 @@
+instance IsServerError ErrDecodeTx where
+    toServerError = \case
+        ErrDecodeTxFromMetadataDecryption ErrMissingMetadataKey ->
+            apiError err403 InvalidMetadataDecryption
+                $ mconcat
+                    [ "It looks like the encrypted metadata has wrong structure. "
+                    , "It is expected to be a map with key '674' - see CIP20."
+                    ]
+        ErrDecodeTxFromMetadataDecryption ErrMissingEncryptionMethod ->
+            apiError err403 InvalidMetadataDecryption
+                $ mconcat
+                    [ "It looks like the encrypted metadata has wrong structure. "
+                    , "It is expected to have encryption method under 'enc' key - see CIP83."
+                    ]
+        ErrDecodeTxFromMetadataDecryption ErrMissingValidEncryptionPayload ->
+            apiError err403 InvalidMetadataDecryption

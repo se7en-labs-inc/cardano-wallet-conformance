@@ -1,0 +1,9 @@
+# Actual validity and expiry oracle audit
+
+Pinned Haskell wallet/source2fc5c383, node11.1.3/CLI11.2.3.0, fresh /tmp/wc-valid-kQvsK7, Conway magic42. Owned wallet funded100m through actual faucet and ready balance. Explicit [0,1) expired interval and future[2677,4677) both construct202/sign202, then submit500 created_invalid_transaction with source-formatted exact node OutsideValidityIntervalUTxO causes. Rejections leave the funding100m UTxO unspent and only its incoming confirmed history entry; public node proof retained.
+
+A valid control[0,tip+2000) constructs202/signs202/submits202. Independent node UTxO confirms exact2m payment in transaction70001857560093dc0895cbb0bee9e73ef76125d782d3a8aad8cb5ada5b360f3d. Exact public requests and transaction responses/headers retained; passphrase-bearing signing requests, mnemonic/create request, databases/keys and raw runtime logs excluded. The audit wallet was deleted204. All seven observed owned runtime processes were stopped and verified absent.
+
+These are actual runtime oracle observations, not registered live-profile evidence and not a completed validity obligation. The reusable live profile must independently inspect exact CBOR fields/signatures/outputs, assert node state and valid-control confirmation, register named cases, and run under the final coherent suite fingerprint. Supplemental500 is not a documented API status or a fabricated403.
+
+The new SlottingAdapter.hs calls actual pinned wallet mkSingleEraInterpreter, ongoingSlotAt, ceilingSlotAt and slotToUTCTime. GHC9.12.3 -O1 -Wall -Werror with exact resolved Nix wallet package wrapper. Binary/source digests retained. Initially invoking nix develop on the wrapper derivation exposed base GHC only; using that resolved output's bin/ghc supplied the pinned wallet libraries. No local August dist-newstyle package database was used. Slot/time profiles remain explicitly single-era and cannot close hard-fork requirements.

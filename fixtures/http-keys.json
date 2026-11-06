@@ -1,0 +1,817 @@
+{
+  "cases": [
+    {
+      "assertions": {
+        "/id": "2425e88933b3a065ba3b5787d86fba26ad450a9d",
+        "/name": "conformance"
+      },
+      "capture": {
+        "wallet_id": "/id"
+      },
+      "expected_status": 201,
+      "id": "key-api-create",
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/time": "services can observe different tips"
+      },
+      "operation": "postWallet",
+      "request": {
+        "body": {
+          "address_pool_gap": 20,
+          "mnemonic_sentence": [
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "abandon",
+            "address"
+          ],
+          "name": "conformance",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "id": "network-guard-addresses-before",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/addresses"
+      },
+      "expected_status": 200,
+      "capture": {"network_guard_addresses": ""}
+    },
+    {
+      "id": "address-cross-network-api-rejected",
+      "operation": "constructTransaction",
+      "requirements": ["address.network"],
+      "source": "Pinned Haskell address network parser; same MAIN/TEST payment credential as src/live/precedence.rs, differing only in network tag",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/transactions-construct",
+        "body": {
+          "payments": [{"address": "addr1vxz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc3nuz8v", "amount": {"quantity": 2000000, "unit": "lovelace"}}]
+        }
+      },
+      "expected_status": 400,
+      "assertions": {
+        "": {"code": "bad_request", "message": "Error in $.payments[0].address: parsing AddressAmount failed, (String 'addr1vxz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc3nuz8v',TextDecodingError {getTextDecodingError = 'Invalid network discrimination on address. Expecting Testnet but got Mainnet.'})"}
+      }
+    },
+    {
+      "id": "network-guard-testnet-control",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/transactions-construct",
+        "body": {
+          "payments": [{"address": "addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf", "amount": {"quantity": 2000000, "unit": "lovelace"}}]
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {"code": "no_utxos_available", "message": "Unable to create a transaction because the wallet has no unspent transaction outputs (UTxOs) available. A transaction must spend at least one UTxO in order to be accepted for inclusion on the Cardano blockchain."}
+      }
+    },
+    {
+      "id": "network-guard-addresses-preserved",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {"": "${network_guard_addresses}"}
+    },
+    {
+      "id": "network-guard-wallet-preserved",
+      "operation": "getWallet",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/id": "${wallet_id}",
+        "/name": "conformance",
+        "/state/status": "ready",
+        "/balance/available": {"quantity": 0, "unit": "lovelace"},
+        "/balance/total": {"quantity": 0, "unit": "lovelace"}
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/time": "services can observe different tips"
+      }
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998",
+          "hrp": "acct_vk"
+        }
+      },
+      "expected_status": 202,
+      "id": "key-api-account-0-non_extended",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "non_extended",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/0H"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998",
+          "hrp": "acct_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-get-account-non_extended",
+      "operation": "getAccountKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys?format=non_extended"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+          "hrp": "acct_xvk"
+        }
+      },
+      "expected_status": 202,
+      "id": "key-api-account-0-extended",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "extended",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/0H"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+          "hrp": "acct_xvk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-get-account-extended",
+      "operation": "getAccountKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys?format=extended"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "573cd56f7534b7ce730b95f1ad019ebcb832eb30ec522fa177b6609fc4f9ac6f",
+          "hrp": "acct_vk"
+        }
+      },
+      "expected_status": 202,
+      "id": "key-api-account-2147483647-non_extended",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "non_extended",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/2147483647H"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "573cd56f7534b7ce730b95f1ad019ebcb832eb30ec522fa177b6609fc4f9ac6f9547c77db1062a847305a7f979864ba0a1d7461942b317cee3c9fd9781285d02",
+          "hrp": "acct_xvk"
+        }
+      },
+      "expected_status": 202,
+      "id": "key-api-account-2147483647-extended",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "extended",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/2147483647H"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "ba828d0ecbeb7e930351e2deada39323bfad7dfe14ee8a353630b7a2bc627486",
+          "hrp": "addr_vk"
+        }
+      },
+      "capture": {
+        "payment_vk": ""
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-0-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/0?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "85abf3eca55024aa1c22b944599b5e890ec12dfb19941229da4ba293",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-0-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/0?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "88de93c86d2d898eca1f533bbb42aac30896286b015c4255204958e98e5161bc",
+          "hrp": "addr_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-19-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/19?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "331f8f7b49dde961667508c8ed387d1b796f182b6ca61479966d813f",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-19-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/19?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "5642aab55dea91eb9d928c690c273a7b5bafc8143dad5c35624d7f30caf8cbd3",
+          "hrp": "addr_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-2147483647-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/2147483647?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "21675e9cd27ab862ff3e34269d1bd2cf5d5d2b84bad92200bb5ad421",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-0-2147483647-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_external/2147483647?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "965efd23d44405c9ee53d01869ecfad54683ec0a538aaa7a7507dfb221c4ea40",
+          "hrp": "addr_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-0-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/0?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "b1605146847e80b3ffe8c802e3b62d5c1964a0a9c2358b800f8357ce",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-0-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/0?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "50d59218d51ee7d2e88409bb49e3217c0bc9dd31634160c93377468f8dbfa5c1",
+          "hrp": "addr_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-19-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/19?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "10d34712df26290b7b647dbff2295920bc19be997954b1cf69c05696",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-19-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/19?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "5f321f3ec041d957ef56b2594f0737f409d7f486d1b72535011e73a4d28e1dd4",
+          "hrp": "addr_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-2147483647-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/2147483647?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "68e4a0844ca7dee849b231913b56874ccfdb8f4c0a8404c1b487f44b",
+          "hrp": "addr_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-1-2147483647-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/utxo_internal/2147483647?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "a22d0b8709e6bc04d11257dc405410d1ace01f207c391ba4788ea17198ee1a08",
+          "hrp": "stake_vk"
+        }
+      },
+      "capture": {
+        "stake_vk": ""
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-0-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/0?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "c3892366f174a76af9252f78368f5747d3055ab3568ea3b6bf40b01e",
+          "hrp": "stake_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-0-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/0?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "3f1daef281367bf7319cd6e02c6e8fe9c688435b9f9663cf764c090a57ad4169",
+          "hrp": "stake_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-19-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/19?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "8963bfb1abb39d173e5caa960392c6644527e3c06332138dfc252aac",
+          "hrp": "stake_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-19-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/19?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "7a1ea2d0372af82749938447e8e00b460035f1e0f8f6f600f9026caabbc64c72",
+          "hrp": "stake_vk"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-2147483647-hash-false",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/2147483647?hash=false"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "8af41cd6bd88db9cfa3c1a523d33106788b018bb03a21c3abb1dbd7b",
+          "hrp": "stake_vkh"
+        }
+      },
+      "expected_status": 200,
+      "id": "key-api-role-2-2147483647-hash-true",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/keys/mutable_account/2147483647?hash=true"
+      },
+      "source": "Haskell cardano-address 4.0.2 from cardano-wallet v2026-09-16; binary sha256:7a9ea8a8c71356a3ab4671190e1cad863e8d701480cf36882dbef8db1870167f; release archive sha256:318ca7e1b8d49249aeee0a6ee9dff92c095ae1ad5279133b4b70e8f3b39dbfb5"
+    },
+    {
+      "assert_bech32": {
+        "/address": {
+          "bytes_hex": "0085abf3eca55024aa1c22b944599b5e890ec12dfb19941229da4ba293c3892366f174a76af9252f78368f5747d3055ab3568ea3b6bf40b01e",
+          "hrp": "addr_test"
+        }
+      },
+      "capture": {
+        "base_address": "/address"
+      },
+      "expected_status": 202,
+      "id": "key-api-address-base",
+      "operation": "postAnyAddress",
+      "request": {
+        "body": {
+          "payment": "${payment_vk}",
+          "stake": "${stake_vk}"
+        },
+        "method": "POST",
+        "path": "/addresses"
+      },
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding"
+      ],
+      "source": "CIP-0019 header/payload construction with frozen Haskell key bytes and independent Blake2b-224"
+    },
+    {
+      "assertions": {
+        "/network_tag": 0
+      },
+      "expected_status": 200,
+      "id": "key-api-inspect-base",
+      "operation": "inspectAddress",
+      "request": {
+        "method": "GET",
+        "path": "/addresses/${base_address}"
+      }
+    },
+    {
+      "assert_bech32": {
+        "/address": {
+          "bytes_hex": "6085abf3eca55024aa1c22b944599b5e890ec12dfb19941229da4ba293",
+          "hrp": "addr_test"
+        }
+      },
+      "capture": {
+        "enterprise_address": "/address"
+      },
+      "expected_status": 202,
+      "id": "key-api-address-enterprise",
+      "operation": "postAnyAddress",
+      "request": {
+        "body": {
+          "payment": "${payment_vk}"
+        },
+        "method": "POST",
+        "path": "/addresses"
+      },
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding"
+      ],
+      "source": "CIP-0019 header/payload construction with frozen Haskell key bytes and independent Blake2b-224"
+    },
+    {
+      "assertions": {
+        "/network_tag": 0
+      },
+      "expected_status": 200,
+      "id": "key-api-inspect-enterprise",
+      "operation": "inspectAddress",
+      "request": {
+        "method": "GET",
+        "path": "/addresses/${enterprise_address}"
+      }
+    },
+    {
+      "assert_bech32": {
+        "/address": {
+          "bytes_hex": "e0c3892366f174a76af9252f78368f5747d3055ab3568ea3b6bf40b01e",
+          "hrp": "stake_test"
+        }
+      },
+      "capture": {
+        "reward_address": "/address"
+      },
+      "expected_status": 202,
+      "id": "key-api-address-reward",
+      "operation": "postAnyAddress",
+      "request": {
+        "body": {
+          "stake": "${stake_vk}"
+        },
+        "method": "POST",
+        "path": "/addresses"
+      },
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding"
+      ],
+      "source": "CIP-0019 header/payload construction with frozen Haskell key bytes and independent Blake2b-224"
+    },
+    {
+      "assertions": {
+        "/network_tag": 0
+      },
+      "expected_status": 200,
+      "id": "key-api-inspect-reward",
+      "operation": "inspectAddress",
+      "request": {
+        "method": "GET",
+        "path": "/addresses/${reward_address}"
+      }
+    },
+    {
+      "assertions": {
+        "/code": "wrong_encryption_passphrase"
+      },
+      "expected_status": 403,
+      "id": "key-api-passphrase-wrong-old",
+      "operation": "putWalletPassphrase",
+      "request": {
+        "body": {
+          "new_passphrase": "conformance-updated-passphrase",
+          "old_passphrase": "incorrect-passphrase"
+        },
+        "method": "PUT",
+        "path": "/wallets/${wallet_id}/passphrase"
+      }
+    },
+    {
+      "expected_status": 204,
+      "id": "key-api-passphrase-change",
+      "operation": "putWalletPassphrase",
+      "request": {
+        "body": {
+          "new_passphrase": "conformance-updated-passphrase",
+          "old_passphrase": "${passphrase}"
+        },
+        "method": "PUT",
+        "path": "/wallets/${wallet_id}/passphrase"
+      }
+    },
+    {
+      "assertions": {
+        "/code": "wrong_encryption_passphrase"
+      },
+      "expected_status": 403,
+      "id": "key-api-old-passphrase-rejected",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "extended",
+          "passphrase": "${passphrase}"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/0H"
+      }
+    },
+    {
+      "assert_bech32": {
+        "": {
+          "bytes_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+          "hrp": "acct_xvk"
+        }
+      },
+      "expected_status": 202,
+      "id": "key-api-new-passphrase-derives-same-key",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "extended",
+          "passphrase": "conformance-updated-passphrase"
+        },
+        "method": "POST",
+        "path": "/wallets/${wallet_id}/keys/0H"
+      }
+    },
+    {
+      "capture": {
+        "original_addresses": ""
+      },
+      "expected_status": 200,
+      "id": "key-api-original-addresses",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/addresses"
+      }
+    },
+    {
+      "expected_status": 204,
+      "id": "key-api-delete-private-wallet",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${wallet_id}"
+      }
+    },
+    {
+      "absent": [
+        "/passphrase"
+      ],
+      "assertions": {
+        "/id": "1ade600063f973d3b1abf23cb46bc55b7f726c83",
+        "/name": "conformance"
+      },
+      "capture": {
+        "watch_wallet_id": "/id"
+      },
+      "expected_status": 201,
+      "id": "key-api-watch-only-create",
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/time": "services can observe different tips"
+      },
+      "operation": "postWallet",
+      "request": {
+        "body": {
+          "account_public_key": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+          "address_pool_gap": 20,
+          "name": "conformance"
+        },
+        "method": "POST",
+        "path": "/wallets"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "assertions": {
+        "": "${original_addresses}"
+      },
+      "expected_status": 200,
+      "id": "key-api-watch-only-addresses",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${watch_wallet_id}/addresses"
+      },
+      "requirements": [
+        "wallet.hardware-watch-only"
+      ]
+    },
+    {
+      "assertions": {
+        "/code": "no_root_key"
+      },
+      "expected_status": 403,
+      "id": "key-api-watch-only-private-derivation-rejected",
+      "operation": "postAccountKey",
+      "request": {
+        "body": {
+          "format": "extended",
+          "passphrase": "conformance-updated-passphrase"
+        },
+        "method": "POST",
+        "path": "/wallets/${watch_wallet_id}/keys/0H"
+      },
+      "requirements": [
+        "wallet.hardware-watch-only"
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "expected_status": 204,
+      "id": "key-api-cleanup",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${watch_wallet_id}"
+      }
+    }
+  ],
+  "name": "Independent Haskell key/account/address HTTP matrix"
+}

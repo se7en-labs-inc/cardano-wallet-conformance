@@ -1,0 +1,339 @@
+{
+  "crypto.hash-boundaries": [
+    "boundary-sha256-0",
+    "boundary-sha256-55",
+    "boundary-sha256-56",
+    "boundary-sha256-63",
+    "boundary-sha256-64",
+    "boundary-sha256-65",
+    "boundary-sha512-111",
+    "boundary-sha512-112",
+    "boundary-blake2b256-127",
+    "boundary-blake2b256-128",
+    "boundary-blake2b256-129",
+    "boundary-sha256-4096",
+    "hash-malformed-hex"
+  ],
+  "crypto.ed25519.noncanonical": [
+    "ed25519-noncanonical-s",
+    "ed25519-small-order-r",
+    "ed25519-small-order-public-key"
+  ],
+  "crypto.extended-ed25519": [
+    "extended-sign-empty",
+    "extended-sign-long",
+    "extended-sign-malformed-key"
+  ],
+  "crypto.icarus-root": [
+    "icarus-second-factor",
+    "icarus-invalid-mnemonic"
+  ],
+  "crypto.shelley-root": [
+    "shelley-second-factor",
+    "shelley-invalid-mnemonic"
+  ],
+  "crypto.byron-root": [
+    "byron-root-encrypted",
+    "byron-root-malformed-mnemonic"
+  ],
+  "crypto.byron-payload": [
+    "byron-path-encrypt-golden",
+    "byron-path-decrypt-golden",
+    "byron-path-authentication-failure",
+    "byron-path-malformed-cbor"
+  ],
+  "crypto.ledger-root": [
+    "ledger-root-golden",
+    "ledger-root-unicode",
+    "ledger-child-golden"
+  ],
+  "crypto.trezor-root": [
+    "trezor-root-golden",
+    "trezor-root-second-factor",
+    "trezor-child-golden"
+  ],
+  "crypto.derivation-boundaries": [
+    "derive-hardened-from-public-rejected",
+    "derive-index-overflow-rejected",
+    "derive-invalid-role-rejected"
+  ],
+  "crypto.passphrase-pbkdf2": [
+    "pbkdf2-check-correct",
+    "pbkdf2-check-wrong",
+    "pbkdf2-malformed-hash"
+  ],
+  "crypto.passphrase-scrypt": [
+    "scrypt-check-correct",
+    "scrypt-check-wrong",
+    "scrypt-migrate-pbkdf2"
+  ],
+  "crypto.root-key-encryption": [
+    "root-encrypt-v1",
+    "root-decrypt-v1-correct",
+    "root-decrypt-v1-wrong-passphrase",
+    "root-change-v1-passphrase",
+    "root-migrate-v1-v2",
+    "root-migration-failure-preserves-v1",
+    "root-encrypt-v2",
+    "root-decrypt-wrong-passphrase",
+    "root-change-passphrase",
+    "root-ciphertext-tamper"
+  ],
+  "address.shelley": [
+    "key-api-address-base",
+    "address-base-script-key",
+    "address-base-key-script",
+    "address-base-script-script",
+    "address-pointer",
+    "key-api-address-reward",
+    "address-reward-script"
+  ],
+  "address.byron": [
+    "address-byron-random",
+    "address-byron-icarus",
+    "address-byron-network-attributes",
+    "address-byron-crc-rejection"
+  ],
+  "address.shared": [
+    "address-shared-all",
+    "address-shared-any",
+    "address-shared-at-least",
+    "address-shared-timelock"
+  ],
+  "address.network": [
+    "address-cross-network-api-rejected",
+    "address-byron-protocol-magic"
+  ],
+  "address.encoding": [
+    "bech32-checksum-rejected",
+    "bech32-mixed-case-rejected",
+    "bech32-invalid-padding",
+    "base58-leading-zero",
+    "base58-malformed"
+  ],
+  "address.cip129": [
+    "cip129-drep-key",
+    "cip129-drep-script",
+    "cip129-committee-hot",
+    "cip129-committee-cold",
+    "cip129-header-rejected"
+  ],
+  "script.native": [
+    "native-script-all",
+    "native-script-any",
+    "native-script-at-least",
+    "native-script-before",
+    "native-script-after",
+    "native-script-unsatisfied"
+  ],
+  "script.policy-id": [
+    "native-policy-id",
+    "key-hash",
+    "asset-fingerprint"
+  ],
+  "tx.serialization": [
+    "tx-cbor-byron",
+    "tx-cbor-shelley",
+    "tx-cbor-allegra",
+    "tx-cbor-mary",
+    "tx-cbor-alonzo",
+    "tx-cbor-babbage",
+    "tx-cbor-conway",
+    "tx-cbor-indefinite",
+    "tx-cbor-duplicate-key-rejected",
+    "tx-cbor-trailing-rejected"
+  ],
+  "tx.witnesses": [
+    "witness-bootstrap-golden",
+    "witness-script-golden",
+    "witness-merge",
+    "witness-duplicate",
+    "witness-invalid-key"
+  ],
+  "tx.minimum-fee": [
+    "fee-linear-boundaries",
+    "fee-witness-count",
+    "fee-execution-units",
+    "fee-maximum-size",
+    "fee-rounding"
+  ],
+  "tx.min-utxo": [
+    "min-utxo-ada",
+    "min-utxo-native-assets",
+    "min-utxo-datum",
+    "min-utxo-reference-script",
+    "min-utxo-protocol-change"
+  ],
+  "tx.validity-interval": [
+    "validity-lower-bound",
+    "validity-ttl",
+    "validity-slot-time-boundary",
+    "live:expired-transaction-rejected"
+  ],
+  "tx.metadata": [
+    "metadata-cbor-golden",
+    "metadata-label-boundaries",
+    "metadata-text-64-bytes",
+    "metadata-bytes-64",
+    "metadata-oversize-rejected"
+  ],
+  "tx.mint-burn": [
+    "live:native-mint",
+    "live:native-burn",
+    "live:mint-invalid-witness-rejected",
+    "mint-burn-quantity-boundaries"
+  ],
+  "tx.collateral": [
+    "collateral-eligibility",
+    "collateral-percentage-rounding",
+    "collateral-return",
+    "collateral-insufficient"
+  ],
+  "tx.delegation": [
+    "live:stake-register",
+    "live:stake-delegate",
+    "live:stake-deregister",
+    "live:reward-withdrawal",
+    "stake-deposit-refund"
+  ],
+  "tx.governance": [
+    "live:vote-delegate",
+    "governance-certificate-golden",
+    "governance-era-rejection"
+  ],
+  "tx.invalid-signature": [
+    "live:unsigned-submit-rejected",
+    "live:corrupt-witness-rejected"
+  ],
+  "tx.double-spend": [
+    "live:conflicting-spend"
+  ],
+  "selection.minimum-change": [
+    "haskell-selection-dust-ada",
+    "haskell-selection-large-dust-ada",
+    "haskell-selection-dust-threshold-minus-one",
+    "haskell-selection-dust-threshold-exact",
+    "haskell-selection-dust-native",
+    "haskell-selection-change-asset-split"
+  ],
+  "selection.input-limits": [
+    "selection-maximum-inputs-boundary",
+    "selection-maximum-size-boundary"
+  ],
+  "selection.insufficient-funds": [
+    "haskell-selection-insufficient-fee",
+    "selection-insufficient-collateral"
+  ],
+  "selection.seeded-oracle": [
+    "haskell-selection-minimal-0",
+    "haskell-selection-optimal-0",
+    "haskell-selection-minimal-9223372036854775808",
+    "haskell-selection-optimal-18446744073709551615"
+  ],
+  "wallet.utxo-snapshot": [
+    "live:utxo-snapshot-statistics",
+    "live:multiasset-utxo-snapshot"
+  ],
+  "wallet.discovery": [
+    "discovery-sequential-gap",
+    "discovery-internal-change",
+    "discovery-random-byron",
+    "discovery-shared-cosigners"
+  ],
+  "wallet.restoration": [
+    "live:restore-from-genesis",
+    "state:restore-from-checkpoint"
+  ],
+  "wallet.rollback": [
+    "state:rollback-spent-inputs",
+    "state:rollback-pending",
+    "state:rollback-balance-history",
+    "live:rollback-reapply"
+  ],
+  "wallet.restart": [
+    "state:restart-confirmed",
+    "state:restart-pending",
+    "state:restart-key-address-state"
+  ],
+  "wallet.resubmission": [
+    "live:pending-retry",
+    "live:pending-expiry",
+    "live:node-disconnect-reconnect"
+  ],
+  "wallet.concurrent-spend": [
+    "live:concurrent-construct",
+    "live:concurrent-submit"
+  ],
+  "wallet.shared-cosigners": [
+    "shared:incomplete",
+    "shared:activate",
+    "shared:partial-sign",
+    "live:shared-fully-signed"
+  ],
+  "wallet.byron-migration": [
+    "live:byron-random-spend",
+    "live:byron-icarus-spend",
+    "live:byron-migrate"
+  ],
+  "wallet.hardware-watch-only": [
+    "key-api-watch-only-addresses",
+    "key-api-watch-only-private-derivation-rejected",
+    "live:watch-only-external-witness"
+  ],
+  "wallet.transaction-filtering": [
+    "history:time-range",
+    "history:status",
+    "history:order",
+    "history:pagination",
+    "history:binary-metadata"
+  ],
+  "wallet.stake-pools": [
+    "pools:metadata",
+    "pools:ranking",
+    "pools:retirement",
+    "pools:maintenance"
+  ],
+  "wallet.governance": [
+    "governance:drep-queries",
+    "governance:vote-state"
+  ],
+  "chain.protocol-parameters": [
+    "chain:node-wallet-protocol-parameters",
+    "chain:protocol-parameter-update"
+  ],
+  "chain.era-boundaries": [
+    "live:hard-fork-restore",
+    "live:hard-fork-submit",
+    "live:hard-fork-certificates"
+  ],
+  "api.transport-errors": [
+    "transport:unknown-method",
+    "transport:unknown-path",
+    "transport:malformed-json",
+    "transport:unsupported-content-type",
+    "transport:unsupported-accept"
+  ],
+  "api.error-precedence": [
+    "precedence:path-body",
+    "precedence:media-body",
+    "precedence:wallet-passphrase",
+    "precedence:funds-output"
+  ],
+  "crypto.shared-root": [
+    "shared-root-second-factor",
+    "shared-root-invalid-mnemonic"
+  ],
+  "crypto.bip39.seed": [
+    "bip39-unicode-composed",
+    "bip39-unicode-decomposed"
+  ],
+  "selection.multi-output": [
+    "haskell-selection-change-coin-distribution",
+    "haskell-selection-change-token-split",
+    "haskell-selection-change-asset-split"
+  ],
+  "selection.large-quantities": [
+    "haskell-selection-wide-coin-totals",
+    "haskell-selection-wide-token-totals"
+  ]
+}

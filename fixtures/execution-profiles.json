@@ -1,0 +1,184 @@
+{
+  "format_version": 1,
+  "http": [
+    "http",
+    "http-keys",
+    "http-signatures",
+    "http-families",
+    "http-rejections",
+    "http-network",
+    "http-statuses",
+    "http-extended",
+    "http-governance-media"
+  ],
+  "internals": [
+    {
+      "name": "internals",
+      "corpora": [
+        "fixtures/vectors/primitives.json",
+        "fixtures/vectors/primitive-boundaries.json",
+        "fixtures/vectors/bip39-reference.json",
+        "fixtures/vectors/cardano-wallet.json",
+        "fixtures/vectors/passphrase-checks.json",
+        "fixtures/vectors/signature-verification.json",
+        "fixtures/vectors/coin-selection.json",
+        "fixtures/vectors/generated-selection.json",
+        "fixtures/vectors/haskell-selection.json",
+        "fixtures/vectors/root-encryption.json"
+      ],
+      "operations": [
+        "sha256",
+        "sha512",
+        "blake2b",
+        "ed25519.sign",
+        "ed25519.verify",
+        "passphrase.hash-pbkdf2",
+        "passphrase.check-pbkdf2",
+        "passphrase.check-scrypt",
+        "keys.verify-extended",
+        "coin-selection.select",
+        "coin-selection.haskell",
+        "root-key.parse",
+        "root-key.create-v2",
+        "root-key.check-v2",
+        "root-key.sign-v2",
+        "root-key.change-v2",
+        "root-key.derive-v2"
+      ]
+    },
+    {
+      "name": "keys",
+      "corpora": [
+        "fixtures/vectors/haskell-keys.json",
+        "fixtures/vectors/cardano-wallet.json",
+        "fixtures/vectors/key-boundaries.json"
+      ],
+      "operations": [
+        "keys.derive",
+        "keys.derive-public",
+        "keys.sign-extended",
+        "byron.generate-root"
+      ]
+    },
+    {
+      "name": "mnemonics",
+      "corpora": [
+        "fixtures/vectors/mnemonic-profiles.json",
+        "fixtures/vectors/bip39-reference.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "addresses",
+      "corpora": [
+        "fixtures/vectors/address-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "credentials",
+      "corpora": [
+        "fixtures/vectors/wallet-credentials.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "ledger",
+      "corpora": [
+        "fixtures/vectors/ledger-profiles.json",
+        "fixtures/vectors/reward-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "balance",
+      "corpora": [
+        "fixtures/vectors/balance-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "writer",
+      "corpora": [
+        "fixtures/vectors/writer-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "wallet-selection",
+      "corpora": [
+        "fixtures/vectors/wallet-selection.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "ledger-fees",
+      "corpora": [
+        "fixtures/vectors/ledger-fees.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "slotting",
+      "corpora": [
+        "fixtures/vectors/slotting-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "mnemonics-public",
+      "corpora": [
+        "fixtures/vectors/primitives.json",
+        "fixtures/vectors/primitive-boundaries.json",
+        "fixtures/vectors/haskell-keys.json"
+      ],
+      "operations": [
+        "bip39.entropy-to-mnemonic",
+        "bip39.to-seed",
+        "address.enterprise"
+      ]
+    },
+    {
+      "name": "balancing",
+      "corpora": [
+        "fixtures/vectors/balancing-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "signed-size",
+      "corpora": [
+        "fixtures/vectors/signed-size-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "witness-count",
+      "corpora": [
+        "fixtures/vectors/input-witness-count-profiles.json"
+      ],
+      "operations": []
+    },
+    {
+      "name": "metadata",
+      "corpora": [
+        "fixtures/vectors/metadata-encryption-profiles.json"
+      ],
+      "operations": []
+    }
+  ],
+  "live": [
+    "live-main",
+    "disconnect",
+    "drep",
+    "pools",
+    "parameters",
+    "pending-normal",
+    "pending-expiry",
+    "pending-byron",
+    "pending-retry",
+    "checkpoint",
+    "rollback",
+    "era"
+  ]
+}

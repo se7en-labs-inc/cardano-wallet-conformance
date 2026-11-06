@@ -1,0 +1,17 @@
+instance FromJSON ApiScriptTemplateEntry where
+    parseJSON = withObject "ApiScriptTemplateEntry" $ \o -> do
+        template' <- parseJSON <$> o .: "template"
+        cosigners' <- parseCosignerPairs <$> o .: "cosigners"
+        (ApiScriptTemplateEntry . Map.fromList <$> cosigners') <*> template'
+      where
+        parseCosignerPairs = withObject "Cosigner pairs" $ \o ->
+            case Aeson.toList o of
+                [] -> fail "Cosigners object array should not be empty"
+                cs -> for (reverse cs) $ \(numTxt, str) -> do
+                    cosigner' <-
+                        parseJSON @Cosigner
+                            $ String
+                            $ Aeson.toText numTxt
+                    xpubOrSelf <- parseJSON str
+                    pure (cosigner', xpubOrSelf)
+

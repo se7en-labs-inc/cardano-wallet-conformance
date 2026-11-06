@@ -1,0 +1,47 @@
+withRootKey
+    :: forall s e a
+     . WalletFlavor s
+    => Tracer IO WalletLog
+    -> DBLayer IO s
+    -> WalletId
+    -> Passphrase "user"
+    -> (ErrWithRootKey -> e)
+    -> (RootKeyAccess (KeyOf s) -> ExceptT e IO a)
+    -> ExceptT e IO a
+withRootKey tr db@DBLayer{..} wid pwd embed action = do
+    (mCreds, mScheme) <- lift . atomically $ do
+        wMetadata <- readWalletMeta walletState
+        let mScheme = passphraseScheme <$> passphraseInfo wMetadata
+        mCreds <- readPrivateKey walletState
+        pure (mCreds, mScheme)
+    validated <- withExceptT embed . ExceptT $ case (mCreds, mScheme) of
+        (Just (HashedCredentialsV1 xprv hpwd), Just scheme) ->
+            pure $ case checkPassphrase scheme pwd hpwd of
+                Left err -> Left $ ErrWithRootKeyWrongPassphrase wid err
+                Right _ -> Right $ RootKeyAccessV1 xprv scheme
+        (Just (HashedCredentialsV2 ekey mPayload), Just _) -> do
+            result <- encryptedValidatePassphrase ekey pwd
+            pure $ case result of
+                Left _ -> Left $ ErrWithRootKeyWrongPassphrase wid ErrWrongPassphrase
+                Right () -> Right $ RootKeyAccessV2 ekey mPayload pwd
+        _ -> pure $ Left $ ErrWithRootKeyNoRootKey wid
+    case validated of
+        rka@(RootKeyAccessV1 xprv scheme) -> do
+            -- Byron and Icarus wallets stay on V1: V2 signing is not yet
+            -- implemented for these legacy wallet types.
+            case kF of
+                ByronKeyS -> pure ()
+                IcarusKeyS -> pure ()
+                _ -> lift $ migrateV1toV2 tr db kF xprv scheme pwd
+            action rka
+        rka@RootKeyAccessV2{} -> action rka
+  where
+    kF = keyFlavorFromState @s
+
+-- | CPS key derivation along a path for V2 'ExtKeyMaterial'.
+-- Recursively nests 'deriveExtKeyMaterial' calls for each index in the path.
+withDerivedExtKeyMaterial
+    :: DerivationScheme
+    -> ExtKeyMaterial s' Validated
+    -> [Word32]
+    -> (forall s. ExtKeyMaterial s Validated -> IO (Either XPrvError a))

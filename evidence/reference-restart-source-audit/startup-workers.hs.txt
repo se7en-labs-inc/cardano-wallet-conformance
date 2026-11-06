@@ -1,0 +1,35 @@
+newApiLayer
+    :: forall ctx s k
+     . ( ctx ~ ApiLayer s
+       , IsOurs s RewardAccount
+       , IsOurs s Address
+       , AddressBookIso s
+       , MaybeLight s
+       , k ~ KeyOf s
+       )
+    => Tracer IO WalletEngineLog
+    -> (Block, NetworkParameters)
+    -> NetworkLayer IO Read.ConsensusBlock
+    -> TransactionLayer k (CredFromOf s) W.SealedTx
+    -> DBFactory IO s
+    -> TokenMetadataClient IO
+    -> (WorkerCtx ctx -> WalletId -> IO ())
+    -- ^ Action to run concurrently with wallet restore
+    -> IO ctx
+newApiLayer tr g0 nw tl df tokenMeta coworker = do
+    re <- Registry.empty
+    let trTx = contramap MsgSubmitSealedTx tr
+    let trW = contramap MsgWalletWorker tr
+    locks <- Concierge.newConcierge
+    let ctx = ApiLayer trTx trW g0 nw tl df re locks tokenMeta
+    listDatabases df >>= mapM_ (startWalletWorker ctx coworker)
+    return ctx
+
+-- | Register a wallet restoration thread with the worker registry.
+startWalletWorker
+    :: forall ctx s
+     . ( ctx ~ ApiLayer s
+       , IsOurs s RewardAccount
+       , IsOurs s Address
+       , AddressBookIso s
+       , MaybeLight s

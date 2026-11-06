@@ -1,0 +1,25 @@
+Command failed: transaction build
+Error: Hash of the file is not valid. Url: http://127.0.0.1:40899/bad.json HTTP(S) request error when downloading anchor data: HttpExceptionRequest Request {
+  host                 = "127.0.0.1"
+  port                 = 40899
+  secure               = False
+  requestHeaders       = []
+  path                 = "/bad.json"
+  queryString          = ""
+  method               = "GET"
+  proxy                = Nothing
+  rawBody              = False
+  redirectCount        = 10
+  responseTimeout      = ResponseTimeoutDefault
+  requestVersion       = HTTP/1.1
+  proxySecureMode      = ProxySecureWithConnect
+}
+ (ConnectionFailure Network.Socket.connect: <socket: 11>: does not exist (Connection refused))
+CallStack (from HasCallStack):
+  fromExceptTCli, called at src/Cardano/CLI/EraBased/Transaction/Run.hs:188:36 in cardano-cli-11.2.3.0-BwTpBhd2UB15Mdxmvi4AFv:Cardano.CLI.EraBased.Transaction.Run
+  runTransactionBuildCmd, called at src/Cardano/CLI/EraBased/Transaction/Run.hs:104:5 in cardano-cli-11.2.3.0-BwTpBhd2UB15Mdxmvi4AFv:Cardano.CLI.EraBased.Transaction.Run
+  runTransactionCmds, called at src/Cardano/CLI/EraBased/Run.hs:61:5 in cardano-cli-11.2.3.0-BwTpBhd2UB15Mdxmvi4AFv:Cardano.CLI.EraBased.Run
+  runCmds, called at src/Cardano/CLI/EraBased/Run.hs:35:35 in cardano-cli-11.2.3.0-BwTpBhd2UB15Mdxmvi4AFv:Cardano.CLI.EraBased.Run
+  runAnyEraCommand, called at src/Cardano/CLI/Run.hs:56:5 in cardano-cli-11.2.3.0-BwTpBhd2UB15Mdxmvi4AFv:Cardano.CLI.Run
+  runClientCommand, called at app/cardano-cli.hs:58:14 in cardano-cli-11.2.3.0-A3ncXYnhV8eIVJcUXK6WfM-cardano-cli:Main
+

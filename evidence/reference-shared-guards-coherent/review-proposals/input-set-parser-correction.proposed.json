@@ -1,0 +1,8 @@
+{
+  "failure": "live::input_limits::tests::boundary_and_fee_checks_reject_conserved_but_incorrect_fees_and_extra_fields fails on transaction::inspect: indefinite arrays are unsupported in this inspection profile",
+  "source": "Pinned cardano-ledger-binary1.9.1.0 Encoding/Encoder.hs443–491 encodes sets above23members with tag258 and indefinite array framing, already audited independently under reference-size-source-audit and64registered signed-size goldens",
+  "proposed_change": "Extend only transaction::inspect's body field0 spending-input set reader to accept both definite and properly terminated indefinite arrays. Keep the full input tuple shape,32-byte hash, unique-reference, original raw body hash, exact witness/signature, top-level tuple, output and trailing-byte checks unchanged. Keep fixed-size inner tuples definite and leave other parser scopes unchanged. Each item must consume a complete input; EOF/missing break/duplicate/malformed inputs must fail, without using a fake size cap or skipping bytes. Add meaningful definite-versus-indefinite equivalence and malformed/duplicate/missing-break regressions, then rerun all offline/Nix checks and fresh-node many-input workflow. Preserve this failure and all historical evidence.",
+  "acceptance_unchanged": "Actual canonical Haskell input-set bytes, exact transaction identity/signatures, conservation, strict API statuses/errors and independent node admission remain mandatory",
+  "catalogue_required": 643,
+  "requires_user_review": true
+}

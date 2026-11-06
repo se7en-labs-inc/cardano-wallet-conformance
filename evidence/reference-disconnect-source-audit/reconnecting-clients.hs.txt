@@ -1,0 +1,17 @@
+        -- NOTE: We keep client connections running for accessing the node tip,
+        -- submitting transactions, querying parameters and delegations/rewards.
+        --
+        -- It is safe to retry when the connection is lost here because this client
+        -- doesn't really do anything but sending messages to get the node's tip.
+        -- It doesn't rely on the intersection to be up-to-date.
+        let handlers cl = retryOnConnectionLost (MsgConnectionStatus cl >$< tr)
+
+        -- FIXME: Would be nice to remove these multiple vars.
+        -- Not as trivial as it seems, since we'd need to preserve the @debounce@
+        -- behaviour.
+        (readNodeTip, networkParamsVar, interpreterVar, eraVar, txSubmissionQ) <-
+            connectNodeClient (handlers ClientNodeTip)
+
+        queryRewardQ <-
+            connectDelegationRewardsClient
+                (handlers ClientDelegationRewards)

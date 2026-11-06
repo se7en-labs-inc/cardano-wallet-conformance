@@ -1,0 +1,169 @@
+{
+  "name": "Shelley deterministic API lifecycle",
+  "cases": [
+    {
+      "id": "invalid-wallet-id",
+      "operation": "getWallet",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/not-a-wallet-id"
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "missing-wallet",
+      "operation": "getWallet",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000"
+      },
+      "expected_status": 404
+    },
+    {
+      "id": "malformed-json",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "raw_body": "{"
+      },
+      "expected_status": 400,
+      "requirements": [
+        "api.transport-errors"
+      ]
+    },
+    {
+      "id": "create-wallet",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "body": {
+          "name": "conformance",
+          "mnemonic_sentence": "${mnemonic}",
+          "passphrase": "${passphrase}",
+          "address_pool_gap": 20
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "wallet_id": "/id"
+      },
+      "assertions": {
+        "/name": "conformance"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/tip/time": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "id": "wait-wallet-ready",
+      "operation": "getWallet",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}"
+      },
+      "expected_status": 200,
+      "eventually_seconds": 30,
+      "assertions": {
+        "/state/status": "ready",
+        "/name": "conformance"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "creation time belongs to each service",
+        "/tip/time": "services can observe different tips",
+        "/tip/height/quantity": "services can observe different tips",
+        "/tip/absolute_slot_number": "services can observe different tips",
+        "/tip/slot_number": "services can observe different tips",
+        "/tip/epoch_number": "services can observe different tips",
+        "/state/progress/quantity": "restoration progress is an asynchronous observation; terminal readiness is asserted separately"
+      }
+    },
+    {
+      "id": "list-addresses",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      }
+    },
+    {
+      "id": "empty-assets",
+      "operation": "listAssets",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/assets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "empty-transactions",
+      "operation": "listTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "invalid-address-state",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${wallet_id}/addresses?state=invalid"
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "rename-wallet",
+      "operation": "putWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/wallets/${wallet_id}",
+        "body": {
+          "name": "conformance-renamed"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/name": "conformance-renamed"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time",
+        "/tip/time": "per-service chain observation",
+        "/tip/height/quantity": "per-service chain observation",
+        "/tip/absolute_slot_number": "per-service chain observation",
+        "/tip/slot_number": "per-service chain observation",
+        "/tip/epoch_number": "per-service chain observation"
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "id": "delete-owned-wallet",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${wallet_id}"
+      },
+      "expected_status": 204
+    }
+  ]
+}

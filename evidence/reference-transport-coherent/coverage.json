@@ -1,0 +1,183 @@
+{
+  "exhaustive": false,
+  "required": 643,
+  "covered": 572,
+  "missing": [
+    "address.network",
+    "tx.validity-interval",
+    "tx.collateral",
+    "tx.delegation",
+    "tx.governance",
+    "tx.double-spend",
+    "selection.input-limits",
+    "wallet.discovery",
+    "wallet.restoration",
+    "wallet.rollback",
+    "wallet.restart",
+    "wallet.resubmission",
+    "wallet.concurrent-spend",
+    "wallet.byron-migration",
+    "wallet.transaction-filtering",
+    "wallet.stake-pools",
+    "wallet.governance",
+    "chain.protocol-parameters",
+    "chain.era-boundaries",
+    "api.transport-errors",
+    "api.error-precedence",
+    "api:balanceTransaction:positive",
+    "api:balanceTransaction:status:202",
+    "api:balanceTransaction:status:403",
+    "api:byronSelectCoins:positive",
+    "api:byronSelectCoins:status:200",
+    "api:createByronWalletMigrationPlan:positive",
+    "api:createByronWalletMigrationPlan:status:202",
+    "api:decodeSharedTransaction:status:403",
+    "api:decodeTransaction:status:403",
+    "api:deleteByronTransaction:positive",
+    "api:deleteByronTransaction:status:204",
+    "api:deleteByronTransaction:status:403",
+    "api:deleteTransaction:positive",
+    "api:deleteTransaction:status:204",
+    "api:deleteTransaction:status:403",
+    "api:getByronAsset:positive",
+    "api:getByronAsset:status:200",
+    "api:getByronAssetDefault:positive",
+    "api:getByronAssetDefault:status:200",
+    "api:getByronTransaction:positive",
+    "api:getByronTransaction:status:200",
+    "api:getDRep:positive",
+    "api:getDRep:status:200",
+    "api:getDelegationFee:positive",
+    "api:getDelegationFee:status:200",
+    "api:joinDRep:positive",
+    "api:joinDRep:status:202",
+    "api:joinDRep:status:403",
+    "api:joinDRep:status:406",
+    "api:joinDRep:status:415",
+    "api:joinStakePool:positive",
+    "api:joinStakePool:status:202",
+    "api:joinStakePool:status:403",
+    "api:joinStakePool:status:406",
+    "api:joinStakePool:status:415",
+    "api:migrateByronWallet:positive",
+    "api:migrateByronWallet:status:202",
+    "api:postByronTransaction:positive",
+    "api:postByronTransaction:status:202",
+    "api:postByronTransaction:status:425",
+    "api:postByronTransactionFee:positive",
+    "api:postByronTransactionFee:status:202",
+    "api:postExternalTransaction:status:425",
+    "api:postSharedWallet:status:403",
+    "api:postTransaction:status:425",
+    "api:putByronWalletPassphrase:status:403",
+    "api:quitStakePool:positive",
+    "api:quitStakePool:status:202",
+    "api:quitStakePool:status:403",
+    "api:signSharedTransaction:status:403"
+  ],
+  "unexecuted_cases": {
+    "address.network": [
+      "address-cross-network-api-rejected"
+    ],
+    "api.error-precedence": [
+      "precedence:funds-output",
+      "precedence:media-body",
+      "precedence:path-body",
+      "precedence:wallet-passphrase"
+    ],
+    "api.transport-errors": [
+      "transport:malformed-json",
+      "transport:unknown-method",
+      "transport:unknown-path",
+      "transport:unsupported-accept",
+      "transport:unsupported-content-type"
+    ],
+    "chain.era-boundaries": [
+      "live:hard-fork-certificates",
+      "live:hard-fork-restore",
+      "live:hard-fork-submit"
+    ],
+    "chain.protocol-parameters": [
+      "chain:node-wallet-protocol-parameters",
+      "chain:protocol-parameter-update"
+    ],
+    "selection.input-limits": [
+      "selection-maximum-inputs-boundary",
+      "selection-maximum-size-boundary"
+    ],
+    "tx.collateral": [
+      "collateral-return"
+    ],
+    "tx.delegation": [
+      "live:reward-withdrawal",
+      "live:stake-delegate",
+      "live:stake-deregister",
+      "live:stake-register"
+    ],
+    "tx.double-spend": [
+      "live:conflicting-spend"
+    ],
+    "tx.governance": [
+      "live:vote-delegate"
+    ],
+    "tx.validity-interval": [
+      "live:expired-transaction-rejected",
+      "validity-lower-bound",
+      "validity-slot-time-boundary",
+      "validity-ttl"
+    ],
+    "wallet.byron-migration": [
+      "live:byron-icarus-spend",
+      "live:byron-migrate",
+      "live:byron-random-spend"
+    ],
+    "wallet.concurrent-spend": [
+      "live:concurrent-construct",
+      "live:concurrent-submit"
+    ],
+    "wallet.discovery": [
+      "discovery-internal-change",
+      "discovery-random-byron",
+      "discovery-sequential-gap"
+    ],
+    "wallet.governance": [
+      "governance:drep-queries",
+      "governance:vote-state"
+    ],
+    "wallet.restart": [
+      "state:restart-confirmed",
+      "state:restart-key-address-state",
+      "state:restart-pending"
+    ],
+    "wallet.restoration": [
+      "state:restore-from-checkpoint"
+    ],
+    "wallet.resubmission": [
+      "live:node-disconnect-reconnect",
+      "live:pending-expiry",
+      "live:pending-retry"
+    ],
+    "wallet.rollback": [
+      "live:rollback-reapply",
+      "state:rollback-balance-history",
+      "state:rollback-pending",
+      "state:rollback-spent-inputs"
+    ],
+    "wallet.stake-pools": [
+      "pools:maintenance",
+      "pools:metadata",
+      "pools:ranking",
+      "pools:retirement"
+    ],
+    "wallet.transaction-filtering": [
+      "history:binary-metadata",
+      "history:order",
+      "history:pagination",
+      "history:status",
+      "history:time-range"
+    ]
+  },
+  "failures": [
+    "live:transport:malformed-json"
+  ]
+}

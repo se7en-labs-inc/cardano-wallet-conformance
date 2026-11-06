@@ -1,0 +1,52 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "0dde6324f9e81e10d65ce5569b15517b70f0d58a4f05987ea4935c1cae3f7c7f",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-conway-node11.1.3-assets-payments",
+  "target": "http://127.0.0.1:18790/v2/",
+  "evidence": [
+    {
+      "case": "metadata-golden-create",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "metadata-golden-public-key",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "metadata-golden-signature",
+      "requirements": [
+        "crypto.extended-ed25519",
+        "api:signMetadata:positive",
+        "api:signMetadata:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "metadata-golden-cleanup",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

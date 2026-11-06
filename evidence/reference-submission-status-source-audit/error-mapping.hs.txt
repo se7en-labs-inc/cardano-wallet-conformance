@@ -1,0 +1,30 @@
+instance IsServerError ErrPostTx where
+    toServerError = \case
+        ErrPostTxValidationError err ->
+            apiError err500 CreatedInvalidTransaction
+                $ mconcat
+                    [ "The submitted transaction was rejected by the local "
+                    , "node. Here's an error message that may help with "
+                    , "debugging:\n"
+                    , err
+                    ]
+        ErrPostTxMempoolFull ->
+            apiError
+                err425
+                    { errBody =
+                        "Mempool is full, please try resubmitting again later."
+                    }
+                MempoolIsFull
+                $ mconcat
+                    [ "The submitted transaction was rejected by the Cardano "
+                    , "node because its mempool was full."
+                    ]
+        e@(ErrPostTxEraUnsupported unsupported) ->
+            flip (apiError err403) (toText e)
+                $ UnsupportedEra
+                    ApiErrorUnsupportedEra
+                        { unsupportedEra = ApiEra.fromReadEra unsupported
+                        , supportedEras = ApiEra.allRecentEras
+                        }
+
+instance IsServerError ErrSubmitTransaction where

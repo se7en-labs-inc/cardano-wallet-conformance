@@ -1,0 +1,54 @@
+listTransactions
+    :: forall s n
+     . ( HasDelegation s
+       , WalletFlavor s
+       )
+    => ApiLayer s
+    -> ApiT WalletId
+    -> Maybe MinWithdrawal
+    -> Maybe Iso8601Time
+    -> Maybe Iso8601Time
+    -> Maybe (ApiT SortOrder)
+    -> Maybe ApiLimit
+    -> Maybe (ApiAddress n)
+    -> TxMetadataSchema
+    -> Handler [ApiTransaction n]
+listTransactions
+    ctx
+    (ApiT wid)
+    mMinWithdrawal
+    mStart
+    mEnd
+    mOrder
+    mLimit
+    mAddress
+    metadataSchema =
+        withWorkerCtx ctx wid liftE liftE $ \wrk -> do
+            txs <-
+                liftHandler
+                    $ W.listTransactions
+                        wrk
+                        (Coin . fromIntegral . getMinWithdrawal <$> mMinWithdrawal)
+                        (getIso8601Time <$> mStart)
+                        (getIso8601Time <$> mEnd)
+                        (maybe defaultSortOrder getApiT mOrder)
+                        (fromApiLimit <$> mLimit)
+                        (apiAddress <$> mAddress)
+            depo <-
+                liftIO
+                    $ W.stakeKeyDeposit
+                        <$> NW.currentProtocolParameters (wrk ^. networkLayer)
+            forM txs $ \tx ->
+                mkApiTransactionFromInfo
+                    (timeInterpreter (ctx ^. networkLayer))
+                    wrk
+                    depo
+                    tx
+                    metadataSchema
+      where
+        defaultSortOrder :: SortOrder
+        defaultSortOrder = Descending
+
+getTransaction
+    :: forall s n
+     . ( HasDelegation s

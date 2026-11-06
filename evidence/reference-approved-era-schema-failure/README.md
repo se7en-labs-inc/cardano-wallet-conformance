@@ -1,0 +1,7 @@
+# Preserved pre-Conway error-schema failure
+
+Assertion source5856893470; fingerprint46b3fa1407d870a703e89a14d33529c993413c93029572175d83d3db23ac213e; runtime /tmp/wc-approved-era-reader-hy7Y9L/owned. The approved compatible Babbage constructor/fee convergence and supported submit reader succeeded. Genuine funding was confirmed, the owned wallet started and restored its100m, and eight wallet/UTxO/address/history checks passed. The pre-Conway construct403 failed unchanged full schema validation before exact envelope comparison. Two failures are retained: the API check and workflow. No hard-fork case is credited.
+
+Source inspection finds construction403 omits the existing node_not_yet_in_recent_era error. The Haskell info record serializes nodeEra/supportedRecentEras, while the OpenAPI and test expectation use recent_eras. The narrow proposed correction is unapplied pending review; it changes no response status or catalogue count. No raw HTTP error body was retained by the secret-safe Session.call diagnostic. Attempts to render the pure handler with the wallet-library-only GHC shell lacked API/servant modules, did not execute, and earn no provenance credit.
+
+The wallet584766 and all five direct nodes581015–581019 were verified absent after RAII cleanup; session35022 exited1. Final independent node integration did not run because the before-fork phase failed. Private keys, logs and databases were not copied. Source-only explanation and successful setup do not turn this into passing era conformance.

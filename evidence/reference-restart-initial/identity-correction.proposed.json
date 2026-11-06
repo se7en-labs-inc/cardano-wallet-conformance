@@ -1,0 +1,9 @@
+{
+  "failure": "reference-restart-initial/live.json: live:restart-workflow fails before crash on restart wallet identity differs from key; 62 other checks pass",
+  "source_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "source": "lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs1088 hashes the root public key for mnemonic wallets, while1136 hashes the account public key for account/watch-only wallets",
+  "proposed_change": "Remove only the erroneous mnemonic-wallet-id equals account-public-key hash assertion from restart_snapshot. Keep the wallet ID exactly equal to the successfully created/saved identity and preserve full before/after ID and account-key equality, strict account bech32 HRP/length/point validation, selected-input payment credential/signature verification, exact state/address/UTxO/history comparisons, deterministic signature bytes and node snapshots. Leave the valid watch-only account-key identity check unchanged. Add a regression grounded in the existing pinned mnemonic HTTP wallet/key goldens showing the two identity domains differ. Rebuild and rerun against a new owned database/workspace, preserving this failed report.",
+  "catalogue_required": 643,
+  "expected_statuses_unchanged": true,
+  "requires_user_review": true
+}

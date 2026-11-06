@@ -1,0 +1,17 @@
+# Coherent address-network checkpoint
+
+**587 of 643 mandatory obligations are covered; 56 remain missing.** All 2,126 registered checks passed: 527 differential HTTP checks, 1,223 actual Haskell internal cases and 376 real-node checks. Independent node integration passed last. The 24 reports share one target, environment and fingerprint. The gate exits1 because the catalogue remains incomplete.
+
+Assertion source: `dac3ec3a15`. Fingerprint: `33d662ac8a22cb290e41041d2915ef72bb115a481cb97d727bb6e53ce683b775`. Environment: `source-2fc5c383-conway-node11.1.3-network-guard`.
+
+The newly covered obligation is `address.network`. Five cases added to the key HTTP matrix capture the owned wallet's complete addresses, require the exact mainnet-address400 error on a testnet service, and use the same payment credential and amount with the testnet network tag to reach the exact empty-wallet403 instead. The complete address array, identity, name, ready state and zero balances remain intact. Both services execute the same assertions. The original funded precedence workflow is unchanged; its pending history-depth correction has not been applied. Existing independent Haskell vectors retain the Byron protocol-magic checks required by the same obligation.
+
+The expanded key matrix passed all46 cases first; the other eight HTTP suites then passed before funding. Both services' Shelley, Byron and shared wallet lists were empty afterward; the raw snapshots are saved. Manual service A was stopped/reaped, and the same executable/URL used a new owned database behind the socket relay. This is not restart-persistence evidence. Service B remained the external signer. The supported live disconnection, history, balancing, collateral, assets, payments and shared-signing profiles passed. The independent faucet/node test ran after all registered workflows. The current-binary post-integration gate agrees exactly with the first result. Protocol parameters stayed unchanged; updates and era transitions remain unproven.
+
+**The full offline harness remains unresolved.** The filtered run passed118 tests and excluded the single unchanged known input-parser failure. Focused harness34, Clippy across targets/features, binaries, formatting and isolated Nix Clippy/format checks passed. No full Cargo test or Nix package pass is claimed. See `harness-status.json`.
+
+Ten proposals remain unapplied. Nine are linked in [the preserved review bundle](../reference-shared-guards-coherent/PENDING-REVIEWS.md); the tenth is the [source-grounded submission-status proposal](../reference-submission-status-source-audit/submission-status-correction.proposed.json). Haskell never constructs the documented425 error. The proposed replacement500 statuses require approval and fresh execution evidence for all three affected operations. The audit's corrected provenance distinguishes wallet-submit500 from the later successful external proxy submission. No credit follows from the source audit.
+
+The owned service/relay cleaned up; service B and the cluster exited130. All eight observed external PIDs are absent, no cardano-wallet process remains, and the proxy socket is removed. Private logs, keys and databases remain in the private scratch directory. Public receipts remain in the live report. Historical reports are preserved separately.
+
+`artifacts/behavioral-specification.network-guard-coherent.draft.json` remains an incomplete, non-authoritative review draft. No report from an earlier fingerprint was combined into this checkpoint.

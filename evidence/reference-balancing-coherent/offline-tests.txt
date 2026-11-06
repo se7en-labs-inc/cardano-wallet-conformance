@@ -1,0 +1,182 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.03s
+     Running unittests src/lib.rs (target/debug/deps/wallet_conformance-2a2fb7ebf7f9bdad)
+
+running 25 tests
+test ledger_fees::tests::tier_rounding_is_final_floor ... ok
+test live::assets::tests::node_rejection_requires_pinned_status_code_and_actual_invalid_witness_cause ... ok
+test live::concurrency::tests::arbitration_rejects_double_accept_double_reject_wrong_ids_and_unrelated_errors ... ok
+test live::families::tests::family_selection_rejects_duplicate_inputs_assets_and_redirected_outputs ... ok
+test live::balancing::tests::collateral_errors_match_actual_source_and_guard_order ... ok
+test live::metadata::tests::ciphertext_format_requires_basic_unique_fields_bounded_chunks_and_salted_blocks ... ok
+test live::transport::tests::malformed_json_requires_the_observed_parser_branch ... ok
+test live::transport::tests::exact_transport_envelope_rejects_wrong_priority_and_extra_fields ... ok
+test live::precedence::tests::funded_output_envelope_rejects_wrong_priority_minimum_and_index ... ok
+test live::balancing::tests::actual_balanced_control_preserves_ttl_funding_and_payment ... ok
+test live::validity::tests::genesis_clock_is_exact_at_fractional_slots_and_calendar_boundaries ... ok
+test slotting::tests::rounding_never_rounds_down_after_a_boundary ... ok
+test live::families::tests::shared_payment_script_requires_both_verified_keys_and_funded_hash ... ok
+test live::concurrency::tests::construction_laws_reject_changed_fees_amounts_inputs_and_selection_totals ... ok
+test live::metadata::tests::extraction_uses_haskell_golden_and_rejects_auxiliary_hash_or_byte_mutations ... ok
+test live::concurrency::tests::transport_releases_both_calls_before_waiting_for_either_response ... ok
+test slotting::tests::frozen_profiles_have_real_boundaries_and_reject_mutated_results ... ok
+test balancing::tests::frozen_return_fields_reject_changed_totals_and_missing_return ... ok
+test live::validity::tests::node_guard_requires_exact_bounds_slot_cause_and_envelope ... ok
+test live::assets::tests::policy_witness_mutation_preserves_body_and_breaks_real_golden_signature ... ok
+test ledger_fees::tests::frozen_fees_reject_size_rounding_units_and_body_mutations ... ok
+test api::tests::corrections_reject_source_drift_and_ambiguous_edits ... ok
+test generate::requirement_binding_tests::actual_fee_shortfall_is_bound_to_insufficient_funds ... ok
+test live::transport::tests::transport_records_close_only_complete_catalogue_groups ... ok
+test api::tests::behavioral_corrections_preserve_owned_union_constraints ... ok
+
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.87s
+
+     Running unittests src/bin/haskell-mnemonic-reference.rs (target/debug/deps/haskell_mnemonic_reference-3fe856d9e6cccb42)
+
+running 1 test
+test tests::normalization_is_limited_to_the_standard_profile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/wallet_conformance-b3a18690afea62c4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/addresses.rs (target/debug/deps/addresses-1b0b17099d8a6243)
+
+running 3 tests
+test codecs_preserve_known_bip173_and_base58_vectors_and_reject_padding ... ok
+test address_script_checks_reject_changed_evaluation_hashes_headers_and_crc ... ok
+test frozen_address_script_profiles_obey_independent_byte_and_evaluation_laws ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/asset_wire.rs (target/debug/deps/asset_wire-76c8392fcecb00b3)
+
+running 3 tests
+test mint_map_checks_signed_burns_empty_names_duplicates_and_trailing_bytes ... ok
+test node_asset_confirmation_rejects_wrong_names_quantities_or_unexpected_assets ... ok
+test binary_request_preserves_bytes_and_rejects_conflicting_or_invalid_encodings ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/balance.rs (target/debug/deps/balance-77bf2dfe6204b476)
+
+running 4 tests
+test minimum_ada_tracks_serialized_coin_boundaries_and_exact_threshold ... ok
+test fee_overflow_and_zero_denominators_fail_without_panicking ... ok
+test fee_and_minimum_ada_checks_reject_rounding_witness_and_conservative_estimate_mutations ... ok
+test actual_wallet_fee_and_minimum_ada_goldens_obey_independent_laws ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/credentials.rs (target/debug/deps/credentials-30699a5b15d9bd16)
+
+running 3 tests
+test credential_laws_reject_false_migration_claims_password_checks_and_signatures ... ok
+test migration_fault_preservation_requires_actual_warning_and_successful_retry ... ok
+test frozen_credential_observations_satisfy_independent_transition_and_signature_laws ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.74s
+
+     Running tests/harness.rs (target/debug/deps/harness-8fe47bbaf1461de6)
+
+running 34 tests
+test adjacent_large_negative_metadata_integers_never_compare_equal ... ok
+test bech32_checksum_padding_case_and_long_cardano_addresses ... ok
+test differential_comparison_does_not_hide_structure_null_or_order ... ok
+test custom_headers_do_not_append_implicit_json_accept_or_content_type ... ok
+test haskell_selection_laws_allow_bounded_dust_but_reject_excess_fee_and_unsplit_change ... ok
+test latest_header_requires_matching_hash_height_and_slot ... ok
+test selection_accounting_preserves_large_integers_and_many_bundles ... ok
+test selection_rejects_ada_asset_fee_input_and_change_mutations ... ok
+test template_expansion_preserves_json_types_and_unknowns_fail ... ok
+test trusted_node_evidence_rejects_fabricated_confirmation_amount_address_and_transaction ... ok
+test uri_template_response_schemas_compile_without_weakening_validation ... ok
+test schema_rejects_missing_fields_and_wrong_types_but_accepts_nullable ... ok
+test frozen_haskell_keys_have_expected_lengths_chain_codes_and_unique_ids ... ok
+test generated_selection_matrix_has_valid_replayable_models_and_rejects_mutations ... ok
+test adapter_process_roundtrip_and_malformed_output_fail_closed ... ok
+test cbor_body_hash_and_witness_verification_reject_altered_body_signature_and_trailing_bytes ... ok
+test adapter_timeouts_are_bounded ... ok
+test epoch_sampling_compares_same_epoch_timestamps_strictly ... ok
+test cleanup_runs_after_created_wallet_response_fails_its_schema ... ok
+test matching_broken_servers_are_not_conformant ... ok
+test epoch_sampling_rejects_invalid_successor_without_retry ... ok
+test modified_runtime_expectation_cannot_reuse_a_registered_case_id_to_pass_the_gate ... ok
+test extreme_response_number_cannot_abort_owned_wallet_cleanup ... ok
+test requirement_needs_every_attached_vector_not_one_family_example ... ok
+test http_key_golden_rejects_equal_but_wrong_implementations ... ok
+test explicit_absence_rejects_null_even_when_both_services_agree ... ok
+test epoch_boundary_resamples_until_matching_epochs ... ok
+test wallet_creation_normalizes_only_after_observing_terminal_ready_state ... ok
+test independent_primitive_vectors_and_tampering_detection ... ok
+test pinned_contract_is_complete_and_path_binding_is_checked ... ok
+test epoch_sampling_is_bounded ... ok
+test coverage_never_passes_empty_missing_failed_or_mixed_runs ... ok
+test specification_retains_exact_contracts_and_marks_unexecuted_drafts ... ok
+test cli_inventory_and_harness_evidence_cannot_pass_exhaustive_gate ... ok
+
+test result: ok. 34 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.83s
+
+     Running tests/http_extended.rs (target/debug/deps/http_extended-1459d5baab5edf2c)
+
+running 2 tests
+test extended_matrix_is_reproducible_registered_and_bound_to_real_api_routes ... ok
+test approved_corrections_preserve_strict_error_alternatives_and_required_request_fields ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.55s
+
+     Running tests/keys.rs (target/debug/deps/keys-d1be19cd7c122f05)
+
+running 3 tests
+test key_checks_reject_chain_code_and_signature_mutations ... ok
+test independent_key_goldens_have_matching_public_private_children_and_valid_signatures ... ok
+test frozen_key_boundaries_are_registered_and_preserve_expected_rejections ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/ledger.rs (target/debug/deps/ledger-f2904fc22aa0a408)
+
+running 3 tests
+test metadata_symmetric_integer_and_utf8_boundaries_are_independent_of_json_encoding ... ok
+test independent_ledger_checks_reject_mutated_hashes_metadata_ranges_and_signatures ... ok
+test wallet_codec_metadata_and_ledger_signature_goldens_obey_independent_laws ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/mnemonics.rs (target/debug/deps/mnemonics-623273fa8e82e6fa)
+
+running 2 tests
+test profile_laws_reject_corrupted_signatures_keys_and_unicode_conflation ... ok
+test frozen_profiles_obey_signature_serialization_and_cross_profile_laws ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests/wallet_selection.rs (target/debug/deps/wallet_selection-182dac342f624ef4)
+
+running 3 tests
+test wallet_error_precedence_and_ordinary_collateral_overlap_remain_explicit ... ok
+test selection_checks_reject_ineligible_assets_missing_value_rounded_shortfall_and_caps ... ok
+test actual_wallet_selection_goldens_obey_conservation_collateral_and_error_laws ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests/writer.rs (target/debug/deps/writer-de424a222608e091)
+
+running 3 tests
+test writer_checks_reject_bootstrap_attributes_script_hashes_and_certificate_mutations ... ok
+test merge_really_preserves_two_distinct_signatures_and_duplicate_signing_is_idempotent ... ok
+test actual_wallet_writer_goldens_obey_independent_signature_and_certificate_laws ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+   Doc-tests wallet_conformance
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

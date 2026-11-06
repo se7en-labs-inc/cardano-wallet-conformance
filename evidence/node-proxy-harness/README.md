@@ -1,0 +1,7 @@
+# Transparent node relay harness
+
+Source49447b88a7 adds the suite-specific Unix socket relay and actual-node control audit. Three targeted real-stream tests pass: a binary exchange larger than1MiB with half-closed request/complete response, active connection draining plus paused admission rejection and successful reconnect, and private-parent/socket inode ownership cleanup.34existing harness integration tests also pass, along with Cargo fmt, all-target/all-feature Clippy, bins build, treefmt and isolated Nix Clippy/fmt checks.
+
+The initial tests failed at the intended private-parent check because their temporary directories inherited broader permissions. The original log is preserved; fixture creation was corrected to explicitly set0700. The production check and test acceptance laws were unchanged. No mandatory wallet cases are bound by these tests. Full cargo/Nix package checks remain unresolved due the separately preserved input-array inspector regression.
+
+The relay never decodes node protocol payloads, emits synthetic protocol messages or logs payloads. It owns a new Unix socket and accepted stream handles; pause shuts down tracked connections and rejects new clients, resume permits real upstream connections, and teardown removes only its original socket inode. Expected errors from deliberately severed copy streams are distinct from counted upstream connection failures and worker panics. It does not pause forging, isolate node-to-node peers or create rollback.

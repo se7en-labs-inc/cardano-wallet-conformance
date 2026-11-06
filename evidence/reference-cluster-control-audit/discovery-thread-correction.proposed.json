@@ -1,0 +1,10 @@
+{
+  "id": "owned-haskell-worker-thread-children",
+  "status": "proposed-unapplied",
+  "failed_attempt": "run.txt",
+  "observed": {"cluster_pid": 474408, "node_pids": [474497,474498,474768,474770,474771], "main_thread_children": [], "independent_ps_parent": 474408, "error": "node discovery timed out"},
+  "cause": "Linux /proc/PID/task/TID/children is thread-specific. The Haskell cluster spawns nodes from worker threads, so reading only task/PID/children misses its real direct children.",
+  "proposal": "Read the exclusively owned cluster's /proc/PID/task directory, union child PIDs from each exact task/TID/children file, and deduplicate. Retry only a thread's NotFound during enumeration within the existing discovery deadline. Preserve the direct-parent, dedicated process-group, start-time, pidfd, executable-hash, owned config/database/key paths, exact four-producer/one-relay checks and all pause/resume assertions.",
+  "required_validation": ["Real helper spawns a child from a worker thread; prove the old main-thread list misses it and the corrected union finds it", "Duplicate and disappearing-thread controls without unrelated-process adoption", "Existing pidfd identity and RAII-resume tests", "Fresh real-cluster audit proves stable chain with queryable relay, resumed advancement and all owned processes absent", "Preserve this failed attempt and do not award conformance credit for the control audit"],
+  "excluded": ["Scanning /nix/store", "Scanning all host processes", "Adopting supplied PIDs", "Weakening parent/group/executable/key/path checks", "Increasing the timeout to conceal incorrect discovery", "Applying other pending proposals"]
+}

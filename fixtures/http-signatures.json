@@ -1,0 +1,99 @@
+{
+  "name": "Pinned Haskell extended Ed25519 metadata signature",
+  "cases": [
+    {
+      "id": "metadata-golden-create",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "body": {
+          "name": "conformance-metadata-golden",
+          "mnemonic_sentence": [
+            "vintage",
+            "poem",
+            "topic",
+            "machine",
+            "hazard",
+            "cement",
+            "dune",
+            "glimpse",
+            "fix",
+            "brief",
+            "account",
+            "badge",
+            "mass",
+            "silly",
+            "business"
+          ],
+          "passphrase": "${passphrase}"
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "metadata_wallet_id": "/id"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time",
+        "/tip/time": "per-service chain observation",
+        "/tip/height/quantity": "per-service chain observation",
+        "/tip/absolute_slot_number": "per-service chain observation",
+        "/tip/slot_number": "per-service chain observation",
+        "/tip/epoch_number": "per-service chain observation"
+      },
+      "settle_wallet_state": true
+    },
+    {
+      "id": "metadata-golden-public-key",
+      "operation": "getWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${metadata_wallet_id}/keys/mutable_account/0"
+      },
+      "expected_status": 200,
+      "capture": {
+        "metadata_public_key": ""
+      }
+    },
+    {
+      "id": "metadata-golden-signature",
+      "operation": "signMetadata",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/${metadata_wallet_id}/signatures/mutable_account/0",
+        "headers": {
+          "Accept": "application/octet-stream"
+        },
+        "body": {
+          "passphrase": "${passphrase}",
+          "metadata": {
+            "0": {
+              "string": "please sign this."
+            }
+          }
+        }
+      },
+      "expected_status": 200,
+      "expected_body_bytes": 64,
+      "expected_raw_hex": "680739414d89eb9f4377192171ce3990c7beea6132a04f327d7c954ae9e7fcfe747dd7b4b9b11acefa1aa75216b837fc81e59c24001b96356ba65598ec159d0c",
+      "verify_signature": {
+        "public_key": "${metadata_public_key}",
+        "message_hex": "1228cd0fea46f9a091172829f0c492c0516dceff67de08f585a4e048a28a6c9f"
+      },
+      "requirements": [
+        "crypto.extended-ed25519"
+      ]
+    }
+  ],
+  "cleanup": [
+    {
+      "id": "metadata-golden-cleanup",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${metadata_wallet_id}"
+      },
+      "expected_status": 204
+    }
+  ]
+}

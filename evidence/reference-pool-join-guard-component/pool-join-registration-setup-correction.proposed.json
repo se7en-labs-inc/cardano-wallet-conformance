@@ -1,0 +1,11 @@
+{
+  "failed_assertion_source": "2ef78598a5",
+  "failed_report": "evidence/reference-pool-join-guard-component/live.json",
+  "observed_result": "live:pool-join-guard-workflow: listStakePools timed out waiting for chain state; three native active pools but an empty wallet pool list",
+  "source_finding": "Pinned Wallet/Pools.hs _knownPools reads listRegisteredPools from the pool database. combineChainData drops production entries without a registration record. The node's genesis-active pool set alone does not establish a wallet-known pool.",
+  "proposed_change": "On a fresh cluster and wallet database, run the existing prepare-pool-fixture command without metadata using the explicitly owned pool whose public operator ID equals the guard's independently selected active pool (pool-1 in the pinned native fixture). Use a fresh registration output directory and the same pinned CLI/node/faucet. Preserve the fixture's independent operator/owner/VRF, certificate, all three signatures, value/fee/spent-input and exact bounded confirmation controls. Require the real confirmed registration and exact wallet visibility before running the unchanged --pool-join-guard --delegation-fees profiles. Do not relax the known-pool predicate, alter errors, bypass schemas, apply the pending metadata-phase correction, or change any of643 obligations. Keep the failed attempt and source/raw-node/API observations. Independent node integration must run last, followed by complete owned-process cleanup.",
+  "wallet_or_guard_source_change_required": false,
+  "metadata_fixture_used": false,
+  "requires_user_review": true,
+  "mandatory_obligations": 643
+}

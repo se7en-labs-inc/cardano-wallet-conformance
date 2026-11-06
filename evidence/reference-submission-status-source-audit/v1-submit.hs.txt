@@ -1,0 +1,20 @@
+                        Delta.onDBVar walletState
+                            . WalletState.updateSubmissions
+                            . Delta.update
+                            $ \_ -> Submissions.addTxSubmission builtTx slot
+
+                        pure txWithSlot
+
+                    postSealedTx netLayer builtSealedTx
+                        & throwWrappedErr wrapNetworkError
+                        & liftIO
+
+                    slotToUTCTime slot
+                        & interpretQuery (neverFails "slot is ahead of the node tip" ti)
+                        & fmap (BuiltTx{..},)
+                        & liftIO
+      where
+        wrapRootKeyError = ExceptionWitnessTx . ErrWitnessTxWithRootKey
+        wrapNetworkError = ExceptionSubmitTx . ErrSubmitTxNetwork
+
+        wrapBalanceConstructError

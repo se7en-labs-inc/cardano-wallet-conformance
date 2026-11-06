@@ -1,0 +1,10 @@
+{
+  "failed_assertion_source": "7c6d60857e",
+  "failed_report": "evidence/reference-parameters-coherent/live.json",
+  "observed_result": "420 checks, one failure: live:disconnect-workflow: disconnect expects two basic owned wallets",
+  "cause": "src/live.rs schedules parameter and discovery workflows before disconnection; those workflows append owned wallets. src/live/disconnect.rs intentionally requires exactly the two basic owned Shelley wallets.",
+  "proposed_change": "Move the existing owned disconnection/restart block immediately after basic workflow success, before all optional wallet-creating workflows. Preserve the block, exact two-wallet guard, independent node accounting, relay fault controls and every other workflow assertion. Keep all 643 obligations. Add a scheduling regression that asserts the actual runner keeps basic then disconnection before parameter, pools and discovery profiles. Rerun on a fresh cluster with fresh databases and parameter output, then run independent node integration last and replay every HTTP/internal report under the new fingerprint. Retain this failed cohort unchanged.",
+  "changes_to_wallet_source": false,
+  "changes_to_expected_errors_or_catalogue": false,
+  "requires_user_review": true
+}

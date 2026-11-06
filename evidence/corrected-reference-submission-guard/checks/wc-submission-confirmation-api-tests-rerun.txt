@@ -1,0 +1,35 @@
+
+Cardano.Wallet.Api.Server
+  API Server
+    binds to the local interface [✔]
+    can bind on any interface [✔]
+    listens on the local interface [✔] (1002ms)
+    handles bad host name [✔] (96ms)
+    handles invalid address [✔]
+    handles privileged ports [✔]
+    handles port in use [✔]
+  getNetworkInformation
+    doesn't return 500 when the time interpreter horizon is behind the current time [✔] (1ms)
+      +++ OK, passed 100 tests.
+  liftHandler and toServerError
+    ErrNoSuchWallet [✔]
+    Unhandled exception [‐]
+      # PENDING: TODO: ADP-641 catch all exceptions in application
+  depositReturnedFromCertificates
+    absent CBOR contributes 0 [✔]
+    empty certificate lists contribute 0 [✔]
+    one explicit own deregistration refund contributes its exact coin [✔]
+    deregistrations of external stake credentials contribute 0 [✔]
+    an unknown wallet reward account claims no refunds [✔]
+    registration deposits with an explicit coin contribute 0 [✔]
+    legacy deregistration without an explicit refund contributes 0 [✔]
+    pool, governance, and ordinary delegation certificates contribute 0 [✔]
+    multiple explicit own deregistration refunds sum exactly [✔]
+
+Finished in 1.0036 seconds, used 0.0110 seconds of CPU time
+19 examples, 0 failures, 1 pending
+
+Slow spec items:
+  test/unit/Cardano/Wallet/Api/ServerSpec.hs:190:5: /Cardano.Wallet.Api.Server/API Server/listens on the local interface/ (1002ms)
+  test/unit/Cardano/Wallet/Api/ServerSpec.hs:211:5: /Cardano.Wallet.Api.Server/API Server/handles bad host name/ (96ms)
+  test/unit/Cardano/Wallet/Api/ServerSpec.hs:243:5: /Cardano.Wallet.Api.Server/getNetworkInformation/doesn't return 500 when the time interpreter horizon is behind the current time/ (1ms)

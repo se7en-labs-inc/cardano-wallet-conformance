@@ -1,0 +1,16 @@
+
+-- | Add a /new/ transaction to the local submission pool
+-- with the most recent submission slot.
+addTxSubmission
+    :: BuiltTx
+    -> SlotNo
+    -> DeltaTxSubmissions
+addTxSubmission BuiltTx{..} resubmitted =
+    let txId = TxId $ builtTx ^. #txId
+        expiry = case builtTxMeta ^. #expiry of
+            Nothing -> SlotNo maxBound
+            Just slot -> slot
+    in  [ AddSubmission expiry (txId, builtSealedTx)
+            $ submissionMetaFromTxMeta builtTxMeta resubmitted
+        ]
+

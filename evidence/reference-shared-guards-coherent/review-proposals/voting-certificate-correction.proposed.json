@@ -1,0 +1,12 @@
+{
+  "source_sha256": "653f358b3937304f6c63ec642d4ac6b7f1fa0e2d04afd4a9866403a3a97039e0",
+  "source": "Pinned Api/Types/Certificate.hs190–218 and241–244 encode CastVote as cast_vote with reward_account_path and vote. Api/Types.hs930–942 uses these in coin-selection; confirmed actual modern202 and deprecated202 responses contain this certificate.",
+  "failure": "reference-voting-coherent/live.json fails strict202 response schema at /coin_selection/certificates/1/certificate_type; response retained in voting-schema-audit/construct.json",
+  "proposed_change": "Extend only the owned certificate schema with disjoint cast_vote branch requiring exact type, five-component reward path and existing ApiDRep schema. Preserve legacy branches, original OpenAPI, all643 obligations and strict media/status/schema/error checks. Add regression accepting actual202, rejecting missing/invalid vote, bad path and invented types; rerun all coherent evidence. External/combined vote certificates stay explicit future gaps.",
+  "prepared_correction": {
+    "id": "haskell-owned-vote-certificate",
+    "before": "x-certificate: &certificate\n  description: |\n    A delegation certificate belonging to wallet\n\n    Only for 'join_pool' the 'pool' property is required.\n  type: object\n  required:\n    - certificate_type\n    - reward_account_path\n  properties:\n    certificate_type:\n      type: string\n      enum: [\"join_pool\", \"quit_pool\", \"register_reward_account\"]\n    pool:\n      <<: *stakePoolId\n    reward_account_path:\n      <<: *rewardAccountPath\n",
+    "after": "x-certificate: &certificate\n  oneOf:\n    - description: Legacy delegation certificate belonging to wallet\n      type: object\n      required: [certificate_type, reward_account_path]\n      properties:\n        certificate_type:\n          type: string\n          enum: [\"join_pool\", \"quit_pool\", \"register_reward_account\"]\n        pool:\n          <<: *stakePoolId\n        reward_account_path:\n          <<: *rewardAccountPath\n    - description: Haskell-owned vote delegation certificate\n      type: object\n      required: [certificate_type, reward_account_path, vote]\n      properties:\n        certificate_type:\n          type: string\n          enum: [\"cast_vote\"]\n        reward_account_path:\n          <<: *rewardAccountPath\n        vote:\n          $ref: '#/components/schemas/ApiDRep'\n"
+  },
+  "required": 643
+}

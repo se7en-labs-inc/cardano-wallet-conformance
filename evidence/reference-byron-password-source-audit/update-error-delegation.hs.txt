@@ -1,0 +1,5 @@
+instance IsServerError ErrUpdatePassphrase where
+    toServerError = \case
+        ErrUpdatePassphraseWithRootKey e -> toServerError e
+
+instance IsServerError ErrListTransactions where

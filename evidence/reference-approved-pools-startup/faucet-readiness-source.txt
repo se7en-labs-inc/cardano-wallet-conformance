@@ -1,0 +1,14 @@
+    -> Config
+    -> FaucetHandlers
+mkFaucetHandlers mRelayConnection config =
+    FaucetHandlers
+        { handleSendAssets = \ass -> do
+            mConn <- getNodeConn mRelayConnection
+            case mConn of
+                Just relayConnection ->
+                    runClusterM config
+                        $ sendFaucetAssetsHandler relayConnection ass
+                Nothing ->
+                    throwIO
+                        err500{errBody = "The relay node is not available yet"}
+        }

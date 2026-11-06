@@ -1,0 +1,122 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "8d51ab1e6750b3f64d8c3e746376671288ab5b6f93e78e31ab1bc6fbe5423e9c",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-conway-node11.1.3-precedence-corrected",
+  "target": "http://127.0.0.1:18790/v2/",
+  "evidence": [
+    {
+      "case": "invalid-wallet-id",
+      "requirements": [
+        "api:getWallet:negative",
+        "api:getWallet:status:400",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "missing-wallet",
+      "requirements": [
+        "api:getWallet:negative",
+        "api:getWallet:status:404",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "malformed-json",
+      "requirements": [
+        "api.transport-errors",
+        "api:postWallet:negative",
+        "api:postWallet:status:400",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "create-wallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "wait-wallet-ready",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "list-addresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "empty-assets",
+      "requirements": [
+        "api:listAssets:positive",
+        "api:listAssets:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "empty-transactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "invalid-address-state",
+      "requirements": [
+        "api:listAddresses:negative",
+        "api:listAddresses:status:400",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "rename-wallet",
+      "requirements": [
+        "api:putWallet:positive",
+        "api:putWallet:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "delete-owned-wallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

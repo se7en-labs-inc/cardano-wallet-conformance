@@ -1,0 +1,63 @@
+
+-- | Handlers that are retrying on every connection lost.
+retryOnConnectionLost
+    :: Tracer IO ConnectionStatusLog -> RetryHandlers
+retryOnConnectionLost tr =
+    [ \_retryStatus ->
+        Handler
+            $ handleIOException
+            $ MsgConnectionLost . ReasonException >$< tr
+    , \_retryStatus ->
+        Handler
+            $ handleMuxError
+            $ MsgConnectionLost >$< tr
+    ]
+
+-- When the node's connection vanished, we may also want to handle things in a
+-- slightly different way depending on whether we are a waller worker or just
+-- the node's tip thread.
+handleIOException
+    :: Tracer IO IOException -> IOException -> IO RetryAction
+handleIOException tr e = traceWith tr e $> retryAction
+  where
+    retryAction
+        -- There's a race-condition when starting the wallet and the node at the
+        -- same time: the socket might not be there yet when we try to open it.
+        -- In such case, we simply retry a bit later and hope it's there.
+        | isDoesNotExistError e = ConsultPolicy
+        -- I/O error where the operation failed because the resource vanished.
+        -- This happens when, for example, attempting to write to a closed
+        -- socket or attempting to write to a named pipe that was deleted.
+        | isResourceVanishedError e = ConsultPolicy
+        -- If the nonblocking UNIX domain socket connection cannot be completed
+        -- immediately (i.e. connect() returns EAGAIN), try again. This happens
+        -- because the node's listen queue is quite short.
+        | "resource exhausted" `isInfixOf` show e = ConsultPolicy
+        | otherwise = DontRetry
+
+handleMuxError
+    :: Tracer IO ReasonConnectionLost -> Error -> IO RetryAction
+handleMuxError tr muxErr = do
+    traceWith tr (ReasonMuxError muxErr)
+    case muxErr of
+        UnknownMiniProtocol _ -> pure DontRetry
+        SDUDecodeError _ -> pure DontRetry
+        IngressQueueOverRun _ _ -> pure DontRetry
+        InitiatorOnly _ -> pure DontRetry
+        Shutdown _ _ -> pure DontRetry -- fixme: #2212 consider cases
+        IOException e _ -> handleIOException (ReasonException >$< tr) e
+        BearerClosed _ -> pure ConsultPolicy
+        -- MuxSDU*Timeout errors arise because the bandwidth of the
+        -- interprocess communication socket dropped unexpectedly,
+        -- and the socket library decided to cut off the connection
+        -- after ~ 30 seconds.
+        -- Chances are that the system is overloaded, let's retry in 30 seconds.
+        SDUReadTimeout -> pure $ ConsultPolicyOverrideDelay 30_000_000
+        SDUWriteTimeout -> pure $ ConsultPolicyOverrideDelay 30_000_000
+
+{-------------------------------------------------------------------------------
+    Helper functions of the Control.* and STM variety
+-------------------------------------------------------------------------------}
+
+-- | Return a function to run an action only if its single parameter has changed
+-- since the previous time it was called.

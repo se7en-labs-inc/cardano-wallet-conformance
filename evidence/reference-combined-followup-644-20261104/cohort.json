@@ -1,0 +1,49 @@
+{
+  "required": 644,
+  "source": "9d146d433c",
+  "environment": "source-2fc5c383-combined-followup-644-20261104",
+  "target": "http://127.0.0.1:18792/v2/",
+  "reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "node": "11.1.3",
+  "cli": "11.2.3.0",
+  "prior_component_reports_reused": false,
+  "original_reference_defects_remain_strict": true,
+  "fixture_phases": [
+    {
+      "name": "standard-conway",
+      "cluster": "cluster",
+      "purpose": "HTTP, funded families/assets/selection/metadata/rewards/restart/disconnect/DRep",
+      "initial_genesis": "cluster/shelley-genesis.json"
+    },
+    {
+      "name": "committee-conway",
+      "cluster": "parameter-runtime/cluster",
+      "purpose": "isolated pool lifecycle first, then empty-wallet pool guard and actual parameter enactment; public mnemonic remains unfunded until guard completes",
+      "genesis": "parameter-runtime/cluster/shelley-genesis.json"
+    },
+    {
+      "name": "owned-pending",
+      "purpose": "fresh owned normal/expiry/Byron producer-control fixtures"
+    },
+    {
+      "name": "scheduled-era",
+      "purpose": "fresh continuous Babbage-to-Conway chain"
+    },
+    {
+      "name": "owned-pending-retry",
+      "purpose": "real legacy500/automatic retry with separately owned adversary"
+    },
+    {
+      "name": "owned-checkpoint",
+      "purpose": "actual accepted persisted checkpoint and offline catch-up"
+    },
+    {
+      "name": "owned-native-rollback",
+      "purpose": "closed common DB and actual isolated divergent branches with four wallet cases"
+    }
+  ],
+  "fingerprint": "4890a9a5dcc9686e210c7d6e534787d66410d791f145315b0355a26de14e9a3e",
+  "declaration_commit": "90697e7f7f",
+  "frozen_binary_sha256": "b0e0864886cd295a51c4d8a47742769937119ad2ca2fa7d7abda274969c0a9c8",
+  "metadata_correction": "Removed stale annotations copied from the previous cohort declaration; report bytes, assertions and frozen executable unchanged."
+}

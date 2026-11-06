@@ -1,0 +1,10 @@
+  where
+    seed = getApiMnemonicT (body ^. #mnemonicSentence)
+    secondFactor = getApiMnemonicT <$> (body ^. #mnemonicSecondFactor)
+    pwd = getApiT (body ^. #passphrase)
+    pwdP = preparePassphrase currentPassphraseScheme pwd
+    rootXPrv = generateKey (seed, secondFactor) pwdP
+    g = maybe defaultAddressPoolGap getApiT (body ^. #addressPoolGap)
+    wid = WalletId $ digest ShelleyKeyS $ publicKey ShelleyKeyS rootXPrv
+    wName = getApiT (body ^. #name)
+    (genesisBlock, networkParams) = ctx ^. #netParams

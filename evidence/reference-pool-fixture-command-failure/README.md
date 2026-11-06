@@ -1,0 +1,5 @@
+# Preserved fixture CLI output-format failure
+
+Source7043cce3f8, fresh /tmp/wc-pfix-ZeeU4E cluster. The Rust command verifies actual certificate, all three signatures, body/input/output/fee accounting, then stops BEFORE submission on the exact CLI/body transaction-ID comparison. Pinned CLI11.2.3.0 defaults txid output to JSON, while the call expected plain text. Raw observed cli-transaction-id.json and public signed body/funding are retained. The same CLI documents --output-text; adding that explicit flag preserves the exact hash comparison and existing verification approach. This is a routine command-format correction, not a change to an oracle, schema or acceptance criterion.
+
+The original100m input remains unspent; its payment signing key is retained only in ignored artifacts/pool-fixture-rust-v1/private. No wallet was created or adopted. A corrected command must use a new output directory/fresh payment credentials, retain this failed attempt and prove actual submission/visibility. No conformance requirement is closed by this fixture attempt. Seven earlier user-review proposals remain unapplied.

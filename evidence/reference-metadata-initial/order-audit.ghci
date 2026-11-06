@@ -1,0 +1,15 @@
+:set -XOverloadedStrings
+import Cardano.Wallet.Primitive.Types.Tx.TxMetadata
+import Cardano.Wallet.Primitive.Types.MetadataEncryption
+import qualified Data.Map.Strict as Map
+import qualified Data.ByteString as BS
+import Control.Exception
+let msg = (TxMetaText "msg", TxMetaList [TxMetaText "public-message"])
+let note = (TxMetaText "note", TxMetaNumber 42)
+let payload pairs = TxMetadata (Map.singleton 674 (TxMetaMap pairs))
+let check pairs = case toMetadataEncrypted "public-password" (payload pairs) (Just (BS.replicate 8 0)) of { Left e -> error (show e); Right cipher -> try (evaluate (fromMetadataEncrypted "public-password" cipher == Right (payload pairs))) :: IO (Either SomeException Bool) }
+putStrLn "note-before-msg"
+check [note,msg] >>= print
+putStrLn "msg-before-note"
+check [msg,note] >>= print
+:quit

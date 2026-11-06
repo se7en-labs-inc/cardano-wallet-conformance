@@ -1,0 +1,352 @@
+[
+  {
+    "id": "shelley-invalid-mnemonic",
+    "requirements": [
+      "crypto.shelley-root"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon",
+      "path": [],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "shared-root-invalid-mnemonic",
+    "requirements": [
+      "crypto.shared-root"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon",
+      "path": [],
+      "second_factor_hex": "",
+      "style": "Shared"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "icarus-invalid-mnemonic",
+    "requirements": [
+      "crypto.icarus-root"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon",
+      "path": [],
+      "second_factor_hex": "",
+      "style": "Icarus"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-root-malformed-mnemonic",
+    "requirements": [
+      "crypto.byron-root"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon",
+      "path": [],
+      "second_factor_hex": "",
+      "style": "Byron"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-index-overflow-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon address",
+      "path": [
+        4294967296
+      ],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-negative-index-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon address",
+      "path": [
+        -1
+      ],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-fractional-index-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon address",
+      "path": [
+        0.5
+      ],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-invalid-role-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon address",
+      "path": [
+        2147485500,
+        2147485463,
+        2147483648,
+        3,
+        0
+      ],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-invalid-path-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon address",
+      "path": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "second_factor_hex": "",
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-hardened-from-public-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive-public",
+    "input": {
+      "parent_xpub_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+      "path": [
+        2147483648
+      ],
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-public-overflow-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive-public",
+    "input": {
+      "parent_xpub_hex": "62def90b803d2c5616165ac40db911b98261bdc2c2a9678a0a3837024fa2f998d43e76aa8d9b5ad9d91d48479ecd8ef6d00e8df8874e8658ece0cdef94c42367",
+      "path": [
+        4294967296
+      ],
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "derive-public-malformed-key-rejected",
+    "requirements": [
+      "crypto.derivation-boundaries"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.derive-public",
+    "input": {
+      "parent_xpub_hex": "00",
+      "path": [
+        0,
+        0
+      ],
+      "style": "Shelley"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "extended-sign-empty",
+    "requirements": [
+      "crypto.extended-ed25519"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.sign-extended",
+    "input": {
+      "message_hex": "",
+      "xprv_hex": "70efe2a104ef519daf55dc8ce74d803a2da97bd8d0ba867a29d897c65af4d74460a7ac314b32699b294573309cdff45a25781594adb31354fab6477fc3459240b4be0f59f9cad5ed984cee7f317063744e54d51523a0ea304192a7cd4099fd31"
+    },
+    "expected": {
+      "result": {
+        "public_key_hex": "a1a07799ec226d8f2bea80dc1a4fdb25e1b2cb0dbd312a1b004b0401e9012253",
+        "signature_hex": "80d41219ed9f1f0e58cfc242c55ab85999d78a4be340ee9fb6516f514c4995f2ba3a8aa5dcefbfd5f86ecc986714d54dd613a153ab2686fec4d72d513d28b304"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "extended-sign-long",
+    "requirements": [
+      "crypto.extended-ed25519"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.sign-extended",
+    "input": {
+      "message_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "xprv_hex": "70efe2a104ef519daf55dc8ce74d803a2da97bd8d0ba867a29d897c65af4d74460a7ac314b32699b294573309cdff45a25781594adb31354fab6477fc3459240b4be0f59f9cad5ed984cee7f317063744e54d51523a0ea304192a7cd4099fd31"
+    },
+    "expected": {
+      "result": {
+        "public_key_hex": "a1a07799ec226d8f2bea80dc1a4fdb25e1b2cb0dbd312a1b004b0401e9012253",
+        "signature_hex": "cc54e66d6de643eed634db78d6aa71159323dcf11ef3353c20c9bacfbee82050af19e5478e3af2203ffb416a34771b4ef2d9fe7a9026bf034544bd6cf06c1700"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "extended-sign-malformed-key",
+    "requirements": [
+      "crypto.extended-ed25519"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "keys.sign-extended",
+    "input": {
+      "message_hex": "1228cd0fea46f9a091172829f0c492c0516dceff67de08f585a4e048a28a6c9f",
+      "xprv_hex": "00"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-root-encrypted",
+    "requirements": [
+      "crypto.byron-root"
+    ],
+    "source": "Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check",
+    "operation": "byron.generate-root",
+    "input": {
+      "encryption_passphrase_hex": "4a87f05fe25a57c96ff5221863e61b91bcca566b853b616f55e5d2c18caa1a4c",
+      "mnemonic": [
+        "squirrel",
+        "material",
+        "silly",
+        "twice",
+        "direct",
+        "slush",
+        "pistol",
+        "razor",
+        "become",
+        "junk",
+        "kingdom",
+        "flee"
+      ]
+    },
+    "expected": {
+      "result": {
+        "xprv_hex": "b842ae13cbb31b7d96910472bbed5c8729c764d66af81b48120a6a583eae55faf78c24765e0c9826f4d095f3e6addb4bda68df322b220d3c08b8a5b414232d101258854ab44b0cfda59bd68fbd87f280841a390068049df0f8a903c94ba65b7aa4762129a6c83acfda5b257eaeb73ec5fee1518b6674fdc7891fe23f06174421"
+      }
+    },
+    "selection_invariants": false
+  }
+]

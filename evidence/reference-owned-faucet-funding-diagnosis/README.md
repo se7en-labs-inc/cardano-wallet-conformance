@@ -1,0 +1,7 @@
+# Native faucet funding loss before wallet workflow
+
+The frozen qualified cohort's normal pending profile fails13 checks/one failure while waiting for initial100ADA funding. No wallet transaction, pending restart or deletion is reached. The real native faucet transaction5229f928... targets the new sender; its original genesis input727c5a1e...#0 contains1e15lovelace.
+
+After all original fixture nodes stopped/reaped, a private COPY of the closed relay database was opened by a separately owned node with no peers or producer keys. At recovered tip471/966, the original input remains unspent and the exact requested output is absent. The unchanged signed faucet envelope is accepted, and its exact mempool membership changes from absent to present. This establishes independently admissible fixture funding lost from the selected native chain/mempool, not a wallet failure to recognize a confirmed payment. The exact native interleaving is not traced. Diagnostic replay occurs only in the isolated nonproducing copy, modifies no original fixture database and earns no conformance credit.
+
+The proposed correction keeps one verified nonretiring producer active throughout owned funding/workflows and preserves nested pause ownership. It does not replay wallet transactions, weaken100ADA/node/signature/accounting requirements, change644 or promote source authority. Both original and diagnostic processes stopped/reaped; independent absence receipts are retained. No private signing keys, random mnemonics, databases or full logs are published.

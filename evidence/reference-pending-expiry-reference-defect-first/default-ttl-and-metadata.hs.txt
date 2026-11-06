@@ -1,0 +1,84 @@
+            withExceptT ErrConstructTxBody
+                $ ExceptT
+                $ pure
+                $ mkUnsignedTransaction netId (Right scriptM) txCtx (Left sel)
+  where
+    netId = networkIdVal $ sNetworkId @n
+
+-- | Calculate the transaction expiry slot, given a 'TimeInterpreter', and an
+-- optional TTL in seconds.
+--
+-- If no TTL is provided, a default of 2 hours is used (note: there is no
+-- particular reason why we chose that duration).
+transactionExpirySlot
+    :: TimeInterpreter (ExceptT PastHorizonException IO)
+    -- ^ Context for time to slot calculation.
+    -> Maybe NominalDiffTime
+    -- ^ Time to live (TTL) in seconds from now.
+    -> IO SlotNo
+transactionExpirySlot safeTimeInterpreter maybeTTL =
+    interpretQuery timeInterpreter . ceilingSlotAt . addRelTime ttl
+        =<< currentRelativeTime timeInterpreter
+  where
+    timeInterpreter = unsafeExtendSafeZone safeTimeInterpreter
+    ttl :: NominalDiffTime = fromMaybe defaultTTL maybeTTL
+    defaultTTL :: NominalDiffTime = 7200 -- that's 2 hours
+
+constructTxMeta
+    :: DBLayer IO s
+    -> TransactionCtx
+    -> [(TxIn, Coin)]
+    -> [TxOut]
+    -> IO TxMeta
+constructTxMeta DBLayer{..} txCtx inps outs = atomically $ do
+    checkpoint <- readCheckpoint
+    let latestBlockHeader = currentTip checkpoint
+        amountOut = F.fold $ map TxOut.coin outs
+        amountIn =
+            F.fold (map snd inps)
+                & case txWithdrawal txCtx of
+                    w@WithdrawalSelf{} -> Coin.add (withdrawalToCoin w)
+                    WithdrawalExternal{} -> Prelude.id
+                    NoWithdrawal -> Prelude.id
+        validity = txValidityInterval txCtx
+    pure $ mkTxMeta latestBlockHeader validity amountIn amountOut
+
+ourCoin :: IsOurs s Address => TxOut -> s -> Maybe Coin
+ourCoin (TxOut addr tokens) wState =
+    fst (isOurs addr wState) $> TokenBundle.getCoin tokens
+
+-- | Construct transaction metadata for a pending transaction
+mkTxMeta
+    :: BlockHeader
+    -> TxValidityInterval
+    -> Coin -- Our inputs amount
+    -> Coin -- Outputs amount
+    -> TxMeta
+mkTxMeta latestBlockHeader txValidity amountIn amountOut =
+    TxMeta
+        { status = Pending
+        , direction = if amountIn > amountOut then Outgoing else Incoming
+        , slotNo = latestBlockHeader ^. #slotNo
+        , blockHeight = latestBlockHeader ^. #blockHeight
+        , amount = Coin.distance amountIn amountOut
+        , expiry = Just (snd txValidity)
+        }
+
+-- | Broadcast a (signed) transaction to the network.
+submitTx
+    :: MonadUnliftIO m
+    => Tracer m WalletWorkerLog
+    -> DBLayer m s
+    -> NetworkLayer m block
+    -> BuiltTx
+    -> ExceptT ErrSubmitTx m ()
+submitTx tr DBLayer{walletState, atomically} nw tx@BuiltTx{..} =
+    traceResult (MsgWallet . MsgTxSubmit . MsgSubmitTx tx >$< tr) $ do
+        withExceptT ErrSubmitTxNetwork $ postSealedTx nw builtSealedTx
+        lift
+            . atomically
+            . Delta.onDBVar walletState
+            . WalletState.updateSubmissions
+            . Delta.update
+            $ \_ -> Submissions.addTxSubmission tx (builtTxMeta ^. #slotNo)
+

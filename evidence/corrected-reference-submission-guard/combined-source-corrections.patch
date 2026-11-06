@@ -1,0 +1,175 @@
+diff --git a/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs b/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
+index 0a196c616b..c7b461ad48 100644
+--- a/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
++++ b/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
+@@ -4096,8 +4096,6 @@ submitTransaction
+     -> ApiSerialisedTransaction
+     -> Handler ApiTxId
+ submitTransaction ctx apiw@(ApiT wid) apitx = do
+-    -- TODO: revisit/possibly set proper ttls in ADP-1193
+-    ttl <- liftIO $ W.transactionExpirySlot ti Nothing
+     era <- liftIO $ NW.currentNodeEra nl
+ 
+     let sealedTx = getApiT . (view #serialisedTxSealed) $ apitx
+@@ -4107,6 +4105,10 @@ submitTransaction ctx apiw@(ApiT wid) apitx = do
+             ctx
+             apiw
+             (toApiDecodeTransactionPostData apitx)
++    ttl <- case apiDecoded ^. #validityInterval of
++        Just (ApiValidityIntervalExplicit interval) ->
++            pure $ SlotNo $ getQuantity $ interval ^. #invalidHereafter
++        Nothing -> liftIO $ W.transactionExpirySlot ti Nothing
+     when (isForeign apiDecoded)
+         $ liftHandler
+         $ throwE ErrSubmitTransactionForeignWallet
+@@ -4143,9 +4145,7 @@ submitTransaction ctx apiw@(ApiT wid) apitx = do
+         let wdrl = getOurWdrl acct path apiDecoded
+         let txCtx =
+                 defaultTransactionCtx
+-                    { -- TODO: [ADP-1193]
+-                      -- Get this from decodeTx:
+-                      txValidityInterval = (Nothing, ttl)
++                    { txValidityInterval = (Nothing, ttl)
+                     , txWithdrawal = wdrl
+                     }
+         txMeta <- handler $ W.constructTxMeta db txCtx ourInps ourOuts
+@@ -4246,7 +4246,6 @@ submitSharedTransaction
+     -> ApiSerialisedTransaction
+     -> Handler ApiTxId
+ submitSharedTransaction ctx apiw@(ApiT wid) apitx = do
+-    ttl <- liftIO $ W.transactionExpirySlot ti Nothing
+     era <- liftIO $ NW.currentNodeEra nl
+ 
+     let sealedTx = getApiT . (view #serialisedTxSealed) $ apitx
+@@ -4256,6 +4255,10 @@ submitSharedTransaction ctx apiw@(ApiT wid) apitx = do
+             ctx
+             apiw
+             (toApiDecodeTransactionPostData apitx)
++    ttl <- case apiDecoded ^. #validityInterval of
++        Just (ApiValidityIntervalExplicit interval) ->
++            pure $ SlotNo $ getQuantity $ interval ^. #invalidHereafter
++        Nothing -> liftIO $ W.transactionExpirySlot ti Nothing
+     when (isForeign apiDecoded)
+         $ liftHandler
+         $ throwE ErrSubmitTransactionForeignWallet
+diff --git a/lib/unit/test/unit/Cardano/Wallet/DB/Store/Submissions/StoreSpec.hs b/lib/unit/test/unit/Cardano/Wallet/DB/Store/Submissions/StoreSpec.hs
+index 60e1260098..e9ba9742b1 100644
+--- a/lib/unit/test/unit/Cardano/Wallet/DB/Store/Submissions/StoreSpec.hs
++++ b/lib/unit/test/unit/Cardano/Wallet/DB/Store/Submissions/StoreSpec.hs
+@@ -22,6 +22,12 @@ import Cardano.Wallet.DB.Fixtures
+ import Cardano.Wallet.DB.Sqlite.Types
+     ( TxId (..)
+     )
++import Cardano.Wallet.DB.Store.Submissions.Layer
++    ( emptyTxSubmissions
++    , getInSubmissionTransaction
++    , resubmitTx
++    , rollForwardTxSubmissions
++    )
+ import Cardano.Wallet.DB.Store.Submissions.Operations
+     ( SubmissionMeta (..)
+     , mkStoreSubmissions
+@@ -32,6 +38,9 @@ import Cardano.Wallet.Primitive.Types
+ import Cardano.Wallet.Primitive.Types.Coin
+     ( Coin (Coin)
+     )
++import Cardano.Wallet.Primitive.Types.Hash
++    ( Hash (..)
++    )
+ import Cardano.Wallet.Primitive.Types.Tx
+     ( SealedTx (..)
+     , mockSealedTx
+@@ -39,15 +48,23 @@ import Cardano.Wallet.Primitive.Types.Tx
+ import Cardano.Wallet.Primitive.Types.Tx.TxMeta
+     ( Direction (Outgoing)
+     )
++import Cardano.Wallet.Submissions.Operations
++    ( Operation (AddSubmission)
++    , applyOperations
++    )
+ import Cardano.Wallet.Submissions.OperationsSpec
+     ( genOperationsDelta
+     )
+ import Cardano.Wallet.Submissions.Submissions
+     ( Submissions (..)
++    , TxStatusMeta (..)
+     )
+ import Control.Monad
+     ( replicateM
+     )
++import Data.Delta
++    ( Delta (apply)
++    )
+ import Data.Quantity
+     ( Quantity (..)
+     )
+@@ -62,6 +79,7 @@ import Test.Hspec
+     , around
+     , describe
+     , it
++    , shouldBe
+     )
+ import Test.QuickCheck
+     ( Arbitrary (..)
+@@ -73,10 +91,36 @@ import qualified Data.ByteString as BS
+ 
+ spec :: Spec
+ spec = do
++    describe "resubmission bookkeeping after concurrent state changes" $ do
++        it "preserves a transaction confirmed after the pending read" $ do
++            let confirmed =
++                    apply
++                        (rollForwardTxSubmissions 10 [(8, transactionId)])
++                        pending
++            apply (resubmitTx transactionId 11 confirmed) confirmed
++                `shouldBe` confirmed
++        it "still refreshes ordinary pending retry metadata" $ do
++            let after = apply (resubmitTx transactionId 11 pending) pending
++                beforeEntry = getInSubmissionTransaction transactionId pending
++                afterEntry = getInSubmissionTransaction transactionId after
++            fmap _txStatus afterEntry `shouldBe` fmap _txStatus beforeEntry
++            fmap (submissionMetaResubmitted . _txStatusMeta) afterEntry
++                `shouldBe` Just 11
++        it "preserves a transaction expired after the pending read" $ do
++            let expired = apply (rollForwardTxSubmissions 1000 []) pending
++            apply (resubmitTx transactionId 1001 expired) expired
++                `shouldBe` expired
+     around (withDBInMemory ForeignKeysDisabled) $ do
+         describe "submissions via API for a single wallet store" $ do
+             it "respects store laws"
+                 $ property . prop_SingleWalletStoreLawsOperations
++  where
++    transactionId = Hash $ BS.replicate 32 1
++    sealed = mockSealedTx $ BS.replicate 16 2
++    pending =
++        applyOperations
++            (AddSubmission 1000 (TxId transactionId, sealed) dummyMetadata)
++            emptyTxSubmissions
+ 
+ deriving instance Random SlotNo
+ 
+diff --git a/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs b/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
+index 3e3ebb8acd..672df86d0b 100644
+--- a/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
++++ b/lib/wallet/src/Cardano/Wallet/DB/Store/Submissions/Layer.hs
+@@ -78,6 +78,9 @@ import Control.Lens
+     , (^..)
+     , (^?)
+     )
++import Control.Monad
++    ( guard
++    )
+ import Data.Bifunctor
+     ( second
+     )
+@@ -113,8 +116,9 @@ resubmitTx
+     -> DeltaTxSubmissions
+ resubmitTx (TxId -> txId) resubmitted walletSubmissions =
+     fromMaybe [] $ do
+-        (TxStatusMeta datas meta) <-
++        entry@(TxStatusMeta datas meta) <-
+             Map.lookup txId $ walletSubmissions ^. transactionsL
++        guard (isInSubmission entry)
+         (_, sealed) <- getTx datas
+         pure $ case expirySlot datas of
+             Nothing -> []

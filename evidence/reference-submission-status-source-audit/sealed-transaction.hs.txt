@@ -1,0 +1,13 @@
+                var <- newEmptyTMVarIO
+                cont $ atomically . putTMVar var
+                atomically $ readTMVar var
+
+        -- NOTE: only shelley-era transactions can be submitted: the stored
+        -- 'EraValue Read.Tx' carries the era so no query is needed.
+        _postSealedTx txSubmissionQueue tx = do
+            liftIO $ traceWith tr $ MsgPostTx $ BS.fromStrict $ serialisedTx tx
+            case unsafeReadTx tx of
+                Read.EraValue readTx ->
+                    postTxToQueue tr txSubmissionQueue readTx
+
+        _stakeDistribution queue coin = do

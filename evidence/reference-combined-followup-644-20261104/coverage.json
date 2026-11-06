@@ -1,0 +1,35 @@
+{
+  "exhaustive": false,
+  "required": 644,
+  "covered": 639,
+  "missing": [
+    "wallet.rollback",
+    "wallet.resubmission",
+    "wallet.transaction-filtering",
+    "wallet.stake-pools",
+    "api:postSharedWallet:status:500"
+  ],
+  "unexecuted_cases": {
+    "wallet.resubmission": [
+      "live:pending-expiry"
+    ],
+    "wallet.rollback": [
+      "live:rollback-reapply",
+      "state:rollback-balance-history",
+      "state:rollback-pending",
+      "state:rollback-spent-inputs"
+    ],
+    "wallet.stake-pools": [
+      "pools:retirement"
+    ],
+    "wallet.transaction-filtering": [
+      "history:status"
+    ]
+  },
+  "failures": [
+    "pending:workflow",
+    "pending:workflow",
+    "live:pools-workflow",
+    "rollback:workflow"
+  ]
+}

@@ -1,0 +1,13 @@
+# Passing owned-wallet node disconnection component
+
+Source65ebcf2776 against pinned Haskell2fc5c383, node11.1.3, CLI11.2.3.0, fresh Conway magic42 cluster /tmp/wc-proxy-QdNgf3. Environment source-2fc5c383-conway-node11.1.3-disconnect-initial, suite f950a290b82b782c4b92493bbfbd2ef0cd0a97925a0304982142edb0257454d1.82registered live checks pass, no failures or unregistered inputs.
+
+After the basic funded transfer/signing/node confirmation/restoration controls, the wallet had6admitted relay connections. Pause drained all active streams and froze its cached node tip at height920/slot1868. The independent faucet/node confirmed10m at transaction51336e74345444eb0e58ca1e47529a15eb0bafb3dc1b166a99b337e82b49c24c, while the disconnected wallet retained its original balance/history and returned strict404 no_such_transaction. Reconnection created5fresh active connections (11total admissions) with no upstream failures or worker panics, and the wallet discovered the exact funding.
+
+The reconnected wallet then built/signed/submitted a2m payment, independently verified input authorization/body/witnesses/ADA conservation, confirmed on both wallets, proved all outputs/spent inputs against the node, and reconciled final balances over every owned address. The public case detail retains funding snapshots, frozen/reconnected counters, signed transaction, spent references and final node UTxOs. No private mnemonic, passphrase or database/log material is copied here.
+
+Only live:node-disconnect-reconnect binds under wallet.resubmission. Pending retry and expiry remain missing; no restart, rollback or pending persistence is inferred. The component-only gate covers25/643 (618missing), expected exit1 for incompleteness, no execution failures. The last full coherent passing581/643 checkpoint is unchanged and cannot be merged with this fingerprint. artifacts/behavioral-specification.disconnect-component.draft.json is an incomplete, non-authoritative review draft.
+
+Three relay tests and34harness tests pass; Cargo fmt/all-target-all-feature Clippy/bins/treefmt/isolated Nix Clippy/fmt checks pass. Full cargo/Nix package checks are not claimed because the separately pending input-parser regression remains unresolved. All nine correction proposals remain unapplied. Explicit disconnection mode selects an independent workflow; the failing restart assertion is unchanged.
+
+Both owned wallets were deleted, the foreground service was stopped/reaped, both owned proxy sockets were removed, and the cluster session exited130 after SIGTERM. All six observed cluster/node PIDs are absent and no cardano-wallet process remains. The private service logs/database stay in the0700scratch workspace.

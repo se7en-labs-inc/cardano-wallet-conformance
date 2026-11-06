@@ -1,0 +1,5 @@
+# Actual pool retirement activation
+
+Source f19e92eed2, pinned Haskell 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; suite fingerprint4627ca61b00ea5d73a643c52f0c9571e02ea067662401780663385ae38a058cd. Fresh isolated owned cluster and wallet:120/120 checks pass. Ranking, metadata hash rejection, maintenance, independently signed/submitted/confirmed retirement, exact scheduled wallet/genesis timestamp and node retiring epoch all pass. Actual node epoch6/slot721 precedes the exact native timestamp lookup returning720, matching independently computed epoch-start slot720. Final node active set and wallet directory exclude the retired pool.
+
+Independent node integration passed last. Its first invocation had a mistyped executable path; that failed invocation is preserved separately and the corrected invocation changes no criteria. Owned cluster651702 and observed node children651797,651812,652557,652559,652560 were stopped, reaped and verified absent. Foreground wallet cleanup passed. Private runtime keys, databases and logs are excluded. Component evidence does not replace the last passing coherent587/643 baseline or satisfy the644 gate.

@@ -1,0 +1,898 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "4890a9a5dcc9686e210c7d6e534787d66410d791f145315b0355a26de14e9a3e",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-combined-followup-644-20261104",
+  "target": "http://127.0.0.1:18792/v2/",
+  "evidence": [
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getBlocksLatestHeader",
+      "requirements": [
+        "api:getBlocksLatestHeader:positive",
+        "api:getBlocksLatestHeader:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postTransaction",
+      "requirements": [
+        "api:postTransaction:negative",
+        "api:postTransaction:status:500"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:shelley:node-rejection-response",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"}"
+    },
+    {
+      "case": "live:listTransactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getTransaction",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:shelley:admitted-conflict",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"adversary_mempool\":{\"exists\":true,\"slot\":310,\"txId\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\"},\"adversary_transaction\":{\"amount\":{\"quantity\":3129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":356,\"epoch_number\":2,\"slot_number\":116,\"time\":\"2026-11-04T23:54:26.2Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qq3krxp9mdc2uhrlljt89sx36jpzkg50swpcvj4cald4l6m0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsdxf3k3\",\"amount\":{\"quantity\":3000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":96870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":356,\"unit\":\"slot\"}},\"withdrawals\":[]},\"funding\":{\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6#0\":{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"horizon\":{\"current_slot\":317,\"exclusive_horizon_slot\":369,\"safe_slots\":60,\"tip_slot\":309,\"upper_slot\":356},\"stable_tip\":{\"hash\":\"e4aa668d4ce4d5e689b96f17e9ed364d325ce398d3ad38d6991961a834317169\",\"height\":138,\"slot\":309},\"target_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_mempool_absent\":{\"exists\":false,\"slot\":310,\"txId\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\"},\"target_pending\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_wallet\":{\"address_pool_gap\":20,\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":0,\"unit\":\"lovelace\"},\"reward\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":97870700,\"unit\":\"lovelace\"}},\"delegation\":{\"active\":{\"status\":\"not_delegating\"},\"next\":[]},\"id\":\"b4284efed5980086d9b2df202ff1f541e6bf81ee\",\"name\":\"conformance-retry-shelley\",\"passphrase\":{\"encryption_method\":\"argon2id-v2\",\"last_updated_at\":\"2026-11-04T23:53:37.663687078Z\"},\"state\":{\"status\":\"ready\"},\"tip\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"}}}"
+    },
+    {
+      "case": "live:getTransaction:confirmed",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:shelley:confirmed-automatically",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"09a31f53200b118ec4fbec39e4deb04a1ca572ee1f37769a01024dfd026e43b6\",\"height\":141,\"slot\":361},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":364,\"txId\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\"},\"adversary_transaction_id\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\",\"adversary_upper_slot\":356,\"final_balance\":97870700,\"native_funding_after\":{},\"native_funding_before\":{\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6#0\":{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#1\":{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97870700}}},\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#0\":{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"shelley\",\"target_confirmed\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":1,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":360,\"epoch_number\":3,\"height\":{\"quantity\":140,\"unit\":\"block\"},\"slot_number\":0,\"time\":\"2026-11-04T23:54:27Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\"}"
+    },
+    {
+      "case": "live:postByronWallet",
+      "requirements": [
+        "api:postByronWallet:positive",
+        "api:postByronWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listByronAddresses",
+      "requirements": [
+        "api:listByronAddresses:positive",
+        "api:listByronAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:constructTransaction",
+      "requirements": [
+        "api:constructTransaction:positive",
+        "api:constructTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:positive",
+        "api:signTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:submitTransaction",
+      "requirements": [
+        "api:submitTransaction:positive",
+        "api:submitTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getTransaction:confirmed",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronTransaction:confirmed",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getBlocksLatestHeader",
+      "requirements": [
+        "api:getBlocksLatestHeader:positive",
+        "api:getBlocksLatestHeader:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postByronTransaction",
+      "requirements": [
+        "api:postByronTransaction:negative",
+        "api:postByronTransaction:status:500"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:icarus:node-rejection-response",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"}"
+    },
+    {
+      "case": "live:listByronTransactions",
+      "requirements": [
+        "api:listByronTransactions:positive",
+        "api:listByronTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronTransaction",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:icarus:admitted-conflict",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"adversary_mempool\":{\"exists\":true,\"slot\":391,\"txId\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\"},\"adversary_transaction\":{\"amount\":{\"quantity\":3136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":436,\"epoch_number\":3,\"slot_number\":76,\"time\":\"2026-11-04T23:54:42.2Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qqaupadfkqjth57686qhkukx40pypatmqxngxrpv3rtm0nnwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qxpcw5x\",\"amount\":{\"quantity\":3000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":96863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":436,\"unit\":\"slot\"}},\"withdrawals\":[]},\"funding\":{\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c#0\":{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"horizon\":{\"current_slot\":396,\"exclusive_horizon_slot\":450,\"safe_slots\":60,\"tip_slot\":390,\"upper_slot\":436},\"stable_tip\":{\"hash\":\"fe3b476e83204136f4bae93f93306c6bea72adcb0adab4df38b60b7b3bbff116\",\"height\":157,\"slot\":390},\"target_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_mempool_absent\":{\"exists\":false,\"slot\":391,\"txId\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\"},\"target_pending\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_wallet\":{\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":97863900,\"unit\":\"lovelace\"}},\"discovery\":\"sequential\",\"id\":\"ca1add694290a40377b9a2673c41d9c29bc99e6f\",\"name\":\"conformance-retry-icarus\",\"passphrase\":{\"encryption_method\":\"pbkdf2-hmac-sha512\",\"last_updated_at\":\"2026-11-04T23:54:28.117693204Z\"},\"state\":{\"status\":\"ready\"},\"tip\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"}}}"
+    },
+    {
+      "case": "live:getByronTransaction:confirmed",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listByronAddresses",
+      "requirements": [
+        "api:listByronAddresses:positive",
+        "api:listByronAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:icarus:confirmed-automatically",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"125feb1ac743de2a3d7fe7606e265f4be0173f2843dba2277157da28e4cc3681\",\"height\":161,\"slot\":443},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":444,\"txId\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\"},\"adversary_transaction_id\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\",\"adversary_upper_slot\":436,\"final_balance\":97863900,\"native_funding_after\":{},\"native_funding_before\":{\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c#0\":{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#1\":{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97863900}}},\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#0\":{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"icarus\",\"target_confirmed\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":2,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":439,\"epoch_number\":3,\"height\":{\"quantity\":159,\"unit\":\"block\"},\"slot_number\":79,\"time\":\"2026-11-04T23:54:42.8Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\"}"
+    },
+    {
+      "case": "live:postByronWallet",
+      "requirements": [
+        "api:postByronWallet:positive",
+        "api:postByronWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:createAddress",
+      "requirements": [
+        "api:createAddress:positive",
+        "api:createAddress:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:constructTransaction",
+      "requirements": [
+        "api:constructTransaction:positive",
+        "api:constructTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:positive",
+        "api:signTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:submitTransaction",
+      "requirements": [
+        "api:submitTransaction:positive",
+        "api:submitTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getTransaction:confirmed",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronTransaction:confirmed",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getBlocksLatestHeader",
+      "requirements": [
+        "api:getBlocksLatestHeader:positive",
+        "api:getBlocksLatestHeader:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postByronTransaction",
+      "requirements": [
+        "api:postByronTransaction:negative",
+        "api:postByronTransaction:status:500"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:random:node-rejection-response",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"}"
+    },
+    {
+      "case": "live:listByronTransactions",
+      "requirements": [
+        "api:listByronTransactions:positive",
+        "api:listByronTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronTransaction",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:random:admitted-conflict",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"adversary_mempool\":{\"exists\":true,\"slot\":471,\"txId\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\"},\"adversary_transaction\":{\"amount\":{\"quantity\":3139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":516,\"epoch_number\":4,\"slot_number\":36,\"time\":\"2026-11-04T23:54:58.2Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzx6nf8d007tfv3euytw0ujthxd2lgjlcf5cdwwhsuqwsrxp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psm28jd5\",\"amount\":{\"quantity\":3000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDoUkqJcUoWQgAFX38YcQFus1gUaEqxdFsNJNPJ9obXVkL6cUFQ1xTjHzBLZK69yfjMiiw2cCRsRVPGTbefrmh4229wfQJrJhUR4B\",\"amount\":{\"quantity\":96860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":516,\"unit\":\"slot\"}},\"withdrawals\":[]},\"funding\":{\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47#0\":{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"horizon\":{\"current_slot\":476,\"exclusive_horizon_slot\":530,\"safe_slots\":60,\"tip_slot\":470,\"upper_slot\":516},\"stable_tip\":{\"hash\":\"099c3c43eabb83ad8985cd2e722a6edbc7af18e0b0fe3b535cd130741d3b9c7f\",\"height\":174,\"slot\":470},\"target_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_mempool_absent\":{\"exists\":false,\"slot\":471,\"txId\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\"},\"target_pending\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_wallet\":{\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":97860600,\"unit\":\"lovelace\"}},\"discovery\":\"random\",\"id\":\"1b7da95a3f3cd870277e94e6872b39997d0a300a\",\"name\":\"conformance-retry-random\",\"passphrase\":{\"encryption_method\":\"pbkdf2-hmac-sha512\",\"last_updated_at\":\"2026-11-04T23:54:44.202564668Z\"},\"state\":{\"status\":\"ready\"},\"tip\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"}}}"
+    },
+    {
+      "case": "live:getByronTransaction:confirmed",
+      "requirements": [
+        "api:getByronTransaction:positive",
+        "api:getByronTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listByronAddresses",
+      "requirements": [
+        "api:listByronAddresses:positive",
+        "api:listByronAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getByronWallet:eventually",
+      "requirements": [
+        "api:getByronWallet:positive",
+        "api:getByronWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:random:confirmed-automatically",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"027854ea7f9fbf778a810588deb876442296c6e7cdb9ed3402c8da26c85aebc0\",\"height\":176,\"slot\":520},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":521,\"txId\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\"},\"adversary_transaction_id\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\",\"adversary_upper_slot\":516,\"final_balance\":97860600,\"native_funding_after\":{},\"native_funding_before\":{\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47#0\":{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#1\":{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97860600}}},\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#0\":{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"random\",\"target_confirmed\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":0,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":520,\"epoch_number\":4,\"height\":{\"quantity\":176,\"unit\":\"block\"},\"slot_number\":40,\"time\":\"2026-11-04T23:54:59Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\"}"
+    },
+    {
+      "case": "retry:cleanup-adversary-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:cleanup-adversary-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "retry:cleanup-adversary-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:pending-retry",
+      "requirements": [
+        "wallet.resubmission"
+      ],
+      "passed": true,
+      "detail": "{\"adversary_checks\":24,\"adversary_fixture_only\":true,\"styles\":[{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"09a31f53200b118ec4fbec39e4deb04a1ca572ee1f37769a01024dfd026e43b6\",\"height\":141,\"slot\":361},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":364,\"txId\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\"},\"adversary_transaction_id\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\",\"adversary_upper_slot\":356,\"final_balance\":97870700,\"native_funding_after\":{},\"native_funding_before\":{\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6#0\":{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#1\":{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97870700}}},\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#0\":{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"shelley\",\"target_confirmed\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":1,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":360,\"epoch_number\":3,\"height\":{\"quantity\":140,\"unit\":\"block\"},\"slot_number\":0,\"time\":\"2026-11-04T23:54:27Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\"},{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"125feb1ac743de2a3d7fe7606e265f4be0173f2843dba2277157da28e4cc3681\",\"height\":161,\"slot\":443},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":444,\"txId\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\"},\"adversary_transaction_id\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\",\"adversary_upper_slot\":436,\"final_balance\":97863900,\"native_funding_after\":{},\"native_funding_before\":{\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c#0\":{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#1\":{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97863900}}},\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#0\":{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"icarus\",\"target_confirmed\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":2,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":439,\"epoch_number\":3,\"height\":{\"quantity\":159,\"unit\":\"block\"},\"slot_number\":79,\"time\":\"2026-11-04T23:54:42.8Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\"},{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"027854ea7f9fbf778a810588deb876442296c6e7cdb9ed3402c8da26c85aebc0\",\"height\":176,\"slot\":520},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":521,\"txId\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\"},\"adversary_transaction_id\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\",\"adversary_upper_slot\":516,\"final_balance\":97860600,\"native_funding_after\":{},\"native_funding_before\":{\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47#0\":{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#1\":{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97860600}}},\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#0\":{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"random\",\"target_confirmed\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":0,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":520,\"epoch_number\":4,\"height\":{\"quantity\":176,\"unit\":\"block\"},\"slot_number\":40,\"time\":\"2026-11-04T23:54:59Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\"}]}"
+    },
+    {
+      "case": "pending:workflow",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"adversary_checks\":24,\"adversary_executable_sha256\":\"6ea82181d5ed0740f4b4eecfcf178e197ac95aafe26f74e1b4019103b9b9092d\",\"adversary_fixture_only\":true,\"styles\":[{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"09a31f53200b118ec4fbec39e4deb04a1ca572ee1f37769a01024dfd026e43b6\",\"height\":141,\"slot\":361},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":364,\"txId\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\"},\"adversary_transaction_id\":\"999bf23cb0bfdb11055bc99dd6cd4eb7f8eef5205436e54d936da29eef8879a8\",\"adversary_upper_slot\":356,\"final_balance\":97870700,\"native_funding_after\":{},\"native_funding_before\":{\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6#0\":{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#1\":{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97870700}}},\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\":{\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6#0\":{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"shelley\",\"target_confirmed\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":1,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":360,\"epoch_number\":3,\"height\":{\"quantity\":140,\"unit\":\"block\"},\"slot_number\":0,\"time\":\"2026-11-04T23:54:27Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2129300,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36318,\"epoch_number\":302,\"slot_number\":78,\"time\":\"2026-11-05T01:54:18.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":129300,\"unit\":\"lovelace\"},\"id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\",\"inputs\":[{\"address\":\"addr_test1qq2lq409maxrn8mwm9k254j8fmx5d73h55y7m9cts7uhxvzh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzq9zcv9c\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"8984a599586e9ce6726248cc7f4e93650cab3d45ffd1c588e4eb10ac52cf9ad6\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qrdwp8v87su6v033z30h9gsv4clh2w4m0cfdm2fcgvtjamt0wssswxwt5gp0ycxvkmff5upxgr7ul6tgszx9652xgtrsr40a9q\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qpwu6x5n5q5l3j03fq2j857ay24qlm3pckv84gttxf2wp2jh49l6t6x3hzgeytc8vn87nj3wzkcjsxjgp936dl887lzqtyrwn9\",\"amount\":{\"quantity\":97870700,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":309,\"epoch_number\":2,\"height\":{\"quantity\":138,\"unit\":\"block\"},\"slot_number\":69,\"time\":\"2026-11-04T23:54:16.8Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36318,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"5e63aadcf840ebfe867f80a7081d4534cd7e2e2b320e9be727fe96dabd1b91e6\"},{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"125feb1ac743de2a3d7fe7606e265f4be0173f2843dba2277157da28e4cc3681\",\"height\":161,\"slot\":443},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":444,\"txId\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\"},\"adversary_transaction_id\":\"31b2c54562ba51d2c44107d3eebb25268588f871b53664c22b0bc3121e856cf9\",\"adversary_upper_slot\":436,\"final_balance\":97863900,\"native_funding_after\":{},\"native_funding_before\":{\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c#0\":{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#1\":{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97863900}}},\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\":{\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3#0\":{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"icarus\",\"target_confirmed\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":2,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":439,\"epoch_number\":3,\"height\":{\"quantity\":159,\"unit\":\"block\"},\"slot_number\":79,\"time\":\"2026-11-04T23:54:42.8Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2136100,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36397,\"epoch_number\":303,\"slot_number\":37,\"time\":\"2026-11-05T01:54:34.4Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":136100,\"unit\":\"lovelace\"},\"id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\",\"inputs\":[{\"address\":\"2657WMsDfac7gqSGtihoUyuVPJewMbDPxb1nECi8ZDauErmkNB3hYjZfjX9pC5mnY\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"4e74fd1e65a1a6542a87f10c44d1a37e328de6eecb1dd595f17ba18b2928880c\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qpfdus5lvw4emscjeh8xjxcvlhgkycekwht6ghcjyjdea5mwx6kqw46jp2ehu3n63daygfc24rnu6ac3r3cpr9m6de9qyvlq6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2657WMsDfac5WXFQHhnKgTNGRUzuYDReBDLKZnXFvycF18UNyTS8jxH2MKuyF59RW\",\"amount\":{\"quantity\":97863900,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":390,\"epoch_number\":3,\"height\":{\"quantity\":157,\"unit\":\"block\"},\"slot_number\":30,\"time\":\"2026-11-04T23:54:33Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36397,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"649b612fdabccc9232b88379a01f50096b705c97c5dd3e2871eb4e186af2a6f3\"},{\"additional_target_submission_api_calls\":0,\"advanced_tip\":{\"hash\":\"027854ea7f9fbf778a810588deb876442296c6e7cdb9ed3402c8da26c85aebc0\",\"height\":176,\"slot\":520},\"adversary_mempool_absent\":{\"exists\":false,\"slot\":521,\"txId\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\"},\"adversary_transaction_id\":\"c1a474f14d9bd2678ee5fc54357575f96ea7fd69d14fc36ecf3f85ff4460df85\",\"adversary_upper_slot\":516,\"final_balance\":97860600,\"native_funding_after\":{},\"native_funding_before\":{\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47#0\":{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"native_outputs\":{\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#1\":{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97860600}}},\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\":{\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80#0\":{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"style\":\"random\",\"target_confirmed\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"depth\":{\"quantity\":0,\"unit\":\"block\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":520,\"epoch_number\":4,\"height\":{\"quantity\":176,\"unit\":\"block\"},\"slot_number\":40,\"time\":\"2026-11-04T23:54:59Z\"},\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_initial_error\":{\"code\":\"created_invalid_transaction\",\"message\":\"The submitted transaction was rejected by the local node. Here's an error message that may help with debugging: HardForkApplyTxErrFromEra S (S (S (S (S (S (Z (WrapApplyTxErr {unwrapApplyTxErr = ConwayApplyTxError (ConwayMempoolFailure \\\"All inputs are spent. Transaction has probably already been included\\\" :| [])})))))))\"},\"target_pending\":{\"amount\":{\"quantity\":2139400,\"unit\":\"lovelace\"},\"burn\":{\"tokens\":[]},\"certificates\":[],\"collateral\":[],\"collateral_outputs\":[],\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":36478,\"epoch_number\":303,\"slot_number\":118,\"time\":\"2026-11-05T01:54:50.6Z\"},\"extra_signatures\":[],\"fee\":{\"quantity\":139400,\"unit\":\"lovelace\"},\"id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\",\"inputs\":[{\"address\":\"2RhQhCGqYPDnXG7c3QE8gq8NwfradZhufwAaD7TJev7T21vyCbvdHSdhLedHgojqrQQstBKkgitdZ9BnsQ5GNU7mCxrPYAnZV29yJgsEbSAVWh\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a74ea1059e1b961b6fdcb654b1e3dbe13104bf80b3b08287b007bd729fc90e47\",\"index\":0}],\"mint\":{\"tokens\":[]},\"outputs\":[{\"address\":\"addr_test1qzhzzvduffcnj2gaaestmezcuerk3wdgmg8g9s8skcasnawp8yjj79y8n66tcal2eepphcz6vp7du4ucx70nasknd9psnssh6w\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"2RhQhCGqYPDozVzmf8uGHt4NBLag62yjrf5BzkrSaM14xXvhrB5vfguRBYpZPz2PKS7xrWSQ3ehHHHJ52jNGaEVsHvgYKDUjtFgZse7cHtnjJT\",\"amount\":{\"quantity\":97860600,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":{\"absolute_slot_number\":470,\"epoch_number\":3,\"height\":{\"quantity\":174,\"unit\":\"block\"},\"slot_number\":110,\"time\":\"2026-11-04T23:54:49Z\"},\"script_validity\":\"valid\",\"status\":\"pending\",\"validity_interval\":{\"invalid_before\":{\"quantity\":0,\"unit\":\"slot\"},\"invalid_hereafter\":{\"quantity\":36478,\"unit\":\"slot\"}},\"withdrawals\":[]},\"target_transaction_id\":\"dc83f99b34c9d47e2b8ca3458884c5b439b8ef817ae63b86f068da1b2a238d80\"}]}"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteByronWallet",
+      "requirements": [
+        "api:deleteByronWallet:positive",
+        "api:deleteByronWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteByronWallet",
+      "requirements": [
+        "api:deleteByronWallet:positive",
+        "api:deleteByronWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:stop-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:stop-owned-adversary",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pending:independent-node-integration-last",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"address\":\"addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf\",\"after\":{\"c64284b4190071e54210e6e4c73485c27226e18dc46cf75d26bd98164d71f5c9#0\":{\"address\":\"addr_test1vzz6hulv54gzf2suy2u5gkvmt6ysasfdlvvegy3fmf969yc2mg7gf\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"before\":{},\"transaction_id\":\"c64284b4190071e54210e6e4c73485c27226e18dc46cf75d26bd98164d71f5c9\"}"
+    },
+    {
+      "case": "pending:stop-owned-cluster",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

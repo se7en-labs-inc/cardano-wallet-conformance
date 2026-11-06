@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "source_sha256": "653f358b3937304f6c63ec642d4ac6b7f1fa0e2d04afd4a9866403a3a97039e0",
+  "corrections": [
+    {
+      "id": "reviewed-source-stale-shared-wallet-reward-error",
+      "before": "  500:\n    description: Forbidden\n    content:\n      application/json:\n        schema:\n          oneOf:\n            - <<: *errMissingRewardAccount\n",
+      "after": ""
+    },
+    {
+      "id": "reviewed-source-stale-shared-template-metadata-errors",
+      "before": "    - *responsesErr503WalletMetadataNotFound\n",
+      "after": ""
+    }
+  ],
+  "status": "proposal_only_not_applied",
+  "application": "Append these two corrections to the existing manifest only if the explicit retirement policy is approved. Also include all200-599 statuses in the requirement inventory. Preserve original YAML and historical644 gates."
+}

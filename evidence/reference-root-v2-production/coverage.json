@@ -1,0 +1,3163 @@
+{
+  "exhaustive": false,
+  "required": 643,
+  "covered": 17,
+  "missing": [
+    "crypto.ed25519.noncanonical",
+    "crypto.extended-ed25519",
+    "crypto.bip39.entropy",
+    "crypto.bip39.seed",
+    "crypto.bip39.checksum",
+    "crypto.icarus-root",
+    "crypto.shelley-root",
+    "crypto.byron-root",
+    "crypto.byron-payload",
+    "crypto.ledger-root",
+    "crypto.trezor-root",
+    "crypto.derivation-boundaries",
+    "crypto.public-private-derivation",
+    "crypto.passphrase-scrypt",
+    "crypto.root-key-encryption",
+    "address.shelley",
+    "address.byron",
+    "address.shared",
+    "address.network",
+    "address.encoding",
+    "address.cip129",
+    "script.native",
+    "script.policy-id",
+    "tx.serialization",
+    "tx.body-hash",
+    "tx.witnesses",
+    "tx.ledger-acceptance",
+    "tx.payment-output",
+    "tx.minimum-fee",
+    "tx.min-utxo",
+    "tx.validity-interval",
+    "tx.metadata",
+    "tx.mint-burn",
+    "tx.collateral",
+    "tx.delegation",
+    "tx.governance",
+    "tx.invalid-signature",
+    "tx.double-spend",
+    "selection.input-limits",
+    "selection.insufficient-funds",
+    "wallet.balance-conservation",
+    "wallet.utxo-snapshot",
+    "wallet.discovery",
+    "wallet.restoration",
+    "wallet.rollback",
+    "wallet.restart",
+    "wallet.resubmission",
+    "wallet.concurrent-spend",
+    "wallet.shared-cosigners",
+    "wallet.byron-migration",
+    "wallet.hardware-watch-only",
+    "wallet.transaction-filtering",
+    "wallet.stake-pools",
+    "wallet.governance",
+    "signing.wrong-passphrase",
+    "chain.block-production",
+    "chain.confirmation",
+    "chain.protocol-parameters",
+    "chain.era-boundaries",
+    "api.transport-errors",
+    "api.error-precedence",
+    "crypto.shared-root",
+    "chain.node-utxo-confirmation",
+    "api.differential-reference",
+    "chain.header-consistency",
+    "api:balanceTransaction:positive",
+    "api:balanceTransaction:negative",
+    "api:balanceTransaction:status:202",
+    "api:balanceTransaction:status:400",
+    "api:balanceTransaction:status:403",
+    "api:balanceTransaction:status:404",
+    "api:balanceTransaction:status:406",
+    "api:balanceTransaction:status:415",
+    "api:byronSelectCoins:positive",
+    "api:byronSelectCoins:negative",
+    "api:byronSelectCoins:status:200",
+    "api:byronSelectCoins:status:400",
+    "api:byronSelectCoins:status:403",
+    "api:byronSelectCoins:status:404",
+    "api:byronSelectCoins:status:406",
+    "api:byronSelectCoins:status:415",
+    "api:constructSharedTransaction:positive",
+    "api:constructSharedTransaction:negative",
+    "api:constructSharedTransaction:status:202",
+    "api:constructSharedTransaction:status:400",
+    "api:constructSharedTransaction:status:403",
+    "api:constructSharedTransaction:status:404",
+    "api:constructSharedTransaction:status:406",
+    "api:constructSharedTransaction:status:415",
+    "api:constructTransaction:positive",
+    "api:constructTransaction:negative",
+    "api:constructTransaction:status:202",
+    "api:constructTransaction:status:400",
+    "api:constructTransaction:status:403",
+    "api:constructTransaction:status:404",
+    "api:constructTransaction:status:406",
+    "api:constructTransaction:status:415",
+    "api:createAddress:positive",
+    "api:createAddress:negative",
+    "api:createAddress:status:201",
+    "api:createAddress:status:400",
+    "api:createAddress:status:403",
+    "api:createAddress:status:406",
+    "api:createAddress:status:415",
+    "api:createByronWalletMigrationPlan:positive",
+    "api:createByronWalletMigrationPlan:negative",
+    "api:createByronWalletMigrationPlan:status:202",
+    "api:createByronWalletMigrationPlan:status:403",
+    "api:createByronWalletMigrationPlan:status:404",
+    "api:createByronWalletMigrationPlan:status:406",
+    "api:createShelleyWalletMigrationPlan:positive",
+    "api:createShelleyWalletMigrationPlan:negative",
+    "api:createShelleyWalletMigrationPlan:status:202",
+    "api:createShelleyWalletMigrationPlan:status:403",
+    "api:createShelleyWalletMigrationPlan:status:404",
+    "api:createShelleyWalletMigrationPlan:status:406",
+    "api:decodeSharedTransaction:positive",
+    "api:decodeSharedTransaction:negative",
+    "api:decodeSharedTransaction:status:202",
+    "api:decodeSharedTransaction:status:400",
+    "api:decodeSharedTransaction:status:403",
+    "api:decodeSharedTransaction:status:404",
+    "api:decodeSharedTransaction:status:406",
+    "api:decodeSharedTransaction:status:415",
+    "api:decodeTransaction:positive",
+    "api:decodeTransaction:negative",
+    "api:decodeTransaction:status:202",
+    "api:decodeTransaction:status:400",
+    "api:decodeTransaction:status:403",
+    "api:decodeTransaction:status:404",
+    "api:decodeTransaction:status:406",
+    "api:decodeTransaction:status:415",
+    "api:deleteByronTransaction:positive",
+    "api:deleteByronTransaction:negative",
+    "api:deleteByronTransaction:status:204",
+    "api:deleteByronTransaction:status:403",
+    "api:deleteByronTransaction:status:404",
+    "api:deleteByronWallet:positive",
+    "api:deleteByronWallet:negative",
+    "api:deleteByronWallet:status:204",
+    "api:deleteByronWallet:status:400",
+    "api:deleteByronWallet:status:404",
+    "api:deleteSharedWallet:positive",
+    "api:deleteSharedWallet:negative",
+    "api:deleteSharedWallet:status:204",
+    "api:deleteSharedWallet:status:400",
+    "api:deleteSharedWallet:status:404",
+    "api:deleteTransaction:positive",
+    "api:deleteTransaction:negative",
+    "api:deleteTransaction:status:204",
+    "api:deleteTransaction:status:403",
+    "api:deleteTransaction:status:404",
+    "api:deleteWallet:positive",
+    "api:deleteWallet:negative",
+    "api:deleteWallet:status:204",
+    "api:deleteWallet:status:400",
+    "api:deleteWallet:status:404",
+    "api:getAccountKey:positive",
+    "api:getAccountKey:negative",
+    "api:getAccountKey:status:200",
+    "api:getAccountKey:status:400",
+    "api:getAccountKey:status:404",
+    "api:getAccountKey:status:406",
+    "api:getAccountKeyShared:positive",
+    "api:getAccountKeyShared:negative",
+    "api:getAccountKeyShared:status:200",
+    "api:getAccountKeyShared:status:400",
+    "api:getAccountKeyShared:status:404",
+    "api:getAccountKeyShared:status:406",
+    "api:getAsset:positive",
+    "api:getAsset:negative",
+    "api:getAsset:status:200",
+    "api:getAsset:status:404",
+    "api:getAsset:status:406",
+    "api:getAssetDefault:positive",
+    "api:getAssetDefault:negative",
+    "api:getAssetDefault:status:200",
+    "api:getAssetDefault:status:404",
+    "api:getAssetDefault:status:406",
+    "api:getBlocksLatestHeader:positive",
+    "api:getBlocksLatestHeader:negative",
+    "api:getBlocksLatestHeader:status:200",
+    "api:getBlocksLatestHeader:status:406",
+    "api:getByronAsset:positive",
+    "api:getByronAsset:negative",
+    "api:getByronAsset:status:200",
+    "api:getByronAsset:status:404",
+    "api:getByronAsset:status:406",
+    "api:getByronAssetDefault:positive",
+    "api:getByronAssetDefault:negative",
+    "api:getByronAssetDefault:status:200",
+    "api:getByronAssetDefault:status:404",
+    "api:getByronAssetDefault:status:406",
+    "api:getByronTransaction:positive",
+    "api:getByronTransaction:negative",
+    "api:getByronTransaction:status:200",
+    "api:getByronTransaction:status:404",
+    "api:getByronTransaction:status:406",
+    "api:getByronUTxOsStatistics:positive",
+    "api:getByronUTxOsStatistics:negative",
+    "api:getByronUTxOsStatistics:status:200",
+    "api:getByronUTxOsStatistics:status:404",
+    "api:getByronUTxOsStatistics:status:406",
+    "api:getByronWallet:positive",
+    "api:getByronWallet:negative",
+    "api:getByronWallet:status:200",
+    "api:getByronWallet:status:404",
+    "api:getByronWallet:status:406",
+    "api:getByronWalletUtxoSnapshot:positive",
+    "api:getByronWalletUtxoSnapshot:negative",
+    "api:getByronWalletUtxoSnapshot:status:200",
+    "api:getByronWalletUtxoSnapshot:status:404",
+    "api:getByronWalletUtxoSnapshot:status:406",
+    "api:getCurrentSmashHealth:positive",
+    "api:getCurrentSmashHealth:negative",
+    "api:getCurrentSmashHealth:status:200",
+    "api:getCurrentSmashHealth:status:400",
+    "api:getCurrentSmashHealth:status:406",
+    "api:getDRep:positive",
+    "api:getDRep:negative",
+    "api:getDRep:status:200",
+    "api:getDRep:status:400",
+    "api:getDRep:status:404",
+    "api:getDRepSummary:positive",
+    "api:getDRepSummary:status:200",
+    "api:getDelegationFee:positive",
+    "api:getDelegationFee:negative",
+    "api:getDelegationFee:status:200",
+    "api:getDelegationFee:status:403",
+    "api:getDelegationFee:status:404",
+    "api:getDelegationFee:status:406",
+    "api:getMaintenanceActions:positive",
+    "api:getMaintenanceActions:status:200",
+    "api:getNetworkClock:positive",
+    "api:getNetworkClock:negative",
+    "api:getNetworkClock:status:200",
+    "api:getNetworkClock:status:406",
+    "api:getNetworkInformation:positive",
+    "api:getNetworkInformation:negative",
+    "api:getNetworkInformation:status:200",
+    "api:getNetworkInformation:status:406",
+    "api:getNetworkParameters:positive",
+    "api:getNetworkParameters:negative",
+    "api:getNetworkParameters:status:200",
+    "api:getNetworkParameters:status:406",
+    "api:getPolicyKey:positive",
+    "api:getPolicyKey:negative",
+    "api:getPolicyKey:status:200",
+    "api:getPolicyKey:status:400",
+    "api:getPolicyKey:status:403",
+    "api:getPolicyKey:status:404",
+    "api:getPolicyKey:status:406",
+    "api:getSettings:positive",
+    "api:getSettings:status:200",
+    "api:getSharedTransaction:positive",
+    "api:getSharedTransaction:negative",
+    "api:getSharedTransaction:status:200",
+    "api:getSharedTransaction:status:404",
+    "api:getSharedTransaction:status:406",
+    "api:getSharedWallet:positive",
+    "api:getSharedWallet:negative",
+    "api:getSharedWallet:status:200",
+    "api:getSharedWallet:status:400",
+    "api:getSharedWallet:status:404",
+    "api:getSharedWallet:status:406",
+    "api:getSharedWalletKey:positive",
+    "api:getSharedWalletKey:negative",
+    "api:getSharedWalletKey:status:200",
+    "api:getSharedWalletKey:status:400",
+    "api:getSharedWalletKey:status:404",
+    "api:getSharedWalletKey:status:406",
+    "api:getSharedWalletUtxoSnapshot:positive",
+    "api:getSharedWalletUtxoSnapshot:negative",
+    "api:getSharedWalletUtxoSnapshot:status:200",
+    "api:getSharedWalletUtxoSnapshot:status:404",
+    "api:getSharedWalletUtxoSnapshot:status:406",
+    "api:getTransaction:positive",
+    "api:getTransaction:negative",
+    "api:getTransaction:status:200",
+    "api:getTransaction:status:404",
+    "api:getTransaction:status:406",
+    "api:getUTxOsStatistics:positive",
+    "api:getUTxOsStatistics:negative",
+    "api:getUTxOsStatistics:status:200",
+    "api:getUTxOsStatistics:status:404",
+    "api:getUTxOsStatistics:status:406",
+    "api:getUTxOsStatisticsShared:positive",
+    "api:getUTxOsStatisticsShared:negative",
+    "api:getUTxOsStatisticsShared:status:200",
+    "api:getUTxOsStatisticsShared:status:404",
+    "api:getUTxOsStatisticsShared:status:406",
+    "api:getWallet:positive",
+    "api:getWallet:negative",
+    "api:getWallet:status:200",
+    "api:getWallet:status:400",
+    "api:getWallet:status:404",
+    "api:getWallet:status:406",
+    "api:getWalletKey:positive",
+    "api:getWalletKey:negative",
+    "api:getWalletKey:status:200",
+    "api:getWalletKey:status:400",
+    "api:getWalletKey:status:404",
+    "api:getWalletKey:status:406",
+    "api:getWalletUtxoSnapshot:positive",
+    "api:getWalletUtxoSnapshot:negative",
+    "api:getWalletUtxoSnapshot:status:200",
+    "api:getWalletUtxoSnapshot:status:404",
+    "api:getWalletUtxoSnapshot:status:406",
+    "api:importAddress:positive",
+    "api:importAddress:negative",
+    "api:importAddress:status:204",
+    "api:importAddress:status:400",
+    "api:importAddress:status:403",
+    "api:importAddress:status:404",
+    "api:importAddresses:positive",
+    "api:importAddresses:negative",
+    "api:importAddresses:status:204",
+    "api:importAddresses:status:400",
+    "api:importAddresses:status:403",
+    "api:inspectAddress:positive",
+    "api:inspectAddress:negative",
+    "api:inspectAddress:status:200",
+    "api:inspectAddress:status:400",
+    "api:joinDRep:positive",
+    "api:joinDRep:negative",
+    "api:joinDRep:status:202",
+    "api:joinDRep:status:400",
+    "api:joinDRep:status:403",
+    "api:joinDRep:status:404",
+    "api:joinDRep:status:406",
+    "api:joinDRep:status:415",
+    "api:joinStakePool:positive",
+    "api:joinStakePool:negative",
+    "api:joinStakePool:status:202",
+    "api:joinStakePool:status:400",
+    "api:joinStakePool:status:403",
+    "api:joinStakePool:status:404",
+    "api:joinStakePool:status:406",
+    "api:joinStakePool:status:415",
+    "api:listAddresses:positive",
+    "api:listAddresses:negative",
+    "api:listAddresses:status:200",
+    "api:listAddresses:status:400",
+    "api:listAddresses:status:404",
+    "api:listAddresses:status:406",
+    "api:listAssets:positive",
+    "api:listAssets:negative",
+    "api:listAssets:status:200",
+    "api:listAssets:status:406",
+    "api:listByronAddresses:positive",
+    "api:listByronAddresses:negative",
+    "api:listByronAddresses:status:200",
+    "api:listByronAddresses:status:400",
+    "api:listByronAddresses:status:404",
+    "api:listByronAddresses:status:406",
+    "api:listByronAssets:positive",
+    "api:listByronAssets:negative",
+    "api:listByronAssets:status:200",
+    "api:listByronAssets:status:406",
+    "api:listByronTransactions:positive",
+    "api:listByronTransactions:negative",
+    "api:listByronTransactions:status:200",
+    "api:listByronTransactions:status:400",
+    "api:listByronTransactions:status:404",
+    "api:listByronTransactions:status:406",
+    "api:listByronWallets:positive",
+    "api:listByronWallets:negative",
+    "api:listByronWallets:status:200",
+    "api:listByronWallets:status:406",
+    "api:listDReps:positive",
+    "api:listDReps:status:200",
+    "api:listSharedAddresses:positive",
+    "api:listSharedAddresses:negative",
+    "api:listSharedAddresses:status:200",
+    "api:listSharedAddresses:status:400",
+    "api:listSharedAddresses:status:404",
+    "api:listSharedAddresses:status:406",
+    "api:listSharedTransactions:positive",
+    "api:listSharedTransactions:negative",
+    "api:listSharedTransactions:status:200",
+    "api:listSharedTransactions:status:400",
+    "api:listSharedTransactions:status:404",
+    "api:listSharedTransactions:status:406",
+    "api:listSharedWallets:positive",
+    "api:listSharedWallets:negative",
+    "api:listSharedWallets:status:200",
+    "api:listSharedWallets:status:406",
+    "api:listStakeKeys:positive",
+    "api:listStakeKeys:status:200",
+    "api:listStakePools:positive",
+    "api:listStakePools:negative",
+    "api:listStakePools:status:200",
+    "api:listStakePools:status:400",
+    "api:listTransactions:positive",
+    "api:listTransactions:negative",
+    "api:listTransactions:status:200",
+    "api:listTransactions:status:400",
+    "api:listTransactions:status:404",
+    "api:listTransactions:status:406",
+    "api:listWallets:positive",
+    "api:listWallets:negative",
+    "api:listWallets:status:200",
+    "api:listWallets:status:406",
+    "api:migrateByronWallet:positive",
+    "api:migrateByronWallet:negative",
+    "api:migrateByronWallet:status:202",
+    "api:migrateByronWallet:status:403",
+    "api:migrateByronWallet:status:404",
+    "api:migrateByronWallet:status:406",
+    "api:migrateByronWallet:status:415",
+    "api:migrateShelleyWallet:positive",
+    "api:migrateShelleyWallet:negative",
+    "api:migrateShelleyWallet:status:202",
+    "api:migrateShelleyWallet:status:403",
+    "api:migrateShelleyWallet:status:404",
+    "api:migrateShelleyWallet:status:406",
+    "api:migrateShelleyWallet:status:415",
+    "api:patchSharedWalletInDelegation:positive",
+    "api:patchSharedWalletInDelegation:negative",
+    "api:patchSharedWalletInDelegation:status:200",
+    "api:patchSharedWalletInDelegation:status:400",
+    "api:patchSharedWalletInDelegation:status:403",
+    "api:patchSharedWalletInDelegation:status:404",
+    "api:patchSharedWalletInDelegation:status:406",
+    "api:patchSharedWalletInPayment:positive",
+    "api:patchSharedWalletInPayment:negative",
+    "api:patchSharedWalletInPayment:status:200",
+    "api:patchSharedWalletInPayment:status:400",
+    "api:patchSharedWalletInPayment:status:403",
+    "api:patchSharedWalletInPayment:status:404",
+    "api:patchSharedWalletInPayment:status:406",
+    "api:postAccountKey:positive",
+    "api:postAccountKey:negative",
+    "api:postAccountKey:status:202",
+    "api:postAccountKey:status:400",
+    "api:postAccountKey:status:403",
+    "api:postAccountKey:status:406",
+    "api:postAccountKey:status:415",
+    "api:postAccountKeyShared:positive",
+    "api:postAccountKeyShared:negative",
+    "api:postAccountKeyShared:status:202",
+    "api:postAccountKeyShared:status:400",
+    "api:postAccountKeyShared:status:406",
+    "api:postAccountKeyShared:status:415",
+    "api:postAnyAddress:positive",
+    "api:postAnyAddress:negative",
+    "api:postAnyAddress:status:202",
+    "api:postAnyAddress:status:400",
+    "api:postAnyAddress:status:406",
+    "api:postAnyAddress:status:415",
+    "api:postByronTransaction:positive",
+    "api:postByronTransaction:negative",
+    "api:postByronTransaction:status:202",
+    "api:postByronTransaction:status:400",
+    "api:postByronTransaction:status:403",
+    "api:postByronTransaction:status:404",
+    "api:postByronTransaction:status:406",
+    "api:postByronTransaction:status:415",
+    "api:postByronTransaction:status:425",
+    "api:postByronTransactionFee:positive",
+    "api:postByronTransactionFee:negative",
+    "api:postByronTransactionFee:status:202",
+    "api:postByronTransactionFee:status:400",
+    "api:postByronTransactionFee:status:403",
+    "api:postByronTransactionFee:status:404",
+    "api:postByronTransactionFee:status:406",
+    "api:postByronTransactionFee:status:415",
+    "api:postByronWallet:positive",
+    "api:postByronWallet:negative",
+    "api:postByronWallet:status:201",
+    "api:postByronWallet:status:400",
+    "api:postByronWallet:status:406",
+    "api:postByronWallet:status:409",
+    "api:postByronWallet:status:415",
+    "api:postExternalTransaction:positive",
+    "api:postExternalTransaction:negative",
+    "api:postExternalTransaction:status:202",
+    "api:postExternalTransaction:status:400",
+    "api:postExternalTransaction:status:406",
+    "api:postExternalTransaction:status:415",
+    "api:postExternalTransaction:status:425",
+    "api:postMaintenanceAction:positive",
+    "api:postMaintenanceAction:negative",
+    "api:postMaintenanceAction:status:204",
+    "api:postMaintenanceAction:status:404",
+    "api:postPolicyId:positive",
+    "api:postPolicyId:negative",
+    "api:postPolicyId:status:202",
+    "api:postPolicyId:status:400",
+    "api:postPolicyId:status:403",
+    "api:postPolicyId:status:406",
+    "api:postPolicyId:status:415",
+    "api:postPolicyKey:positive",
+    "api:postPolicyKey:negative",
+    "api:postPolicyKey:status:202",
+    "api:postPolicyKey:status:400",
+    "api:postPolicyKey:status:406",
+    "api:postPolicyKey:status:415",
+    "api:postSharedWallet:positive",
+    "api:postSharedWallet:negative",
+    "api:postSharedWallet:status:201",
+    "api:postSharedWallet:status:400",
+    "api:postSharedWallet:status:403",
+    "api:postSharedWallet:status:406",
+    "api:postSharedWallet:status:409",
+    "api:postSharedWallet:status:415",
+    "api:postTransaction:positive",
+    "api:postTransaction:negative",
+    "api:postTransaction:status:202",
+    "api:postTransaction:status:400",
+    "api:postTransaction:status:403",
+    "api:postTransaction:status:404",
+    "api:postTransaction:status:406",
+    "api:postTransaction:status:415",
+    "api:postTransaction:status:425",
+    "api:postTransactionFee:positive",
+    "api:postTransactionFee:negative",
+    "api:postTransactionFee:status:202",
+    "api:postTransactionFee:status:400",
+    "api:postTransactionFee:status:403",
+    "api:postTransactionFee:status:404",
+    "api:postTransactionFee:status:406",
+    "api:postTransactionFee:status:415",
+    "api:postWallet:positive",
+    "api:postWallet:negative",
+    "api:postWallet:status:201",
+    "api:postWallet:status:400",
+    "api:postWallet:status:406",
+    "api:postWallet:status:409",
+    "api:postWallet:status:415",
+    "api:putByronWallet:positive",
+    "api:putByronWallet:negative",
+    "api:putByronWallet:status:200",
+    "api:putByronWallet:status:400",
+    "api:putByronWallet:status:404",
+    "api:putByronWallet:status:406",
+    "api:putByronWallet:status:415",
+    "api:putByronWalletPassphrase:positive",
+    "api:putByronWalletPassphrase:negative",
+    "api:putByronWalletPassphrase:status:204",
+    "api:putByronWalletPassphrase:status:400",
+    "api:putByronWalletPassphrase:status:403",
+    "api:putByronWalletPassphrase:status:404",
+    "api:putByronWalletPassphrase:status:415",
+    "api:putSettings:positive",
+    "api:putSettings:negative",
+    "api:putSettings:status:204",
+    "api:putSettings:status:400",
+    "api:putSettings:status:415",
+    "api:putSharedWallet:positive",
+    "api:putSharedWallet:negative",
+    "api:putSharedWallet:status:200",
+    "api:putSharedWallet:status:400",
+    "api:putSharedWallet:status:404",
+    "api:putSharedWallet:status:406",
+    "api:putSharedWallet:status:415",
+    "api:putWallet:positive",
+    "api:putWallet:negative",
+    "api:putWallet:status:200",
+    "api:putWallet:status:400",
+    "api:putWallet:status:404",
+    "api:putWallet:status:406",
+    "api:putWallet:status:415",
+    "api:putWalletPassphrase:positive",
+    "api:putWalletPassphrase:negative",
+    "api:putWalletPassphrase:status:204",
+    "api:putWalletPassphrase:status:400",
+    "api:putWalletPassphrase:status:403",
+    "api:putWalletPassphrase:status:404",
+    "api:putWalletPassphrase:status:415",
+    "api:quitStakePool:positive",
+    "api:quitStakePool:negative",
+    "api:quitStakePool:status:202",
+    "api:quitStakePool:status:400",
+    "api:quitStakePool:status:403",
+    "api:quitStakePool:status:404",
+    "api:quitStakePool:status:406",
+    "api:quitStakePool:status:415",
+    "api:selectCoins:positive",
+    "api:selectCoins:negative",
+    "api:selectCoins:status:200",
+    "api:selectCoins:status:400",
+    "api:selectCoins:status:403",
+    "api:selectCoins:status:404",
+    "api:selectCoins:status:406",
+    "api:selectCoins:status:415",
+    "api:signMetadata:positive",
+    "api:signMetadata:negative",
+    "api:signMetadata:status:200",
+    "api:signMetadata:status:400",
+    "api:signMetadata:status:406",
+    "api:signMetadata:status:415",
+    "api:signSharedTransaction:positive",
+    "api:signSharedTransaction:negative",
+    "api:signSharedTransaction:status:202",
+    "api:signSharedTransaction:status:400",
+    "api:signSharedTransaction:status:403",
+    "api:signSharedTransaction:status:404",
+    "api:signSharedTransaction:status:406",
+    "api:signSharedTransaction:status:415",
+    "api:signTransaction:positive",
+    "api:signTransaction:negative",
+    "api:signTransaction:status:202",
+    "api:signTransaction:status:400",
+    "api:signTransaction:status:403",
+    "api:signTransaction:status:404",
+    "api:signTransaction:status:406",
+    "api:signTransaction:status:415",
+    "api:submitSharedTransaction:positive",
+    "api:submitSharedTransaction:negative",
+    "api:submitSharedTransaction:status:202",
+    "api:submitSharedTransaction:status:400",
+    "api:submitSharedTransaction:status:403",
+    "api:submitSharedTransaction:status:404",
+    "api:submitSharedTransaction:status:406",
+    "api:submitSharedTransaction:status:415",
+    "api:submitTransaction:positive",
+    "api:submitTransaction:negative",
+    "api:submitTransaction:status:202",
+    "api:submitTransaction:status:400",
+    "api:submitTransaction:status:403",
+    "api:submitTransaction:status:404",
+    "api:submitTransaction:status:406",
+    "api:submitTransaction:status:415",
+    "api:suggestedDReps:positive",
+    "api:suggestedDReps:status:200"
+  ],
+  "unexecuted_cases": {
+    "address.byron": [
+      "address-byron-crc-rejection",
+      "address-byron-icarus",
+      "address-byron-network-attributes",
+      "address-byron-random"
+    ],
+    "address.cip129": [
+      "cip129-committee-cold",
+      "cip129-committee-hot",
+      "cip129-drep-key",
+      "cip129-drep-script",
+      "cip129-header-rejected"
+    ],
+    "address.encoding": [
+      "base58-leading-zero",
+      "base58-malformed",
+      "bech32-checksum-rejected",
+      "bech32-invalid-padding",
+      "bech32-mixed-case-rejected",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1",
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward"
+    ],
+    "address.network": [
+      "address-byron-protocol-magic",
+      "address-cross-network-api-rejected",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1",
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward"
+    ],
+    "address.shared": [
+      "address-shared-all",
+      "address-shared-any",
+      "address-shared-at-least",
+      "address-shared-timelock"
+    ],
+    "address.shelley": [
+      "address-base-key-script",
+      "address-base-script-key",
+      "address-base-script-script",
+      "address-pointer",
+      "address-reward-script",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1",
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward"
+    ],
+    "api.differential-reference": [
+      "byron-wallet-list",
+      "create-wallet",
+      "delete-owned-wallet",
+      "drep-list",
+      "drep-suggestions",
+      "drep-summary",
+      "empty-assets",
+      "empty-transactions",
+      "family-icarus-addresses",
+      "family-icarus-assets",
+      "family-icarus-create",
+      "family-icarus-delete-unsupported-accept",
+      "family-icarus-passphrase-unsupported-accept",
+      "family-icarus-ready",
+      "family-icarus-rename",
+      "family-icarus-statistics",
+      "family-icarus-transactions",
+      "family-icarus-utxo",
+      "family-ledger-addresses",
+      "family-ledger-assets",
+      "family-ledger-create",
+      "family-ledger-delete-unsupported-accept",
+      "family-ledger-passphrase-unsupported-accept",
+      "family-ledger-ready",
+      "family-ledger-rename",
+      "family-ledger-statistics",
+      "family-ledger-transactions",
+      "family-ledger-utxo",
+      "family-random-addresses",
+      "family-random-assets",
+      "family-random-create",
+      "family-random-delete-unsupported-accept",
+      "family-random-passphrase-unsupported-accept",
+      "family-random-ready",
+      "family-random-rename",
+      "family-random-statistics",
+      "family-random-transactions",
+      "family-random-utxo",
+      "family-shared-account-derive",
+      "family-shared-account-get",
+      "family-shared-active-addresses",
+      "family-shared-active-create",
+      "family-shared-active-history",
+      "family-shared-active-ready",
+      "family-shared-active-rename",
+      "family-shared-active-statistics",
+      "family-shared-active-utxo",
+      "family-shared-completed-addresses",
+      "family-shared-completed-delete",
+      "family-shared-completed-ready",
+      "family-shared-delete-unsupported-accept",
+      "family-shared-pending-addresses",
+      "family-shared-pending-create",
+      "family-shared-pending-delegation-patch",
+      "family-shared-pending-payment-patch",
+      "family-shared-soft-key",
+      "family-trezor-addresses",
+      "family-trezor-assets",
+      "family-trezor-create",
+      "family-trezor-delete-unsupported-accept",
+      "family-trezor-passphrase-unsupported-accept",
+      "family-trezor-ready",
+      "family-trezor-rename",
+      "family-trezor-statistics",
+      "family-trezor-transactions",
+      "family-trezor-utxo",
+      "generated-reject-balanceTransaction",
+      "generated-reject-byronSelectCoins",
+      "generated-reject-constructSharedTransaction",
+      "generated-reject-constructTransaction",
+      "generated-reject-createAddress",
+      "generated-reject-decodeSharedTransaction",
+      "generated-reject-decodeTransaction",
+      "generated-reject-deleteByronWallet",
+      "generated-reject-deleteSharedWallet",
+      "generated-reject-deleteWallet",
+      "generated-reject-getAccountKey",
+      "generated-reject-getAccountKeyShared",
+      "generated-reject-getAsset",
+      "generated-reject-getAssetDefault",
+      "generated-reject-getBlocksLatestHeader",
+      "generated-reject-getByronAsset",
+      "generated-reject-getByronAssetDefault",
+      "generated-reject-getByronTransaction",
+      "generated-reject-getByronUTxOsStatistics",
+      "generated-reject-getByronWallet",
+      "generated-reject-getByronWalletUtxoSnapshot",
+      "generated-reject-getCurrentSmashHealth",
+      "generated-reject-getDRep",
+      "generated-reject-getDelegationFee",
+      "generated-reject-getNetworkClock",
+      "generated-reject-getNetworkInformation",
+      "generated-reject-getNetworkParameters",
+      "generated-reject-getPolicyKey",
+      "generated-reject-getSharedTransaction",
+      "generated-reject-getSharedWallet",
+      "generated-reject-getSharedWalletKey",
+      "generated-reject-getSharedWalletUtxoSnapshot",
+      "generated-reject-getTransaction",
+      "generated-reject-getUTxOsStatistics",
+      "generated-reject-getUTxOsStatisticsShared",
+      "generated-reject-getWallet",
+      "generated-reject-getWalletKey",
+      "generated-reject-getWalletUtxoSnapshot",
+      "generated-reject-importAddress",
+      "generated-reject-importAddresses",
+      "generated-reject-inspectAddress",
+      "generated-reject-joinDRep",
+      "generated-reject-joinStakePool",
+      "generated-reject-listAddresses",
+      "generated-reject-listAssets",
+      "generated-reject-listByronAddresses",
+      "generated-reject-listByronAssets",
+      "generated-reject-listByronTransactions",
+      "generated-reject-listByronWallets",
+      "generated-reject-listSharedAddresses",
+      "generated-reject-listSharedTransactions",
+      "generated-reject-listSharedWallets",
+      "generated-reject-listStakePools",
+      "generated-reject-listTransactions",
+      "generated-reject-listWallets",
+      "generated-reject-patchSharedWalletInDelegation",
+      "generated-reject-patchSharedWalletInPayment",
+      "generated-reject-postAccountKey",
+      "generated-reject-postAccountKeyShared",
+      "generated-reject-postAnyAddress",
+      "generated-reject-postByronTransaction",
+      "generated-reject-postByronTransactionFee",
+      "generated-reject-postByronWallet",
+      "generated-reject-postExternalTransaction",
+      "generated-reject-postPolicyId",
+      "generated-reject-postPolicyKey",
+      "generated-reject-postSharedWallet",
+      "generated-reject-postTransaction",
+      "generated-reject-postTransactionFee",
+      "generated-reject-postWallet",
+      "generated-reject-putByronWallet",
+      "generated-reject-putByronWalletPassphrase",
+      "generated-reject-putSettings",
+      "generated-reject-putSharedWallet",
+      "generated-reject-putWallet",
+      "generated-reject-putWalletPassphrase",
+      "generated-reject-quitStakePool",
+      "generated-reject-selectCoins",
+      "generated-reject-signMetadata",
+      "generated-reject-signSharedTransaction",
+      "generated-reject-signTransaction",
+      "generated-reject-submitSharedTransaction",
+      "generated-reject-submitTransaction",
+      "invalid-address-state",
+      "invalid-wallet-id",
+      "key-api-account-0-extended",
+      "key-api-account-0-non_extended",
+      "key-api-account-2147483647-extended",
+      "key-api-account-2147483647-non_extended",
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward",
+      "key-api-cleanup",
+      "key-api-create",
+      "key-api-delete-private-wallet",
+      "key-api-get-account-extended",
+      "key-api-get-account-non_extended",
+      "key-api-inspect-base",
+      "key-api-inspect-enterprise",
+      "key-api-inspect-reward",
+      "key-api-new-passphrase-derives-same-key",
+      "key-api-old-passphrase-rejected",
+      "key-api-original-addresses",
+      "key-api-passphrase-change",
+      "key-api-passphrase-wrong-old",
+      "key-api-role-0-0-hash-false",
+      "key-api-role-0-0-hash-true",
+      "key-api-role-0-19-hash-false",
+      "key-api-role-0-19-hash-true",
+      "key-api-role-0-2147483647-hash-false",
+      "key-api-role-0-2147483647-hash-true",
+      "key-api-role-1-0-hash-false",
+      "key-api-role-1-0-hash-true",
+      "key-api-role-1-19-hash-false",
+      "key-api-role-1-19-hash-true",
+      "key-api-role-1-2147483647-hash-false",
+      "key-api-role-1-2147483647-hash-true",
+      "key-api-role-2-0-hash-false",
+      "key-api-role-2-0-hash-true",
+      "key-api-role-2-19-hash-false",
+      "key-api-role-2-19-hash-true",
+      "key-api-role-2-2147483647-hash-false",
+      "key-api-role-2-2147483647-hash-true",
+      "key-api-watch-only-addresses",
+      "key-api-watch-only-create",
+      "key-api-watch-only-private-derivation-rejected",
+      "latest-block-header",
+      "list-addresses",
+      "malformed-json",
+      "metadata-golden-cleanup",
+      "metadata-golden-create",
+      "metadata-golden-public-key",
+      "metadata-golden-signature",
+      "missing-wallet",
+      "network-clock",
+      "network-information",
+      "network-parameters",
+      "numeric-decimal-delete-unsupported-accept",
+      "numeric-exponent-delete-unsupported-accept",
+      "numeric-gap-decimal",
+      "numeric-gap-exponent",
+      "numeric-gap-fraction",
+      "numeric-passphrase-unsupported-accept",
+      "numeric-quantity-address",
+      "numeric-quantity-decimal",
+      "numeric-quantity-exponent",
+      "numeric-quantity-fraction",
+      "numeric-quantity-negative",
+      "numeric-quantity-overflow",
+      "pool-maintenance-status",
+      "precedence-deleteByronTransaction-unsupported-accept",
+      "precedence-deleteByronWallet-unsupported-accept",
+      "precedence-deleteSharedWallet-unsupported-accept",
+      "precedence-deleteTransaction-unsupported-accept",
+      "precedence-deleteWallet-unsupported-accept",
+      "precedence-importAddress-unused-body",
+      "precedence-putByronWalletPassphrase-unsupported-accept",
+      "precedence-putWalletPassphrase-unsupported-accept",
+      "rename-wallet",
+      "settings-read",
+      "shared-wallet-list",
+      "smash-health",
+      "stake-pool-list",
+      "status-balanceTransaction-400",
+      "status-balanceTransaction-406",
+      "status-balanceTransaction-415",
+      "status-byronSelectCoins-400",
+      "status-byronSelectCoins-406",
+      "status-byronSelectCoins-415",
+      "status-constructSharedTransaction-400",
+      "status-constructSharedTransaction-406",
+      "status-constructSharedTransaction-415",
+      "status-constructTransaction-400",
+      "status-constructTransaction-406",
+      "status-constructTransaction-415",
+      "status-createAddress-400",
+      "status-createAddress-406",
+      "status-createAddress-415",
+      "status-createByronWalletMigrationPlan-406",
+      "status-createShelleyWalletMigrationPlan-406",
+      "status-decodeSharedTransaction-400",
+      "status-decodeSharedTransaction-406",
+      "status-decodeSharedTransaction-415",
+      "status-decodeTransaction-400",
+      "status-decodeTransaction-406",
+      "status-decodeTransaction-415",
+      "status-deleteByronTransaction-404",
+      "status-deleteByronWallet-404",
+      "status-deleteSharedWallet-404",
+      "status-deleteTransaction-404",
+      "status-deleteWallet-404",
+      "status-getAccountKey-404",
+      "status-getAccountKey-406",
+      "status-getAccountKeyShared-404",
+      "status-getAccountKeyShared-406",
+      "status-getAsset-404",
+      "status-getAsset-406",
+      "status-getAssetDefault-404",
+      "status-getAssetDefault-406",
+      "status-getBlocksLatestHeader-406",
+      "status-getByronAsset-404",
+      "status-getByronAsset-406",
+      "status-getByronAssetDefault-404",
+      "status-getByronAssetDefault-406",
+      "status-getByronTransaction-404",
+      "status-getByronTransaction-406",
+      "status-getByronUTxOsStatistics-404",
+      "status-getByronUTxOsStatistics-406",
+      "status-getByronWallet-404",
+      "status-getByronWallet-406",
+      "status-getByronWalletUtxoSnapshot-404",
+      "status-getByronWalletUtxoSnapshot-406",
+      "status-getCurrentSmashHealth-406",
+      "status-getDelegationFee-404",
+      "status-getDelegationFee-406",
+      "status-getNetworkClock-406",
+      "status-getNetworkInformation-406",
+      "status-getNetworkParameters-406",
+      "status-getPolicyKey-404",
+      "status-getPolicyKey-406",
+      "status-getSharedTransaction-404",
+      "status-getSharedTransaction-406",
+      "status-getSharedWallet-404",
+      "status-getSharedWallet-406",
+      "status-getSharedWalletKey-404",
+      "status-getSharedWalletKey-406",
+      "status-getSharedWalletUtxoSnapshot-404",
+      "status-getSharedWalletUtxoSnapshot-406",
+      "status-getTransaction-404",
+      "status-getTransaction-406",
+      "status-getUTxOsStatistics-404",
+      "status-getUTxOsStatistics-406",
+      "status-getUTxOsStatisticsShared-404",
+      "status-getUTxOsStatisticsShared-406",
+      "status-getWallet-404",
+      "status-getWallet-406",
+      "status-getWalletKey-404",
+      "status-getWalletKey-406",
+      "status-getWalletUtxoSnapshot-404",
+      "status-getWalletUtxoSnapshot-406",
+      "status-importAddress-404",
+      "status-importAddresses-400",
+      "status-listAddresses-404",
+      "status-listAddresses-406",
+      "status-listAssets-406",
+      "status-listByronAddresses-404",
+      "status-listByronAddresses-406",
+      "status-listByronAssets-406",
+      "status-listByronTransactions-404",
+      "status-listByronTransactions-406",
+      "status-listByronWallets-406",
+      "status-listSharedAddresses-404",
+      "status-listSharedAddresses-406",
+      "status-listSharedTransactions-404",
+      "status-listSharedTransactions-406",
+      "status-listSharedWallets-406",
+      "status-listTransactions-404",
+      "status-listTransactions-406",
+      "status-listWallets-406",
+      "status-migrateByronWallet-406",
+      "status-migrateByronWallet-415",
+      "status-migrateShelleyWallet-406",
+      "status-migrateShelleyWallet-415",
+      "status-patchSharedWalletInDelegation-400",
+      "status-patchSharedWalletInDelegation-406",
+      "status-patchSharedWalletInPayment-400",
+      "status-patchSharedWalletInPayment-406",
+      "status-postAccountKey-400",
+      "status-postAccountKey-406",
+      "status-postAccountKey-415",
+      "status-postAccountKeyShared-400",
+      "status-postAccountKeyShared-406",
+      "status-postAccountKeyShared-415",
+      "status-postAnyAddress-400",
+      "status-postAnyAddress-406",
+      "status-postAnyAddress-415",
+      "status-postByronTransaction-400",
+      "status-postByronTransaction-406",
+      "status-postByronTransaction-415",
+      "status-postByronTransactionFee-400",
+      "status-postByronTransactionFee-406",
+      "status-postByronTransactionFee-415",
+      "status-postByronWallet-400",
+      "status-postByronWallet-406",
+      "status-postByronWallet-415",
+      "status-postExternalTransaction-400",
+      "status-postExternalTransaction-406",
+      "status-postExternalTransaction-415",
+      "status-postPolicyId-400",
+      "status-postPolicyId-406",
+      "status-postPolicyId-415",
+      "status-postPolicyKey-400",
+      "status-postPolicyKey-406",
+      "status-postPolicyKey-415",
+      "status-postSharedWallet-400",
+      "status-postSharedWallet-406",
+      "status-postSharedWallet-415",
+      "status-postTransaction-400",
+      "status-postTransaction-406",
+      "status-postTransaction-415",
+      "status-postTransactionFee-400",
+      "status-postTransactionFee-406",
+      "status-postTransactionFee-415",
+      "status-postWallet-400",
+      "status-postWallet-406",
+      "status-postWallet-415",
+      "status-putByronWallet-400",
+      "status-putByronWallet-406",
+      "status-putByronWallet-415",
+      "status-putByronWalletPassphrase-400",
+      "status-putByronWalletPassphrase-415",
+      "status-putSettings-400",
+      "status-putSettings-415",
+      "status-putSharedWallet-400",
+      "status-putSharedWallet-406",
+      "status-putSharedWallet-415",
+      "status-putWallet-400",
+      "status-putWallet-406",
+      "status-putWallet-415",
+      "status-putWalletPassphrase-400",
+      "status-putWalletPassphrase-415",
+      "status-quitStakePool-400",
+      "status-quitStakePool-404",
+      "status-quitStakePool-406",
+      "status-quitStakePool-415",
+      "status-selectCoins-400",
+      "status-selectCoins-406",
+      "status-selectCoins-415",
+      "status-signMetadata-400",
+      "status-signMetadata-406",
+      "status-signMetadata-415",
+      "status-signSharedTransaction-400",
+      "status-signSharedTransaction-406",
+      "status-signSharedTransaction-415",
+      "status-signTransaction-400",
+      "status-signTransaction-406",
+      "status-signTransaction-415",
+      "status-submitSharedTransaction-400",
+      "status-submitSharedTransaction-406",
+      "status-submitSharedTransaction-415",
+      "status-submitTransaction-400",
+      "status-submitTransaction-406",
+      "status-submitTransaction-415",
+      "wait-wallet-ready",
+      "wallet-list"
+    ],
+    "api.error-precedence": [
+      "precedence-deleteByronTransaction-unsupported-accept",
+      "precedence-deleteByronWallet-unsupported-accept",
+      "precedence-deleteSharedWallet-unsupported-accept",
+      "precedence-deleteTransaction-unsupported-accept",
+      "precedence-deleteWallet-unsupported-accept",
+      "precedence-importAddress-unused-body",
+      "precedence-putByronWalletPassphrase-unsupported-accept",
+      "precedence-putWalletPassphrase-unsupported-accept",
+      "precedence:funds-output",
+      "precedence:media-body",
+      "precedence:path-body",
+      "precedence:wallet-passphrase"
+    ],
+    "api.transport-errors": [
+      "malformed-json",
+      "transport:malformed-json",
+      "transport:unknown-method",
+      "transport:unknown-path",
+      "transport:unsupported-accept",
+      "transport:unsupported-content-type"
+    ],
+    "api:balanceTransaction:negative": [
+      "generated-reject-balanceTransaction",
+      "status-balanceTransaction-400",
+      "status-balanceTransaction-406",
+      "status-balanceTransaction-415"
+    ],
+    "api:balanceTransaction:status:400": [
+      "generated-reject-balanceTransaction",
+      "status-balanceTransaction-400"
+    ],
+    "api:balanceTransaction:status:406": [
+      "status-balanceTransaction-406"
+    ],
+    "api:balanceTransaction:status:415": [
+      "status-balanceTransaction-415"
+    ],
+    "api:byronSelectCoins:negative": [
+      "generated-reject-byronSelectCoins",
+      "status-byronSelectCoins-400",
+      "status-byronSelectCoins-406",
+      "status-byronSelectCoins-415"
+    ],
+    "api:byronSelectCoins:status:400": [
+      "generated-reject-byronSelectCoins",
+      "status-byronSelectCoins-400"
+    ],
+    "api:byronSelectCoins:status:406": [
+      "status-byronSelectCoins-406"
+    ],
+    "api:byronSelectCoins:status:415": [
+      "status-byronSelectCoins-415"
+    ],
+    "api:constructSharedTransaction:negative": [
+      "generated-reject-constructSharedTransaction",
+      "status-constructSharedTransaction-400",
+      "status-constructSharedTransaction-406",
+      "status-constructSharedTransaction-415"
+    ],
+    "api:constructSharedTransaction:status:400": [
+      "generated-reject-constructSharedTransaction",
+      "status-constructSharedTransaction-400"
+    ],
+    "api:constructSharedTransaction:status:406": [
+      "status-constructSharedTransaction-406"
+    ],
+    "api:constructSharedTransaction:status:415": [
+      "status-constructSharedTransaction-415"
+    ],
+    "api:constructTransaction:negative": [
+      "generated-reject-constructTransaction",
+      "numeric-quantity-decimal",
+      "numeric-quantity-exponent",
+      "numeric-quantity-fraction",
+      "numeric-quantity-negative",
+      "numeric-quantity-overflow",
+      "status-constructTransaction-400",
+      "status-constructTransaction-406",
+      "status-constructTransaction-415"
+    ],
+    "api:constructTransaction:status:400": [
+      "generated-reject-constructTransaction",
+      "numeric-quantity-fraction",
+      "numeric-quantity-negative",
+      "numeric-quantity-overflow",
+      "status-constructTransaction-400"
+    ],
+    "api:constructTransaction:status:404": [
+      "numeric-quantity-decimal",
+      "numeric-quantity-exponent"
+    ],
+    "api:constructTransaction:status:406": [
+      "status-constructTransaction-406"
+    ],
+    "api:constructTransaction:status:415": [
+      "status-constructTransaction-415"
+    ],
+    "api:createAddress:negative": [
+      "generated-reject-createAddress",
+      "status-createAddress-400",
+      "status-createAddress-406",
+      "status-createAddress-415"
+    ],
+    "api:createAddress:status:400": [
+      "generated-reject-createAddress",
+      "status-createAddress-400"
+    ],
+    "api:createAddress:status:406": [
+      "status-createAddress-406"
+    ],
+    "api:createAddress:status:415": [
+      "status-createAddress-415"
+    ],
+    "api:createByronWalletMigrationPlan:negative": [
+      "status-createByronWalletMigrationPlan-406"
+    ],
+    "api:createByronWalletMigrationPlan:status:406": [
+      "status-createByronWalletMigrationPlan-406"
+    ],
+    "api:createShelleyWalletMigrationPlan:negative": [
+      "status-createShelleyWalletMigrationPlan-406"
+    ],
+    "api:createShelleyWalletMigrationPlan:status:406": [
+      "status-createShelleyWalletMigrationPlan-406"
+    ],
+    "api:decodeSharedTransaction:negative": [
+      "generated-reject-decodeSharedTransaction",
+      "status-decodeSharedTransaction-400",
+      "status-decodeSharedTransaction-406",
+      "status-decodeSharedTransaction-415"
+    ],
+    "api:decodeSharedTransaction:status:400": [
+      "generated-reject-decodeSharedTransaction",
+      "status-decodeSharedTransaction-400"
+    ],
+    "api:decodeSharedTransaction:status:406": [
+      "status-decodeSharedTransaction-406"
+    ],
+    "api:decodeSharedTransaction:status:415": [
+      "status-decodeSharedTransaction-415"
+    ],
+    "api:decodeTransaction:negative": [
+      "generated-reject-decodeTransaction",
+      "status-decodeTransaction-400",
+      "status-decodeTransaction-406",
+      "status-decodeTransaction-415"
+    ],
+    "api:decodeTransaction:status:400": [
+      "generated-reject-decodeTransaction",
+      "status-decodeTransaction-400"
+    ],
+    "api:decodeTransaction:status:406": [
+      "status-decodeTransaction-406"
+    ],
+    "api:decodeTransaction:status:415": [
+      "status-decodeTransaction-415"
+    ],
+    "api:deleteByronTransaction:negative": [
+      "precedence-deleteByronTransaction-unsupported-accept",
+      "status-deleteByronTransaction-404"
+    ],
+    "api:deleteByronTransaction:status:404": [
+      "precedence-deleteByronTransaction-unsupported-accept",
+      "status-deleteByronTransaction-404"
+    ],
+    "api:deleteByronWallet:negative": [
+      "generated-reject-deleteByronWallet",
+      "precedence-deleteByronWallet-unsupported-accept",
+      "status-deleteByronWallet-404"
+    ],
+    "api:deleteByronWallet:positive": [
+      "family-icarus-delete-unsupported-accept",
+      "family-ledger-delete-unsupported-accept",
+      "family-random-delete-unsupported-accept",
+      "family-trezor-delete-unsupported-accept"
+    ],
+    "api:deleteByronWallet:status:204": [
+      "family-icarus-delete-unsupported-accept",
+      "family-ledger-delete-unsupported-accept",
+      "family-random-delete-unsupported-accept",
+      "family-trezor-delete-unsupported-accept"
+    ],
+    "api:deleteByronWallet:status:400": [
+      "generated-reject-deleteByronWallet"
+    ],
+    "api:deleteByronWallet:status:404": [
+      "precedence-deleteByronWallet-unsupported-accept",
+      "status-deleteByronWallet-404"
+    ],
+    "api:deleteSharedWallet:negative": [
+      "generated-reject-deleteSharedWallet",
+      "precedence-deleteSharedWallet-unsupported-accept",
+      "status-deleteSharedWallet-404"
+    ],
+    "api:deleteSharedWallet:positive": [
+      "family-shared-completed-delete",
+      "family-shared-delete-unsupported-accept"
+    ],
+    "api:deleteSharedWallet:status:204": [
+      "family-shared-completed-delete",
+      "family-shared-delete-unsupported-accept"
+    ],
+    "api:deleteSharedWallet:status:400": [
+      "generated-reject-deleteSharedWallet"
+    ],
+    "api:deleteSharedWallet:status:404": [
+      "precedence-deleteSharedWallet-unsupported-accept",
+      "status-deleteSharedWallet-404"
+    ],
+    "api:deleteTransaction:negative": [
+      "precedence-deleteTransaction-unsupported-accept",
+      "status-deleteTransaction-404"
+    ],
+    "api:deleteTransaction:status:404": [
+      "precedence-deleteTransaction-unsupported-accept",
+      "status-deleteTransaction-404"
+    ],
+    "api:deleteWallet:negative": [
+      "generated-reject-deleteWallet",
+      "precedence-deleteWallet-unsupported-accept",
+      "status-deleteWallet-404"
+    ],
+    "api:deleteWallet:positive": [
+      "delete-owned-wallet",
+      "key-api-cleanup",
+      "key-api-delete-private-wallet",
+      "metadata-golden-cleanup",
+      "numeric-decimal-delete-unsupported-accept",
+      "numeric-exponent-delete-unsupported-accept"
+    ],
+    "api:deleteWallet:status:204": [
+      "delete-owned-wallet",
+      "key-api-cleanup",
+      "key-api-delete-private-wallet",
+      "metadata-golden-cleanup",
+      "numeric-decimal-delete-unsupported-accept",
+      "numeric-exponent-delete-unsupported-accept"
+    ],
+    "api:deleteWallet:status:400": [
+      "generated-reject-deleteWallet"
+    ],
+    "api:deleteWallet:status:404": [
+      "precedence-deleteWallet-unsupported-accept",
+      "status-deleteWallet-404"
+    ],
+    "api:getAccountKey:negative": [
+      "generated-reject-getAccountKey",
+      "status-getAccountKey-404",
+      "status-getAccountKey-406"
+    ],
+    "api:getAccountKey:positive": [
+      "key-api-get-account-extended",
+      "key-api-get-account-non_extended"
+    ],
+    "api:getAccountKey:status:200": [
+      "key-api-get-account-extended",
+      "key-api-get-account-non_extended"
+    ],
+    "api:getAccountKey:status:400": [
+      "generated-reject-getAccountKey"
+    ],
+    "api:getAccountKey:status:404": [
+      "status-getAccountKey-404"
+    ],
+    "api:getAccountKey:status:406": [
+      "status-getAccountKey-406"
+    ],
+    "api:getAccountKeyShared:negative": [
+      "generated-reject-getAccountKeyShared",
+      "status-getAccountKeyShared-404",
+      "status-getAccountKeyShared-406"
+    ],
+    "api:getAccountKeyShared:positive": [
+      "family-shared-account-get"
+    ],
+    "api:getAccountKeyShared:status:200": [
+      "family-shared-account-get"
+    ],
+    "api:getAccountKeyShared:status:400": [
+      "generated-reject-getAccountKeyShared"
+    ],
+    "api:getAccountKeyShared:status:404": [
+      "status-getAccountKeyShared-404"
+    ],
+    "api:getAccountKeyShared:status:406": [
+      "status-getAccountKeyShared-406"
+    ],
+    "api:getAsset:negative": [
+      "generated-reject-getAsset",
+      "status-getAsset-404",
+      "status-getAsset-406"
+    ],
+    "api:getAsset:status:404": [
+      "status-getAsset-404"
+    ],
+    "api:getAsset:status:406": [
+      "generated-reject-getAsset",
+      "status-getAsset-406"
+    ],
+    "api:getAssetDefault:negative": [
+      "generated-reject-getAssetDefault",
+      "status-getAssetDefault-404",
+      "status-getAssetDefault-406"
+    ],
+    "api:getAssetDefault:status:404": [
+      "status-getAssetDefault-404"
+    ],
+    "api:getAssetDefault:status:406": [
+      "generated-reject-getAssetDefault",
+      "status-getAssetDefault-406"
+    ],
+    "api:getBlocksLatestHeader:negative": [
+      "generated-reject-getBlocksLatestHeader",
+      "status-getBlocksLatestHeader-406"
+    ],
+    "api:getBlocksLatestHeader:positive": [
+      "latest-block-header"
+    ],
+    "api:getBlocksLatestHeader:status:200": [
+      "latest-block-header"
+    ],
+    "api:getBlocksLatestHeader:status:406": [
+      "generated-reject-getBlocksLatestHeader",
+      "status-getBlocksLatestHeader-406"
+    ],
+    "api:getByronAsset:negative": [
+      "generated-reject-getByronAsset",
+      "status-getByronAsset-404",
+      "status-getByronAsset-406"
+    ],
+    "api:getByronAsset:status:404": [
+      "status-getByronAsset-404"
+    ],
+    "api:getByronAsset:status:406": [
+      "generated-reject-getByronAsset",
+      "status-getByronAsset-406"
+    ],
+    "api:getByronAssetDefault:negative": [
+      "generated-reject-getByronAssetDefault",
+      "status-getByronAssetDefault-404",
+      "status-getByronAssetDefault-406"
+    ],
+    "api:getByronAssetDefault:status:404": [
+      "status-getByronAssetDefault-404"
+    ],
+    "api:getByronAssetDefault:status:406": [
+      "generated-reject-getByronAssetDefault",
+      "status-getByronAssetDefault-406"
+    ],
+    "api:getByronTransaction:negative": [
+      "generated-reject-getByronTransaction",
+      "status-getByronTransaction-404",
+      "status-getByronTransaction-406"
+    ],
+    "api:getByronTransaction:status:404": [
+      "status-getByronTransaction-404"
+    ],
+    "api:getByronTransaction:status:406": [
+      "generated-reject-getByronTransaction",
+      "status-getByronTransaction-406"
+    ],
+    "api:getByronUTxOsStatistics:negative": [
+      "generated-reject-getByronUTxOsStatistics",
+      "status-getByronUTxOsStatistics-404",
+      "status-getByronUTxOsStatistics-406"
+    ],
+    "api:getByronUTxOsStatistics:positive": [
+      "family-icarus-statistics",
+      "family-ledger-statistics",
+      "family-random-statistics",
+      "family-trezor-statistics"
+    ],
+    "api:getByronUTxOsStatistics:status:200": [
+      "family-icarus-statistics",
+      "family-ledger-statistics",
+      "family-random-statistics",
+      "family-trezor-statistics"
+    ],
+    "api:getByronUTxOsStatistics:status:404": [
+      "status-getByronUTxOsStatistics-404"
+    ],
+    "api:getByronUTxOsStatistics:status:406": [
+      "generated-reject-getByronUTxOsStatistics",
+      "status-getByronUTxOsStatistics-406"
+    ],
+    "api:getByronWallet:negative": [
+      "generated-reject-getByronWallet",
+      "status-getByronWallet-404",
+      "status-getByronWallet-406"
+    ],
+    "api:getByronWallet:positive": [
+      "family-icarus-ready",
+      "family-ledger-ready",
+      "family-random-ready",
+      "family-trezor-ready"
+    ],
+    "api:getByronWallet:status:200": [
+      "family-icarus-ready",
+      "family-ledger-ready",
+      "family-random-ready",
+      "family-trezor-ready"
+    ],
+    "api:getByronWallet:status:404": [
+      "status-getByronWallet-404"
+    ],
+    "api:getByronWallet:status:406": [
+      "generated-reject-getByronWallet",
+      "status-getByronWallet-406"
+    ],
+    "api:getByronWalletUtxoSnapshot:negative": [
+      "generated-reject-getByronWalletUtxoSnapshot",
+      "status-getByronWalletUtxoSnapshot-404",
+      "status-getByronWalletUtxoSnapshot-406"
+    ],
+    "api:getByronWalletUtxoSnapshot:positive": [
+      "family-icarus-utxo",
+      "family-ledger-utxo",
+      "family-random-utxo",
+      "family-trezor-utxo"
+    ],
+    "api:getByronWalletUtxoSnapshot:status:200": [
+      "family-icarus-utxo",
+      "family-ledger-utxo",
+      "family-random-utxo",
+      "family-trezor-utxo"
+    ],
+    "api:getByronWalletUtxoSnapshot:status:404": [
+      "status-getByronWalletUtxoSnapshot-404"
+    ],
+    "api:getByronWalletUtxoSnapshot:status:406": [
+      "generated-reject-getByronWalletUtxoSnapshot",
+      "status-getByronWalletUtxoSnapshot-406"
+    ],
+    "api:getCurrentSmashHealth:negative": [
+      "generated-reject-getCurrentSmashHealth",
+      "status-getCurrentSmashHealth-406"
+    ],
+    "api:getCurrentSmashHealth:positive": [
+      "smash-health"
+    ],
+    "api:getCurrentSmashHealth:status:200": [
+      "smash-health"
+    ],
+    "api:getCurrentSmashHealth:status:406": [
+      "generated-reject-getCurrentSmashHealth",
+      "status-getCurrentSmashHealth-406"
+    ],
+    "api:getDRep:negative": [
+      "generated-reject-getDRep"
+    ],
+    "api:getDRep:status:400": [
+      "generated-reject-getDRep"
+    ],
+    "api:getDRepSummary:positive": [
+      "drep-summary"
+    ],
+    "api:getDRepSummary:status:200": [
+      "drep-summary"
+    ],
+    "api:getDelegationFee:negative": [
+      "generated-reject-getDelegationFee",
+      "status-getDelegationFee-404",
+      "status-getDelegationFee-406"
+    ],
+    "api:getDelegationFee:status:404": [
+      "status-getDelegationFee-404"
+    ],
+    "api:getDelegationFee:status:406": [
+      "generated-reject-getDelegationFee",
+      "status-getDelegationFee-406"
+    ],
+    "api:getMaintenanceActions:positive": [
+      "pool-maintenance-status"
+    ],
+    "api:getMaintenanceActions:status:200": [
+      "pool-maintenance-status"
+    ],
+    "api:getNetworkClock:negative": [
+      "generated-reject-getNetworkClock",
+      "status-getNetworkClock-406"
+    ],
+    "api:getNetworkClock:positive": [
+      "network-clock"
+    ],
+    "api:getNetworkClock:status:200": [
+      "network-clock"
+    ],
+    "api:getNetworkClock:status:406": [
+      "generated-reject-getNetworkClock",
+      "status-getNetworkClock-406"
+    ],
+    "api:getNetworkInformation:negative": [
+      "generated-reject-getNetworkInformation",
+      "status-getNetworkInformation-406"
+    ],
+    "api:getNetworkInformation:positive": [
+      "network-information"
+    ],
+    "api:getNetworkInformation:status:200": [
+      "network-information"
+    ],
+    "api:getNetworkInformation:status:406": [
+      "generated-reject-getNetworkInformation",
+      "status-getNetworkInformation-406"
+    ],
+    "api:getNetworkParameters:negative": [
+      "generated-reject-getNetworkParameters",
+      "status-getNetworkParameters-406"
+    ],
+    "api:getNetworkParameters:positive": [
+      "network-parameters"
+    ],
+    "api:getNetworkParameters:status:200": [
+      "network-parameters"
+    ],
+    "api:getNetworkParameters:status:406": [
+      "generated-reject-getNetworkParameters",
+      "status-getNetworkParameters-406"
+    ],
+    "api:getPolicyKey:negative": [
+      "generated-reject-getPolicyKey",
+      "status-getPolicyKey-404",
+      "status-getPolicyKey-406"
+    ],
+    "api:getPolicyKey:status:400": [
+      "generated-reject-getPolicyKey"
+    ],
+    "api:getPolicyKey:status:404": [
+      "status-getPolicyKey-404"
+    ],
+    "api:getPolicyKey:status:406": [
+      "status-getPolicyKey-406"
+    ],
+    "api:getSettings:positive": [
+      "settings-read"
+    ],
+    "api:getSettings:status:200": [
+      "settings-read"
+    ],
+    "api:getSharedTransaction:negative": [
+      "generated-reject-getSharedTransaction",
+      "status-getSharedTransaction-404",
+      "status-getSharedTransaction-406"
+    ],
+    "api:getSharedTransaction:status:404": [
+      "status-getSharedTransaction-404"
+    ],
+    "api:getSharedTransaction:status:406": [
+      "generated-reject-getSharedTransaction",
+      "status-getSharedTransaction-406"
+    ],
+    "api:getSharedWallet:negative": [
+      "generated-reject-getSharedWallet",
+      "status-getSharedWallet-404",
+      "status-getSharedWallet-406"
+    ],
+    "api:getSharedWallet:positive": [
+      "family-shared-active-ready",
+      "family-shared-completed-ready"
+    ],
+    "api:getSharedWallet:status:200": [
+      "family-shared-active-ready",
+      "family-shared-completed-ready"
+    ],
+    "api:getSharedWallet:status:400": [
+      "generated-reject-getSharedWallet"
+    ],
+    "api:getSharedWallet:status:404": [
+      "status-getSharedWallet-404"
+    ],
+    "api:getSharedWallet:status:406": [
+      "status-getSharedWallet-406"
+    ],
+    "api:getSharedWalletKey:negative": [
+      "generated-reject-getSharedWalletKey",
+      "status-getSharedWalletKey-404",
+      "status-getSharedWalletKey-406"
+    ],
+    "api:getSharedWalletKey:positive": [
+      "family-shared-soft-key"
+    ],
+    "api:getSharedWalletKey:status:200": [
+      "family-shared-soft-key"
+    ],
+    "api:getSharedWalletKey:status:400": [
+      "generated-reject-getSharedWalletKey"
+    ],
+    "api:getSharedWalletKey:status:404": [
+      "status-getSharedWalletKey-404"
+    ],
+    "api:getSharedWalletKey:status:406": [
+      "status-getSharedWalletKey-406"
+    ],
+    "api:getSharedWalletUtxoSnapshot:negative": [
+      "generated-reject-getSharedWalletUtxoSnapshot",
+      "status-getSharedWalletUtxoSnapshot-404",
+      "status-getSharedWalletUtxoSnapshot-406"
+    ],
+    "api:getSharedWalletUtxoSnapshot:positive": [
+      "family-shared-active-utxo"
+    ],
+    "api:getSharedWalletUtxoSnapshot:status:200": [
+      "family-shared-active-utxo"
+    ],
+    "api:getSharedWalletUtxoSnapshot:status:404": [
+      "status-getSharedWalletUtxoSnapshot-404"
+    ],
+    "api:getSharedWalletUtxoSnapshot:status:406": [
+      "generated-reject-getSharedWalletUtxoSnapshot",
+      "status-getSharedWalletUtxoSnapshot-406"
+    ],
+    "api:getTransaction:negative": [
+      "generated-reject-getTransaction",
+      "status-getTransaction-404",
+      "status-getTransaction-406"
+    ],
+    "api:getTransaction:status:404": [
+      "status-getTransaction-404"
+    ],
+    "api:getTransaction:status:406": [
+      "generated-reject-getTransaction",
+      "status-getTransaction-406"
+    ],
+    "api:getUTxOsStatistics:negative": [
+      "generated-reject-getUTxOsStatistics",
+      "status-getUTxOsStatistics-404",
+      "status-getUTxOsStatistics-406"
+    ],
+    "api:getUTxOsStatistics:status:404": [
+      "status-getUTxOsStatistics-404"
+    ],
+    "api:getUTxOsStatistics:status:406": [
+      "generated-reject-getUTxOsStatistics",
+      "status-getUTxOsStatistics-406"
+    ],
+    "api:getUTxOsStatisticsShared:negative": [
+      "generated-reject-getUTxOsStatisticsShared",
+      "status-getUTxOsStatisticsShared-404",
+      "status-getUTxOsStatisticsShared-406"
+    ],
+    "api:getUTxOsStatisticsShared:positive": [
+      "family-shared-active-statistics"
+    ],
+    "api:getUTxOsStatisticsShared:status:200": [
+      "family-shared-active-statistics"
+    ],
+    "api:getUTxOsStatisticsShared:status:404": [
+      "status-getUTxOsStatisticsShared-404"
+    ],
+    "api:getUTxOsStatisticsShared:status:406": [
+      "generated-reject-getUTxOsStatisticsShared",
+      "status-getUTxOsStatisticsShared-406"
+    ],
+    "api:getWallet:negative": [
+      "generated-reject-getWallet",
+      "invalid-wallet-id",
+      "missing-wallet",
+      "status-getWallet-404",
+      "status-getWallet-406"
+    ],
+    "api:getWallet:positive": [
+      "wait-wallet-ready"
+    ],
+    "api:getWallet:status:200": [
+      "wait-wallet-ready"
+    ],
+    "api:getWallet:status:400": [
+      "generated-reject-getWallet",
+      "invalid-wallet-id"
+    ],
+    "api:getWallet:status:404": [
+      "missing-wallet",
+      "status-getWallet-404"
+    ],
+    "api:getWallet:status:406": [
+      "status-getWallet-406"
+    ],
+    "api:getWalletKey:negative": [
+      "generated-reject-getWalletKey",
+      "status-getWalletKey-404",
+      "status-getWalletKey-406"
+    ],
+    "api:getWalletKey:positive": [
+      "key-api-role-0-0-hash-false",
+      "key-api-role-0-0-hash-true",
+      "key-api-role-0-19-hash-false",
+      "key-api-role-0-19-hash-true",
+      "key-api-role-0-2147483647-hash-false",
+      "key-api-role-0-2147483647-hash-true",
+      "key-api-role-1-0-hash-false",
+      "key-api-role-1-0-hash-true",
+      "key-api-role-1-19-hash-false",
+      "key-api-role-1-19-hash-true",
+      "key-api-role-1-2147483647-hash-false",
+      "key-api-role-1-2147483647-hash-true",
+      "key-api-role-2-0-hash-false",
+      "key-api-role-2-0-hash-true",
+      "key-api-role-2-19-hash-false",
+      "key-api-role-2-19-hash-true",
+      "key-api-role-2-2147483647-hash-false",
+      "key-api-role-2-2147483647-hash-true",
+      "metadata-golden-public-key"
+    ],
+    "api:getWalletKey:status:200": [
+      "key-api-role-0-0-hash-false",
+      "key-api-role-0-0-hash-true",
+      "key-api-role-0-19-hash-false",
+      "key-api-role-0-19-hash-true",
+      "key-api-role-0-2147483647-hash-false",
+      "key-api-role-0-2147483647-hash-true",
+      "key-api-role-1-0-hash-false",
+      "key-api-role-1-0-hash-true",
+      "key-api-role-1-19-hash-false",
+      "key-api-role-1-19-hash-true",
+      "key-api-role-1-2147483647-hash-false",
+      "key-api-role-1-2147483647-hash-true",
+      "key-api-role-2-0-hash-false",
+      "key-api-role-2-0-hash-true",
+      "key-api-role-2-19-hash-false",
+      "key-api-role-2-19-hash-true",
+      "key-api-role-2-2147483647-hash-false",
+      "key-api-role-2-2147483647-hash-true",
+      "metadata-golden-public-key"
+    ],
+    "api:getWalletKey:status:400": [
+      "generated-reject-getWalletKey"
+    ],
+    "api:getWalletKey:status:404": [
+      "status-getWalletKey-404"
+    ],
+    "api:getWalletKey:status:406": [
+      "status-getWalletKey-406"
+    ],
+    "api:getWalletUtxoSnapshot:negative": [
+      "generated-reject-getWalletUtxoSnapshot",
+      "status-getWalletUtxoSnapshot-404",
+      "status-getWalletUtxoSnapshot-406"
+    ],
+    "api:getWalletUtxoSnapshot:status:404": [
+      "status-getWalletUtxoSnapshot-404"
+    ],
+    "api:getWalletUtxoSnapshot:status:406": [
+      "generated-reject-getWalletUtxoSnapshot",
+      "status-getWalletUtxoSnapshot-406"
+    ],
+    "api:importAddress:negative": [
+      "generated-reject-importAddress",
+      "precedence-importAddress-unused-body",
+      "status-importAddress-404"
+    ],
+    "api:importAddress:status:400": [
+      "generated-reject-importAddress"
+    ],
+    "api:importAddress:status:404": [
+      "precedence-importAddress-unused-body",
+      "status-importAddress-404"
+    ],
+    "api:importAddresses:negative": [
+      "generated-reject-importAddresses",
+      "status-importAddresses-400"
+    ],
+    "api:importAddresses:status:400": [
+      "generated-reject-importAddresses",
+      "status-importAddresses-400"
+    ],
+    "api:inspectAddress:negative": [
+      "generated-reject-inspectAddress"
+    ],
+    "api:inspectAddress:positive": [
+      "key-api-inspect-base",
+      "key-api-inspect-enterprise",
+      "key-api-inspect-reward"
+    ],
+    "api:inspectAddress:status:200": [
+      "key-api-inspect-base",
+      "key-api-inspect-enterprise",
+      "key-api-inspect-reward"
+    ],
+    "api:inspectAddress:status:400": [
+      "generated-reject-inspectAddress"
+    ],
+    "api:joinDRep:negative": [
+      "generated-reject-joinDRep"
+    ],
+    "api:joinDRep:status:400": [
+      "generated-reject-joinDRep"
+    ],
+    "api:joinStakePool:negative": [
+      "generated-reject-joinStakePool"
+    ],
+    "api:joinStakePool:status:400": [
+      "generated-reject-joinStakePool"
+    ],
+    "api:listAddresses:negative": [
+      "generated-reject-listAddresses",
+      "invalid-address-state",
+      "status-listAddresses-404",
+      "status-listAddresses-406"
+    ],
+    "api:listAddresses:positive": [
+      "key-api-original-addresses",
+      "key-api-watch-only-addresses",
+      "list-addresses",
+      "numeric-quantity-address"
+    ],
+    "api:listAddresses:status:200": [
+      "key-api-original-addresses",
+      "key-api-watch-only-addresses",
+      "list-addresses",
+      "numeric-quantity-address"
+    ],
+    "api:listAddresses:status:400": [
+      "generated-reject-listAddresses",
+      "invalid-address-state"
+    ],
+    "api:listAddresses:status:404": [
+      "status-listAddresses-404"
+    ],
+    "api:listAddresses:status:406": [
+      "status-listAddresses-406"
+    ],
+    "api:listAssets:negative": [
+      "generated-reject-listAssets",
+      "status-listAssets-406"
+    ],
+    "api:listAssets:positive": [
+      "empty-assets"
+    ],
+    "api:listAssets:status:200": [
+      "empty-assets"
+    ],
+    "api:listAssets:status:406": [
+      "generated-reject-listAssets",
+      "status-listAssets-406"
+    ],
+    "api:listByronAddresses:negative": [
+      "generated-reject-listByronAddresses",
+      "status-listByronAddresses-404",
+      "status-listByronAddresses-406"
+    ],
+    "api:listByronAddresses:positive": [
+      "family-icarus-addresses",
+      "family-ledger-addresses",
+      "family-random-addresses",
+      "family-trezor-addresses"
+    ],
+    "api:listByronAddresses:status:200": [
+      "family-icarus-addresses",
+      "family-ledger-addresses",
+      "family-random-addresses",
+      "family-trezor-addresses"
+    ],
+    "api:listByronAddresses:status:400": [
+      "generated-reject-listByronAddresses"
+    ],
+    "api:listByronAddresses:status:404": [
+      "status-listByronAddresses-404"
+    ],
+    "api:listByronAddresses:status:406": [
+      "status-listByronAddresses-406"
+    ],
+    "api:listByronAssets:negative": [
+      "generated-reject-listByronAssets",
+      "status-listByronAssets-406"
+    ],
+    "api:listByronAssets:positive": [
+      "family-icarus-assets",
+      "family-ledger-assets",
+      "family-random-assets",
+      "family-trezor-assets"
+    ],
+    "api:listByronAssets:status:200": [
+      "family-icarus-assets",
+      "family-ledger-assets",
+      "family-random-assets",
+      "family-trezor-assets"
+    ],
+    "api:listByronAssets:status:406": [
+      "generated-reject-listByronAssets",
+      "status-listByronAssets-406"
+    ],
+    "api:listByronTransactions:negative": [
+      "generated-reject-listByronTransactions",
+      "status-listByronTransactions-404",
+      "status-listByronTransactions-406"
+    ],
+    "api:listByronTransactions:positive": [
+      "family-icarus-transactions",
+      "family-ledger-transactions",
+      "family-random-transactions",
+      "family-trezor-transactions"
+    ],
+    "api:listByronTransactions:status:200": [
+      "family-icarus-transactions",
+      "family-ledger-transactions",
+      "family-random-transactions",
+      "family-trezor-transactions"
+    ],
+    "api:listByronTransactions:status:400": [
+      "generated-reject-listByronTransactions"
+    ],
+    "api:listByronTransactions:status:404": [
+      "status-listByronTransactions-404"
+    ],
+    "api:listByronTransactions:status:406": [
+      "status-listByronTransactions-406"
+    ],
+    "api:listByronWallets:negative": [
+      "generated-reject-listByronWallets",
+      "status-listByronWallets-406"
+    ],
+    "api:listByronWallets:positive": [
+      "byron-wallet-list"
+    ],
+    "api:listByronWallets:status:200": [
+      "byron-wallet-list"
+    ],
+    "api:listByronWallets:status:406": [
+      "generated-reject-listByronWallets",
+      "status-listByronWallets-406"
+    ],
+    "api:listDReps:positive": [
+      "drep-list"
+    ],
+    "api:listDReps:status:200": [
+      "drep-list"
+    ],
+    "api:listSharedAddresses:negative": [
+      "generated-reject-listSharedAddresses",
+      "status-listSharedAddresses-404",
+      "status-listSharedAddresses-406"
+    ],
+    "api:listSharedAddresses:positive": [
+      "family-shared-active-addresses",
+      "family-shared-completed-addresses",
+      "family-shared-pending-addresses"
+    ],
+    "api:listSharedAddresses:status:200": [
+      "family-shared-active-addresses",
+      "family-shared-completed-addresses",
+      "family-shared-pending-addresses"
+    ],
+    "api:listSharedAddresses:status:400": [
+      "generated-reject-listSharedAddresses"
+    ],
+    "api:listSharedAddresses:status:404": [
+      "status-listSharedAddresses-404"
+    ],
+    "api:listSharedAddresses:status:406": [
+      "status-listSharedAddresses-406"
+    ],
+    "api:listSharedTransactions:negative": [
+      "generated-reject-listSharedTransactions",
+      "status-listSharedTransactions-404",
+      "status-listSharedTransactions-406"
+    ],
+    "api:listSharedTransactions:positive": [
+      "family-shared-active-history"
+    ],
+    "api:listSharedTransactions:status:200": [
+      "family-shared-active-history"
+    ],
+    "api:listSharedTransactions:status:400": [
+      "generated-reject-listSharedTransactions"
+    ],
+    "api:listSharedTransactions:status:404": [
+      "status-listSharedTransactions-404"
+    ],
+    "api:listSharedTransactions:status:406": [
+      "status-listSharedTransactions-406"
+    ],
+    "api:listSharedWallets:negative": [
+      "generated-reject-listSharedWallets",
+      "status-listSharedWallets-406"
+    ],
+    "api:listSharedWallets:positive": [
+      "shared-wallet-list"
+    ],
+    "api:listSharedWallets:status:200": [
+      "shared-wallet-list"
+    ],
+    "api:listSharedWallets:status:406": [
+      "generated-reject-listSharedWallets",
+      "status-listSharedWallets-406"
+    ],
+    "api:listStakePools:negative": [
+      "generated-reject-listStakePools"
+    ],
+    "api:listStakePools:positive": [
+      "stake-pool-list"
+    ],
+    "api:listStakePools:status:200": [
+      "stake-pool-list"
+    ],
+    "api:listStakePools:status:400": [
+      "generated-reject-listStakePools"
+    ],
+    "api:listTransactions:negative": [
+      "generated-reject-listTransactions",
+      "status-listTransactions-404",
+      "status-listTransactions-406"
+    ],
+    "api:listTransactions:positive": [
+      "empty-transactions"
+    ],
+    "api:listTransactions:status:200": [
+      "empty-transactions"
+    ],
+    "api:listTransactions:status:400": [
+      "generated-reject-listTransactions"
+    ],
+    "api:listTransactions:status:404": [
+      "status-listTransactions-404"
+    ],
+    "api:listTransactions:status:406": [
+      "status-listTransactions-406"
+    ],
+    "api:listWallets:negative": [
+      "generated-reject-listWallets",
+      "status-listWallets-406"
+    ],
+    "api:listWallets:positive": [
+      "wallet-list"
+    ],
+    "api:listWallets:status:200": [
+      "wallet-list"
+    ],
+    "api:listWallets:status:406": [
+      "generated-reject-listWallets",
+      "status-listWallets-406"
+    ],
+    "api:migrateByronWallet:negative": [
+      "status-migrateByronWallet-406",
+      "status-migrateByronWallet-415"
+    ],
+    "api:migrateByronWallet:status:406": [
+      "status-migrateByronWallet-406"
+    ],
+    "api:migrateByronWallet:status:415": [
+      "status-migrateByronWallet-415"
+    ],
+    "api:migrateShelleyWallet:negative": [
+      "status-migrateShelleyWallet-406",
+      "status-migrateShelleyWallet-415"
+    ],
+    "api:migrateShelleyWallet:status:406": [
+      "status-migrateShelleyWallet-406"
+    ],
+    "api:migrateShelleyWallet:status:415": [
+      "status-migrateShelleyWallet-415"
+    ],
+    "api:patchSharedWalletInDelegation:negative": [
+      "generated-reject-patchSharedWalletInDelegation",
+      "status-patchSharedWalletInDelegation-400",
+      "status-patchSharedWalletInDelegation-406"
+    ],
+    "api:patchSharedWalletInDelegation:positive": [
+      "family-shared-pending-delegation-patch"
+    ],
+    "api:patchSharedWalletInDelegation:status:200": [
+      "family-shared-pending-delegation-patch"
+    ],
+    "api:patchSharedWalletInDelegation:status:400": [
+      "generated-reject-patchSharedWalletInDelegation",
+      "status-patchSharedWalletInDelegation-400"
+    ],
+    "api:patchSharedWalletInDelegation:status:406": [
+      "status-patchSharedWalletInDelegation-406"
+    ],
+    "api:patchSharedWalletInPayment:negative": [
+      "generated-reject-patchSharedWalletInPayment",
+      "status-patchSharedWalletInPayment-400",
+      "status-patchSharedWalletInPayment-406"
+    ],
+    "api:patchSharedWalletInPayment:positive": [
+      "family-shared-pending-payment-patch"
+    ],
+    "api:patchSharedWalletInPayment:status:200": [
+      "family-shared-pending-payment-patch"
+    ],
+    "api:patchSharedWalletInPayment:status:400": [
+      "generated-reject-patchSharedWalletInPayment",
+      "status-patchSharedWalletInPayment-400"
+    ],
+    "api:patchSharedWalletInPayment:status:406": [
+      "status-patchSharedWalletInPayment-406"
+    ],
+    "api:postAccountKey:negative": [
+      "generated-reject-postAccountKey",
+      "key-api-old-passphrase-rejected",
+      "key-api-watch-only-private-derivation-rejected",
+      "status-postAccountKey-400",
+      "status-postAccountKey-406",
+      "status-postAccountKey-415"
+    ],
+    "api:postAccountKey:positive": [
+      "key-api-account-0-extended",
+      "key-api-account-0-non_extended",
+      "key-api-account-2147483647-extended",
+      "key-api-account-2147483647-non_extended",
+      "key-api-new-passphrase-derives-same-key"
+    ],
+    "api:postAccountKey:status:202": [
+      "key-api-account-0-extended",
+      "key-api-account-0-non_extended",
+      "key-api-account-2147483647-extended",
+      "key-api-account-2147483647-non_extended",
+      "key-api-new-passphrase-derives-same-key"
+    ],
+    "api:postAccountKey:status:400": [
+      "generated-reject-postAccountKey",
+      "status-postAccountKey-400"
+    ],
+    "api:postAccountKey:status:403": [
+      "key-api-old-passphrase-rejected",
+      "key-api-watch-only-private-derivation-rejected"
+    ],
+    "api:postAccountKey:status:406": [
+      "status-postAccountKey-406"
+    ],
+    "api:postAccountKey:status:415": [
+      "status-postAccountKey-415"
+    ],
+    "api:postAccountKeyShared:negative": [
+      "generated-reject-postAccountKeyShared",
+      "status-postAccountKeyShared-400",
+      "status-postAccountKeyShared-406",
+      "status-postAccountKeyShared-415"
+    ],
+    "api:postAccountKeyShared:positive": [
+      "family-shared-account-derive"
+    ],
+    "api:postAccountKeyShared:status:202": [
+      "family-shared-account-derive"
+    ],
+    "api:postAccountKeyShared:status:400": [
+      "generated-reject-postAccountKeyShared",
+      "status-postAccountKeyShared-400"
+    ],
+    "api:postAccountKeyShared:status:406": [
+      "status-postAccountKeyShared-406"
+    ],
+    "api:postAccountKeyShared:status:415": [
+      "status-postAccountKeyShared-415"
+    ],
+    "api:postAnyAddress:negative": [
+      "generated-reject-postAnyAddress",
+      "status-postAnyAddress-400",
+      "status-postAnyAddress-406",
+      "status-postAnyAddress-415"
+    ],
+    "api:postAnyAddress:positive": [
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward"
+    ],
+    "api:postAnyAddress:status:202": [
+      "key-api-address-base",
+      "key-api-address-enterprise",
+      "key-api-address-reward"
+    ],
+    "api:postAnyAddress:status:400": [
+      "generated-reject-postAnyAddress",
+      "status-postAnyAddress-400"
+    ],
+    "api:postAnyAddress:status:406": [
+      "status-postAnyAddress-406"
+    ],
+    "api:postAnyAddress:status:415": [
+      "status-postAnyAddress-415"
+    ],
+    "api:postByronTransaction:negative": [
+      "generated-reject-postByronTransaction",
+      "status-postByronTransaction-400",
+      "status-postByronTransaction-406",
+      "status-postByronTransaction-415"
+    ],
+    "api:postByronTransaction:status:400": [
+      "generated-reject-postByronTransaction",
+      "status-postByronTransaction-400"
+    ],
+    "api:postByronTransaction:status:406": [
+      "status-postByronTransaction-406"
+    ],
+    "api:postByronTransaction:status:415": [
+      "status-postByronTransaction-415"
+    ],
+    "api:postByronTransactionFee:negative": [
+      "generated-reject-postByronTransactionFee",
+      "status-postByronTransactionFee-400",
+      "status-postByronTransactionFee-406",
+      "status-postByronTransactionFee-415"
+    ],
+    "api:postByronTransactionFee:status:400": [
+      "generated-reject-postByronTransactionFee",
+      "status-postByronTransactionFee-400"
+    ],
+    "api:postByronTransactionFee:status:406": [
+      "status-postByronTransactionFee-406"
+    ],
+    "api:postByronTransactionFee:status:415": [
+      "status-postByronTransactionFee-415"
+    ],
+    "api:postByronWallet:negative": [
+      "generated-reject-postByronWallet",
+      "status-postByronWallet-400",
+      "status-postByronWallet-406",
+      "status-postByronWallet-415"
+    ],
+    "api:postByronWallet:positive": [
+      "family-icarus-create",
+      "family-ledger-create",
+      "family-random-create",
+      "family-trezor-create"
+    ],
+    "api:postByronWallet:status:201": [
+      "family-icarus-create",
+      "family-ledger-create",
+      "family-random-create",
+      "family-trezor-create"
+    ],
+    "api:postByronWallet:status:400": [
+      "generated-reject-postByronWallet",
+      "status-postByronWallet-400"
+    ],
+    "api:postByronWallet:status:406": [
+      "status-postByronWallet-406"
+    ],
+    "api:postByronWallet:status:415": [
+      "status-postByronWallet-415"
+    ],
+    "api:postExternalTransaction:negative": [
+      "generated-reject-postExternalTransaction",
+      "status-postExternalTransaction-400",
+      "status-postExternalTransaction-406",
+      "status-postExternalTransaction-415"
+    ],
+    "api:postExternalTransaction:status:400": [
+      "generated-reject-postExternalTransaction",
+      "status-postExternalTransaction-400"
+    ],
+    "api:postExternalTransaction:status:406": [
+      "status-postExternalTransaction-406"
+    ],
+    "api:postExternalTransaction:status:415": [
+      "status-postExternalTransaction-415"
+    ],
+    "api:postPolicyId:negative": [
+      "generated-reject-postPolicyId",
+      "status-postPolicyId-400",
+      "status-postPolicyId-406",
+      "status-postPolicyId-415"
+    ],
+    "api:postPolicyId:status:400": [
+      "generated-reject-postPolicyId",
+      "status-postPolicyId-400"
+    ],
+    "api:postPolicyId:status:406": [
+      "status-postPolicyId-406"
+    ],
+    "api:postPolicyId:status:415": [
+      "status-postPolicyId-415"
+    ],
+    "api:postPolicyKey:negative": [
+      "generated-reject-postPolicyKey",
+      "status-postPolicyKey-400",
+      "status-postPolicyKey-406",
+      "status-postPolicyKey-415"
+    ],
+    "api:postPolicyKey:status:400": [
+      "generated-reject-postPolicyKey",
+      "status-postPolicyKey-400"
+    ],
+    "api:postPolicyKey:status:406": [
+      "status-postPolicyKey-406"
+    ],
+    "api:postPolicyKey:status:415": [
+      "status-postPolicyKey-415"
+    ],
+    "api:postSharedWallet:negative": [
+      "generated-reject-postSharedWallet",
+      "status-postSharedWallet-400",
+      "status-postSharedWallet-406",
+      "status-postSharedWallet-415"
+    ],
+    "api:postSharedWallet:positive": [
+      "family-shared-active-create",
+      "family-shared-pending-create"
+    ],
+    "api:postSharedWallet:status:201": [
+      "family-shared-active-create",
+      "family-shared-pending-create"
+    ],
+    "api:postSharedWallet:status:400": [
+      "generated-reject-postSharedWallet",
+      "status-postSharedWallet-400"
+    ],
+    "api:postSharedWallet:status:406": [
+      "status-postSharedWallet-406"
+    ],
+    "api:postSharedWallet:status:415": [
+      "status-postSharedWallet-415"
+    ],
+    "api:postTransaction:negative": [
+      "generated-reject-postTransaction",
+      "status-postTransaction-400",
+      "status-postTransaction-406",
+      "status-postTransaction-415"
+    ],
+    "api:postTransaction:status:400": [
+      "generated-reject-postTransaction",
+      "status-postTransaction-400"
+    ],
+    "api:postTransaction:status:406": [
+      "status-postTransaction-406"
+    ],
+    "api:postTransaction:status:415": [
+      "status-postTransaction-415"
+    ],
+    "api:postTransactionFee:negative": [
+      "generated-reject-postTransactionFee",
+      "status-postTransactionFee-400",
+      "status-postTransactionFee-406",
+      "status-postTransactionFee-415"
+    ],
+    "api:postTransactionFee:status:400": [
+      "generated-reject-postTransactionFee",
+      "status-postTransactionFee-400"
+    ],
+    "api:postTransactionFee:status:406": [
+      "status-postTransactionFee-406"
+    ],
+    "api:postTransactionFee:status:415": [
+      "status-postTransactionFee-415"
+    ],
+    "api:postWallet:negative": [
+      "generated-reject-postWallet",
+      "malformed-json",
+      "numeric-gap-fraction",
+      "status-postWallet-400",
+      "status-postWallet-406",
+      "status-postWallet-415"
+    ],
+    "api:postWallet:positive": [
+      "create-wallet",
+      "key-api-create",
+      "key-api-watch-only-create",
+      "metadata-golden-create",
+      "numeric-gap-decimal",
+      "numeric-gap-exponent"
+    ],
+    "api:postWallet:status:201": [
+      "create-wallet",
+      "key-api-create",
+      "key-api-watch-only-create",
+      "metadata-golden-create",
+      "numeric-gap-decimal",
+      "numeric-gap-exponent"
+    ],
+    "api:postWallet:status:400": [
+      "generated-reject-postWallet",
+      "malformed-json",
+      "numeric-gap-fraction",
+      "status-postWallet-400"
+    ],
+    "api:postWallet:status:406": [
+      "status-postWallet-406"
+    ],
+    "api:postWallet:status:415": [
+      "status-postWallet-415"
+    ],
+    "api:putByronWallet:negative": [
+      "generated-reject-putByronWallet",
+      "status-putByronWallet-400",
+      "status-putByronWallet-406",
+      "status-putByronWallet-415"
+    ],
+    "api:putByronWallet:positive": [
+      "family-icarus-rename",
+      "family-ledger-rename",
+      "family-random-rename",
+      "family-trezor-rename"
+    ],
+    "api:putByronWallet:status:200": [
+      "family-icarus-rename",
+      "family-ledger-rename",
+      "family-random-rename",
+      "family-trezor-rename"
+    ],
+    "api:putByronWallet:status:400": [
+      "generated-reject-putByronWallet",
+      "status-putByronWallet-400"
+    ],
+    "api:putByronWallet:status:406": [
+      "status-putByronWallet-406"
+    ],
+    "api:putByronWallet:status:415": [
+      "status-putByronWallet-415"
+    ],
+    "api:putByronWalletPassphrase:negative": [
+      "generated-reject-putByronWalletPassphrase",
+      "precedence-putByronWalletPassphrase-unsupported-accept",
+      "status-putByronWalletPassphrase-400",
+      "status-putByronWalletPassphrase-415"
+    ],
+    "api:putByronWalletPassphrase:positive": [
+      "family-icarus-passphrase-unsupported-accept",
+      "family-ledger-passphrase-unsupported-accept",
+      "family-random-passphrase-unsupported-accept",
+      "family-trezor-passphrase-unsupported-accept"
+    ],
+    "api:putByronWalletPassphrase:status:204": [
+      "family-icarus-passphrase-unsupported-accept",
+      "family-ledger-passphrase-unsupported-accept",
+      "family-random-passphrase-unsupported-accept",
+      "family-trezor-passphrase-unsupported-accept"
+    ],
+    "api:putByronWalletPassphrase:status:400": [
+      "generated-reject-putByronWalletPassphrase",
+      "precedence-putByronWalletPassphrase-unsupported-accept",
+      "status-putByronWalletPassphrase-400"
+    ],
+    "api:putByronWalletPassphrase:status:415": [
+      "status-putByronWalletPassphrase-415"
+    ],
+    "api:putSettings:negative": [
+      "generated-reject-putSettings",
+      "status-putSettings-400",
+      "status-putSettings-415"
+    ],
+    "api:putSettings:status:400": [
+      "generated-reject-putSettings",
+      "status-putSettings-400"
+    ],
+    "api:putSettings:status:415": [
+      "status-putSettings-415"
+    ],
+    "api:putSharedWallet:negative": [
+      "generated-reject-putSharedWallet",
+      "status-putSharedWallet-400",
+      "status-putSharedWallet-406",
+      "status-putSharedWallet-415"
+    ],
+    "api:putSharedWallet:positive": [
+      "family-shared-active-rename"
+    ],
+    "api:putSharedWallet:status:200": [
+      "family-shared-active-rename"
+    ],
+    "api:putSharedWallet:status:400": [
+      "generated-reject-putSharedWallet",
+      "status-putSharedWallet-400"
+    ],
+    "api:putSharedWallet:status:406": [
+      "status-putSharedWallet-406"
+    ],
+    "api:putSharedWallet:status:415": [
+      "status-putSharedWallet-415"
+    ],
+    "api:putWallet:negative": [
+      "generated-reject-putWallet",
+      "status-putWallet-400",
+      "status-putWallet-406",
+      "status-putWallet-415"
+    ],
+    "api:putWallet:positive": [
+      "rename-wallet"
+    ],
+    "api:putWallet:status:200": [
+      "rename-wallet"
+    ],
+    "api:putWallet:status:400": [
+      "generated-reject-putWallet",
+      "status-putWallet-400"
+    ],
+    "api:putWallet:status:406": [
+      "status-putWallet-406"
+    ],
+    "api:putWallet:status:415": [
+      "status-putWallet-415"
+    ],
+    "api:putWalletPassphrase:negative": [
+      "generated-reject-putWalletPassphrase",
+      "key-api-passphrase-wrong-old",
+      "precedence-putWalletPassphrase-unsupported-accept",
+      "status-putWalletPassphrase-400",
+      "status-putWalletPassphrase-415"
+    ],
+    "api:putWalletPassphrase:positive": [
+      "key-api-passphrase-change",
+      "numeric-passphrase-unsupported-accept"
+    ],
+    "api:putWalletPassphrase:status:204": [
+      "key-api-passphrase-change",
+      "numeric-passphrase-unsupported-accept"
+    ],
+    "api:putWalletPassphrase:status:400": [
+      "generated-reject-putWalletPassphrase",
+      "precedence-putWalletPassphrase-unsupported-accept",
+      "status-putWalletPassphrase-400"
+    ],
+    "api:putWalletPassphrase:status:403": [
+      "key-api-passphrase-wrong-old"
+    ],
+    "api:putWalletPassphrase:status:415": [
+      "status-putWalletPassphrase-415"
+    ],
+    "api:quitStakePool:negative": [
+      "generated-reject-quitStakePool",
+      "status-quitStakePool-400",
+      "status-quitStakePool-404",
+      "status-quitStakePool-406",
+      "status-quitStakePool-415"
+    ],
+    "api:quitStakePool:status:400": [
+      "generated-reject-quitStakePool",
+      "status-quitStakePool-400"
+    ],
+    "api:quitStakePool:status:404": [
+      "status-quitStakePool-404"
+    ],
+    "api:quitStakePool:status:406": [
+      "status-quitStakePool-406"
+    ],
+    "api:quitStakePool:status:415": [
+      "status-quitStakePool-415"
+    ],
+    "api:selectCoins:negative": [
+      "generated-reject-selectCoins",
+      "status-selectCoins-400",
+      "status-selectCoins-406",
+      "status-selectCoins-415"
+    ],
+    "api:selectCoins:status:400": [
+      "generated-reject-selectCoins",
+      "status-selectCoins-400"
+    ],
+    "api:selectCoins:status:406": [
+      "status-selectCoins-406"
+    ],
+    "api:selectCoins:status:415": [
+      "status-selectCoins-415"
+    ],
+    "api:signMetadata:negative": [
+      "generated-reject-signMetadata",
+      "status-signMetadata-400",
+      "status-signMetadata-406",
+      "status-signMetadata-415"
+    ],
+    "api:signMetadata:positive": [
+      "metadata-golden-signature"
+    ],
+    "api:signMetadata:status:200": [
+      "metadata-golden-signature"
+    ],
+    "api:signMetadata:status:400": [
+      "generated-reject-signMetadata",
+      "status-signMetadata-400"
+    ],
+    "api:signMetadata:status:406": [
+      "status-signMetadata-406"
+    ],
+    "api:signMetadata:status:415": [
+      "status-signMetadata-415"
+    ],
+    "api:signSharedTransaction:negative": [
+      "generated-reject-signSharedTransaction",
+      "status-signSharedTransaction-400",
+      "status-signSharedTransaction-406",
+      "status-signSharedTransaction-415"
+    ],
+    "api:signSharedTransaction:status:400": [
+      "generated-reject-signSharedTransaction",
+      "status-signSharedTransaction-400"
+    ],
+    "api:signSharedTransaction:status:406": [
+      "status-signSharedTransaction-406"
+    ],
+    "api:signSharedTransaction:status:415": [
+      "status-signSharedTransaction-415"
+    ],
+    "api:signTransaction:negative": [
+      "generated-reject-signTransaction",
+      "status-signTransaction-400",
+      "status-signTransaction-406",
+      "status-signTransaction-415"
+    ],
+    "api:signTransaction:status:400": [
+      "generated-reject-signTransaction",
+      "status-signTransaction-400"
+    ],
+    "api:signTransaction:status:406": [
+      "status-signTransaction-406"
+    ],
+    "api:signTransaction:status:415": [
+      "status-signTransaction-415"
+    ],
+    "api:submitSharedTransaction:negative": [
+      "generated-reject-submitSharedTransaction",
+      "status-submitSharedTransaction-400",
+      "status-submitSharedTransaction-406",
+      "status-submitSharedTransaction-415"
+    ],
+    "api:submitSharedTransaction:status:400": [
+      "generated-reject-submitSharedTransaction",
+      "status-submitSharedTransaction-400"
+    ],
+    "api:submitSharedTransaction:status:406": [
+      "status-submitSharedTransaction-406"
+    ],
+    "api:submitSharedTransaction:status:415": [
+      "status-submitSharedTransaction-415"
+    ],
+    "api:submitTransaction:negative": [
+      "generated-reject-submitTransaction",
+      "status-submitTransaction-400",
+      "status-submitTransaction-406",
+      "status-submitTransaction-415"
+    ],
+    "api:submitTransaction:status:400": [
+      "generated-reject-submitTransaction",
+      "status-submitTransaction-400"
+    ],
+    "api:submitTransaction:status:406": [
+      "status-submitTransaction-406"
+    ],
+    "api:submitTransaction:status:415": [
+      "status-submitTransaction-415"
+    ],
+    "api:suggestedDReps:positive": [
+      "drep-suggestions"
+    ],
+    "api:suggestedDReps:status:200": [
+      "drep-suggestions"
+    ],
+    "chain.era-boundaries": [
+      "live:hard-fork-certificates",
+      "live:hard-fork-restore",
+      "live:hard-fork-submit"
+    ],
+    "chain.header-consistency": [
+      "live:independent-latest-header"
+    ],
+    "chain.protocol-parameters": [
+      "chain:node-wallet-protocol-parameters",
+      "chain:protocol-parameter-update"
+    ],
+    "crypto.bip39.checksum": [
+      "bip39-bad-checksum",
+      "bip39-short-entropy"
+    ],
+    "crypto.bip39.entropy": [
+      "bip39-reference-entropy-0",
+      "bip39-reference-entropy-1",
+      "bip39-reference-entropy-10",
+      "bip39-reference-entropy-11",
+      "bip39-reference-entropy-12",
+      "bip39-reference-entropy-13",
+      "bip39-reference-entropy-14",
+      "bip39-reference-entropy-15",
+      "bip39-reference-entropy-16",
+      "bip39-reference-entropy-17",
+      "bip39-reference-entropy-18",
+      "bip39-reference-entropy-19",
+      "bip39-reference-entropy-2",
+      "bip39-reference-entropy-20",
+      "bip39-reference-entropy-21",
+      "bip39-reference-entropy-22",
+      "bip39-reference-entropy-23",
+      "bip39-reference-entropy-3",
+      "bip39-reference-entropy-4",
+      "bip39-reference-entropy-5",
+      "bip39-reference-entropy-6",
+      "bip39-reference-entropy-7",
+      "bip39-reference-entropy-8",
+      "bip39-reference-entropy-9",
+      "bip39-zero-entropy"
+    ],
+    "crypto.bip39.seed": [
+      "bip39-reference-seed-0",
+      "bip39-reference-seed-1",
+      "bip39-reference-seed-10",
+      "bip39-reference-seed-11",
+      "bip39-reference-seed-12",
+      "bip39-reference-seed-13",
+      "bip39-reference-seed-14",
+      "bip39-reference-seed-15",
+      "bip39-reference-seed-16",
+      "bip39-reference-seed-17",
+      "bip39-reference-seed-18",
+      "bip39-reference-seed-19",
+      "bip39-reference-seed-2",
+      "bip39-reference-seed-20",
+      "bip39-reference-seed-21",
+      "bip39-reference-seed-22",
+      "bip39-reference-seed-23",
+      "bip39-reference-seed-3",
+      "bip39-reference-seed-4",
+      "bip39-reference-seed-5",
+      "bip39-reference-seed-6",
+      "bip39-reference-seed-7",
+      "bip39-reference-seed-8",
+      "bip39-reference-seed-9",
+      "bip39-trezor-seed",
+      "bip39-unicode-composed",
+      "bip39-unicode-decomposed"
+    ],
+    "crypto.byron-payload": [
+      "byron-path-authentication-failure",
+      "byron-path-decrypt-golden",
+      "byron-path-encrypt-golden",
+      "byron-path-malformed-cbor"
+    ],
+    "crypto.byron-root": [
+      "byron-root-encrypted",
+      "byron-root-malformed-mnemonic",
+      "byron-root-no-passphrase",
+      "haskell-Byron-root"
+    ],
+    "crypto.derivation-boundaries": [
+      "derive-hardened-from-public-rejected",
+      "derive-index-overflow-rejected",
+      "derive-invalid-role-rejected",
+      "haskell-Byron-child-0",
+      "haskell-Byron-child-1",
+      "haskell-Byron-child-2147483647",
+      "haskell-Icarus-0-0-0-private",
+      "haskell-Icarus-0-0-19-private",
+      "haskell-Icarus-0-0-2147483647-private",
+      "haskell-Icarus-0-1-0-private",
+      "haskell-Icarus-0-1-19-private",
+      "haskell-Icarus-0-1-2147483647-private",
+      "haskell-Icarus-0-2-0-private",
+      "haskell-Icarus-0-2-19-private",
+      "haskell-Icarus-0-2-2147483647-private",
+      "haskell-Icarus-2147483647-0-0-private",
+      "haskell-Icarus-2147483647-0-19-private",
+      "haskell-Icarus-2147483647-0-2147483647-private",
+      "haskell-Icarus-2147483647-1-0-private",
+      "haskell-Icarus-2147483647-1-19-private",
+      "haskell-Icarus-2147483647-1-2147483647-private",
+      "haskell-Icarus-2147483647-2-0-private",
+      "haskell-Icarus-2147483647-2-19-private",
+      "haskell-Icarus-2147483647-2-2147483647-private",
+      "haskell-Shared-0-0-0-private",
+      "haskell-Shared-0-0-19-private",
+      "haskell-Shared-0-0-2147483647-private",
+      "haskell-Shared-0-1-0-private",
+      "haskell-Shared-0-1-19-private",
+      "haskell-Shared-0-1-2147483647-private",
+      "haskell-Shared-0-2-0-private",
+      "haskell-Shared-0-2-19-private",
+      "haskell-Shared-0-2-2147483647-private",
+      "haskell-Shared-2147483647-0-0-private",
+      "haskell-Shared-2147483647-0-19-private",
+      "haskell-Shared-2147483647-0-2147483647-private",
+      "haskell-Shared-2147483647-1-0-private",
+      "haskell-Shared-2147483647-1-19-private",
+      "haskell-Shared-2147483647-1-2147483647-private",
+      "haskell-Shared-2147483647-2-0-private",
+      "haskell-Shared-2147483647-2-19-private",
+      "haskell-Shared-2147483647-2-2147483647-private",
+      "haskell-Shelley-0-0-0-private",
+      "haskell-Shelley-0-0-19-private",
+      "haskell-Shelley-0-0-2147483647-private",
+      "haskell-Shelley-0-1-0-private",
+      "haskell-Shelley-0-1-19-private",
+      "haskell-Shelley-0-1-2147483647-private",
+      "haskell-Shelley-0-2-0-private",
+      "haskell-Shelley-0-2-19-private",
+      "haskell-Shelley-0-2-2147483647-private",
+      "haskell-Shelley-2147483647-0-0-private",
+      "haskell-Shelley-2147483647-0-19-private",
+      "haskell-Shelley-2147483647-0-2147483647-private",
+      "haskell-Shelley-2147483647-1-0-private",
+      "haskell-Shelley-2147483647-1-19-private",
+      "haskell-Shelley-2147483647-1-2147483647-private",
+      "haskell-Shelley-2147483647-2-0-private",
+      "haskell-Shelley-2147483647-2-19-private",
+      "haskell-Shelley-2147483647-2-2147483647-private"
+    ],
+    "crypto.ed25519.noncanonical": [
+      "ed25519-noncanonical-s",
+      "ed25519-small-order-public-key",
+      "ed25519-small-order-r"
+    ],
+    "crypto.extended-ed25519": [
+      "extended-sign-empty",
+      "extended-sign-long",
+      "extended-sign-malformed-key",
+      "haskell-extended-signature-metadata",
+      "metadata-golden-signature"
+    ],
+    "crypto.icarus-root": [
+      "haskell-Icarus-root",
+      "icarus-invalid-mnemonic",
+      "icarus-second-factor"
+    ],
+    "crypto.ledger-root": [
+      "ledger-child-golden",
+      "ledger-root-golden",
+      "ledger-root-unicode"
+    ],
+    "crypto.passphrase-scrypt": [
+      "scrypt-migrate-pbkdf2"
+    ],
+    "crypto.public-private-derivation": [
+      "haskell-Icarus-0-0-0-public",
+      "haskell-Icarus-0-0-19-public",
+      "haskell-Icarus-0-0-2147483647-public",
+      "haskell-Icarus-0-1-0-public",
+      "haskell-Icarus-0-1-19-public",
+      "haskell-Icarus-0-1-2147483647-public",
+      "haskell-Icarus-0-2-0-public",
+      "haskell-Icarus-0-2-19-public",
+      "haskell-Icarus-0-2-2147483647-public",
+      "haskell-Icarus-2147483647-0-0-public",
+      "haskell-Icarus-2147483647-0-19-public",
+      "haskell-Icarus-2147483647-0-2147483647-public",
+      "haskell-Icarus-2147483647-1-0-public",
+      "haskell-Icarus-2147483647-1-19-public",
+      "haskell-Icarus-2147483647-1-2147483647-public",
+      "haskell-Icarus-2147483647-2-0-public",
+      "haskell-Icarus-2147483647-2-19-public",
+      "haskell-Icarus-2147483647-2-2147483647-public",
+      "haskell-Shared-0-0-0-public",
+      "haskell-Shared-0-0-19-public",
+      "haskell-Shared-0-0-2147483647-public",
+      "haskell-Shared-0-1-0-public",
+      "haskell-Shared-0-1-19-public",
+      "haskell-Shared-0-1-2147483647-public",
+      "haskell-Shared-0-2-0-public",
+      "haskell-Shared-0-2-19-public",
+      "haskell-Shared-0-2-2147483647-public",
+      "haskell-Shared-2147483647-0-0-public",
+      "haskell-Shared-2147483647-0-19-public",
+      "haskell-Shared-2147483647-0-2147483647-public",
+      "haskell-Shared-2147483647-1-0-public",
+      "haskell-Shared-2147483647-1-19-public",
+      "haskell-Shared-2147483647-1-2147483647-public",
+      "haskell-Shared-2147483647-2-0-public",
+      "haskell-Shared-2147483647-2-19-public",
+      "haskell-Shared-2147483647-2-2147483647-public",
+      "haskell-Shelley-0-0-0-public",
+      "haskell-Shelley-0-0-19-public",
+      "haskell-Shelley-0-0-2147483647-public",
+      "haskell-Shelley-0-1-0-public",
+      "haskell-Shelley-0-1-19-public",
+      "haskell-Shelley-0-1-2147483647-public",
+      "haskell-Shelley-0-2-0-public",
+      "haskell-Shelley-0-2-19-public",
+      "haskell-Shelley-0-2-2147483647-public",
+      "haskell-Shelley-2147483647-0-0-public",
+      "haskell-Shelley-2147483647-0-19-public",
+      "haskell-Shelley-2147483647-0-2147483647-public",
+      "haskell-Shelley-2147483647-1-0-public",
+      "haskell-Shelley-2147483647-1-19-public",
+      "haskell-Shelley-2147483647-1-2147483647-public",
+      "haskell-Shelley-2147483647-2-0-public",
+      "haskell-Shelley-2147483647-2-19-public",
+      "haskell-Shelley-2147483647-2-2147483647-public"
+    ],
+    "crypto.root-key-encryption": [
+      "root-change-v1-passphrase",
+      "root-decrypt-v1-correct",
+      "root-decrypt-v1-wrong-passphrase",
+      "root-encrypt-v1",
+      "root-migrate-v1-v2"
+    ],
+    "crypto.shared-root": [
+      "haskell-Shared-root",
+      "shared-root-invalid-mnemonic",
+      "shared-root-second-factor"
+    ],
+    "crypto.shelley-root": [
+      "haskell-Shelley-root",
+      "shelley-invalid-mnemonic",
+      "shelley-second-factor"
+    ],
+    "crypto.trezor-root": [
+      "trezor-child-golden",
+      "trezor-root-golden",
+      "trezor-root-second-factor"
+    ],
+    "script.native": [
+      "native-script-after",
+      "native-script-all",
+      "native-script-any",
+      "native-script-at-least",
+      "native-script-before",
+      "native-script-unsatisfied"
+    ],
+    "script.policy-id": [
+      "asset-fingerprint",
+      "key-hash",
+      "native-policy-id"
+    ],
+    "selection.input-limits": [
+      "selection-maximum-inputs-boundary",
+      "selection-maximum-size-boundary"
+    ],
+    "selection.insufficient-funds": [
+      "haskell-selection-insufficient-fee",
+      "selection-insufficient-collateral"
+    ],
+    "tx.collateral": [
+      "collateral-eligibility",
+      "collateral-insufficient",
+      "collateral-percentage-rounding",
+      "collateral-return"
+    ],
+    "tx.delegation": [
+      "live:reward-withdrawal",
+      "live:stake-delegate",
+      "live:stake-deregister",
+      "live:stake-register",
+      "stake-deposit-refund"
+    ],
+    "tx.double-spend": [
+      "live:conflicting-spend"
+    ],
+    "tx.governance": [
+      "governance-certificate-golden",
+      "governance-era-rejection",
+      "live:vote-delegate"
+    ],
+    "tx.invalid-signature": [
+      "live:corrupt-witness-rejected",
+      "live:unsigned-submit-rejected"
+    ],
+    "tx.metadata": [
+      "metadata-bytes-64",
+      "metadata-cbor-golden",
+      "metadata-label-boundaries",
+      "metadata-oversize-rejected",
+      "metadata-text-64-bytes"
+    ],
+    "tx.min-utxo": [
+      "min-utxo-ada",
+      "min-utxo-datum",
+      "min-utxo-native-assets",
+      "min-utxo-protocol-change",
+      "min-utxo-reference-script"
+    ],
+    "tx.minimum-fee": [
+      "fee-execution-units",
+      "fee-linear-boundaries",
+      "fee-maximum-size",
+      "fee-rounding",
+      "fee-witness-count"
+    ],
+    "tx.mint-burn": [
+      "live:mint-invalid-witness-rejected",
+      "live:native-burn",
+      "live:native-mint",
+      "mint-burn-quantity-boundaries"
+    ],
+    "tx.serialization": [
+      "tx-cbor-allegra",
+      "tx-cbor-alonzo",
+      "tx-cbor-babbage",
+      "tx-cbor-byron",
+      "tx-cbor-conway",
+      "tx-cbor-duplicate-key-rejected",
+      "tx-cbor-indefinite",
+      "tx-cbor-mary",
+      "tx-cbor-shelley",
+      "tx-cbor-trailing-rejected"
+    ],
+    "tx.validity-interval": [
+      "live:expired-transaction-rejected",
+      "validity-lower-bound",
+      "validity-slot-time-boundary",
+      "validity-ttl"
+    ],
+    "tx.witnesses": [
+      "witness-bootstrap-golden",
+      "witness-duplicate",
+      "witness-invalid-key",
+      "witness-merge",
+      "witness-script-golden"
+    ],
+    "wallet.byron-migration": [
+      "live:byron-icarus-spend",
+      "live:byron-migrate",
+      "live:byron-random-spend"
+    ],
+    "wallet.concurrent-spend": [
+      "live:concurrent-construct",
+      "live:concurrent-submit"
+    ],
+    "wallet.discovery": [
+      "discovery-internal-change",
+      "discovery-random-byron",
+      "discovery-sequential-gap",
+      "discovery-shared-cosigners"
+    ],
+    "wallet.governance": [
+      "governance:drep-queries",
+      "governance:vote-state"
+    ],
+    "wallet.hardware-watch-only": [
+      "key-api-watch-only-addresses",
+      "key-api-watch-only-private-derivation-rejected",
+      "live:watch-only-external-witness"
+    ],
+    "wallet.restart": [
+      "state:restart-confirmed",
+      "state:restart-key-address-state",
+      "state:restart-pending"
+    ],
+    "wallet.restoration": [
+      "live:restore-from-genesis",
+      "state:restore-from-checkpoint"
+    ],
+    "wallet.resubmission": [
+      "live:node-disconnect-reconnect",
+      "live:pending-expiry",
+      "live:pending-retry"
+    ],
+    "wallet.rollback": [
+      "live:rollback-reapply",
+      "state:rollback-balance-history",
+      "state:rollback-pending",
+      "state:rollback-spent-inputs"
+    ],
+    "wallet.shared-cosigners": [
+      "live:shared-fully-signed",
+      "shared:activate",
+      "shared:incomplete",
+      "shared:partial-sign"
+    ],
+    "wallet.stake-pools": [
+      "pools:maintenance",
+      "pools:metadata",
+      "pools:ranking",
+      "pools:retirement"
+    ],
+    "wallet.transaction-filtering": [
+      "history:binary-metadata",
+      "history:order",
+      "history:pagination",
+      "history:status",
+      "history:time-range"
+    ],
+    "wallet.utxo-snapshot": [
+      "live:multiasset-utxo-snapshot",
+      "live:utxo-snapshot-statistics"
+    ]
+  },
+  "failures": []
+}

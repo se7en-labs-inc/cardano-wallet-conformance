@@ -1,0 +1,38 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.02s
+     Running unittests src/lib.rs (target/debug/deps/wallet_conformance-2a2fb7ebf7f9bdad)
+
+running 3 tests
+test node_proxy::tests::cleanup_preserves_replacement_inode_and_refuses_public_parent ... FAILED
+test node_proxy::tests::drains_live_connections_rejects_paused_clients_and_reconnects ... FAILED
+test node_proxy::tests::preserves_large_binary_bytes_and_half_closed_response ... FAILED
+
+failures:
+
+---- node_proxy::tests::cleanup_preserves_replacement_inode_and_refuses_public_parent stdout ----
+
+thread 'node_proxy::tests::cleanup_preserves_replacement_inode_and_refuses_public_parent' (403883) panicked at src/node_proxy.rs:338:55:
+called `Result::unwrap()` on an `Err` value: proxy socket parent must be private
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- node_proxy::tests::drains_live_connections_rejects_paused_clients_and_reconnects stdout ----
+
+thread 'node_proxy::tests::drains_live_connections_rejects_paused_clients_and_reconnects' (403884) panicked at src/node_proxy.rs:296:55:
+called `Result::unwrap()` on an `Err` value: proxy socket parent must be private
+
+---- node_proxy::tests::preserves_large_binary_bytes_and_half_closed_response stdout ----
+
+thread 'node_proxy::tests::preserves_large_binary_bytes_and_half_closed_response' (403885) panicked at src/node_proxy.rs:261:55:
+called `Result::unwrap()` on an `Err` value: proxy socket parent must be private
+
+
+failures:
+    node_proxy::tests::cleanup_preserves_replacement_inode_and_refuses_public_parent
+    node_proxy::tests::drains_live_connections_rejects_paused_clients_and_reconnects
+    node_proxy::tests::preserves_large_binary_bytes_and_half_closed_response
+
+test result: FAILED. 0 passed; 3 failed; 0 ignored; 0 measured; 46 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--lib`

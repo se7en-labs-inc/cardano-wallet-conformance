@@ -1,0 +1,151 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "fcb88a69f97ae466b0c5ec2d0db78e3f0851e1fc840d4e1e7b01aacfa00ee0df",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-conway-node11.1.3-validity",
+  "target": "http://127.0.0.1:18790/v2/",
+  "evidence": [
+    {
+      "case": "network-information",
+      "requirements": [
+        "api:getNetworkInformation:positive",
+        "api:getNetworkInformation:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-parameters",
+      "requirements": [
+        "api:getNetworkParameters:positive",
+        "api:getNetworkParameters:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-clock",
+      "requirements": [
+        "api:getNetworkClock:positive",
+        "api:getNetworkClock:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "latest-block-header",
+      "requirements": [
+        "api:getBlocksLatestHeader:positive",
+        "api:getBlocksLatestHeader:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "stake-pool-list",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pool-maintenance-status",
+      "requirements": [
+        "api:getMaintenanceActions:positive",
+        "api:getMaintenanceActions:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "smash-health",
+      "requirements": [
+        "api:getCurrentSmashHealth:positive",
+        "api:getCurrentSmashHealth:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "settings-read",
+      "requirements": [
+        "api:getSettings:positive",
+        "api:getSettings:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "wallet-list",
+      "requirements": [
+        "api:listWallets:positive",
+        "api:listWallets:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "byron-wallet-list",
+      "requirements": [
+        "api:listByronWallets:positive",
+        "api:listByronWallets:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "shared-wallet-list",
+      "requirements": [
+        "api:listSharedWallets:positive",
+        "api:listSharedWallets:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep-list",
+      "requirements": [
+        "api:listDReps:positive",
+        "api:listDReps:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep-summary",
+      "requirements": [
+        "api:getDRepSummary:positive",
+        "api:getDRepSummary:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep-suggestions",
+      "requirements": [
+        "api:suggestedDReps:positive",
+        "api:suggestedDReps:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

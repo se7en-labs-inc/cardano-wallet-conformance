@@ -1,0 +1,45 @@
+        , amount = Coin.distance amountIn amountOut
+        , expiry = Just (snd txValidity)
+        }
+
+-- | Broadcast a (signed) transaction to the network.
+submitTx
+    :: MonadUnliftIO m
+    => Tracer m WalletWorkerLog
+    -> DBLayer m s
+    -> NetworkLayer m block
+    -> BuiltTx
+    -> ExceptT ErrSubmitTx m ()
+submitTx tr DBLayer{walletState, atomically} nw tx@BuiltTx{..} =
+    traceResult (MsgWallet . MsgTxSubmit . MsgSubmitTx tx >$< tr) $ do
+        withExceptT ErrSubmitTxNetwork $ postSealedTx nw builtSealedTx
+        lift
+            . atomically
+            . Delta.onDBVar walletState
+            . WalletState.updateSubmissions
+            . Delta.update
+            $ \_ -> Submissions.addTxSubmission tx (builtTxMeta ^. #slotNo)
+
+-- | Broadcast an externally-signed transaction to the network.
+--
+-- NOTE: external transactions will not be added to the LocalTxSubmission pool,
+-- so the user must retry submission themselves.
+submitExternalTx
+    :: Tracer IO TxSubmitLog
+    -> NetworkLayer IO block
+    -> TransactionLayer k ktype SealedTx
+    -> SealedTx
+    -> ExceptT ErrPostTx IO TxId
+submitExternalTx tr nw tl sealedTx = do
+    -- FIXME: We read the current era to constrain the @sealedTx@ **twice**:
+    -- once here for decodeTx, and once in postSealedTx before submitting.
+    era <- liftIO $ currentNodeEra nw
+    let tx = walletTx $ decodeTx tl era sealedTx
+        txid = tx ^. #txId
+    _ <- traceResult (MsgSubmitExternalTx txid >$< tr) $ do
+        postSealedTx nw sealedTx
+        pure sealedTx
+    pure txid
+
+votingEnabledInEra
+    :: Write.RecentEra era

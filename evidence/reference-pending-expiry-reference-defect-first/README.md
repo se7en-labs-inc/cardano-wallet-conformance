@@ -1,0 +1,11 @@
+# Reference wallet fails actual transaction expiry
+
+Source96e3de2bf9, pinned Haskell2fc5c383c94bb907deaa0cd27b1b407f86224b6c. The approved8-second window and safe-horizon guard allow actual native chain advancement past expiry. Fresh28 checks/27PASS/one strict expiry-status failure. This is distinct from the earlier30-second native forecast-horizon fixture failure.
+
+The signed/API validity upper slot is412 at20:19:04.4Z. Later the ready wallet reports tip979 and zero available funds, while keeping the transaction pending and projecting97870500 lovelace after change. The independent node reports the original100000000-lovelace funding output still unspent and the transaction absent from its mempool at slot980. Preserved native rejections show repeated wallet submissions rejected as OutsideValidityIntervalUTxO beyond412. Public API observations and selected native queries were captured before cleanup.
+
+Pinned submitTransaction explicitly obtains transactionExpirySlot ti Nothing and puts that fresh value into construction metadata instead of the decoded signed interval. transactionExpirySlot defaults to7200seconds. The local submission store uses that metadata expiry. Source excerpts preserve the causal chain and existing ADP-1193 TODO. A selected-row database diagnostic raced cleanup and failed, so no first-run stored expiry value is claimed; the separately repeated run captures selected fields using SQLite readonly mode.
+
+All wallet/cluster cleanup checks pass and final process verification finds no owned runtime remaining. The strict expiry test remains failing: no timeout increase, expected-pending substitution, skip, coverage credit or source pin change. Full163 harness tests, Clippy and Nix package/Clippy/fmt checks pass separately; they do not make this wallet workflow pass.
+
+submitted-expiry-fix.proposed.patch is an UNAPPLIED review artifact. It uses the decoded upper bound when available for normal and shared submissions, preserving the existing fallback when interval decoding supplies none. git apply --check succeeds against the pinned source; no compilation or live fix validation is claimed. Shared expiry is a source-audit finding and has not been reproduced live. Original Haskell source is unchanged.

@@ -1,0 +1,9 @@
+# Coherent key derivation baseline
+
+Harness710fd203d8 passes all1,223 cases under one fingerprint and source-bound environment:411 differential HTTP cases,48 funded live checks and764 supported internal cases. The independent real-node faucet/UTxO integration also passes. The gate covers444/643 obligations, leaves199 missing and records no failures or unregistered inputs.
+
+Compared with the previous coherent baseline, the named Byron-root, derivation-boundary, public/private derivation and extended-signing requirements now close. There are824 frozen internal vectors in total;60 remain unsupported by these adapters. Hardware roots, nonempty generation factors, other address/script/transaction domains, migration-failure injection, durable wallet state and the remaining API/ledger scenarios remain mandatory.
+
+Two isolated pinned-source wallet services shared a fresh advancing Conway/node11.1.3 cluster. All seven HTTP suites ran sequentially before the funded workflow. Runtime binaries, derivations, source binding, test results and the corrected initial cluster-log argument are recorded in runtime.json. Public tip samples, protocol parameters and genesis hashes are retained. Owned processes were terminated and exact scratch-path absence verified. Internal adapters use the same pinned wallet/component source identities through JSON, not HTTP.
+
+The local export artifacts/behavioral-specification.key-coherent.draft.json remains an incomplete, non-authoritative draft. Gate and specification --require-complete correctly exit1. Historical evidence was retained unchanged. Reproduction: [source runtime](../../docs/reference-source-runtime.md), [key adapter](../../docs/reference-keys.md), [other component adapter](../../docs/reference-adapter.md), [credential adapter](../../docs/reference-credentials.md).

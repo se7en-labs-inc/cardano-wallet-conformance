@@ -1,0 +1,20 @@
+                , TMVar IO (CardanoInterpreter StandardCrypto)
+                , TMVar IO (Read.EraValue Read.Era)
+                , TQueue
+                    IO
+                    ( LocalTxSubmissionCmd
+                        (Consensus.GenTx (CardanoBlock StandardCrypto))
+                        (ApplyTxErr (CardanoBlock StandardCrypto))
+                        IO
+                    )
+                )
+        connectNodeClient handlers = do
+            networkParamsVar <- newEmptyTMVarIO
+            interpreterVar <- newEmptyTMVarIO
+            eraVar <- newEmptyTMVarIO
+            txSubmissionQ <- newTQueueIO
+            (mkProtocols, readTip) <-
+                mkWalletToNodeProtocols
+                    tr
+                    np
+                    (atomically . repsertTMVar networkParamsVar)

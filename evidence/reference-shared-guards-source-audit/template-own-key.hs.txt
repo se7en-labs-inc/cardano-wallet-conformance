@@ -1,0 +1,44 @@
+accountXPubCondition
+    :: KeyFlavorS k
+    -> k 'AccountK XPub
+    -> ScriptTemplate
+    -> Bool
+accountXPubCondition kF accXPub (ScriptTemplate cosignerKeys _) =
+    getRawKey kF accXPub `F.elem` cosignerKeys
+
+validateScriptTemplates
+    :: KeyFlavorS k
+    -> k 'AccountK XPub
+    -> ValidationLevel
+    -> ScriptTemplate
+    -> Maybe ScriptTemplate
+    -> Either ErrScriptTemplate ()
+validateScriptTemplates kF accXPub level pTemplate dTemplateM = do
+    checkTemplate Payment pTemplate
+    unless (checkXPub pTemplate)
+        $ Left
+        $ ErrScriptTemplateMissingKey Payment accXPubErr
+    case dTemplateM of
+        Just dTemplate -> do
+            checkTemplate Delegation dTemplate
+            unless (checkXPub dTemplate)
+                $ Left
+                $ ErrScriptTemplateMissingKey Delegation accXPubErr
+        Nothing -> pure ()
+  where
+    -- when creating the shared wallet we can have cosigners in script with missing
+    -- account public key. They are supposed to be collected when patching.
+    handleUnusedCosigner
+        :: Either ErrValidateScriptTemplate ()
+        -> Either ErrValidateScriptTemplate ()
+    handleUnusedCosigner = \case
+        Left MissingCosignerXPub -> Right ()
+        rest -> rest
+    checkTemplate cred template' =
+        mapLeft (ErrScriptTemplateInvalid cred)
+            $ handleUnusedCosigner
+            $ validateScriptTemplate level template'
+    checkXPub = accountXPubCondition kF accXPub
+    accXPubErr =
+        "The wallet's account key must be always present for the script template."
+

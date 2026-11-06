@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "root-encrypt-v2",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "78b66d5c5832f37a24befba32bb5b7a33f83398e1705e8273aae30a43e46204cae4422370abc0f32492ca953d804da7ae270dae3f8618a5fda57269e4f04b97f82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-parse",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-check",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-decrypt-wrong-passphrase",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "",
+      "new_passphrase_hex": "01",
+      "old_passphrase_hex": "00",
+      "passphrase_hex": "00",
+      "path": [
+        0
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-key.sign-v2",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "",
+      "new_passphrase_hex": "01",
+      "old_passphrase_hex": "00",
+      "passphrase_hex": "00",
+      "path": [
+        0
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-key.change-v2",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.change-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "",
+      "new_passphrase_hex": "01",
+      "old_passphrase_hex": "00",
+      "passphrase_hex": "00",
+      "path": [
+        0
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-key.derive-v2",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.derive-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "",
+      "new_passphrase_hex": "01",
+      "old_passphrase_hex": "00",
+      "passphrase_hex": "00",
+      "path": [
+        0
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-sign-empty",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "signature_hex": "6d83576614598bdf5047efb908730d5ad28f60ec8299a829fd3dc189f56f13e418b747072a750bc371cd83f6497ed5effb633c1bcfd8a6405dd9b7b2a33be905",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-sign-binary",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "00ff80",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "signature_hex": "830b677833eb311d205ca6da74b41609300cd82bc8c8d8f9be97d59e920616ab1327378e406fbc473a3666630d91847e309d75d15013253162ff0b8d4c176403",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-sign-long",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "message_hex": "a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "signature_hex": "54b6ab823b3cf5abc49f4534fddf66100ba54b63ce7f3f30f471aa0a97711c36c4e0b4da562caf2462a9aa13900ccd10f7a4652e10c2aa4d63c33a70b4168d03",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-create-empty",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "78b66d5c5832f37a24befba32bb5b7a33f83398e1705e8273aae30a43e46204cae4422370abc0f32492ca953d804da7ae270dae3f8618a5fda57269e4f04b97f82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840029a23278203360105c3f1b8c5290b2ece1c0e99d27cb9c037f99041314b5c631f6f81d704fe18137d3c0f15bfbf5bf85cd53b93643757f423767c3b14b537e05039bbec1355fc71e48d350db37d010b0d",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-check-empty",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840029a23278203360105c3f1b8c5290b2ece1c0e99d27cb9c037f99041314b5c631f6f81d704fe18137d3c0f15bfbf5bf85cd53b93643757f423767c3b14b537e05039bbec1355fc71e48d350db37d010b0d",
+      "passphrase_hex": ""
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-create-unicode",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "78b66d5c5832f37a24befba32bb5b7a33f83398e1705e8273aae30a43e46204cae4422370abc0f32492ca953d804da7ae270dae3f8618a5fda57269e4f04b97f82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1",
+      "passphrase_hex": "70c3a47373f09f949065cc81",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840c19dca64e873761e3134cbe8e37b795d195ed1172f85c4c442a87065ecf3f39d0e7f623da3c84c1b984549822cd049a5a677a30a5dd02aac2cb37c96df60ac08509e986af360825456908be63feeb19c69",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-check-unicode",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840c19dca64e873761e3134cbe8e37b795d195ed1172f85c4c442a87065ecf3f39d0e7f623da3c84c1b984549822cd049a5a677a30a5dd02aac2cb37c96df60ac08509e986af360825456908be63feeb19c69",
+      "passphrase_hex": "70c3a47373f09f949065cc81"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-create-binary",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "78b66d5c5832f37a24befba32bb5b7a33f83398e1705e8273aae30a43e46204cae4422370abc0f32492ca953d804da7ae270dae3f8618a5fda57269e4f04b97f82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1",
+      "passphrase_hex": "0000ff80",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840e6a93ab1536505da9fe8386425706a15789efe4b39edce0d185df4d335cc3268f1cd8e482f91d39609f9abc1777b06ca950980719a454ab07e4db4bddd9f03cc500830c5a35bf6e301df30d9b378246325",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-check-binary",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840e6a93ab1536505da9fe8386425706a15789efe4b39edce0d185df4d335cc3268f1cd8e482f91d39609f9abc1777b06ca950980719a454ab07e4db4bddd9f03cc500830c5a35bf6e301df30d9b378246325",
+      "passphrase_hex": "0000ff80"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-change-passphrase",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.change-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "new_passphrase_hex": "00ff",
+      "old_passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840098a68d7672a54f63738f42a7afcbb33182b57a749013df87021ce854a44de3e1b4a32e9b1f48b04decf4813cee89391303507eaa9890e759277204bbf7f787e50d29500921fb261bc1f439de3fb2deed6",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-changed-new-passphrase",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840098a68d7672a54f63738f42a7afcbb33182b57a749013df87021ce854a44de3e1b4a32e9b1f48b04decf4813cee89391303507eaa9890e759277204bbf7f787e50d29500921fb261bc1f439de3fb2deed6",
+      "passphrase_hex": "00ff"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-changed-old-rejected",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840098a68d7672a54f63738f42a7afcbb33182b57a749013df87021ce854a44de3e1b4a32e9b1f48b04decf4813cee89391303507eaa9890e759277204bbf7f787e50d29500921fb261bc1f439de3fb2deed6",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-changed-signature",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a15840098a68d7672a54f63738f42a7afcbb33182b57a749013df87021ce854a44de3e1b4a32e9b1f48b04decf4813cee89391303507eaa9890e759277204bbf7f787e50d29500921fb261bc1f439de3fb2deed6",
+      "message_hex": "00ff80",
+      "passphrase_hex": "00ff"
+    },
+    "expected": {
+      "result": {
+        "signature_hex": "830b677833eb311d205ca6da74b41609300cd82bc8c8d8f9be97d59e920616ab1327378e406fbc473a3666630d91847e309d75d15013253162ff0b8d4c176403",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-change-same-passphrase",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.change-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "new_passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "old_passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-derived-address-key",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.derive-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "path": [
+        2147485500,
+        2147485463,
+        2147483648,
+        0,
+        0
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820080000000000000008000000000000000800000000000000080000000000000058180900000000000000090000000000000009000000000000005855880201841a0002000003041820010118405820ba828d0ecbeb7e930351e2deada39323bfad7dfe14ee8a353630b7a2bc62748658200701bcef1a33588bf9efcd888eea2f60a64245d1507d583d8b0928757944b5aa58407e1e70b43d7705c9bd4b6f701c35119a31d638b1f8cf728d4917ec45da6e6c86b5321a68226ae892c2f3f97f67016a593c1fd2389cc2d16fa230eac64201605250f9257eb517818c7e6dad76fed7a1dfb3",
+        "xpub_hex": "ba828d0ecbeb7e930351e2deada39323bfad7dfe14ee8a353630b7a2bc6274860701bcef1a33588bf9efcd888eea2f60a64245d1507d583d8b0928757944b5aa"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-derived-signature",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.sign-v2",
+    "input": {
+      "key_hex": "855820080000000000000008000000000000000800000000000000080000000000000058180900000000000000090000000000000009000000000000005855880201841a0002000003041820010118405820ba828d0ecbeb7e930351e2deada39323bfad7dfe14ee8a353630b7a2bc62748658200701bcef1a33588bf9efcd888eea2f60a64245d1507d583d8b0928757944b5aa58407e1e70b43d7705c9bd4b6f701c35119a31d638b1f8cf728d4917ec45da6e6c86b5321a68226ae892c2f3f97f67016a593c1fd2389cc2d16fa230eac64201605250f9257eb517818c7e6dad76fed7a1dfb3",
+      "message_hex": "00ff80",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "signature_hex": "007737483e6a371e634b136336b17b560869e6549dfce4dc2ac5725e5d8e58c1c214290c44b8df0eef299b4a1bd95283991501ccdd4b741ecac7b48dff04ed0f",
+        "xpub_hex": "ba828d0ecbeb7e930351e2deada39323bfad7dfe14ee8a353630b7a2bc6274860701bcef1a33588bf9efcd888eea2f60a64245d1507d583d8b0928757944b5aa"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-derived-maximum-index",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.derive-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264",
+      "path": [
+        2147485500,
+        2147485463,
+        4294967295,
+        2,
+        2147483647
+      ],
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "key_hex": "855820080000000000000008000000000000000800000000000000080000000000000058180900000000000000090000000000000009000000000000005855880201841a0002000003041820010118405820efff1ba6eef7f2ce5afdd9a7d386f934cb35226043ad99413e0e2112628ca24e5820d12bc7e39e6243f97032c6dd06af69272e7b64a5a5dcf9f3ed14006fcb908225584086250d349607757748012efef708bf244dbcf8585f60b23091fcd4efc46e6c86018a23a78a513f08febba1880cf7028a907a472e572d7fe16a289828ff133496509ab40bba64ba200eb0ab39c04630bbd9",
+        "xpub_hex": "efff1ba6eef7f2ce5afdd9a7d386f934cb35226043ad99413e0e2112628ca24ed12bc7e39e6243f97032c6dd06af69272e7b64a5a5dcf9f3ed14006fcb908225"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-salt",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820010000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-short-salt",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85581f0000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-nonce",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180000000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-short-nonce",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85582000000000000000000000000000000000000000000000000000000000000000005700000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-aad",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a0584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-short-aad",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "8558200000000000000000000000000000000000000000000000000000000000000000581801000000000000000100000000000000010000000000000058540201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a0584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-ciphertext-tamper",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584045545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-short-ciphertext",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1583f545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-tag",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507c3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-short-tag",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d964f3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-aad-key-6",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32f582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-tamper-aad-key-7",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a0584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvAuthenticationFailed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-overlong-outer-parse",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "98055820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-overlong-outer-auth",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "98055820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-overlong-aad-parse",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85582000000000000000000000000000000000000000000000000000000000000000005818010000000000000001000000000000000100000000000000585698080201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "result": {
+        "format": "v2",
+        "xpub_hex": "0730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e82facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-overlong-aad-auth",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "85582000000000000000000000000000000000000000000000000000000000000000005818010000000000000001000000000000000100000000000000585698080201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35",
+      "passphrase_hex": "636f6e666f726d616e636520726f6f742070617373776f7264"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-0",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005857881903e701841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-1",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85582000000000000000000000000000000000000000000000000000000000000000005818010000000000000001000000000000000100000000000000585788021903e7841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-2",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85582000000000000000000000000000000000000000000000000000000000000000005818010000000000000001000000000000000100000000000000585388020184191000010118200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-3",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005857880201841a00020000030418201903e701184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-4",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005857880201841a0002000003041820011903e7184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-5",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005856880201841a000200000304182001011903e758200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-6",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005854880201841a000200000304182001011840581f00000000000000000000000000000000000000000000000000000000000000582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-aad-field-7",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005854880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e581f00000000000000000000000000000000000000000000000000000000000000584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd35"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-truncated-0",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": ""
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-truncated-1",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "85"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-truncated-127",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48c"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-truncated-129",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-truncated-230",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-trailing-data",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf563b8760359ce14aa54d6e22cf39cceabcba7d5a1584044545ce88dbc5b086eb9537d0004f21c02434a52f7174260d31c41bd185cdf81b43d01f10516bdff865004cc1dc3daac5fc240f30fddaffa48321d23ebc66d96507d3f3b182892dd106c3419174fc9bd3500"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-master-0",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvInvalidSecretKey"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-master-32",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvInvalidSecretKey"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-master-95",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvInvalidSecretKey"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-master-97",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvInvalidSecretKey"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-invalid-master-128",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.create-v2",
+    "input": {
+      "master_key_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "passphrase_hex": "",
+      "randomness": "counter-v1"
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvInvalidSecretKey"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v1-parse",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "b84d0b6db447911a98a3ade98145c0e8323e106f07bc17a99c2104c2688bb7528310902a3cec7e262ded6a4369ec1f48966a6b48b1ee90aa00e61b95417949f81258854ab44b0cfda59bd68fbd87f280841a390068049df0f8a903c94ba65b7aa4762129a6c83acfda5b257eaeb73ec5fee1518b6674fdc7891fe23f06174421"
+    },
+    "expected": {
+      "result": {
+        "format": "v1",
+        "xpub_hex": "1258854ab44b0cfda59bd68fbd87f280841a390068049df0f8a903c94ba65b7aa4762129a6c83acfda5b257eaeb73ec5fee1518b6674fdc7891fe23f06174421"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v1-not-a-v2-key",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.check-v2",
+    "input": {
+      "key_hex": "b84d0b6db447911a98a3ade98145c0e8323e106f07bc17a99c2104c2688bb7528310902a3cec7e262ded6a4369ec1f48966a6b48b1ee90aa00e61b95417949f81258854ab44b0cfda59bd68fbd87f280841a390068049df0f8a903c94ba65b7aa4762129a6c83acfda5b257eaeb73ec5fee1518b6674fdc7891fe23f06174421",
+      "passphrase_hex": ""
+    },
+    "expected": {
+      "error": {
+        "code": "XPrvDecodeError"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v1-zero-serialization-parses",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "expected": {
+      "result": {
+        "format": "v1",
+        "xpub_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "root-v2-prefix-128-classified-v1",
+    "requirements": [
+      "crypto.root-key-encryption"
+    ],
+    "source": "Haskell cardano-crypto-wallet 0.2.0.0; package source sha256-jpHIKobCE2NI80SpHptUB7eY3MoWcMU+/DF3iVIDtXY=; wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; oracle sha256:2a9fd2d0b24de402fee3787ec85600b159f1c66e7b1833afe8872b80cf12e1d2; driver sha256:d8e116f43fb23ce85504f68e3eedfe4948c014cdea4f66ed088b0fbb14690a1c; production Argon2id 131072KiB/time3/parallelism4/output32; XChaCha20-Poly1305; deterministic counter-v1 test entropy only; independent cardano-address public keys and Rust strict signature checks",
+    "operation": "root-key.parse",
+    "input": {
+      "key_hex": "855820000000000000000000000000000000000000000000000000000000000000000058180100000000000000010000000000000001000000000000005855880201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf5"
+    },
+    "expected": {
+      "result": {
+        "format": "v1",
+        "xpub_hex": "0201841a00020000030418200101184058200730f885297d4b18650dc1f3ecf5874979cea96daaf93d651144e28a246cd32e582082facb5f17f6868c7ea48cf5"
+      }
+    },
+    "selection_invariants": false
+  }
+]

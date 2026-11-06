@@ -1,0 +1,11 @@
+{
+  "failed_source": "5856893470",
+  "failed_report": "live.json",
+  "observed": "423checks/422PASS/1FAIL: input-limit workflow rejects assumed400-input accepted anchor; actual exact403 transaction_is_too_big passes its response/schema guard",
+  "primary_source": "cardano-balance-transaction897577325745729552495a9add56c713630c497e Sign.hs191-229 counts distinct spending/collateral input references in vkInsUnique, not unique payment credentials. Balance.hs950-957 uses that count for minfee and the signed-size guard at919-923.",
+  "cause": "The profile fixes vkey_witnesses=1 because all inputs share one actual signing key. That matches physical final witnesses but not Haskell's conservative estimate.400estimated witnesses plus inputs exceed16384 bytes; the profile's400-to600 bracket cannot contain an accepted boundary.",
+  "proposed_change": "Capture the actual pinned estimateKeyWitnessCounts helper for multiple distinct input references sharing the same payment credential. Keep actual signatures independently one key, but compute the wallet's conservative fee/size using its actual per-input witness count. Begin the independent bracket at the source-defined CBOR threshold23 instead of assumed400, retain the600-input oversized fixture and exact403. Search for adjacent accepted/rejected counts, include the extra101-byte mock witness and exact CBOR framing/fee/change widths in the next-input proof, and retain every exact funding reference, signature, fee, size, conservation, node inclusion and spent-input check. Preserve all600 real funding outputs and failed evidence. Rerun fresh node verification; do not invent an input cap or relax errors.",
+  "changes_to_catalogue_count_or_statuses": false,
+  "requires_user_review": true,
+  "approved": false
+}

@@ -1,0 +1,483 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "5ee88ddea23bbf9e91440bc90dcb66e74ee0dcee1e507c9c2be0f01c2625b6a4",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-combined-644-20261104",
+  "target": "http://127.0.0.1:18792/v2/",
+  "evidence": [
+    {
+      "case": "key-api-create",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-guard-addresses-before",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "address-cross-network-api-rejected",
+      "requirements": [
+        "address.network",
+        "api:constructTransaction:negative",
+        "api:constructTransaction:status:400",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-guard-testnet-control",
+      "requirements": [
+        "api:constructTransaction:negative",
+        "api:constructTransaction:status:403",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-guard-addresses-preserved",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "network-guard-wallet-preserved",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-account-0-non_extended",
+      "requirements": [
+        "api:postAccountKey:positive",
+        "api:postAccountKey:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-get-account-non_extended",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-account-0-extended",
+      "requirements": [
+        "api:postAccountKey:positive",
+        "api:postAccountKey:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-get-account-extended",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-account-2147483647-non_extended",
+      "requirements": [
+        "api:postAccountKey:positive",
+        "api:postAccountKey:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-account-2147483647-extended",
+      "requirements": [
+        "api:postAccountKey:positive",
+        "api:postAccountKey:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-0-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-0-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-19-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-19-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-2147483647-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-0-2147483647-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-0-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-0-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-19-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-19-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-2147483647-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-1-2147483647-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-0-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-0-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-19-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-19-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-2147483647-hash-false",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-role-2-2147483647-hash-true",
+      "requirements": [
+        "api:getWalletKey:positive",
+        "api:getWalletKey:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-address-base",
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding",
+        "api:postAnyAddress:positive",
+        "api:postAnyAddress:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-inspect-base",
+      "requirements": [
+        "api:inspectAddress:positive",
+        "api:inspectAddress:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-address-enterprise",
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding",
+        "api:postAnyAddress:positive",
+        "api:postAnyAddress:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-inspect-enterprise",
+      "requirements": [
+        "api:inspectAddress:positive",
+        "api:inspectAddress:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-address-reward",
+      "requirements": [
+        "address.shelley",
+        "address.network",
+        "address.encoding",
+        "api:postAnyAddress:positive",
+        "api:postAnyAddress:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-inspect-reward",
+      "requirements": [
+        "api:inspectAddress:positive",
+        "api:inspectAddress:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-passphrase-wrong-old",
+      "requirements": [
+        "api:putWalletPassphrase:negative",
+        "api:putWalletPassphrase:status:403",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-passphrase-change",
+      "requirements": [
+        "api:putWalletPassphrase:positive",
+        "api:putWalletPassphrase:status:204",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-old-passphrase-rejected",
+      "requirements": [
+        "api:postAccountKey:negative",
+        "api:postAccountKey:status:403",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-new-passphrase-derives-same-key",
+      "requirements": [
+        "api:postAccountKey:positive",
+        "api:postAccountKey:status:202",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-original-addresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-delete-private-wallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-watch-only-create",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-watch-only-addresses",
+      "requirements": [
+        "wallet.hardware-watch-only",
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-watch-only-private-derivation-rejected",
+      "requirements": [
+        "wallet.hardware-watch-only",
+        "api:postAccountKey:negative",
+        "api:postAccountKey:status:403",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "key-api-cleanup",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204",
+        "api.differential-reference"
+      ],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+error[E0689]: can't call method `to_bits` on ambiguous numeric type `{float}`
+   --> src/live/pools.rs:668:72
+    |
+660 |         for (n, d, value) in [
+    |                    ----- you must specify a type for this binding, like `f32`
+...
+668 |             assert_eq!(rational_double(n, d).unwrap().to_bits(), value.to_bits());
+    |                                                                        ^^^^^^^
+
+For more information about this error, try `rustc --explain E0689`.
+error: could not compile `wallet-conformance` (lib test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

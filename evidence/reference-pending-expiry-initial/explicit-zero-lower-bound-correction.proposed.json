@@ -1,0 +1,8 @@
+{
+  "approved": false,
+  "reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "failure": "Fresh expiry workflow21 checks:20 pass, one encoded validity assertion fails before producer pause/submission. The test incorrectly expects an absent lower bound.",
+  "source_evidence": "Pinned Server.hs parseValidityInterval maps an unspecified lower bound to SlotNo0; construction writes first Just validityInterval into transactionCtx0. Exact excerpts are preserved alongside live.json.",
+  "proposed_change": "Require transaction::validity to equal (Some(0),Some(independently computed upper slot)) instead of (None,Some(upper)). Include actual/expected interval in diagnostics. Add a focused expiry interval regression rejecting absent/nonzero lower bounds and off-by-one upper bounds.",
+  "preserved": ["all644 obligations", "public-genesis absolute upper bound", "exact expiry timestamp/epoch/slot", "thirty-second validity", "real signed pending admission", "owned producer pause/resume", "actual native advancement beyond expiry", "strict expired history", "restored funds and unchanged node input", "no ledger outputs", "exact mempool absence", "expired deletion/error/key/history checks", "all failure reports"]
+}

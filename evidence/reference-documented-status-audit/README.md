@@ -1,0 +1,7 @@
+# Documented statuses outside the current644-obligation denominator
+
+A read-only comparison of all statuses in the effective pinned operation inventory against the actual requirement IDs finds two omissions: `patchSharedWalletInPayment:503` and `patchSharedWalletInDelegation:503`. Both are original OpenAPI `wallet_metadata_not_found` responses. The current requirement builder in `src/main.rs` includes statuses200–500, so these503 responses remain visible in the operation contract but are absent from the required gate inventory. [The machine-readable audit](inventory-audit.json) records the exact IDs and paths. No in-flight assertion, denominator or report is changed.
+
+Pinned Haskell source2fc5c383: Wallet.hs4889 declares `ErrAddCosignerKeyWalletMetadataNotFound`; Api/Http/Server/Error.hs1133 maps it to503. A focused search of lib finds no production constructor expression beyond the declaration and mapping, paralleling the documented shared-creation500 question. This is evidence requiring contract/coverage review, not a substitute for live execution or a formal proof that every runtime path is unreachable. Neither response has been executed by this cohort.
+
+Retaining all current obligations and adding these statuses would produce646 mandatory obligations. Any later decision about retiring source-stale documented errors must be explicit and separate. The644 gate cannot currently certify that every documented HTTP response has been exercised. Original OpenAPI bytes and all prior results stay preserved.

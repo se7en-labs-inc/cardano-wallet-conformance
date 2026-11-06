@@ -1,0 +1,15 @@
+postExternalTransaction
+    :: forall s
+     . ApiLayer s
+    -> ApiT W.SealedTx
+    -> Handler ApiTxId
+postExternalTransaction ctx (ApiT sealed) = do
+    txid <-
+        liftHandler
+            $ W.submitExternalTx
+                (tracerTxSubmit ctx)
+                (ctx ^. #netLayer)
+                (ctx ^. #txLayer)
+                sealed
+    return $ ApiTxId (ApiT txid)
+

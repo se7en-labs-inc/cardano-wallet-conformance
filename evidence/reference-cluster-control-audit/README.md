@@ -1,0 +1,9 @@
+# Owned producer-control audit: failed discovery, no conformance credit
+
+The first actual audit exited2 with `node discovery timed out`. Independent read-only process inspection observed the owned cluster474408, relay474498 and producers474497/474768/474770/474771. Their command lines used the owned scratch workspace `/tmp/wc-owned-cluster-bQFE2z/owned`. Reading `/proc/474408/task/474408/children` returned an empty list: the Haskell runtime starts these child processes from worker threads. This invalidated the supervisor's main-thread-only discovery assumption. The audit never paused any producer and no pause/resume evidence is claimed.
+
+The supervisor's failure cleanup terminated its dedicated owned process group and reaped the cluster. All six independently observed cluster/node PIDs were subsequently checked absent. Private cluster logs and generated keys remain in the private scratch directory. The original failed run and launch manifest are preserved here. No control JSON was emitted, and no mandatory obligation was credited.
+
+Four focused unit tests (including the helper fixture), 34 harness tests, Clippy across targets/features, binary builds and formatting passed. The filtered offline run passed122 tests while excluding the unchanged known input-parser failure; it is not a full harness or Nix package pass. T059 remains incomplete. The last coherent conformance checkpoint remains587/643 at the earlier assertion source dac3ec3a15; these new control changes have not received a coherent conformance replay.
+
+`discovery-thread-correction.proposed.json` describes the narrow correction and required worker-thread regression. It is unapplied pending explicit review under the user's failed-approach working agreement. The proposed correction retains all ownership and producer/relay identity checks.

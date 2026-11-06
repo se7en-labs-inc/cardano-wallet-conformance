@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "status": "proposal_only_not_applied",
+  "reason": "The complete documented-status audit exposes three named errors without production constructor sites in the pinned Haskell source. They cannot honestly receive live HTTP execution credit from serializers, proxies, injected constructors or generic exceptions.",
+  "original_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "original_openapi_sha256": "653f358b3937304f6c63ec642d4ac6b7f1fa0e2d04afd4a9866403a3a97039e0",
+  "current_required": 644,
+  "complete_documented_inventory_before_review": 646,
+  "source_stale_candidates": [
+    {"requirement":"api:postSharedWallet:status:500","error":"missing_reward_account","currently_required":true},
+    {"requirement":"api:patchSharedWalletInPayment:status:503","error":"wallet_metadata_not_found","currently_required":false},
+    {"requirement":"api:patchSharedWalletInDelegation:status:503","error":"wallet_metadata_not_found","currently_required":false}
+  ],
+  "proposed_explicit_review": {
+    "inventory_all_documented_statuses": true,
+    "preserve_original_openapi_and_all_historical_644_reports": true,
+    "retire_only_the_three_listed_statuses_from_the_executable_contract_if_approved": true,
+    "resulting_executable_required": 643,
+    "historical_644_gate_remains_incomplete": true,
+    "no_substitute_obligation_to_preserve_a_preferred_count": true,
+    "do_not_claim_644_of_644": true,
+    "source_search_is_not_formal_unreachability_proof": true
+  },
+  "alternatives": [
+    "Retain all646 documented responses as mandatory and leave the three unexecuted until genuine original-source reproductions are supplied.",
+    "Review a future wallet contract that intentionally implements these errors, with genuine production construction paths and live tests; do not manufacture reference evidence."
+  ],
+  "evidence": ["docs/deferred-authority-questions.md","evidence/reference-documented-status-audit/inventory-audit.json"],
+  "changes_applied": false,
+  "reference_authority_promoted": false
+}

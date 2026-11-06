@@ -1,0 +1,5 @@
+# Exact untraced release discovery failure
+
+Sourceb6c3a8d705 adds only path/process context, preserving acceptance. The actual Nix release build passes its package checks, then a fresh untraced owned-cluster audit fails: cannot resolve owned node path .../cluster/pool-1/db. The newly spawned node has not created this directory yet. Config/topology/key files already exist. The slower debug hash/identity path had hidden this startup ordering issue; the earlier traced audit also passed discovery but cannot earn pause/conformance credit.
+
+The failed complete packaged cohort and original bare ENOENT reports remain preserved. This exact control diagnostic starts no wallet, earns no obligation and preserves the failed cluster's closed files privately. All diagnostic processes stopped/reaped and independent absence is retained. No private keys, full wallet/node logs, database or full filesystem trace are copied here. The proposed readiness correction waits only for the missing database child under a canonical owned existing parent, then revalidates all identity/path checks within the original deadline.

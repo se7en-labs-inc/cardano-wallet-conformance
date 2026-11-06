@@ -1,0 +1,6 @@
+{
+  "observed": "Real pending202/history200 reached;23checks/22PASS/1FAIL. Pinned CLI tx-exists returns {exists:true,slot:309,txId:b1f96ebd06b8fca5b102e772be8571efaed8c38792ed3ca7f847306c5f691d6b}, but new checker assumed only {exists:true}.",
+  "proposed_change": "Require exactly the three actually returned fields: exists must be true, txId must equal the original independently verified signed body hash, slot must be an unsigned integer bracketed by read-only tx-mempool info slot samples. Retain stable full chain tip, node funding, pending history/accounting, restart/signature, DELETE204/exact404, ledger confirmation, final independent node probe and all cleanup requirements. Add missing/wrong/extra-field/hash/slot/exists mutation regressions; preserve failed report and replay fresh owned runtime. No wallet/API schema, status, catalogue or semantic requirement changes.",
+  "approved": false,
+  "cleanup": "owned wallet and cluster stop/reap checks all passed; Pause Drop resumes producers on every workflow exit"
+}

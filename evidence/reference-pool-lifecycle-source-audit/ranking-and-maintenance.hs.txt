@@ -1,0 +1,59 @@
+    _listPools
+        :: EpochNo
+        -- Exclude all pools that retired in or before this epoch.
+        -> Coin
+        -> IO [StakePool]
+    _listPools currentEpoch userStake = do
+        rawLsqData <- stakeDistribution nl userStake
+        dbData <- readPoolDbData db currentEpoch
+        seed <- atomically readSystemSeed
+        sortByReward seed . map snd . Map.toList
+            <$> combineDbAndLsqData
+                (timeInterpreter nl)
+                (nOpt rawLsqData)
+                (combineLsqData rawLsqData)
+                dbData
+      where
+        -- Sort by non-myopic member rewards, making sure to also randomly sort
+        -- pools that have equal rewards.
+        --
+        -- NOTE: we discard the final value of the random generator because we
+        -- do actually want the order to be stable between two identical
+        -- requests. The order simply needs to be different between different
+        -- instances of the server.
+        sortByReward
+            :: RandomGen g
+            => g
+            -> [StakePool]
+            -> [StakePool]
+        sortByReward g0 =
+            map stakePool
+                . L.sortOn (Down . rewards)
+                . L.sortOn randomWeight
+                . evalState' g0
+                . traverse withRandomWeight
+          where
+            evalState' :: s -> State s a -> a
+            evalState' = flip evalState
+
+            withRandomWeight :: RandomGen g => a -> State g (Int, a)
+            withRandomWeight a = do
+                weight <- state random
+                pure (weight, a)
+
+            rewards = view (#metrics . #nonMyopicMemberRewards) . stakePool
+            (randomWeight, stakePool) = (fst, snd)
+
+    _forceMetadataGC :: IO ()
+    _forceMetadataGC = do
+        -- We force a GC by resetting last sync time to 0 (start of POSIX
+        -- time) and have the metadata thread restart.
+        lastGC <- atomically readLastMetadataGC
+        STM.atomically
+            $ writeTVar gcStatus
+            $ maybe NotStarted Restarting lastGC
+        atomically $ putLastMetadataGC $ fromIntegral @Int 0
+        restartSyncThread
+
+    _getGCMetadataStatus =
+        readTVarIO gcStatus

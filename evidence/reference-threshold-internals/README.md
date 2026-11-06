@@ -1,0 +1,7 @@
+# Current actual Haskell internal replay
+
+Source5bb9d46afc, pinned Haskell2fc5c383c94bb907deaa0cd27b1b407f86224b6c. All1241 cases across16 reports pass, no failures/unregistered inputs, one source fingerprinta4db7f294b1d6904c59ffeaa1e807a2a5db92214fda3743915109eb6fd8d4d0a and explicit source-2fc5c383-threshold-internals environment/target. These are actual adapter executions, not relabeled historical reports or harness oracle self-checks.
+
+The twelve original Haskell executables match the preserved baseline SHA256 pins. The additional actual per-reference witness-count and metadata executables match their independent capture provenance. The Rust mnemonic wrapper retains its explicit standard/Haskell normalization profiles. Commands, actual current binary hashes, reports and their summary are preserved. Full162 harness tests plus Clippy, formatting and isolated Nix package/Clippy/fmt pass; harness tests are separate from the1241 reference cases.
+
+Source-bound components are still separate from the live-node/API cohort. Neither these1241 cases nor the contemporaneous142 input/54 pending checks establish all644 obligations, a new coherent aggregate coverage count, pending expiry, rollback, retry or checkpoint behavior. Historical coherent587/643 remains the last wholly passing aggregate. No candidate implementation exists yet, so these results establish reference/corpus execution rather than cross-language implementation conformance.

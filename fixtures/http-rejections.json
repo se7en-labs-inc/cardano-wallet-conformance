@@ -1,0 +1,925 @@
+{
+  "cases": [
+    {
+      "expected_status": 400,
+      "id": "generated-reject-balanceTransaction",
+      "operation": "balanceTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions-balance",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-byronSelectCoins",
+      "operation": "byronSelectCoins",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/byron-wallets/invalid-conformance-parameter/coin-selections/random",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-constructSharedTransaction",
+      "operation": "constructSharedTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets/invalid-conformance-parameter/transactions-construct",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-constructTransaction",
+      "operation": "constructTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions-construct",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-createAddress",
+      "operation": "createAddress",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/byron-wallets/invalid-conformance-parameter/addresses",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-decodeSharedTransaction",
+      "operation": "decodeSharedTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets/invalid-conformance-parameter/transactions-decode",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-decodeTransaction",
+      "operation": "decodeTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions-decode",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-deleteByronWallet",
+      "operation": "deleteByronWallet",
+      "request": {
+        "headers": {},
+        "method": "DELETE",
+        "path": "/byron-wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-deleteSharedWallet",
+      "operation": "deleteSharedWallet",
+      "request": {
+        "headers": {},
+        "method": "DELETE",
+        "path": "/shared-wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-deleteWallet",
+      "operation": "deleteWallet",
+      "request": {
+        "headers": {},
+        "method": "DELETE",
+        "path": "/wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getAccountKey",
+      "operation": "getAccountKey",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter/keys"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getAccountKeyShared",
+      "operation": "getAccountKeyShared",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/shared-wallets/invalid-conformance-parameter/keys"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getAsset",
+      "operation": "getAsset",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/assets/00000000000000000000000000000000000000000000000000000000/00"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getAssetDefault",
+      "operation": "getAssetDefault",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/assets/00000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getBlocksLatestHeader",
+      "operation": "getBlocksLatestHeader",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/blocks/latest/header"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronAsset",
+      "operation": "getByronAsset",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/assets/00000000000000000000000000000000000000000000000000000000/00"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronAssetDefault",
+      "operation": "getByronAssetDefault",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/assets/00000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronTransaction",
+      "operation": "getByronTransaction",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/transactions/0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronUTxOsStatistics",
+      "operation": "getByronUTxOsStatistics",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/statistics/utxos"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronWallet",
+      "operation": "getByronWallet",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getByronWalletUtxoSnapshot",
+      "operation": "getByronWalletUtxoSnapshot",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/utxo"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getCurrentSmashHealth",
+      "operation": "getCurrentSmashHealth",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/smash/health"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getDRep",
+      "operation": "getDRep",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/dreps/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getDelegationFee",
+      "operation": "getDelegationFee",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/delegation-fees"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getNetworkClock",
+      "operation": "getNetworkClock",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/network/clock"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getNetworkInformation",
+      "operation": "getNetworkInformation",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/network/information"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getNetworkParameters",
+      "operation": "getNetworkParameters",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/network/parameters"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getPolicyKey",
+      "operation": "getPolicyKey",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter/policy-key"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getSharedTransaction",
+      "operation": "getSharedTransaction",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/transactions/0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getSharedWallet",
+      "operation": "getSharedWallet",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/shared-wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getSharedWalletKey",
+      "operation": "getSharedWalletKey",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/shared-wallets/invalid-conformance-parameter/keys/invalid-conformance-parameter/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getSharedWalletUtxoSnapshot",
+      "operation": "getSharedWalletUtxoSnapshot",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/utxo"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getTransaction",
+      "operation": "getTransaction",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions/0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getUTxOsStatistics",
+      "operation": "getUTxOsStatistics",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/statistics/utxos"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getUTxOsStatisticsShared",
+      "operation": "getUTxOsStatisticsShared",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/shared-wallets/0000000000000000000000000000000000000000/statistics/utxos"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getWallet",
+      "operation": "getWallet",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-getWalletKey",
+      "operation": "getWalletKey",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter/keys/invalid-conformance-parameter/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-getWalletUtxoSnapshot",
+      "operation": "getWalletUtxoSnapshot",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/utxo"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-importAddress",
+      "operation": "importAddress",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/byron-wallets/invalid-conformance-parameter/addresses/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-importAddresses",
+      "operation": "importAddresses",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/byron-wallets/invalid-conformance-parameter/addresses",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-inspectAddress",
+      "operation": "inspectAddress",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/addresses/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-joinDRep",
+      "operation": "joinDRep",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/dreps/invalid-conformance-parameter/wallets/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-joinStakePool",
+      "operation": "joinStakePool",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/stake-pools/invalid-conformance-parameter/wallets/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listAddresses",
+      "operation": "listAddresses",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter/addresses"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-listAssets",
+      "operation": "listAssets",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets/0000000000000000000000000000000000000000/assets"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listByronAddresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/byron-wallets/invalid-conformance-parameter/addresses"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-listByronAssets",
+      "operation": "listByronAssets",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets/0000000000000000000000000000000000000000/assets"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listByronTransactions",
+      "operation": "listByronTransactions",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/byron-wallets/invalid-conformance-parameter/transactions"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-listByronWallets",
+      "operation": "listByronWallets",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/byron-wallets"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listSharedAddresses",
+      "operation": "listSharedAddresses",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/shared-wallets/invalid-conformance-parameter/addresses"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listSharedTransactions",
+      "operation": "listSharedTransactions",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/shared-wallets/invalid-conformance-parameter/transactions"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-listSharedWallets",
+      "operation": "listSharedWallets",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/shared-wallets"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listStakePools",
+      "operation": "listStakePools",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/stake-pools?stake=invalid"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-listTransactions",
+      "operation": "listTransactions",
+      "request": {
+        "headers": {},
+        "method": "GET",
+        "path": "/wallets/invalid-conformance-parameter/transactions"
+      }
+    },
+    {
+      "expected_status": 406,
+      "id": "generated-reject-listWallets",
+      "operation": "listWallets",
+      "request": {
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        },
+        "method": "GET",
+        "path": "/wallets"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-patchSharedWalletInDelegation",
+      "operation": "patchSharedWalletInDelegation",
+      "request": {
+        "headers": {},
+        "method": "PATCH",
+        "path": "/shared-wallets/invalid-conformance-parameter/delegation-script-template",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-patchSharedWalletInPayment",
+      "operation": "patchSharedWalletInPayment",
+      "request": {
+        "headers": {},
+        "method": "PATCH",
+        "path": "/shared-wallets/invalid-conformance-parameter/payment-script-template",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postAccountKey",
+      "operation": "postAccountKey",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/keys/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postAccountKeyShared",
+      "operation": "postAccountKeyShared",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets/invalid-conformance-parameter/keys/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postAnyAddress",
+      "operation": "postAnyAddress",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/addresses",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postByronTransaction",
+      "operation": "postByronTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/byron-wallets/invalid-conformance-parameter/transactions",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postByronTransactionFee",
+      "operation": "postByronTransactionFee",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/byron-wallets/invalid-conformance-parameter/payment-fees",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postByronWallet",
+      "operation": "postByronWallet",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/byron-wallets",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postExternalTransaction",
+      "operation": "postExternalTransaction",
+      "request": {
+        "headers": {
+          "Content-Type": "application/octet-stream"
+        },
+        "method": "POST",
+        "path": "/proxy/transactions",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postPolicyId",
+      "operation": "postPolicyId",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/policy-id",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postPolicyKey",
+      "operation": "postPolicyKey",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/policy-key",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postSharedWallet",
+      "operation": "postSharedWallet",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postTransaction",
+      "operation": "postTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postTransactionFee",
+      "operation": "postTransactionFee",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/payment-fees",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-postWallet",
+      "operation": "postWallet",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putByronWallet",
+      "operation": "putByronWallet",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/byron-wallets/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putByronWalletPassphrase",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/byron-wallets/invalid-conformance-parameter/passphrase",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putSettings",
+      "operation": "putSettings",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/settings",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putSharedWallet",
+      "operation": "putSharedWallet",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/shared-wallets/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putWallet",
+      "operation": "putWallet",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/wallets/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-putWalletPassphrase",
+      "operation": "putWalletPassphrase",
+      "request": {
+        "headers": {},
+        "method": "PUT",
+        "path": "/wallets/invalid-conformance-parameter/passphrase",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-quitStakePool",
+      "operation": "quitStakePool",
+      "request": {
+        "headers": {},
+        "method": "DELETE",
+        "path": "/stake-pools/*/wallets/invalid-conformance-parameter"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-selectCoins",
+      "operation": "selectCoins",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/coin-selections/random",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-signMetadata",
+      "operation": "signMetadata",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/signatures/invalid-conformance-parameter/invalid-conformance-parameter",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-signSharedTransaction",
+      "operation": "signSharedTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets/invalid-conformance-parameter/transactions-sign",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-signTransaction",
+      "operation": "signTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions-sign",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-submitSharedTransaction",
+      "operation": "submitSharedTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/shared-wallets/invalid-conformance-parameter/transactions-submit",
+        "raw_body": "{"
+      }
+    },
+    {
+      "expected_status": 400,
+      "id": "generated-reject-submitTransaction",
+      "operation": "submitTransaction",
+      "request": {
+        "headers": {},
+        "method": "POST",
+        "path": "/wallets/invalid-conformance-parameter/transactions-submit",
+        "raw_body": "{"
+      }
+    }
+  ],
+  "name": "Pinned API syntax and negotiation rejections"
+}

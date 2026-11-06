@@ -1,0 +1,9 @@
+# Packaged CLI complete current644 cohort
+
+Result: **632/644 obligations (98.1%), gate FAILED**. All37 reports are fresh under one packaged executable/fingerprint:3368 checks,3363 passing and5 failing. The five owned pending/checkpoint profiles fail immediately during startup with filesystem ENOENT, before any wallet assertion. This release-runtime failure was absent from the earlier debug component executions; their passing evidence is not merged here.
+
+All9HTTP537 and16actualinternal1241 checks pass. Live funded950, disconnect82, DRep6, pools120, parameter enactment149, rollback224 and era49 pass with completed final integrations. The exact twelve missing obligations and five startup failures remain in coverage.json and all reports/. Shared creation500 remains mandatory/unexecuted; no inventory/contract-review proposal is applied.
+
+Frozen Nix package source56d010daa1, fingerprintb4925e70d07c6e6a8f907da05365a3650e92ffd910386875abac41e45eb1ab58, binarySHA62c0cf4b978663a25e8a211724c5c1a9795b3d2d62f9c002e519192980c4f738. Corrected target8fcb6fb0ee remains explicitly nonauthoritative, original2fc differential/adversary/internal oracles remain independently pinned. All200 development-shell tests, Clippy, formatting, Nix flake checks and sandboxed package checks passed before this execution. This live discovery failure therefore remains a distinct packaging/runtime blind spot requiring correction.
+
+All owned wallet/node/cluster processes stopped/reaped; independent process absence is retained. A separate traced control audit got beyond discovery but failed producer pause because traced stop states differ; it earns no conformance credit and did not conclusively reproduce the original missing path. No private keys, mnemonic phrases, databases, full wallet logs or full traces are published. Timestamp/elapsed receipts measure the warm cohort; cold builds are excluded. No previous/component reports are reused or relabeled.

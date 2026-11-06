@@ -1,0 +1,11 @@
+# Coherent expanded pinned-source checkpoint
+
+All1,556 registered cases pass under one suite fingerprint, target and source environment:486 differential HTTP cases across eight suites,1,022 internal cases across nine actual Haskell adapter profiles, and48 funded node-backed workflow checks. The independently configured real-node faucet/UTxO integration also passes. The63 offline regression tests, all-target/all-feature Clippy, formatting and isolated Nix build/Clippy/fmt checks passed before this run.
+
+The strict gate covers539/643 mandatory obligations with104 explicitly open and zero execution failures or unregistered inputs. Gate exit1 is expected for the preserved incompleteness; it is not suppressed as a complete result. The generated local specification remains a non-authoritative draft at artifacts/behavioral-specification.expanded-coherent.draft.json. All previous evidence, including the initial extended HTTP failures and older seven-era codec report, remains unchanged.
+
+The cluster used the pinned source wallet/cluster, matched node11.1.3 and CLI11.2.3.0 on Conway magic42. HTTP target18790 and reference18791 had isolated wallet databases. All HTTP suites ran sequentially before funded tests; the independent node integration ran last because it funds a fixed public fixture address. A future fresh HTTP baseline needs a fresh cluster to avoid funding that fixture wallet. Runtime and adapter binary digests, public genesis digest, node tip and protocol parameters are retained; private cluster files are excluded.
+
+The suite URL labels the pinned implementation across HTTP and internal JSON transports. Internal helpers call the actual same-source wallet/component libraries; expected outputs come from independently pinned Haskell captures/published vectors, with Rust byte/crypto/accounting checks. Production Argon2 parameters remain enabled. This is bounded evidence, not universal equivalence or authority promotion.
+
+All owned cluster/node/wallet processes were stopped with SIGTERM and absence was verified after their shutdown grace period. The missing cases in coverage.json drive the next funded, ledger and state-transition work; restart/rollback/resubmission/concurrent-spend coverage remains open.

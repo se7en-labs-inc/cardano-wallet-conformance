@@ -1,0 +1,11 @@
+# Strict pool clock and pending inclusion corrections
+
+Original Haskell2fc5c383, assertion sourcef85419cb0b, suite fingerprint738e3f90748035324f166a06490293f0f7f880e63d7e4ca42f38aae2714e8f08. Fresh owned pending55/55PASS; fresh pool lifecycle120/120PASS, including strict native retirement activation and exact retirement timestamp. All194 Rust tests, formatting, Clippy and Nix checks pass. Pending final native integration and a separate final pool-cluster native integration pass. All owned wallet/cluster/node processes were stopped, reaped and independently absent afterward.
+
+The pool guard now uses the actual cluster's nearest-second/ties-to-even rounding, shared with the existing validity and expiry clocks. The fresh public Shelley start00:08:41.904587783Z rounds to the Byron42-second start, exercising the earlier failing upper-fraction case. Exact native retirement slot and API timestamp assertions remain unchanged.
+
+Normal pending reappearance now waits within one monotonic bound for the exact signed transaction's native output, retrying only absence. Wrong matching address, amount or assets, malformed result shapes and node-query errors fail immediately. Immediate payment assertions used for state-preservation controls retain their semantics. Public signed/admission/forgetting/tip context is retained before resumed inclusion. Meaningful regressions exercise exact-ID/unrelated-ID distinction, absence→presence, immediate failure and timeout, plus integer/fraction/half-even clock boundaries.
+
+The first pool attempt began after native block production but before the faucet relay was ready; its strict funding failure is retained under preserved-failures/. The unchanged profile was rerun with fresh owned wallet/workspace after an independent ready:true response, and passed. Initial regression compilation and Clippy module-placement failures are also retained, then corrected and all checks rerun. The public evidence omits private keys, random mnemonics, databases and full wallet logs.
+
+This component does not change the preserved combined639/644 checkpoint, waive original expiry/shared500, change the catalogue or promote a reference revision. Its fingerprint is separate; a new coherent aggregate is still required.

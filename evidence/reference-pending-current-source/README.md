@@ -1,0 +1,5 @@
+# Fresh pending persistence/deletion replay
+
+Source5bb9d46afc, fingerprinta4db7f294b1d6904c59ffeaa1e807a2a5db92214fda3743915109eb6fd8d4d0a. Fresh54/54 real-node checks pass. Original default workflow retains exact signed pending transaction/accounting/state across owned wallet death/restart, restores availability and history on DELETE204/exact404 while preserving native mempool/funding, then confirms the original signed transaction after producer resume with exact outputs/spent-input/history accounting. Independent node integration passes last. Owned wallet/cluster stop-and-reap checks pass; final process absence is independently verified. Private runtime material is excluded.
+
+This replay proves the default mode is preserved after adding expiry mode and exact lower-bound assertions. It supplies no expiry, scheduled-retry, rollback or checkpoint evidence. Input-boundary and internal-vector components use the same source fingerprint, but differing targets/environments/independent clusters are not merged into a new coherent count. Last coherent passing baseline remains587/643; all644 obligations remain required.

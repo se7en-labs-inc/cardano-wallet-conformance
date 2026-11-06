@@ -1,0 +1,61 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "4890a9a5dcc9686e210c7d6e534787d66410d791f145315b0355a26de14e9a3e",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-combined-followup-644-20261104",
+  "target": "http://127.0.0.1:18792/v2/",
+  "evidence": [
+    {
+      "case": "drep:registered-detail",
+      "requirements": [
+        "api:getDRep:positive",
+        "api:getDRep:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep:registered-absent",
+      "requirements": [
+        "api:getDRep:negative",
+        "api:getDRep:status:404"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep:registered-list",
+      "requirements": [
+        "api:listDReps:positive",
+        "api:listDReps:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep:registered-summary",
+      "requirements": [
+        "api:getDRepSummary:positive",
+        "api:getDRepSummary:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "drep:stable-node-cache-bracket",
+      "requirements": [],
+      "passed": true,
+      "detail": "{\"absent_error\":{\"code\":\"not_found\",\"message\":\"No DRep found for the given identifier.\"},\"distribution\":{},\"executable_sha256\":\"6ea82181d5ed0740f4b4eecfcf178e197ac95aafe26f74e1b4019103b9b9092d\",\"is_restart_persistence_evidence\":false,\"list\":[{\"anchor\":null,\"credential\":{\"hash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\",\"type\":\"key_hash\"},\"deposit\":{\"quantity\":500000000,\"unit\":\"lovelace\"},\"expiry_epoch\":63,\"id\":\"drep1yg7j6rjn0fym9e2t279zqzfkpjep4uyf979d608nqfxdkrqhjvyqu\",\"metadata\":null,\"name\":null,\"status\":\"active\",\"voting_power\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}}],\"lookup\":{\"anchor\":null,\"credential\":{\"hash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\",\"type\":\"key_hash\"},\"deposit\":{\"quantity\":500000000,\"unit\":\"lovelace\"},\"expiry_epoch\":63,\"id\":\"drep1yg7j6rjn0fym9e2t279zqzfkpjep4uyf979d608nqfxdkrqhjvyqu\",\"metadata\":null,\"name\":null,\"status\":\"active\",\"voting_power\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}},\"node_after\":[[{\"keyHash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\"},{\"anchor\":null,\"deposit\":500000000,\"expiry\":63,\"stake\":null}]],\"node_before\":[[{\"keyHash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\"},{\"anchor\":null,\"deposit\":500000000,\"expiry\":63,\"stake\":null}]],\"owned_process_pid\":826994,\"owned_process_stopped_and_reaped\":true,\"summary\":{\"active_drep_count\":1,\"inactive_drep_count\":0,\"total_drep_count\":1,\"total_drep_stake\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}},\"tip_after\":{\"block\":2571,\"epoch\":43,\"era\":\"Conway\",\"hash\":\"c3b886ef63ba70010b9dc445324c1dcc85513201e9fdbde9d3d5d78ecd85e342\",\"slot\":5169,\"slotInEpoch\":9,\"slotsToEpochEnd\":111,\"syncProgress\":\"100.00\"},\"tip_before\":{\"block\":2565,\"epoch\":43,\"era\":\"Conway\",\"hash\":\"a01b4bd4bed78d7c6e0197c6ff2c7635cfa6db5bb530dd7c25eabfb54733aeb2\",\"slot\":5160,\"slotInEpoch\":0,\"slotsToEpochEnd\":120,\"syncProgress\":\"100.00\"}}"
+    },
+    {
+      "case": "governance:drep-queries",
+      "requirements": [
+        "wallet.governance"
+      ],
+      "passed": true,
+      "detail": "{\"absent_error\":{\"code\":\"not_found\",\"message\":\"No DRep found for the given identifier.\"},\"distribution\":{},\"executable_sha256\":\"6ea82181d5ed0740f4b4eecfcf178e197ac95aafe26f74e1b4019103b9b9092d\",\"is_restart_persistence_evidence\":false,\"list\":[{\"anchor\":null,\"credential\":{\"hash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\",\"type\":\"key_hash\"},\"deposit\":{\"quantity\":500000000,\"unit\":\"lovelace\"},\"expiry_epoch\":63,\"id\":\"drep1yg7j6rjn0fym9e2t279zqzfkpjep4uyf979d608nqfxdkrqhjvyqu\",\"metadata\":null,\"name\":null,\"status\":\"active\",\"voting_power\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}}],\"lookup\":{\"anchor\":null,\"credential\":{\"hash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\",\"type\":\"key_hash\"},\"deposit\":{\"quantity\":500000000,\"unit\":\"lovelace\"},\"expiry_epoch\":63,\"id\":\"drep1yg7j6rjn0fym9e2t279zqzfkpjep4uyf979d608nqfxdkrqhjvyqu\",\"metadata\":null,\"name\":null,\"status\":\"active\",\"voting_power\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}},\"node_after\":[[{\"keyHash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\"},{\"anchor\":null,\"deposit\":500000000,\"expiry\":63,\"stake\":null}]],\"node_before\":[[{\"keyHash\":\"3d2d0e537a49b2e54b578a2009360cb21af0892f8add3cf3024cdb0c\"},{\"anchor\":null,\"deposit\":500000000,\"expiry\":63,\"stake\":null}]],\"owned_process_pid\":826994,\"owned_process_stopped_and_reaped\":true,\"summary\":{\"active_drep_count\":1,\"inactive_drep_count\":0,\"total_drep_count\":1,\"total_drep_stake\":{\"quantity\":\"0\",\"unit\":\"lovelace\"}},\"tip_after\":{\"block\":2571,\"epoch\":43,\"era\":\"Conway\",\"hash\":\"c3b886ef63ba70010b9dc445324c1dcc85513201e9fdbde9d3d5d78ecd85e342\",\"slot\":5169,\"slotInEpoch\":9,\"slotsToEpochEnd\":111,\"syncProgress\":\"100.00\"},\"tip_before\":{\"block\":2565,\"epoch\":43,\"era\":\"Conway\",\"hash\":\"a01b4bd4bed78d7c6e0197c6ff2c7635cfa6db5bb530dd7c25eabfb54733aeb2\",\"slot\":5160,\"slotInEpoch\":0,\"slotsToEpochEnd\":120,\"syncProgress\":\"100.00\"}}"
+    }
+  ]
+}

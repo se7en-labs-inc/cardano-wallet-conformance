@@ -1,0 +1,59 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.00s
+     Running tests/harness.rs (target/debug/deps/harness-475638ee12b3d7b7)
+
+running 34 tests
+test adjacent_large_negative_metadata_integers_never_compare_equal ... ok
+test bech32_checksum_padding_case_and_long_cardano_addresses ... ok
+test differential_comparison_does_not_hide_structure_null_or_order ... ok
+test haskell_selection_laws_allow_bounded_dust_but_reject_excess_fee_and_unsplit_change ... ok
+test latest_header_requires_matching_hash_height_and_slot ... ok
+test custom_headers_do_not_append_implicit_json_accept_or_content_type ... ok
+test selection_accounting_preserves_large_integers_and_many_bundles ... ok
+test template_expansion_preserves_json_types_and_unknowns_fail ... ok
+test trusted_node_evidence_rejects_fabricated_confirmation_amount_address_and_transaction ... ok
+test selection_rejects_ada_asset_fee_input_and_change_mutations ... ok
+test uri_template_response_schemas_compile_without_weakening_validation ... ok
+test schema_rejects_missing_fields_and_wrong_types_but_accepts_nullable ... ok
+test frozen_haskell_keys_have_expected_lengths_chain_codes_and_unique_ids ... ok
+test generated_selection_matrix_has_valid_replayable_models_and_rejects_mutations ... ok
+test adapter_process_roundtrip_and_malformed_output_fail_closed ... ok
+test cbor_body_hash_and_witness_verification_reject_altered_body_signature_and_trailing_bytes ... ok
+test adapter_timeouts_are_bounded ... ok
+test epoch_sampling_compares_same_epoch_timestamps_strictly ... ok
+test matching_broken_servers_are_not_conformant ... ok
+test extreme_response_number_cannot_abort_owned_wallet_cleanup ... ok
+test modified_runtime_expectation_cannot_reuse_a_registered_case_id_to_pass_the_gate ... ok
+test cleanup_runs_after_created_wallet_response_fails_its_schema ... ok
+test epoch_sampling_rejects_invalid_successor_without_retry ... ok
+test requirement_needs_every_attached_vector_not_one_family_example ... ok
+test epoch_boundary_resamples_until_matching_epochs ... ok
+test http_key_golden_rejects_equal_but_wrong_implementations ... ok
+test wallet_creation_normalizes_only_after_observing_terminal_ready_state ... ok
+test explicit_absence_rejects_null_even_when_both_services_agree ... ok
+test independent_primitive_vectors_and_tampering_detection ... ok
+test epoch_sampling_is_bounded ... ok
+test pinned_contract_is_complete_and_path_binding_is_checked ... ok
+test cli_inventory_and_harness_evidence_cannot_pass_exhaustive_gate ... FAILED
+test coverage_never_passes_empty_missing_failed_or_mixed_runs ... ok
+test specification_retains_exact_contracts_and_marks_unexecuted_drafts ... ok
+
+failures:
+
+---- cli_inventory_and_harness_evidence_cannot_pass_exhaustive_gate stdout ----
+
+thread 'cli_inventory_and_harness_evidence_cannot_pass_exhaustive_gate' (579966) panicked at tests/harness.rs:395:5:
+assertion `left == right` failed
+  left: 644
+ right: 643
+
+
+failures:
+    cli_inventory_and_harness_evidence_cannot_pass_exhaustive_gate
+
+test result: FAILED. 33 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.87s
+
+error: test failed, to rerun pass `--test harness`

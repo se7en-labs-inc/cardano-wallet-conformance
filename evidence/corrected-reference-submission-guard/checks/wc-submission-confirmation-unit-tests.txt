@@ -1,0 +1,33 @@
+
+Cardano.Wallet.DB.Store.Submissions.Store
+  resubmission bookkeeping after concurrent state changes
+    preserves a transaction confirmed after the pending read [✔]
+    still refreshes ordinary pending retry metadata [✔]
+    preserves a transaction expired after the pending read [✔]
+  submissions via API for a single wallet store
+    respects store laws [✔] (712ms)
+      +++ OK, passed 100 tests.
+Cardano.Wallet.Submissions.Operations
+  submissions API operations
+    respects specifications [✔] (636ms)
+      +++ OK, passed 100 tests:
+      59% at least 1 in expired state
+      59% at least 1 in in-submission state
+      51% non trivial
+      27% at least 1 in in-ledger state
+Cardano.Wallet.Submissions.Primitives
+  submissions primitive operations
+    respects specifications [✔] (637ms)
+      +++ OK, passed 100 tests:
+      70% non trivial
+      65% at least 1 in expired state
+      65% at least 1 in in-submission state
+      33% at least 1 in in-ledger state
+
+Finished in 0.7126 seconds, used 1.6082 seconds of CPU time
+6 examples, 0 failures
+
+Slow spec items:
+  test/unit/Cardano/Wallet/DB/Store/Submissions/StoreSpec.hs:115:13: /Cardano.Wallet.DB.Store.Submissions.Store/submissions via API for a single wallet store/respects store laws/ (712ms)
+  test/unit/Cardano/Wallet/Submissions/PrimitivesSpec.hs:47:9: /Cardano.Wallet.Submissions.Primitives/submissions primitive operations/respects specifications/ (637ms)
+  test/unit/Cardano/Wallet/Submissions/OperationsSpec.hs:48:9: /Cardano.Wallet.Submissions.Operations/submissions API operations/respects specifications/ (636ms)

@@ -1,0 +1,27 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+    Checking wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+error: items after a test module
+   --> src/node.rs:210:1
+    |
+210 |   mod inclusion_tests {
+    |   ^^^^^^^^^^^^^^^^^^^
+...
+280 | / pub fn validate_asset_payment(
+281 | |     utxos: &Value,
+282 | |     txid: &str,
+283 | |     address: &str,
+284 | |     amount: u64,
+285 | |     expected: &std::collections::BTreeMap<String, u64>,
+286 | | ) -> Result<()> {
+    | |_______________^
+...
+329 |   pub fn validate_payment(utxos: &Value, txid: &str, address: &str, amount: u64) -> Result<()> {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/rust-1.99.0/index.html#items_after_test_module
+    = note: `-D clippy::items-after-test-module` implied by `-D warnings`
+    = help: to override `-D warnings` add `#[allow(clippy::items_after_test_module)]`
+    = help: move the items to before the test module was defined
+
+error: could not compile `wallet-conformance` (lib test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...

@@ -1,0 +1,7 @@
+{
+  "failure_report":"evidence/reference-validity-coherent/live.json",
+  "failure":"Actual expired transaction rejection passes exact500/JSON/code/formatted Conway OutsideValidityIntervalUTxO envelope/bounds, but its admission slot fails the harness's assumed node-chain-tip/wall-clock bracket",
+  "independent_audit":{"tool":"pinned cardano-cli11.2.3.0 conway query tx-mempool info against real node11.1.3","snapshot_before":1788,"rejection_slot":1788,"snapshot_after":1788,"files":"artifacts/validity-slot-audit/mempool-before.json,submit.json,mempool-after.json"},
+  "proposed_change":"Add bounded read-only NodeOracle.mempool_info query. Bracket each actual node rejection with independently sampled mempool snapshot slots and require admission slot in that interval, outside the exact signed validity bounds. Preserve exact500/JSON/code/message/wrapper/bounds and unchanged UTxO/balance/history checks. Keep wall-clock brackets for API relative/default TTL, whose actual checks passed, and real produced-node-slot waiting for later admission of the same future transaction. No time tolerance, arbitrary error acceptance, API overlay or catalogue changes. Add snapshot-order/wrong-slot regressions, preserve failed report, rerun fresh coherent evidence.",
+  "catalogue_required":643
+}

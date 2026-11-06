@@ -1,0 +1,9 @@
+# Complete early-lease current644 cohort
+
+Strict result: **642/644 obligations (99.7%), gate FAILED**, despite **3785/3785 executed checks passing** in37 fresh reports. The gate identifies missing history:status under wallet.transaction-filtering and original postSharedWallet500. No missing case is relabeled or waived, and no prior component report is reused.
+
+All9HTTP537,16actualinternal1241 and12live2007 checks pass. Live funded950,disconnect82,DRep6,pools126,parameters149,normal56,expiry48,Byron180,retry108,checkpoint29,rollback224 andera49 pass with all final native integrations/cleanup. The early producer lease prevents the previously diagnosed native funding loss in this execution. The existing pending/expiry profile verifies transitions, but it does not yet execute/credit the complete mixed-status list/get/order/limit matrix required for history:status. That case will receive new explicit verification rather than a passing label.
+
+Actual Nix sourcee07a6d317a, executableSHA61f5ec0205696a95e8be5b5d89b176a97f67b56af3e14d8379324f079b033b6f, fingerprint199d9884b89b8e6ef3070b809d776c0b7676b042410b84552a8d809e7a95bc44. All201 Rust/full Nix checks and421 separate release qualification checks passed before execution. Corrected8fcb target remains nonauthoritative versus original2fc HTTP differential/adversary/internal oracles. All644 remain mandatory and the unanswered status-retirement proposal is unapplied.
+
+All owned processes stopped/reaped, including a broad exact-root absence check. Timestamp/elapsed receipts include warm setup/execution/cleanup; cold builds are excluded. The generated specification remains an incomplete draft. No private keys, random mnemonics, databases or full logs/traces are copied. Previous639/641/632/641 cohorts and all strict failures remain separate.

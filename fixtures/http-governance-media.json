@@ -1,0 +1,81 @@
+{
+  "name": "Governance route media negotiation",
+  "cases": [
+    {
+      "id": "governance-media-joinStakePool-406",
+      "source": "Pinned Haskell Error.hs1356–1417 and independently saved live media audit; well-formed route/body, exact errors and strict response schema.",
+      "operation": "joinStakePool",
+      "request": {
+        "method": "PUT",
+        "path": "/stake-pools/00000000000000000000000000000000000000000000000000000000/wallets/0000000000000000000000000000000000000000",
+        "headers": {
+          "Accept": "text/plain",
+          "Content-Type": "application/json"
+        },
+        "raw_body": "{\"passphrase\":\"conformance-test-passphrase\"}"
+      },
+      "expected_status": 406,
+      "assertions": {
+        "/code": "not_acceptable",
+        "/message": "It seems as though you don't accept 'application/json', but unfortunately I only speak 'application/json'! Please double-check your 'Accept' request header and make sure it's set to 'application/json'."
+      }
+    },
+    {
+      "id": "governance-media-joinStakePool-415",
+      "source": "Pinned Haskell Error.hs1356–1417 and independently saved live media audit; well-formed route/body, exact errors and strict response schema.",
+      "operation": "joinStakePool",
+      "request": {
+        "method": "PUT",
+        "path": "/stake-pools/00000000000000000000000000000000000000000000000000000000/wallets/0000000000000000000000000000000000000000",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "text/plain"
+        },
+        "raw_body": "{\"passphrase\":\"conformance-test-passphrase\"}"
+      },
+      "expected_status": 415,
+      "assertions": {
+        "/code": "unsupported_media_type",
+        "/message": "I'm really sorry but I only understand 'application/json'. I need you to tell me what language you're speaking in order for me to understand your message. Please double-check your 'Content-Type' request header and make sure it's set to 'application/json'."
+      }
+    },
+    {
+      "id": "governance-media-joinDRep-406",
+      "source": "Pinned Haskell Error.hs1356–1417 and independently saved live media audit; well-formed route/body, exact errors and strict response schema.",
+      "operation": "joinDRep",
+      "request": {
+        "method": "PUT",
+        "path": "/dreps/abstain/wallets/0000000000000000000000000000000000000000",
+        "headers": {
+          "Accept": "text/plain",
+          "Content-Type": "application/json"
+        },
+        "raw_body": "{\"passphrase\":\"conformance-test-passphrase\"}"
+      },
+      "expected_status": 406,
+      "assertions": {
+        "/code": "not_acceptable",
+        "/message": "It seems as though you don't accept 'application/json', but unfortunately I only speak 'application/json'! Please double-check your 'Accept' request header and make sure it's set to 'application/json'."
+      }
+    },
+    {
+      "id": "governance-media-joinDRep-415",
+      "source": "Pinned Haskell Error.hs1356–1417 and independently saved live media audit; well-formed route/body, exact errors and strict response schema.",
+      "operation": "joinDRep",
+      "request": {
+        "method": "PUT",
+        "path": "/dreps/abstain/wallets/0000000000000000000000000000000000000000",
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "text/plain"
+        },
+        "raw_body": "{\"passphrase\":\"conformance-test-passphrase\"}"
+      },
+      "expected_status": 415,
+      "assertions": {
+        "/code": "unsupported_media_type",
+        "/message": "I'm really sorry but I only understand 'application/json'. I need you to tell me what language you're speaking in order for me to understand your message. Please double-check your 'Content-Type' request header and make sure it's set to 'application/json'."
+      }
+    }
+  ]
+}

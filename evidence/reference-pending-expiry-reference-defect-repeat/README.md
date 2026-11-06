@@ -1,0 +1,11 @@
+# Independent reproduction with complete phase proofs
+
+Diagnostic source30b8335246, pinned Haskell2fc5c383c94bb907deaa0cd27b1b407f86224b6c, fingerprint9a406f4815f724b1180767a558de9b484a2e1c0a9576fa1659d512db472fc01d. A second fresh owned cluster/wallet records37 checks/36PASS/one strict expiry-status failure. Admission proof retains the independently verified signed transaction, real funding, pending state, mempool membership and horizon guard. Upper350/current315/native tip312 plus one lies strictly below horizon372 (safe60). Native post-expiry advancement is recorded separately.
+
+Read-only SQLite queries select only public submission metadata: the exact transaction39fbfe4c63cd7b618775ed77b24bea9b8c7fca85345952fd64d81d66fad67a9a has stored expiration36316, acceptance null and pending status, despite signed/API upper350. The same snapshot records resubmitted505 and submission-store tip521/finality461. This independently confirms that the wallet continues resubmitting beyond signed expiry using the wrong local deadline. No database or key material is copied.
+
+At the unchanged180-second expiry polling deadline, the node is at slot1255, mempool query at1256 reports the exact transaction absent, original funding remains unspent, and the wallet still reports pending with0 available/97870500 projected total. Public timeout observations are preserved before cleanup. The strict test fails; no expectation/timeout/coverage exemption was introduced. This reproduces the first corrected-fixture failure and supports the pinned-handler/default-TTL source diagnosis.
+
+All owned wallet/cluster cleanup checks pass, the supervisor is reaped, and final pinned procps finds no process for this workspace. No native integration-last success is claimed: that control runs only after a successful workflow. Full163 harness tests/Clippy/Nix package-Clippy-fmt pass independently. The old source pin and all644 obligations remain unchanged.
+
+User approved validating the prepared fix in an isolated Haskell worktree. Branch70008-submitted-expiry starts from the same pin; spec commitc1b9999814 precedes exact fix30f84bcf3d. Build and quality checks are underway; no corrected-wallet PASS is claimed yet.

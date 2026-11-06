@@ -1,0 +1,13 @@
+                                }
+                    atomically
+                        $ Delta.onDBVar walletState
+                            . WalletState.updateSubmissions
+                            . Delta.update
+                        $ \_ -> Submissions.addTxSubmission builtTx slot
+                    postSealedTx netLayer builtSealedTx
+                        & throwWrappedErr wrapNetworkError
+                        & liftIO
+                    slotToUTCTime slot
+                        & interpretQuery
+                            (neverFails "slot is ahead of the node tip" ti)
+                        & fmap (builtTx,)

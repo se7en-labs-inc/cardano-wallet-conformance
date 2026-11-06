@@ -1,0 +1,12 @@
+{
+  "source_archive": "cardano-ledger-conway-1.23.0.0.tar.gz",
+  "source_archive_sha256": "486831d3d94060fff90e5e85c74030c744008526aa83f4a18215da124720cf1a",
+  "member": "cardano-ledger-conway-1.23.0.0/src/Cardano/Ledger/Conway/Rules/Mempool.hs",
+  "member_sha256": "3369c119d6635dcfffcb6e4a042a8871a6f47cca74ef0cef80e5684e411b4dc8",
+  "function": "mempoolTransition",
+  "predicate": "notAllSpent = any (`Map.member` utxo) inputs",
+  "failure_constructor": "ConwayMempoolFailure",
+  "message": "All inputs are spent. Transaction has probably already been included",
+  "ordering": "Normal LEDGER checks run only inside whenFailureFreeDefault after this guard",
+  "runtime_observation": "The actual pinned node returned this exact failure for the one-input conflicting transaction; the wallet mapped it to500 created_invalid_transaction"
+}

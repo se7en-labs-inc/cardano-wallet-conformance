@@ -1,0 +1,9 @@
+        let transactionCtx0 =
+                defaultTransactionCtx
+                    { txWithdrawal = withdrawal
+                    , txVotingAction = optionalVoteAction
+                    , txDeposit = Just $ W.getStakeKeyDeposit pp
+                    , txMetadata = metadata
+                    , txValidityInterval = first Just validityInterval
+                    }
+

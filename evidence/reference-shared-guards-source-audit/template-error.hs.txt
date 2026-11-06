@@ -1,0 +1,22 @@
+instance IsServerError ErrConstructSharedWallet where
+    toServerError = \case
+        ErrConstructSharedWalletWrongScriptTemplate
+            (ErrScriptTemplateInvalid cred reason) ->
+                handleTemplateErr cred (toText reason)
+        ErrConstructSharedWalletWrongScriptTemplate
+            (ErrScriptTemplateMissingKey cred reason) ->
+                handleTemplateErr cred reason
+        ErrConstructSharedWalletInvalidIndex e -> toServerError e
+      where
+        handleTemplateErr cred reason =
+            apiError err403 SharedWalletScriptTemplateInvalid
+                $ mconcat
+                    [ "It looks like you've tried to create a shared wallet "
+                    , "with a template script for "
+                    , toText cred
+                    , " credential that does not "
+                    , "pass validation. The problem is: "
+                    , reason
+                    ]
+
+instance IsServerError (ErrInvalidDerivationIndex 'Soft level) where

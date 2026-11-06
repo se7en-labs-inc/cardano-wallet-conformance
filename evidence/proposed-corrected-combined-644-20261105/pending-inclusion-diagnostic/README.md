@@ -1,0 +1,7 @@
+# Native inclusion diagnostic; no conformance credit
+
+The unchanged frozen normal-pending profile fails44 checks/one failure: exact native payment inclusion timed out. The public admission proof records transaction0441cad1... present in the native mempool after successful pending DELETE, unchanged original funding and stable tip142/306.
+
+After all original fixture processes stopped/reaped, a private copy of the CLOSED relay database was opened by a separately owned node with empty peer topology and no producer keys. At recovered tip617/1233, the exact original100ADA input remains unspent and the requested transaction output is absent. Its unchanged signed envelope has the exact original transaction ID and is accepted by the isolated node; mempool membership changes from absent to present. This diagnostic cannot produce blocks, never modifies the original closed database, never calls a wallet API and earns no passing obligation or inclusion credit. It substantiates native fixture loss of an otherwise admissible transaction after wallet deletion, not a wallet reappearance defect or proof of the exact native rollback schedule.
+
+The isolated diagnostic node was stopped/reaped and its absence verified. Original failed report, signed envelope and public native observations remain preserved. The proposed fixture correction avoids competing producers during the controlled inclusion interval; it does not replay wallet transactions, relax expectations or change644.

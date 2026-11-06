@@ -1,0 +1,42 @@
+postTxToQueue
+    :: Read.IsEra era
+    => Tracer IO Log
+    -> TQueue
+        IO
+        ( LocalTxSubmissionCmd
+            (Consensus.GenTx (CardanoBlock StandardCrypto))
+            (ApplyTxErr (CardanoBlock StandardCrypto))
+            IO
+        )
+    -> Read.Tx era
+    -> ExceptT ErrPostTx IO ()
+postTxToQueue tr txSubmissionQueue tx = do
+    liftIO $ traceWith tr $ MsgPostTx $ Read.serializeTx tx
+    case consensusGenTxFromTxRecent tx of
+        Left e -> throwE e
+        Right consensusGenTx -> do
+            let cmd = CmdSubmitTx consensusGenTx
+            liftIO (send txSubmissionQueue cmd) >>= \case
+                SubmitSuccess -> pure ()
+                SubmitFail e ->
+                    throwE $ ErrPostTxValidationError $ T.pack $ show e
+
+consensusGenTxFromTxRecent
+    :: forall era
+     . Read.IsEra era
+    => Read.Tx era
+    -> Either ErrPostTx (Consensus.GenTx (CardanoBlock StandardCrypto))
+consensusGenTxFromTxRecent (Read.Tx tx) = case Read.theEra @era of
+    Read.Babbage ->
+        Right
+            $ Consensus.GenTxBabbage
+            $ Consensus.ShelleyTx (txIdTx tx) tx
+    Read.Conway ->
+        Right
+            $ Consensus.GenTxConway
+            $ Consensus.ShelleyTx (txIdTx tx) tx
+    era -> Left $ ErrPostTxEraUnsupported (Read.EraValue era)
+
+{-------------------------------------------------------------------------------
+    NetworkClient
+    Node-to-client mini-protocol descriptions

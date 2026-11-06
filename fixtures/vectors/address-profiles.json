@@ -1,0 +1,1453 @@
+[
+  {
+    "id": "native-script-all",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          },
+          {
+            "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+            "type": "signature"
+          }
+        ],
+        "type": "all"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111",
+        "22222222222222222222222222222222222222222222222222222222"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "008201828200581c111111111111111111111111111111111111111111111111111111118200581c22222222222222222222222222222222222222222222222222222222",
+        "hash_hex": "6c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-script-any",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          },
+          {
+            "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+            "type": "signature"
+          }
+        ],
+        "type": "any"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "008202828200581c111111111111111111111111111111111111111111111111111111118200581c22222222222222222222222222222222222222222222222222222222",
+        "hash_hex": "254e553a131b6c13c02d1b4c849da6eb8803ce5984a1426827f21399",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-script-at-least",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "required": 2,
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          },
+          {
+            "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+            "type": "signature"
+          },
+          {
+            "slot": 1000,
+            "type": "before"
+          }
+        ],
+        "type": "at_least"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111",
+        "22222222222222222222222222222222222222222222222222222222"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "00830302838200581c111111111111111111111111111111111111111111111111111111118200581c2222222222222222222222222222222222222222222222222222222282051903e8",
+        "hash_hex": "61ae8ee47fe6f614d1d241669e2cb3e5e0a1b96fe60d4a4c02869ec5",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-script-before",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": null,
+      "invalid_hereafter": 1000,
+      "script": {
+        "slot": 1000,
+        "type": "before"
+      },
+      "signers": []
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0082051903e8",
+        "hash_hex": "f34ce37b50eec3bce2bd096fdaebd447cb92c9e74e2a4093beff8705",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-script-after",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": null,
+      "script": {
+        "slot": 100,
+        "type": "after"
+      },
+      "signers": []
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0082041864",
+        "hash_hex": "15fa0f97f3fe447a10dfbbd71edae89fb15d2b1b80f805ffaace9a5b",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-script-unsatisfied",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          },
+          {
+            "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+            "type": "signature"
+          }
+        ],
+        "type": "all"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "008201828200581c111111111111111111111111111111111111111111111111111111118200581c22222222222222222222222222222222222222222222222222222222",
+        "hash_hex": "6c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82",
+        "satisfied": false,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-before-outside-bound",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": null,
+      "invalid_hereafter": 1001,
+      "script": {
+        "slot": 1000,
+        "type": "before"
+      },
+      "signers": []
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0082051903e8",
+        "hash_hex": "f34ce37b50eec3bce2bd096fdaebd447cb92c9e74e2a4093beff8705",
+        "satisfied": false,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-after-outside-bound",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 99,
+      "invalid_hereafter": null,
+      "script": {
+        "slot": 100,
+        "type": "after"
+      },
+      "signers": []
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0082041864",
+        "hash_hex": "15fa0f97f3fe447a10dfbbd71edae89fb15d2b1b80f805ffaace9a5b",
+        "satisfied": false,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-before-unbounded",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": null,
+      "invalid_hereafter": null,
+      "script": {
+        "slot": 1000,
+        "type": "before"
+      },
+      "signers": []
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0082051903e8",
+        "hash_hex": "f34ce37b50eec3bce2bd096fdaebd447cb92c9e74e2a4093beff8705",
+        "satisfied": false,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-policy-id",
+    "requirements": [
+      "script.policy-id"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          },
+          {
+            "slot": 1000,
+            "type": "before"
+          },
+          {
+            "slot": 100,
+            "type": "after"
+          }
+        ],
+        "type": "all"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "008201838200581c1111111111111111111111111111111111111111111111111111111182051903e882041864",
+        "hash_hex": "760a868dea570f524041c7c8038be5f84254d3f8ccceb5c3f555065a",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-empty-all",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [],
+        "type": "all"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "00820180",
+        "hash_hex": "d441227553a0f1a965fee7d60a0f724b368dd1bddbc208730fccebcf",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-empty-any",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "scripts": [],
+        "type": "any"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "00820280",
+        "hash_hex": "52dc3d43b6d2465e96109ce75ab61abe5e9c1d8a3c9ce6ff8a3af528",
+        "satisfied": false,
+        "valid": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-threshold-zero",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "required": 0,
+        "scripts": [],
+        "type": "at_least"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "0083030080",
+        "hash_hex": "3530cc9ae7f2895111a99b7a02184dd7c0cea7424f1632d73951b1d7",
+        "satisfied": true,
+        "valid": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-threshold-impossible",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": 100,
+      "invalid_hereafter": 1000,
+      "script": {
+        "required": 2,
+        "scripts": [
+          {
+            "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+            "type": "signature"
+          }
+        ],
+        "type": "at_least"
+      },
+      "signers": [
+        "11111111111111111111111111111111111111111111111111111111"
+      ]
+    },
+    "expected": {
+      "result": {
+        "cbor_hex": "00830302818200581c11111111111111111111111111111111111111111111111111111111",
+        "hash_hex": "cd9f7bc6ae2513e1011cde0d7c2ab7f48d88a95b9294aea82bbfd1d2",
+        "satisfied": false,
+        "valid": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "native-threshold-overflow-rejected",
+    "requirements": [
+      "script.native"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "native.script",
+    "input": {
+      "invalid_before": null,
+      "invalid_hereafter": null,
+      "script": {
+        "required": 256,
+        "scripts": [],
+        "type": "at_least"
+      },
+      "signers": []
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-base-script-key",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "base",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      },
+      "stake": {
+        "hash_hex": "22222222222222222222222222222222222222222222222222222222",
+        "type": "key"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1zpkgzum6v8vqlal8fp30tlrvf7vykhtw2qsq8zhmfhx6eq3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3qpt6gsm",
+        "address_hex": "106c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac8222222222222222222222222222222222222222222222222222222222"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-base-key-script",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "base",
+      "network_tag": 0,
+      "payment": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      },
+      "stake": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1yqg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zytvs9eh5cwcplm7wjrz7h7xcnucfdwku5pqqw90knwd4jpqm0gneu",
+        "address_hex": "20111111111111111111111111111111111111111111111111111111116c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-base-script-script",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "base",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      },
+      "stake": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1xpkgzum6v8vqlal8fp30tlrvf7vykhtw2qsq8zhmfhx6eqnvs9eh5cwcplm7wjrz7h7xcnucfdwku5pqqw90knwd4jpq5xlnt5",
+        "address_hex": "306c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac826c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-pointer",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "pointer",
+      "network_tag": 0,
+      "output_index": 128,
+      "payment": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      },
+      "slot": 128,
+      "transaction_index": 127
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1gqg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyvpqplczqqh73duj",
+        "address_hex": "401111111111111111111111111111111111111111111111111111111181007f8100"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-pointer-zero",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "pointer",
+      "network_tag": 0,
+      "output_index": 0,
+      "payment": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      },
+      "slot": 0,
+      "transaction_index": 0
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1gqg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygqqqqqkj64v3",
+        "address_hex": "4011111111111111111111111111111111111111111111111111111111000000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-pointer-u64-max",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "pointer",
+      "network_tag": 0,
+      "output_index": 18446744073709551615,
+      "payment": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      },
+      "slot": 18446744073709551615,
+      "transaction_index": 18446744073709551615
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1gqg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyvpllllllllllll7lupllllllllllll7lupllllllllllll7lckqttc3",
+        "address_hex": "401111111111111111111111111111111111111111111111111111111181ffffffffffffffff7f81ffffffffffffffff7f81ffffffffffffffff7f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-reward-script",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "reward",
+      "network_tag": 1,
+      "stake": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "stake179kgzum6v8vqlal8fp30tlrvf7vykhtw2qsq8zhmfhx6eqsm2pm2g",
+        "address_hex": "f16c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-shared-all",
+    "requirements": [
+      "address.shared"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1wpkgzum6v8vqlal8fp30tlrvf7vykhtw2qsq8zhmfhx6eqsug4pel",
+        "address_hex": "706c81737a61d80ff7e74862f5fc6c4f984b5d6e5020038afb4dcdac82"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-shared-any",
+    "requirements": [
+      "address.shared"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            }
+          ],
+          "type": "any"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1wqj5u4f6zvdkcy7q95d5epya5m4csq7wtxz2zsngylep8xgqgtc0k",
+        "address_hex": "70254e553a131b6c13c02d1b4c849da6eb8803ce5984a1426827f21399"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-shared-at-least",
+    "requirements": [
+      "address.shared"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "required": 2,
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "key_hash_hex": "22222222222222222222222222222222222222222222222222222222",
+              "type": "signature"
+            },
+            {
+              "slot": 1000,
+              "type": "before"
+            }
+          ],
+          "type": "at_least"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1wps6arhy0ln0v9x36fqkd83vk0j7pgdedlnq6jjvq2rfa3gcwuj3q",
+        "address_hex": "7061ae8ee47fe6f614d1d241669e2cb3e5e0a1b96fe60d4a4c02869ec5"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-shared-timelock",
+    "requirements": [
+      "address.shared"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 0,
+      "payment": {
+        "script": {
+          "scripts": [
+            {
+              "key_hash_hex": "11111111111111111111111111111111111111111111111111111111",
+              "type": "signature"
+            },
+            {
+              "slot": 1000,
+              "type": "before"
+            },
+            {
+              "slot": 100,
+              "type": "after"
+            }
+          ],
+          "type": "all"
+        },
+        "type": "script"
+      }
+    },
+    "expected": {
+      "result": {
+        "address": "addr_test1wpmq4p5dafts75jqg8rusqutuhuyy4xnlrxvadwr742svkswektnx",
+        "address_hex": "70760a868dea570f524041c7c8038be5f84254d3f8ccceb5c3f555065a"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-byron-random",
+    "requirements": [
+      "address.byron",
+      "address.network"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.byron",
+    "input": {
+      "account_index": 2147483648,
+      "address_index": 0,
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "network": "mainnet",
+      "style": "Byron"
+    },
+    "expected": {
+      "result": {
+        "address": "2w1sdSJu3GVgUMCg95UFEyPuR3wZfafce23XXNAu6G4HUW14r7PG7s3UhUK66yBtgYRuKuE7gEkJWv2ExCA98crpuRDfkSXMvmY",
+        "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-byron-network-attributes",
+    "requirements": [
+      "address.byron",
+      "address.network"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.byron",
+    "input": {
+      "account_index": 2147483648,
+      "address_index": 0,
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "network": "preprod",
+      "style": "Byron"
+    },
+    "expected": {
+      "result": {
+        "address": "3s4ud2BC9ZiUjwGN11qHewgLm3T578V3bmSzaghJQBdE27XxiRhUt1hYiJqUPP5XQx5U62A7Q1xpgUEU4nTxV5wxABGKvwUKKfLCTCF",
+        "address_hex": "82d818584183581cfc0ad6ed2a286bc7eb0ee1d687b1bde54af18eee0ba36e5f5f125fa8a201581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f024101001a1ff7fe5c"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-byron-icarus",
+    "requirements": [
+      "address.byron",
+      "address.network"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.byron",
+    "input": {
+      "account_index": 2147483648,
+      "address_index": 0,
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "network": "mainnet",
+      "style": "Icarus"
+    },
+    "expected": {
+      "result": {
+        "address": "Ae2tdPwUPEZKcVUy5JAhPjdXa6PuWMnHDgjWdK4ZyGK33L8YWjBv2saUwaa",
+        "address_hex": "82d818582183581ce48f4355e84102190e65fe93f3e202ad569ec839572cc3f65ae20d81a0001a515af47b"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-byron-protocol-magic",
+    "requirements": [
+      "address.byron",
+      "address.network"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.byron",
+    "input": {
+      "account_index": 2147483648,
+      "address_index": 0,
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "network": "preprod",
+      "style": "Icarus"
+    },
+    "expected": {
+      "result": {
+        "address": "FHnt4NL7yPYBmmHUX5URkTbcvce1idt6BLb34NncTNqz6yMVfKgQ3YYTbCspFQE",
+        "address_hex": "82d818582483581cc68775b3a9b73b04521b1112716dbe7923499a250d4d789edfc263dda1024101001a89588013"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-byron-crc-rejection",
+    "requirements": [
+      "address.byron"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.inspect-byron",
+    "input": {
+      "address_hex": "82d818582483581cc68775b3a9b73b04521b1112716dbe7923499a250d4d789edfc263dda1024101001a89588012",
+      "style": "Icarus"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-path-encrypt-golden",
+    "requirements": [
+      "crypto.byron-payload"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "byron.path-encrypt",
+    "input": {
+      "account_index": 2147483648,
+      "address_index": 4294967295,
+      "passphrase_hex": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "expected": {
+      "result": {
+        "attributes_hex": "a101581e581cdab6cbaa85ab99c7265a1512133c58889fa234a25072c4680c84d172"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-path-decrypt-golden",
+    "requirements": [
+      "crypto.byron-payload"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "byron.path-decrypt",
+    "input": {
+      "attributes_hex": "a101581e581cdab6cbaa85ab99c7265a1512133c58889fa234a25072c4680c84d172",
+      "passphrase_hex": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "expected": {
+      "result": {
+        "path": [
+          2147483648,
+          4294967295
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-path-authentication-failure",
+    "requirements": [
+      "crypto.byron-payload"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "byron.path-decrypt",
+    "input": {
+      "attributes_hex": "a101581e581cdab6cbaa85ab99c7265a1512133c58889fa234a25072c4680c84d172",
+      "passphrase_hex": "0101010101010101010101010101010101010101010101010101010101010101"
+    },
+    "expected": {
+      "result": {
+        "path": null
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "byron-path-malformed-cbor",
+    "requirements": [
+      "crypto.byron-payload"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "byron.path-decrypt",
+    "input": {
+      "attributes_hex": "ff",
+      "passphrase_hex": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "base58-leading-zero",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.base58",
+    "input": {
+      "action": "encode",
+      "bytes_hex": "000001"
+    },
+    "expected": {
+      "result": {
+        "text": "112"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "base58-leading-zero-decode",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.base58",
+    "input": {
+      "action": "decode",
+      "text": "112"
+    },
+    "expected": {
+      "result": {
+        "bytes_hex": "000001"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "base58-malformed",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.base58",
+    "input": {
+      "action": "decode",
+      "text": "0OIl"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bech32-checksum-rejected",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.bech32",
+    "input": {
+      "action": "decode",
+      "text": "addr_test1qqqsyayu07q"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bech32-mixed-case-rejected",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.bech32",
+    "input": {
+      "action": "decode",
+      "text": "Addr_test1qqqsyayu07r"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bech32-invalid-padding",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.bech32",
+    "input": {
+      "action": "decode",
+      "text": "addr_test1p72fq6f"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bech32-byte-encode",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.bech32",
+    "input": {
+      "action": "encode",
+      "bytes_hex": "000102",
+      "hrp": "addr_test"
+    },
+    "expected": {
+      "result": {
+        "text": "addr_test1qqqsyayu07r"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bech32-byte-decode",
+    "requirements": [
+      "address.encoding"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "encoding.bech32",
+    "input": {
+      "action": "decode",
+      "text": "addr_test1qqqsyayu07r"
+    },
+    "expected": {
+      "result": {
+        "bytes_hex": "000102",
+        "hrp": "addr_test"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-drep-key",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "encode",
+      "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+      "kind": "key",
+      "role": "drep"
+    },
+    "expected": {
+      "result": {
+        "text": "drep1ygg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg42v5vz"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-drep-key-decode",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "decode",
+      "kind": "key",
+      "role": "drep",
+      "text": "drep1ygg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg42v5vz"
+    },
+    "expected": {
+      "result": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-drep-script",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "encode",
+      "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+      "kind": "script",
+      "role": "drep"
+    },
+    "expected": {
+      "result": {
+        "text": "drep1yvg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg4cu9v9"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-drep-script-decode",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "decode",
+      "kind": "script",
+      "role": "drep",
+      "text": "drep1yvg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg4cu9v9"
+    },
+    "expected": {
+      "result": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-committee-hot",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "encode",
+      "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+      "kind": "key",
+      "role": "committee_hot"
+    },
+    "expected": {
+      "result": {
+        "text": "cc_hot1qgg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg8777l0"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-committee-hot-decode",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "decode",
+      "kind": "key",
+      "role": "committee_hot",
+      "text": "cc_hot1qgg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg8777l0"
+    },
+    "expected": {
+      "result": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-committee-cold",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "encode",
+      "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+      "kind": "key",
+      "role": "committee_cold"
+    },
+    "expected": {
+      "result": {
+        "text": "cc_cold1zgg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3z2z9x"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-committee-cold-decode",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "decode",
+      "kind": "key",
+      "role": "committee_cold",
+      "text": "cc_cold1zgg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3z2z9x"
+    },
+    "expected": {
+      "result": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "cip129-header-rejected",
+    "requirements": [
+      "address.cip129"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "governance.identifier",
+    "input": {
+      "action": "decode",
+      "kind": "key",
+      "role": "drep",
+      "text": "drep1lug3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zyg3zygm4pnke"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "key-hash",
+    "requirements": [
+      "script.policy-id"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "key.hash",
+    "input": {
+      "public_key_hex": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "expected": {
+      "result": {
+        "hash_hex": "8cf0020fd6584f7b130db5ca0229c51f934821a2eb07c1df512d8aca"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "asset-fingerprint",
+    "requirements": [
+      "script.policy-id"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "asset.fingerprint",
+    "input": {
+      "asset_name_hex": "deadbeef",
+      "policy_hex": "11111111111111111111111111111111111111111111111111111111"
+    },
+    "expected": {
+      "result": {
+        "fingerprint": "asset1uqsz3xh3a07jmklmda6q3gpl87esjr4qhq2wxe"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-invalid-network-rejected",
+    "requirements": [
+      "address.network"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 16,
+      "payment": {
+        "hash_hex": "11111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      }
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "address-short-credential-rejected",
+    "requirements": [
+      "address.shelley"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-address/ledger/CBOR/codec functions; AddressAdapter sha256:f751ef54b76bf04781eed6ca96c7fb59b03f1e9ed8770fc9320776005ccc6147; independent Rust byte/hash/evaluation laws",
+    "operation": "address.build",
+    "input": {
+      "kind": "enterprise",
+      "network_tag": 0,
+      "payment": {
+        "hash_hex": "111111111111111111111111111111111111111111111111111111",
+        "type": "key"
+      }
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  }
+]

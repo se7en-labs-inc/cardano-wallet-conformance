@@ -1,0 +1,11 @@
+{
+  "id": "pool-metadata-cli-preflight-and-wallet-fetch-phases",
+  "status": "proposed-unapplied",
+  "failed_source": "5ffe189b2a",
+  "failed_report": "live.json",
+  "observation": "Pool1 registered. Pool2 metadata expected bytes/hash and certificate were generated, but trusted CLI transaction build failed before producing a body. The fixture CLI suppresses private stderr. A repeat read-only build diagnosed anchor-data downloading/hash validation; after the fixture server had stopped it returned the preserved metadata URL connection failure.",
+  "cause": "The deliberately mismatched pool2 metadata is served during trusted CLI transaction construction, so the CLI's own anchor-data validation rejects it before it can become a wallet metadata rejection case.",
+  "proposal": "Give the owned HTTP fixture two explicit phases. During both registrations serve the exact expected bytes for each URL, retaining all CLI/Rust hash, certificate, signatures, fee, spent-input and node checks. Once both registrations are independently confirmed and while wallet metadata mode remains none, atomically switch only pool2 to different valid JSON under its unchanged URL/on-chain hash. Reset both request counters at that transition, then enable direct wallet fetching. Require new requests in the wallet phase, exact pool1 metadata, pool2 metadata absence across independent block advancements, source-mode clearing and unchanged fixture funds. Keep distinct expected hashes so valid cache entries cannot satisfy the negative case.",
+  "required_validation": ["Unit test expected pool2 body before the transition and mismatched body afterward", "Prove request counters reset and require fresh wallet-phase requests", "Fresh actual cluster registrations with CLI hash validation still active", "All four complete pool lifecycle cases and independent node integration last", "Preserve this failed report and diagnostic outputs; no conformance credit before successful execution"],
+  "unchanged": ["Original OpenAPI and643 obligations", "Every strict metadata/certificate/signature/fee/value check", "Wallet hash-mismatch rejection expectations", "Ranking and real retirement assertions", "All other eleven unapplied proposals"]
+}

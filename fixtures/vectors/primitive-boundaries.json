@@ -1,0 +1,1294 @@
+[
+  {
+    "id": "boundary-sha256-0",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": ""
+    },
+    "expected": {
+      "result": {
+        "hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-0",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": ""
+    },
+    "expected": {
+      "result": {
+        "hex": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-0",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "786a02f742015903c6c6fd852552d272912f4740e15847618a86e217f71f5419d25e1031afee585313896444934eb04b903a685b1448b755d56f701afe9be2ce"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-0",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "0e5751c026e543b2e8ab2eb06099daa1d1e5df47778f7787faab45cdf12fe3a8"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-1",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "00"
+    },
+    "expected": {
+      "result": {
+        "hex": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-1",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "00"
+    },
+    "expected": {
+      "result": {
+        "hex": "b8244d028981d693af7b456af8efa4cad63d282e19ff14942c246e50d9351d22704a802a71c3580b6370de4ceb293c324a8423342557d4e5c38438f0e36910ee"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-1",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "00",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "2fa3f686df876995167e7c2e5d74c4c7b6e48f8068fe0e44208344d480f7904c36963e44115fe3eb2a3ac8694c28bcb4f5a0f3276f2e79487d8219057a506e4b"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-1",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "00",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c111314"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-55",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30313233343536"
+    },
+    "expected": {
+      "result": {
+        "hex": "463eb28e72f82e0a96c0a4cc53690c571281131f672aa229e0d45ae59b598b59"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-55",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30313233343536"
+    },
+    "expected": {
+      "result": {
+        "hex": "6856647f269c2ee3d8128f0b25427659d880641ef343300dd3cd4679168f58d6527fda70b4ebc854e2065e172b7d58c1536992c0810599259ba84a2b40c65414"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-55",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30313233343536",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "659858f0b5c9edab5b94fd732f6e6b17c51cc096104f09beb3afc3aa467c2ecf885c4c6541effa9023d3b5738ae5a14d867e15db06fe1f9d1127b77e1aabb516"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-55",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f30313233343536",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "ace7db9e8f298e823b7b265bbcd004577e0029256c48684b2d7a7cdfcbff5e47"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-56",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637"
+    },
+    "expected": {
+      "result": {
+        "hex": "da2ae4d6b36748f2a318f23e7ab1dfdf45acdc9d049bd80e59de82a60895f562"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-56",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637"
+    },
+    "expected": {
+      "result": {
+        "hex": "8b12b2f6fe400a51d29656e2b8c42a1bbfe6fcf3e425da430db05d1a2dda14790dee20fa8b22d8762afffe4988a5c98a4430d22a17e41e23d90fa61ab75671a9"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-56",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "26cca0126f5d1a813c62e5c71001c046f9c92095704550be5873a495a999ad010a4f79491f24f286500adce1a137bc2084e4949f5b7294cefe51ecaff8e95cba"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-56",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "a6c1d35f74218e57b4dbd4ed467b41981208666738ffa0d9dc53d3de96be702a"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-63",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e"
+    },
+    "expected": {
+      "result": {
+        "hex": "29af2686fd53374a36b0846694cc342177e428d1647515f078784d69cdb9e488"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-63",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e"
+    },
+    "expected": {
+      "result": {
+        "hex": "9dc9c5598e55dc42955695320839788e353f1d7f6ba74df74c80a8a52f463c0697f57f68835d1418f4ce9b6530cd79bd0f4c6f7e13c93feb1218c0b65c2c0561"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-63",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "d10bf9a15b1c9fc8d41f89bb140bf0be08d2f3666176d13baac4d381358ad074c9d4748c300520eb026daeaea7c5b158892fde4e8ec17dc998dcd507df26eb63"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-63",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "29e41a64fbdd2fd27612228623c0702222bf367451e7324287f181cb3dcf7237"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-64",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+    },
+    "expected": {
+      "result": {
+        "hex": "fdeab9acf3710362bd2658cdc9a29e8f9c757fcf9811603a8c447cd1d9151108"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-64",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f"
+    },
+    "expected": {
+      "result": {
+        "hex": "ee4320ebaf3fdb4f2c832b137200c08e235e0fa7bbd0eb1740c7063ba8a0d151da77e003398e1714a955d475b05e3e950b639503b452ec185de4229bc4873949"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-64",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "2fc6e69fa26a89a5ed269092cb9b2a449a4409a7a44011eecad13d7c4b0456602d402fa5844f1a7a758136ce3d5d8d0e8b86921ffff4f692dd95bdc8e5ff0052"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-64",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "10d8e6d534b00939843fe9dcc4dae48cdf008f6b8b2b82b156f5404d874887f5"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-65",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40"
+    },
+    "expected": {
+      "result": {
+        "hex": "4bfd2c8b6f1eec7a2afeb48b934ee4b2694182027e6d0fc075074f2fabb31781"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-65",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40"
+    },
+    "expected": {
+      "result": {
+        "hex": "02856cef735f9acec6b9e33f0fbc8f9804d2aa54187f382b8ae842e5d3696c07459aad2a5aed25ea5e117eb1c7ba35da6a7a8adce9e6afe3ad79e9fa42d5bba8"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-65",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "fcbe8be7dcb49a32dbdf239459e26308b84dff1ea480df8d104eeff34b46fae98627b450c2267d48c0946a697c5b59531452ac0484f1c84e3a33d0c339bb2e28"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-65",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f40",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "84c04ab082c8ae24206561f77397704b627892089a05887a2a1996472bcfe15d"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-111",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e"
+    },
+    "expected": {
+      "result": {
+        "hex": "60780e9451bdc43cf4530ffc95cbb0c4eb24dae2c39f55f334d679e076c08065"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-111",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e"
+    },
+    "expected": {
+      "result": {
+        "hex": "a1a111449b198d9b1f538bad7f3fc1022b3a5b1a5e90a0bc860de8512746cbc31599e6c834de3a3235327af0b51ff57bf7acf1974a73014d9c3953812edc7c8d"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-111",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "bf23c0c25c8060e4f6995f1623a3bebecaa96e308680000a8aa3cd56bb1a6da099e10d9231b37f4519b2efd2c24de72f31a5f19535241b4a59fa3c03ceb790e7"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-111",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "e08b3d16f0a3b663f319da999db897488d1677048a38fa7b4f1f783e4f1974e6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-112",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f"
+    },
+    "expected": {
+      "result": {
+        "hex": "09373f127d34e61dbbaa8bc4499c87074f2ddb10e1b465f506d7d70a15011979"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-112",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f"
+    },
+    "expected": {
+      "result": {
+        "hex": "c5fbd731d19d2ae1180f001be72c2c1aaba1d7b094b3748880e24593b8e117a750e11c1bd867cc2f96dace8c8b74abd2d5c4f236be444e77d30d1916174070b9"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-112",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "877fd652c05281009c0a5250e7a3a671f8b18c108817fe4a874de22da8e45db11958a600c5f62e67d36cbf84474cf244a9c2b03a9fb9dc711cd1a2cab6f3fae0"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-112",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "d5587e0b33166a320dd69417adb01cb1129aff5506a2f655574cf2e264636bdb"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-127",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e"
+    },
+    "expected": {
+      "result": {
+        "hex": "92ca0fa6651ee2f97b884b7246a562fa71250fedefe5ebf270d31c546bfea976"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-127",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e"
+    },
+    "expected": {
+      "result": {
+        "hex": "eab89674feaa34e27aebeeff3c0a4d70070bb872d5e9f186cf1dbbdee517b6e35724d629ff025a5b07185e911ada7e3c8acf830aa0e4f71777bd2d44f504f7f0"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-127",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "b6292669ccd38d5f01caae96ba272c76a879a45743afa0725d83b9ebb26665b731f1848c52f11972b6644f554c064fa90780dbbbf3a89d4fc31f67df3e5857ef"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-127",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "f2fe67ff342e21b8f45e8f2e0bcd1d9243245d50ee6c78042e9c491388791c72"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-128",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f"
+    },
+    "expected": {
+      "result": {
+        "hex": "471fb943aa23c511f6f72f8d1652d9c880cfa392ad80503120547703e56a2be5"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-128",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f"
+    },
+    "expected": {
+      "result": {
+        "hex": "1dffd5e3adb71d45d2245939665521ae001a317a03720a45732ba1900ca3b8351fc5c9b4ca513eba6f80bc7b1d1fdad4abd13491cb824d61b08d8c0e1561b3f7"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-128",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "2319e3789c47e2daa5fe807f61bec2a1a6537fa03f19ff32e87eecbfd64b7e0e8ccff439ac333b040f19b0c4ddd11a61e24ac1fe0f10a039806c5dcc0da3d115"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-128",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "c3582f71ebb2be66fa5dd750f80baae97554f3b015663c8be377cfcb2488c1d1"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-129",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f80"
+    },
+    "expected": {
+      "result": {
+        "hex": "5099c6a56203f9687f7d33f4bfdf576d31dc91f6b695ecea38b2770c87631135"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-129",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f80"
+    },
+    "expected": {
+      "result": {
+        "hex": "1d9da57fbbdab09afb3506ab2d223d06109d65c1c8ad197f50138f714bc4c3f2fe5787922639c680acad1c651f955990425954ce2cba0c5cc83f2667d878eb0f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-129",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f80",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "f59711d44a031d5f97a9413c065d1e614c417ede998590325f49bad2fd444d3e4418be19aec4e11449ac1a57207898bc57d76a1bcf3566292c20c683a5c4648f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-129",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f80",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "f7f3c46ba2564ff4c4c162da1f5b605f9f1c4aa6a20652a9f9a337c1a2f5b9c9"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-255",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa00010203"
+    },
+    "expected": {
+      "result": {
+        "hex": "857df204175f077a9986709897f00ee0bcc0449585248e4b42498337e9329999"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-255",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa00010203"
+    },
+    "expected": {
+      "result": {
+        "hex": "e9746a5516961da1fdc8e6c59350cd147b7d80c120cc7ed621399faeb2462c28f34217a13009a8e6a721f538356db9a9b64d9a5412e0fd07d24cac1315d95548"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-255",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa00010203",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "fe2c02da499516b0e9fb2dd70c49eb3629039f632e20a880946fb7bc97a7ab09deb7d48774d7f0648141c9d9ede19ae6e0dbf07863a128cf4b00195f0f179f74"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-255",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa00010203",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "d9ef0fc521b4266d16df662bec231bc2ec3989e7adeaf63169c295dc239dbbea"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-256",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa0001020304"
+    },
+    "expected": {
+      "result": {
+        "hex": "5bc31b283cef0072274e97d74916552954c935794536cab632641e5ea071379d"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-256",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa0001020304"
+    },
+    "expected": {
+      "result": {
+        "hex": "7ff1cd1e9773a4b7ba1f40e642db0d879bd5f6cc151a7d3401a0bc7778b8270c108b530fb195f2383f4cec8cf05778e6af4db56811673371674cec1524488f83"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-256",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa0001020304",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "93463ac058b6163eb43be3f5bb32b28541498f4e3366f1effe253ad44e1e076e41c3616046027c82a7124f8f4746668ad10b12e8e25a95ac8f3151df01cd5a93"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-256",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa0001020304",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "582f782226018ec33076bd8d1c42413530ac7e1126260ffc0f306ba3befc3f24"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-1024",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f10111213"
+    },
+    "expected": {
+      "result": {
+        "hex": "2bce1ba628720664be4b9fdd77aae0678e5f0f3f02fc6ff641ec879094f6a404"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-1024",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f10111213"
+    },
+    "expected": {
+      "result": {
+        "hex": "9af3eed7e9dd11428bb922c6830c32065154532303781f8ea4f20792d616703884d564ebfd2bfa65faed8fc8fd91d9e1d3f12897fbb1e2247632db70ce30573e"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-1024",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f10111213",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "8d1090909017add40e749df2d0ebac43273d6fc816bc4ffaf2a6dfabe4206dea13677d2002399e4a38e700d8083db4af8341ee9b3a5147110b6a963a3894e4e2"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-1024",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f10111213",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "d75edc54bb5acee4cc8610568e82872ce79758afd38c51dfe6ccfab01c2d191f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha256-4096",
+    "requirements": [
+      "crypto.sha256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f"
+    },
+    "expected": {
+      "result": {
+        "hex": "d67c656e01756650d77717b0839985a056ec28ffe174601d690fc407a2ceffca"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-sha512-4096",
+    "requirements": [
+      "crypto.sha512.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f"
+    },
+    "expected": {
+      "result": {
+        "hex": "3b5e033c335c4a168b9b370c752db690ede9cc918abb9a2d18736536c83908ddd4be0bef9018c9fc2b4700befa1d91bf12cee544e0c06cdcea822bf2ebdf36a2"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b512-4096",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f",
+      "output_bytes": 64
+    },
+    "expected": {
+      "result": {
+        "hex": "c7a3d6a53bd11772ecf077c1dc9633a39c6fe691ec07a530e0e765c0a9d5a01a16f00995536578b83e54c2821766ac7ac6ae86e22269a5d14208ccac954cc95f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "boundary-blake2b256-4096",
+    "requirements": [
+      "crypto.blake2b-256.basic",
+      "crypto.hash-boundaries"
+    ],
+    "source": "Haskell cardano-cli 11.2.1.0 binary sha256:aeda024fef9dc0c5533885a192dd3fced865727164591aabce95d401bbbaf0c8; hash anchor-data --file-binary /dev/stdin; Blake2b-256",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fa000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f",
+      "output_bytes": 32
+    },
+    "expected": {
+      "result": {
+        "hex": "11c294a11dc67e3ddb25f8c06cca2721e58d2a044243abea6c7063fd17d589e5"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "hash-malformed-hex",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Adapter v1 hexadecimal and BLAKE2 parameter validation contract",
+    "operation": "sha256",
+    "input": {
+      "message_hex": "0g"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "hash-odd-hex",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Adapter v1 hexadecimal and BLAKE2 parameter validation contract",
+    "operation": "sha512",
+    "input": {
+      "message_hex": "0"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "blake2b-zero-length",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Adapter v1 hexadecimal and BLAKE2 parameter validation contract",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "",
+      "output_bytes": 0
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "blake2b-oversize",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Adapter v1 hexadecimal and BLAKE2 parameter validation contract",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "",
+      "output_bytes": 65
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "blake2b-negative-length",
+    "requirements": [
+      "crypto.hash-boundaries"
+    ],
+    "source": "Adapter v1 hexadecimal and BLAKE2 parameter validation contract",
+    "operation": "blake2b",
+    "input": {
+      "message_hex": "",
+      "output_bytes": -1
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bip39-unicode-composed",
+    "requirements": [
+      "crypto.bip39.seed"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs; BIP39 NFKD e+U+0301 salt, 2048 iterations HMAC-SHA512",
+    "operation": "bip39.to-seed",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "passphrase": "é"
+    },
+    "expected": {
+      "result": {
+        "seed_hex": "f37f8652bf7004d4bd4ba7702e70e647f54965758656423dde58d64fa725c1e8be1b0416864e10f714c0730e46f9676079b4fd4f72fcf0c09a120ae65589c091"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "bip39-unicode-decomposed",
+    "requirements": [
+      "crypto.bip39.seed"
+    ],
+    "source": "Nix-pinned OpenSSL 3.6.2 binary sha256:2109b64903b9af91f467d2c7a98d9c45d1328ea4a2ce8d7fb43f9f1fb7d247a0; independent digest/PBKDF2 capture, never harness primitive outputs; BIP39 NFKD e+U+0301 salt, 2048 iterations HMAC-SHA512",
+    "operation": "bip39.to-seed",
+    "input": {
+      "mnemonic": "abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about",
+      "passphrase": "é"
+    },
+    "expected": {
+      "result": {
+        "seed_hex": "f37f8652bf7004d4bd4ba7702e70e647f54965758656423dde58d64fa725c1e8be1b0416864e10f714c0730e46f9676079b4fd4f72fcf0c09a120ae65589c091"
+      }
+    },
+    "selection_invariants": false
+  }
+]

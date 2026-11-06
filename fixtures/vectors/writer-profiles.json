@@ -1,0 +1,682 @@
+[
+  {
+    "id": "witness-vkey-golden",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.build",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "witness_cbor_hex": "82582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-bootstrap-golden",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.build",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Byron",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "witness_cbor_hex": "84582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a58205287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb073127755822a201581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f0242182a"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-bootstrap-mainnet",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.build",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": null,
+      "passphrase_hex": "",
+      "style": "Byron",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "witness_cbor_hex": "84582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a58205287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775581ea101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-script-golden",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.script",
+    "input": {
+      "script_key_hash_hex": "11111111111111111111111111111111111111111111111111111111"
+    },
+    "expected": {
+      "result": {
+        "script_hash_hex": "5334c8c55ec6518f2e262da617d3170bf0722f43813d64dbaf0ff0b9",
+        "witnesses_cbor_hex": "a101d90102818200581c11111111111111111111111111111111111111111111111111111111"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-sign-first",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-duplicate",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-merge",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6",
+      "xprv_hex": "c860c31ad8acfb5acd9c94e63668fa05047de024be1e4f7c4e9db587be39cd4feae688448f41ecbaa8bf54e7e8463d6bdc4d9c4307548296d61a31ef58f12c991210f3a9376acf626ae9cbfacbf2cf2ba75335b0cc8ba179a5b00f7b5b7a3b50276e7a60102d19826aef923dcbb4c5dc4feff6a1bec34ec726dcaa872f2368e2"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028282582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a8258201210f3a9376acf626ae9cbfacbf2cf2ba75335b0cc8ba179a5b00f7b5b7a3b50584063663d04cdd60313c31f25dd1f76cd99c3aa83c0fb810092a2ea87b9f2bd0ff07513ae3cc9fb9bbcbffdb7d36e149fd6d7a33ba8a1d52064bc9444c13d81a904f5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-merge-idempotent",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028282582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a8258201210f3a9376acf626ae9cbfacbf2cf2ba75335b0cc8ba179a5b00f7b5b7a3b50584063663d04cdd60313c31f25dd1f76cd99c3aa83c0fb810092a2ea87b9f2bd0ff07513ae3cc9fb9bbcbffdb7d36e149fd6d7a33ba8a1d52064bc9444c13d81a904f5f6",
+      "xprv_hex": "c860c31ad8acfb5acd9c94e63668fa05047de024be1e4f7c4e9db587be39cd4feae688448f41ecbaa8bf54e7e8463d6bdc4d9c4307548296d61a31ef58f12c991210f3a9376acf626ae9cbfacbf2cf2ba75335b0cc8ba179a5b00f7b5b7a3b50276e7a60102d19826aef923dcbb4c5dc4feff6a1bec34ec726dcaa872f2368e2"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028282582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a8258201210f3a9376acf626ae9cbfacbf2cf2ba75335b0cc8ba179a5b00f7b5b7a3b50584063663d04cdd60313c31f25dd1f76cd99c3aa83c0fb810092a2ea87b9f2bd0ff07513ae3cc9fb9bbcbffdb7d36e149fd6d7a33ba8a1d52064bc9444c13d81a904f5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-unresolved-preserves-existing",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "resolve_inputs": false,
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a100d901028182582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20af5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-bootstrap-sign",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.sign",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Byron",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a102d901028184582077b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5840d081090de24be6ccadb2af3ba91a653110e1693058ad15672868868efad13776bc0308902d71aa9b45cfbe1383d7b0ba30f3e88f031508c2c068e206a41cd20a58205287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb073127755822a201581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f0242182af5f6"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-invalid-key",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.build",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "84a300d9010281825820000000000000000000000000000000000000000000000000000000000000000000018182584882d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb1a000f42400200a0f5f6",
+      "xprv_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "witness-malformed-transaction",
+    "requirements": [
+      "tx.witnesses"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "witness.build",
+    "input": {
+      "address_hex": "82d818583e83581c7fdf3bcc91a8c44aa620f2a70ae8d6ba6ea0cdc4d8fb773e1b695480a101581a58180bd5a2556447a8738fd2363f157a5fee8fa6ef48bb5a6f8f001aa45ee1eb",
+      "network_magic": 42,
+      "passphrase_hex": "",
+      "style": "Shelley",
+      "transaction_cbor_hex": "ff",
+      "xprv_hex": "50b9902d61b96eed82230efdb43fee46347a0e79262a45086ed90caa433c894635872af14b179e79bc342b2bd60ec692dc0560fe515a58f7998e77f58ed18dfd77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "error": {
+        "code": "decode_failed"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-register-delegate-golden",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "join-registering",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83078200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e1a001e8480",
+          "83028200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e581c22222222222222222222222222222222222222222222222222222222"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-delegate-golden",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "join",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83028200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e581c22222222222222222222222222222222222222222222222222222222"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-deposit-refund",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "quit",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83088200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e1a001e8480"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-certificate-golden",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote-registering",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83078200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e1a001e8480",
+          "83098200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e8102"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-vote-abstain",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83098200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e8102"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-vote-no-confidence",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": 2000000,
+      "drep": {
+        "type": "no-confidence"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83098200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e8103"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-vote-key",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": 2000000,
+      "drep": {
+        "hash_hex": "33333333333333333333333333333333333333333333333333333333",
+        "type": "key"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83098200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e8200581c33333333333333333333333333333333333333333333333333333333"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-vote-script",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": 2000000,
+      "drep": {
+        "hash_hex": "44444444444444444444444444444444444444444444444444444444",
+        "type": "script"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83098200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e8201581c44444444444444444444444444444444444444444444444444444444"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-stake-script",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_script": {
+        "key_hash_hex": "55555555555555555555555555555555555555555555555555555555"
+      },
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83098201581c2a2970ba58a51a811cd13169a5c6c9d3dc58093c4a0eb10ec2b340018102"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-script-register",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "join-registering",
+      "deposit": 2000000,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_script": {
+        "key_hash_hex": "55555555555555555555555555555555555555555555555555555555"
+      },
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83078201581c2a2970ba58a51a811cd13169a5c6c9d3dc58093c4a0eb10ec2b340011a001e8480",
+          "83028201581c2a2970ba58a51a811cd13169a5c6c9d3dc58093c4a0eb10ec2b34001581c22222222222222222222222222222222222222222222222222222222"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-zero-deposit",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "quit",
+      "deposit": 0,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83088200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e00"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-max-deposit",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "quit",
+      "deposit": 18446744073709551615,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "result": {
+        "certificates_cbor_hex": [
+          "83088200581c91ad6f8aea3abd6690018a7575463b71dfdf529729cead386e5cea0e1bffffffffffffffff"
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-era-rejection",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote",
+      "deposit": null,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "dijkstra",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "error": {
+        "code": "unsupported_era"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-era-rejection",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "join",
+      "deposit": null,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "dijkstra",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "error": {
+        "code": "unsupported_era"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "stake-deposit-required",
+    "requirements": [
+      "tx.delegation"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "quit",
+      "deposit": null,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "error": {
+        "code": "deposit_required"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "governance-deposit-required",
+    "requirements": [
+      "tx.governance"
+    ],
+    "source": "Wallet2fc5c383 actual ledger witness builders, wallet signTransaction and delegation/voting certificate builders; WriterAdapter binary sha256:9d6548868037df4648ebc648aa0fc364ef538064ea8bb2e28072d7c92dac37f2; independent Rust raw-body/signature/credential/certificate CBOR laws",
+    "operation": "wallet.certificates",
+    "input": {
+      "action": "vote-registering",
+      "deposit": null,
+      "drep": {
+        "type": "abstain"
+      },
+      "era": "conway",
+      "pool_hex": "22222222222222222222222222222222222222222222222222222222",
+      "stake_xpub_hex": "77b46cf0b0d61fe2aec38db2d126c261a94b3a9940a4117c3f56083ea42a0dcb5287b5d6e7399f03d2cb4954892ea6a4ac1749794d794079a48072cb07312775"
+    },
+    "expected": {
+      "error": {
+        "code": "deposit_required"
+      }
+    },
+    "selection_invariants": false
+  }
+]

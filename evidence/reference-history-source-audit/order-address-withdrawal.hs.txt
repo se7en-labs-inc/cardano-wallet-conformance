@@ -1,0 +1,39 @@
+sortTransactionsBySlot
+    :: SortOrder -> [TransactionInfo] -> [TransactionInfo]
+sortTransactionsBySlot = \case
+    Ascending ->
+        sortOn
+            $ (,) <$> slotNo . txInfoMeta <*> Down . txInfoId
+    Descending ->
+        sortOn
+            $ (,) <$> (Down . slotNo . txInfoMeta) <*> txInfoId
+
+-- | Keep all transactions where at least one withdrawal is
+-- above a given minimum amount.
+filterMinWithdrawal
+    :: Maybe Coin -> [TransactionInfo] -> [TransactionInfo]
+filterMinWithdrawal Nothing = id
+filterMinWithdrawal (Just minWithdrawal) = filter p
+  where
+    p = any (>= minWithdrawal) . Map.elems . txInfoWithdrawals
+
+-- | Keep all transactions where the address is engaged.
+filterAddress
+    :: Maybe Address -> [TransactionInfo] -> [TransactionInfo]
+filterAddress Nothing = id
+filterAddress (Just addr) =
+    filter (\info -> p1 info || p2 info || p3 info || p4 info)
+  where
+    addressInTxOut = any (\(TxOut addr' _) -> addr' == addr)
+    p1 = addressInTxOut . txInfoOutputs
+
+    isAddressPresent = \case
+        (_, Just (TxOut addr' _)) -> addr' == addr
+        _ -> False
+    addressInInp = any isAddressPresent
+    p2 = addressInInp . txInfoInputs
+    p3 = addressInInp . txInfoCollateralInputs
+
+    addressInCollaterlaOut (Just (TxOut addr' _)) = addr' == addr
+    addressInCollaterlaOut Nothing = False
+    p4 = addressInCollaterlaOut . txInfoCollateralOutput

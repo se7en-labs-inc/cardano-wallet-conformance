@@ -1,0 +1,9 @@
+# Coherent funded balancing checkpoint
+
+All 1851 registered checks pass under suite fingerprint 8f9b27c2db2c584ba87522f6126bdfbaf5429864d1185ff7ae73fec9050a8549: 486 differential HTTP, 1157 actual Haskell internal and 208 live-node checks. Independent node integration passes. All 89 offline tests, all-target/all-feature Clippy, Cargo formatting, treefmt and isolated Nix package/Clippy/fmt/fault checks pass.
+
+The strict gate covers 576/643 mandatory obligations, with 67 missing, zero execution failures and no unregistered inputs. Gate exit1 records incompleteness. The funded balance API now has empty-wallet403 and funded202 coverage, independent body/input/output/fee conservation, unsigned-state preservation, exact signing and submission, sender/recipient confirmation and node accounting. Eleven actual Haskell ledger codec fixtures cover Babbage/Conway collateral fields and the partial payment envelope. The collateral API profile remains unexecuted in this checkpoint, which predates application of the approved return-code correction.
+
+Fresh /tmp/wc-bfull-9kj2LV cluster, pinned wallet source2fc5c383, node11.1.3/CLI11.2.3.0, Conway magic42. Eight HTTP suites ran sequentially before funding. Live profiles: balance, assets, payments, shared and external-signer. Independent node integration ran last. All owned wallets cleaned up and all eight observed runtime processes stopped and verified absent. Public genesis, node observations and executable/adapter hashes are retained; private seeds, keys, databases and raw runtime logs are excluded.
+
+The ignored artifacts/behavioral-specification.balancing-coherent.draft.json remains incomplete and non-authoritative. Six older proposed corrections remain pending. No historical evidence has been relabelled and no exhaustive equivalence claim is made.

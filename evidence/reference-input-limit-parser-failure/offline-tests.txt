@@ -1,0 +1,63 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.32s
+     Running unittests src/lib.rs (target/debug/deps/wallet_conformance-2a2fb7ebf7f9bdad)
+
+running 40 tests
+test ledger_fees::tests::tier_rounding_is_final_floor ... ok
+test live::assets::tests::node_rejection_requires_pinned_status_code_and_actual_invalid_witness_cause ... ok
+test live::balancing::tests::collateral_errors_match_actual_source_and_guard_order ... ok
+test live::concurrency::tests::arbitration_rejects_double_accept_double_reject_wrong_ids_and_unrelated_errors ... ok
+test live::families::tests::family_selection_rejects_duplicate_inputs_assets_and_redirected_outputs ... ok
+test live::balancing::tests::actual_balanced_control_preserves_ttl_funding_and_payment ... ok
+test live::metadata::tests::ciphertext_format_requires_basic_unique_fields_bounded_chunks_and_salted_blocks ... ok
+test live::concurrency::tests::construction_laws_reject_changed_fees_amounts_inputs_and_selection_totals ... ok
+test live::transport::tests::exact_transport_envelope_rejects_wrong_priority_and_extra_fields ... ok
+test live::precedence::tests::funded_output_envelope_rejects_wrong_priority_minimum_and_index ... ok
+test live::transport::tests::malformed_json_requires_the_observed_parser_branch ... ok
+test live::voting::tests::node_vote_state_rejects_wrong_vote_and_missing_refund ... ok
+test live::validity::tests::genesis_clock_is_exact_at_fractional_slots_and_calendar_boundaries ... ok
+test pool_fixture::tests::confirmation_retries_only_absence_and_checks_exact_node_output ... ok
+test live::voting::tests::actual_vote_and_refund_accounting_rejects_changed_deposits_and_outputs ... ok
+test live::families::tests::shared_payment_script_requires_both_verified_keys_and_funded_hash ... ok
+test live::metadata::tests::extraction_uses_haskell_golden_and_rejects_auxiliary_hash_or_byte_mutations ... ok
+test rewards::tests::withdrawal_parser_rejects_duplicate_credentials_wrong_headers_and_negative_amounts ... ok
+test slotting::tests::rounding_never_rounds_down_after_a_boundary ... ok
+test balancing::tests::frozen_return_fields_reject_changed_totals_and_missing_return ... ok
+test live::voting::tests::exact_certificate_extraction_preserves_actual_haskell_writer_bytes ... ok
+test rewards::tests::recomputed_codec_hashes_do_not_hide_changed_reward_maps_or_conservation ... ok
+test live::concurrency::tests::transport_releases_both_calls_before_waiting_for_either_response ... ok
+test slotting::tests::frozen_profiles_have_real_boundaries_and_reject_mutated_results ... ok
+test signed_size::tests::large_witness_sets_use_indefinite_not_generic_definite_header_growth ... ok
+test live::validity::tests::node_guard_requires_exact_bounds_slot_cause_and_envelope ... ok
+test signed_size::tests::existing_payment_and_bootstrap_witnesses_are_replaced_but_scripts_remain ... ok
+test live::assets::tests::policy_witness_mutation_preserves_body_and_breaks_real_golden_signature ... ok
+test ledger_fees::tests::frozen_fees_reject_size_rounding_units_and_body_mutations ... ok
+test api::tests::corrections_reject_source_drift_and_ambiguous_edits ... ok
+test live::input_limits::tests::funding_requires_six_complete_batches_and_sorts_numeric_indices ... ok
+test generate::requirement_binding_tests::actual_fee_shortfall_is_bound_to_insufficient_funds ... ok
+test signed_size::tests::independent_size_boundary_uses_actual_bytes_and_exact_input_counts ... ok
+test rewards::tests::actual_unsigned_and_signed_withdrawals_match_node_hash_and_witnesses ... ok
+test rewards::tests::codec_roundtrip_does_not_validate_a_corrupted_stake_signature ... ok
+test pool_fixture::tests::actual_pool_registration_rejects_changed_credentials_funding_fees_and_witnesses ... ok
+test live::transport::tests::transport_records_close_only_complete_catalogue_groups ... ok
+test signed_size::tests::actual_size_goldens_match_independent_byte_model_and_reject_changed_results ... ok
+test api::tests::behavioral_corrections_preserve_owned_union_constraints ... ok
+test live::input_limits::tests::boundary_and_fee_checks_reject_conserved_but_incorrect_fees_and_extra_fields ... FAILED
+
+failures:
+
+---- live::input_limits::tests::boundary_and_fee_checks_reject_conserved_but_incorrect_fees_and_extra_fields stdout ----
+
+thread 'live::input_limits::tests::boundary_and_fee_checks_reject_conserved_but_incorrect_fees_and_extra_fields' (393110) panicked at src/live/input_limits.rs:636:84:
+called `Result::unwrap()` on an `Err` value: indefinite arrays are unsupported in this inspection profile
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    live::input_limits::tests::boundary_and_fee_checks_reject_conserved_but_incorrect_fees_and_extra_fields
+
+test result: FAILED. 39 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.80s
+
+error: test failed, to rerun pass `--lib`

@@ -1,0 +1,11 @@
+{
+  "failed_assertion_source": "c0530e1c4a",
+  "failed_report": "evidence/reference-era-wallet-component/live.json",
+  "failed_result": "era:wallet-boundary-workflow: trusted fixture CLI failed; private stderr suppressed",
+  "observed_stage": "All five nodes produced Babbage blocks. Funding keys and public stake key exist, but no funding transaction body or wallet process was created.",
+  "independent_diagnostic": "The exact pinned CLI11.2.3.0 rejects `babbage transaction build --help` with Invalid argument `babbage`. Its read-only help exposes `compatible babbage transaction signed-transaction` with explicit inputs, outputs, fee and signing-key-file. The original run's stderr was suppressed; the separate help diagnostic and exact source command prefix establish the parser incompatibility.",
+  "proposed_change": "Change only the pre-Conway fixture funding construction to the same pinned CLI's compatible babbage transaction signed-transaction. Supply the exact independently queried input,100m recipient output, explicit enterprise change and sole owned funding signer. Determine the fee with a bounded signed-size fixed-point loop using actual node fixed/per-byte parameters and independently decoded signed CBOR; never submit provisional iterations, fail if it does not converge, and preserve all original body/signature/output/asset/conservation/fee-floor checks. Submit the final Babbage envelope through the pinned CLI's transaction submit reader and require actual Babbage inclusion, exact outputs and spent input before wallet startup. Keep the wallet's pre-era403, all post-Conway payment/certificate/signature/deposit/history checks, final independent node integration, process cleanup and all643 obligations unchanged. Add a fee convergence/width-boundary regression and a CLI capability guard. Replay on a new chain/workspace with fresh funding credentials. Preserve this failed attempt and original control audit.",
+  "changes_to_wallet_source_or_api_schema": false,
+  "requires_user_review": true,
+  "mandatory_obligations": 643
+}

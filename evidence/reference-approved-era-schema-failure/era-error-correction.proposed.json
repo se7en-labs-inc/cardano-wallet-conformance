@@ -1,0 +1,11 @@
+{
+  "failed_source": "5856893470",
+  "failed_report": "live.json",
+  "observed": "Actual Babbage funding and restored-wallet checks pass, then constructTransaction403 fails the unchanged response schema;8PASS/2FAIL",
+  "source": "Pinned Server/Error.hs ErrWriteTxEra maps ErrNodeNotYetInRecentEra to403 node_not_yet_in_recent_era; Api/Types/Error.hs361-368 derives DefaultRecord serialization of nodeEra and supportedRecentEras; construct responses omit this existing error branch",
+  "proposed_change": "Add only errNodeNotYetInRecentEra to construction403 oneOf via hash-guarded overlay. Correct only that error anchor's required/property key recent_eras to supported_recent_eras and the pre-era exact expectation. Preserve original OpenAPI, all other statuses/errors/fields, the current catalogue count decision, exact Babbage/conway/funding/value/signature/fee/state/cleanup requirements. Add accepted/rejected info-field/schema regressions and replay on fresh owned chain. Never credit this failed run.",
+  "approval_required": true,
+  "approved": false,
+  "raw_http_error_body_captured": false,
+  "diagnostic_limit": "Pinned wallet-library GHC shell excludes API/servant modules; attempted read-only pure-handler rendering did not execute and is not treated as runtime body proof"
+}

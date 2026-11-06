@@ -1,0 +1,25 @@
+putByronWalletPassphrase
+    :: forall ctx s
+     . ( WalletFlavor s
+       , ctx ~ ApiLayer s
+       )
+    => ctx
+    -> ApiT WalletId
+    -> ByronWalletPutPassphraseData
+    -> Handler NoContent
+putByronWalletPassphrase ctx (ApiT wid) body = do
+    let (ByronWalletPutPassphraseData oldM (ApiT new)) = body
+    withWorkerCtx ctx wid liftE liftE $ \wrk -> liftHandler $ do
+        let old = maybe mempty (coerce . getApiT) oldM
+        W.updateWalletPassphraseWithOldPassphrase
+            (walletFlavor @s)
+            wrk
+            wid
+            (old, new)
+    return NoContent
+
+getUTxOsStatistics
+    :: forall ctx s
+     . ctx ~ ApiLayer s
+    => ctx
+    -> ApiT WalletId

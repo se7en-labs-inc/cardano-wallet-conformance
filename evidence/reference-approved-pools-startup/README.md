@@ -1,0 +1,7 @@
+# Preserved faucet-startup invocation failure
+
+Source5856893470/fingerprint46b3fa1407d870a703e89a14d33529c993413c93029572175d83d3db23ac213e. Fresh --pool-directory invocation started before the native faucet's relay connection was available. Basic workflow failed on non204 funding, before any pool profile or fixture registration:23checks/22PASS/1FAIL. Both successfully created wallets were cleaned up and the owned foreground wallet reaped. The pool workspace was never created. This attempt is not pool-metadata evidence.
+
+Pinned native faucet source throws500 while NodeConnVar is empty. The existing GET /ready monitor is the advertised boolean startup precondition. The unchanged invocation will be replayed only on a new cluster after a bounded read-only observation of true, with a fresh wallet database and pool output. No test assertion, error/status, fixture certificate/value/signature, timeout or accepted outcome changes. This corrects invocation sequencing, analogous to supplying required environment, rather than relaxing a failed test.
+
+Final independent node integration passes once the relay is ready. Cluster595423 and all five observed node processes were stopped/reaped and absence verified; session71504 exits130, profile5711 exits1, integration96704 exits0. Runtime /tmp/wc-approved-pools-3y8dYh. Private logs, keys and DBs were not copied. The original fifteen corrections stay approved; the three newly prepared count/era/witness decisions remain pending separately.

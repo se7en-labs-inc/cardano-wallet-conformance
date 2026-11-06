@@ -1,0 +1,7 @@
+# Actual wallet migration backend-failure evidence
+
+All61 registered credential cases pass against the linked, pinned-source Haskell wallet adapter. The53 pre-existing expected result payloads are unchanged. Eight new cases cover authorized Shelley/shared V1 unlock with PBKDF2/scrypt credentials, successful/failing callbacks, exactly one actual Argon2 failure and wallet warning, unchanged V1 key/scheme/metadata/timestamp, and successful retry followed by idempotent V2 access.
+
+The no_std Rust shim wraps the real backend symbol at link time and normally forwards all arguments unchanged. Only an explicitly armed call returns nonzero. The unchanged actual wallet code takes its migration-failure branch and emits MsgV2MigrationFailed; that tracer event and the consumed fault are checked. Production time3/memory131072KiB parameters remain in effect. No production wallet or crypto-library code was changed, and no fast-KDF override was enabled.
+
+Cargo48 tests, one separate shim test, all-target/all-feature Clippy, formatting and Nix default/Clippy/fmt/credential-faults checks pass. Digests and provenance are in runtime.json; reproduction is in [reference-credentials.md](../../docs/reference-credentials.md). The complete frozen internal inventory is901 vectors. This is an internal subset, not a live-node or complete643-obligation certificate. Historical evidence remains unchanged; final aggregation requires one coherent fingerprint/source environment. Disk restart/crash durability remains separately required.

@@ -1,0 +1,4 @@
+[{"name":"submissions","sql":"CREATE TABLE \"submissions\"(\"tx_id\" VARCHAR NOT NULL,\"tx\" BLOB NOT NULL,\"expiration\" INTEGER NOT NULL,\"acceptance\" INTEGER NULL,\"wallet_id\" VARCHAR NOT NULL REFERENCES \"wallet\" ON DELETE RESTRICT ON UPDATE RESTRICT,\"status\" INTEGER NOT NULL,\"slot\" INTEGER NOT NULL,\"block_height\" INTEGER NOT NULL,\"amount\" INTEGER NOT NULL,\"direction\" BOOLEAN NOT NULL,\"resubmitted\" INTEGER NOT NULL, PRIMARY KEY (\"tx_id\"))"},
+{"name":"sqlite_autoindex_submissions_1","sql":null},
+{"name":"submissions_slots","sql":"CREATE TABLE \"submissions_slots\"(\"finality\" INTEGER NOT NULL,\"tip\" INTEGER NOT NULL,\"wallet_id\" VARCHAR NOT NULL REFERENCES \"wallet\" ON DELETE RESTRICT ON UPDATE RESTRICT, PRIMARY KEY (\"wallet_id\"))"},
+{"name":"sqlite_autoindex_submissions_slots_1","sql":null}]

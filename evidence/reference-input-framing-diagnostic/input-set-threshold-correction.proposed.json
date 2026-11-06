@@ -1,0 +1,8 @@
+{
+  "approved": false,
+  "reason": "Actual pinned Haskell23-input response starts84a400d9010297: tag258 and definite array23. The specialized shape verifier incorrectly requires indefinite framing for every count; existing boundary arithmetic already models23-to24 transition.",
+  "evidence": "live.json and returned-unsigned.base64 in this directory",
+  "proposed_change": "In src/live/input_limits.rs shape, retain mandatory tag258; accept definite nonempty input arrays of at most23 entries and require terminated indefinite arrays only above23. Validate every input pair/hash/index; preserve generic inspector uniqueness/order/eligibility checks. No arbitrary alternative framing is accepted.",
+  "regression": "Exercise valid23-definite and24-indefinite controls; reject23-indefinite,24-definite, missing/wrong tags, malformed pair/hash/index, missing break and trailing bytes. Replay the full600-output workflow with unchanged final adjacent-boundary and node checks.",
+  "preserved": ["644 obligations", "600 real1ADA outputs", "23-to600 bracket", "12ADA reserve", "exact status/error schemas", "canonical requested/eligible inputs", "final no-extra-input boundary", "conservative witness fee and size", "physical signature and native inclusion", "input/output accounting", "original failure reports"]
+}

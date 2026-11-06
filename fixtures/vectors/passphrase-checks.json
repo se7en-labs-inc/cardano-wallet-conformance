@@ -1,0 +1,121 @@
+[
+  {
+    "id": "pbkdf2-check-correct",
+    "requirements": [
+      "crypto.passphrase-pbkdf2"
+    ],
+    "source": "cardano-wallet 2fc5c383c94bb907deaa0cd27b1b407f86224b6c lib/secrets/test/Cardano/Wallet/Primitive/PassphraseSpec.hs passphraseGolden1",
+    "operation": "passphrase.check-pbkdf2",
+    "input": {
+      "passphrase_utf8": "passphrase",
+      "hash_hex": "0f85801b23d3e8da1b863ed8d848ebceced3862787fdedf4e28f16ef217df7aca818d4110fffebd7f114b585b1e83dbe9af9170464b095f9d8858dbc50bc739f71fa9f5e646a0206244f40d08aec7770"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    }
+  },
+  {
+    "id": "pbkdf2-check-wrong",
+    "requirements": [
+      "crypto.passphrase-pbkdf2"
+    ],
+    "source": "cardano-wallet 2fc5c383c94bb907deaa0cd27b1b407f86224b6c lib/secrets/test/Cardano/Wallet/Primitive/PassphraseSpec.hs passphraseGolden1; wrong password must fail",
+    "operation": "passphrase.check-pbkdf2",
+    "input": {
+      "passphrase_utf8": "wrong-password",
+      "hash_hex": "0f85801b23d3e8da1b863ed8d848ebceced3862787fdedf4e28f16ef217df7aca818d4110fffebd7f114b585b1e83dbe9af9170464b095f9d8858dbc50bc739f71fa9f5e646a0206244f40d08aec7770"
+    },
+    "expected": {
+      "result": {
+        "valid": false
+      }
+    }
+  },
+  {
+    "id": "pbkdf2-malformed-hash",
+    "requirements": [
+      "crypto.passphrase-pbkdf2"
+    ],
+    "source": "Pinned Haskell Current.checkPassphrase: salt-length prefix exceeds stored bytes; stored hash cannot equal recomputed serialization",
+    "operation": "passphrase.check-pbkdf2",
+    "input": {
+      "passphrase_utf8": "passphrase",
+      "hash_hex": "ff"
+    },
+    "expected": {
+      "result": {
+        "valid": false
+      }
+    }
+  },
+  {
+    "id": "pbkdf2-empty-hash",
+    "requirements": [
+      "crypto.passphrase-pbkdf2"
+    ],
+    "source": "Pinned Haskell Current.checkPassphrase getSalt rejects empty stored hash",
+    "operation": "passphrase.check-pbkdf2",
+    "input": {
+      "passphrase_utf8": "passphrase",
+      "hash_hex": ""
+    },
+    "expected": {
+      "result": {
+        "valid": false
+      }
+    }
+  },
+  {
+    "id": "scrypt-check-correct",
+    "requirements": [
+      "crypto.passphrase-scrypt"
+    ],
+    "source": "cardano-wallet 2fc5c383c94bb907deaa0cd27b1b407f86224b6c lib/secrets/test/Cardano/Wallet/Primitive/Passphrase/LegacySpec.hs fixturePassphraseEncrypted and checkPassphraseCryptonite golden",
+    "operation": "passphrase.check-scrypt",
+    "input": {
+      "passphrase_utf8": "cardano-wallet",
+      "hash_hex": "31347c387c317c2b6a6f747446495a6a566d586f43374c6c54425a576c597a425834515177666475467578436b4d485569733d7c78324d64673849554a3232507235676531393575445a76583646552b7757395a6a6a2f51303054356c654751794279732f7662753367526d726c316c657a715043676d364e6758476d4d2f4b6438343265304b4945773d3d"
+    },
+    "expected": {
+      "result": {
+        "valid": true
+      }
+    }
+  },
+  {
+    "id": "scrypt-empty-hash",
+    "requirements": [
+      "crypto.passphrase-scrypt"
+    ],
+    "source": "Pinned Haskell Legacy.parsePassphraseHash requires exactly five pipe-separated fields",
+    "operation": "passphrase.check-scrypt",
+    "input": {
+      "passphrase_utf8": "cardano-wallet",
+      "hash_hex": ""
+    },
+    "expected": {
+      "result": {
+        "valid": false
+      }
+    }
+  },
+  {
+    "id": "scrypt-check-wrong",
+    "requirements": [
+      "crypto.passphrase-scrypt"
+    ],
+    "source": "cardano-wallet 2fc5c383c94bb907deaa0cd27b1b407f86224b6c lib/secrets/test/Cardano/Wallet/Primitive/Passphrase/LegacySpec.hs fixturePassphraseEncrypted and checkPassphraseCryptonite golden",
+    "operation": "passphrase.check-scrypt",
+    "input": {
+      "passphrase_utf8": "wrong",
+      "hash_hex": "31347c387c317c2b6a6f747446495a6a566d586f43374c6c54425a576c597a425834515177666475467578436b4d485569733d7c78324d64673849554a3232507235676531393575445a76583646552b7757395a6a6a2f51303054356c654751794279732f7662753367526d726c316c657a715043676d364e6758476d4d2f4b6438343265304b4945773d3d"
+    },
+    "expected": {
+      "result": {
+        "valid": false
+      }
+    }
+  }
+]

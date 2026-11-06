@@ -1,0 +1,27 @@
+instance
+    ( SoftDerivation k
+    , AddressCredential k ~ 'CredFromKeyK
+    )
+    => GenChange (SeqState n k)
+    where
+    -- \| We pick indexes in sequence from the first known available index (i.e.
+    -- @length addrs - gap@) but we do not generate _new change addresses_. As a
+    -- result, we can't generate more than @gap@ _pending_ change addresses and
+    -- therefore, rotate the change addresses when we need extra change outputs.
+    --
+    -- See also: 'nextChangeIndex'
+    type
+        ArgGenChange (SeqState n k) =
+            (k 'CredFromKeyK XPub -> k 'CredFromKeyK XPub -> Address)
+
+    genChange mkAddress st = (addr, st{pendingChangeIxs = pending'})
+      where
+        ixMin = minBound @(Index 'Soft 'CredFromKeyK)
+        updatePending pendingIxs =
+            pendingIxsFromList $ L.nub $ (pendingIxsToList pendingIxs) <> [ixMin]
+        (ix, pending') =
+            case changeAddressMode st of
+                SingleChangeAddress ->
+                    (ixMin, updatePending (pendingChangeIxs st))
+                IncreasingChangeAddresses ->
+                    nextChangeIndex (getPool $ internalPool st) (pendingChangeIxs st)

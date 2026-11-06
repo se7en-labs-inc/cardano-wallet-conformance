@@ -1,0 +1,35 @@
+        , readTransactions = \minWithdrawal order range status limit maddress ->
+            readCurrentTip >>= \tip -> do
+                inLedgers <-
+                    if status `elem` [Nothing, Just WTxMeta.InLedger]
+                        then readTxHistory_ dbTxHistory range tip limit order
+                        else pure []
+                let isInSubmission = has (txStatus . _InSubmission)
+                    isExpired = has (txStatus . _Expired)
+                    whichSubmission :: TxSubmissionsStatus -> Bool
+                    whichSubmission = case status of
+                        Nothing -> (||) <$> isInSubmission <*> isExpired
+                        Just WTxMeta.Pending -> isInSubmission
+                        Just WTxMeta.Expired -> isExpired
+                        Just WTxMeta.InLedger -> const False
+                inSubmissionsRaw <-
+                    withSubmissions
+                        $ pure
+                            . filter whichSubmission
+                            . getInSubmissionTransactions
+                inSubmissions :: [TransactionInfo] <-
+                    fmap catMaybes
+                        $ for inSubmissionsRaw
+                        $ mkTransactionInfo
+                            (hoistTimeInterpreter liftIO ti)
+                            (mkDecorator_ dbTxHistory)
+                            tip
+                            . fmap snd
+                pure
+                    . maybe id (take . fromIntegral) limit
+                    . sortTransactionsBySlot order
+                    . filterMinWithdrawal minWithdrawal
+                    . filterAddress maddress
+                    $ inLedgers <> inSubmissions
+        , getTx = \txid ->
+            readCurrentTip >>= \tip -> do

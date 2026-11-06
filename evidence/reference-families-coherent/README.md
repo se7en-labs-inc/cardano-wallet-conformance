@@ -1,0 +1,7 @@
+# Preserved family-funding failure after passing baseline
+
+Despite this directory's original name, this is not a successful coherent conformance checkpoint. All486 differential HTTP cases and1059 actual internal cases passed under fingerprint903a730a3f16e694300f784ac33eb306e6fb1b663c42c4ae22bb3488640aef6c, environment source-2fc5c383-conway-node11.1.3-families and logical target http://127.0.0.1:18790/v2/. The fresh mktemp cluster used the pinned Haskell wallet/cluster and matched node11.1.3/CLI11.2.3.0; public runtime data is retained.
+
+The basic funded payment/restoration flow passed. The additional family workflow failed when the faucet rejected funding an Icarus destination (59recorded checks,58pass/1fail); every owned wallet cleanup passed. Source inspection shows the cluster faucet's sendFaucetAssetsTo unconditionally uses Cardano.Address.bech32 for CLI transaction outputs, including Byron addresses. This is a funding-driver limitation; it does not establish legacy payment or migration conformance. No expected result was changed to accept that rejection.
+
+A concrete proposal for a genuine Shelley-to-Byron funding payment is prepared in artifacts/byron-funding-correction.proposed.json, pending the user's requested approval before changing approach after failure. Keep the failed report immutable and rerun independently after approval. No aggregate gate or specification is claimed from these partial results. The subsequent shared-wallet profile has a different executable fingerprint and is recorded separately.

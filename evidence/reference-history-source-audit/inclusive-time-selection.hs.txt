@@ -1,0 +1,50 @@
+listTransactions
+    :: WalletLayer IO s
+    -> Maybe Coin
+    -- Inclusive minimum value of at least one withdrawal in each transaction
+    -> Maybe UTCTime
+    -- Inclusive minimum time bound.
+    -> Maybe UTCTime
+    -- Inclusive maximum time bound.
+    -> SortOrder
+    -> Maybe Natural
+    -- ^ Maximum number of transactions to return.
+    -> Maybe Address
+    -> ExceptT ErrListTransactions IO [TransactionInfo]
+listTransactions ctx mMinWithdrawal mStart mEnd order mLimit mAddress =
+    db & \DBLayer{..} -> do
+        when (Just True == ((< (Coin 1)) <$> mMinWithdrawal))
+            $ throwE ErrListTransactionsMinWithdrawalWrong
+        mapExceptT atomically $ do
+            mapExceptT liftIO getSlotRange
+                >>= maybe
+                    (pure [])
+                    ( \r ->
+                        lift
+                            $ readTransactions mMinWithdrawal order r Nothing mLimit mAddress
+                    )
+  where
+    ti :: TimeInterpreter (ExceptT PastHorizonException IO)
+    ti = timeInterpreter (ctx ^. networkLayer)
+
+    db = ctx ^. dbLayer
+
+    -- Transforms the user-specified time range into a slot range. If the
+    -- user-specified range terminates before the start of the blockchain,
+    -- returns 'Nothing'.
+    getSlotRange
+        :: ExceptT ErrListTransactions IO (Maybe (Range SlotNo))
+    getSlotRange = case (mStart, mEnd) of
+        (Just start, Just end) | start > end -> do
+            let err = ErrStartTimeLaterThanEndTime start end
+            throwE (ErrListTransactionsStartTimeLaterThanEndTime err)
+        _ -> do
+            withExceptT ErrListTransactionsPastHorizonException
+                $ interpretQuery ti
+                $ slotRangeFromTimeRange
+                $ Range mStart mEnd
+
+-- | Extract assets associated with a given wallet from its transaction history.
+listAssets
+    :: IsOurs s Address
+    => WalletLayer IO s

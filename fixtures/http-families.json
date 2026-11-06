@@ -1,0 +1,1845 @@
+{
+  "name": "Byron/shared wallet lifecycle and exact numeric grammar",
+  "cases": [
+    {
+      "id": "family-random-create",
+      "operation": "postByronWallet",
+      "request": {
+        "method": "POST",
+        "path": "/byron-wallets",
+        "body": {
+          "style": "random",
+          "name": "conformance-random",
+          "mnemonic_sentence": "${mnemonic12}",
+          "passphrase": "${passphrase}"
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "byron_random": "/id"
+      },
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/name": "conformance-random",
+        "/balance/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-random-ready",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-random-addresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-random-transactions",
+      "operation": "listByronTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-random-assets",
+      "operation": "listByronAssets",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/assets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-random-utxo",
+      "operation": "getByronWalletUtxoSnapshot",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/utxo"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/entries": []
+      }
+    },
+    {
+      "id": "family-random-statistics",
+      "operation": "getByronUTxOsStatistics",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/statistics/utxos"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-random-rename",
+      "operation": "putByronWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_random}",
+        "body": {
+          "name": "renamed-random"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/name": "renamed-random"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-icarus-create",
+      "operation": "postByronWallet",
+      "request": {
+        "method": "POST",
+        "path": "/byron-wallets",
+        "body": {
+          "style": "icarus",
+          "name": "conformance-icarus",
+          "mnemonic_sentence": "${mnemonic}",
+          "passphrase": "${passphrase}"
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "byron_icarus": "/id"
+      },
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/name": "conformance-icarus",
+        "/balance/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-icarus-ready",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-icarus-addresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      }
+    },
+    {
+      "id": "family-icarus-transactions",
+      "operation": "listByronTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-icarus-assets",
+      "operation": "listByronAssets",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/assets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-icarus-utxo",
+      "operation": "getByronWalletUtxoSnapshot",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/utxo"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/entries": []
+      }
+    },
+    {
+      "id": "family-icarus-statistics",
+      "operation": "getByronUTxOsStatistics",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/statistics/utxos"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-icarus-rename",
+      "operation": "putByronWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_icarus}",
+        "body": {
+          "name": "renamed-icarus"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/name": "renamed-icarus"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-trezor-create",
+      "operation": "postByronWallet",
+      "request": {
+        "method": "POST",
+        "path": "/byron-wallets",
+        "body": {
+          "style": "trezor",
+          "name": "conformance-trezor",
+          "mnemonic_sentence": "${mnemonic24}",
+          "passphrase": "${passphrase}"
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "byron_trezor": "/id"
+      },
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/name": "conformance-trezor",
+        "/balance/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-trezor-ready",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-trezor-addresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      }
+    },
+    {
+      "id": "family-trezor-transactions",
+      "operation": "listByronTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-trezor-assets",
+      "operation": "listByronAssets",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/assets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-trezor-utxo",
+      "operation": "getByronWalletUtxoSnapshot",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/utxo"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/entries": []
+      }
+    },
+    {
+      "id": "family-trezor-statistics",
+      "operation": "getByronUTxOsStatistics",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/statistics/utxos"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-trezor-rename",
+      "operation": "putByronWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_trezor}",
+        "body": {
+          "name": "renamed-trezor"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/name": "renamed-trezor"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-ledger-create",
+      "operation": "postByronWallet",
+      "request": {
+        "method": "POST",
+        "path": "/byron-wallets",
+        "body": {
+          "style": "ledger",
+          "name": "conformance-ledger",
+          "mnemonic_sentence": "${mnemonic24}",
+          "passphrase": "${passphrase}"
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "byron_ledger": "/id"
+      },
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/name": "conformance-ledger",
+        "/balance/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-ledger-ready",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-ledger-addresses",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      }
+    },
+    {
+      "id": "family-ledger-transactions",
+      "operation": "listByronTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-ledger-assets",
+      "operation": "listByronAssets",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/assets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-ledger-utxo",
+      "operation": "getByronWalletUtxoSnapshot",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/utxo"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/entries": []
+      }
+    },
+    {
+      "id": "family-ledger-statistics",
+      "operation": "getByronUTxOsStatistics",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/statistics/utxos"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-ledger-rename",
+      "operation": "putByronWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_ledger}",
+        "body": {
+          "name": "renamed-ledger"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/name": "renamed-ledger"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-shared-active-create",
+      "operation": "postSharedWallet",
+      "request": {
+        "method": "POST",
+        "path": "/shared-wallets",
+        "body": {
+          "name": "conformance-shared",
+          "mnemonic_sentence": "${mnemonic}",
+          "passphrase": "${passphrase}",
+          "account_index": "0H",
+          "payment_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          },
+          "delegation_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0"
+              ]
+            }
+          }
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "shared_active": "/id"
+      },
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/account_index": "0H",
+        "/balance/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-shared-active-ready",
+      "operation": "getSharedWallet",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      }
+    },
+    {
+      "id": "family-shared-active-addresses",
+      "operation": "listSharedAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      },
+      "capture": {
+        "shared_address": "/0/id"
+      }
+    },
+    {
+      "id": "family-shared-active-history",
+      "operation": "listSharedTransactions",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/transactions"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-shared-active-utxo",
+      "operation": "getSharedWalletUtxoSnapshot",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/utxo"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/entries": []
+      }
+    },
+    {
+      "id": "family-shared-active-statistics",
+      "operation": "getUTxOsStatisticsShared",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/statistics/utxos"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/total/quantity": 0
+      }
+    },
+    {
+      "id": "family-shared-active-rename",
+      "operation": "putSharedWallet",
+      "request": {
+        "method": "PUT",
+        "path": "/shared-wallets/${shared_active}",
+        "body": {
+          "name": "shared-renamed"
+        }
+      },
+      "expected_status": 200,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "assertions": {
+        "/name": "shared-renamed"
+      }
+    },
+    {
+      "id": "numeric-gap-fraction",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "body": {
+          "name": "numeric-nonintegral-gap",
+          "mnemonic_sentence": "${mnemonic}",
+          "passphrase": "${passphrase}",
+          "address_pool_gap": 20.0000000000000001
+        }
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "numeric-gap-decimal",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "body": {
+          "name": "numeric-decimal",
+          "mnemonic_sentence": "${mnemonic}",
+          "passphrase": "${passphrase}",
+          "address_pool_gap": 20.0
+        }
+      },
+      "expected_status": 201,
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "capture": {
+        "numeric_decimal": "/id"
+      },
+      "assertions": {
+        "/address_pool_gap": 20
+      }
+    },
+    {
+      "id": "numeric-quantity-address",
+      "operation": "listAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/wallets/${numeric_decimal}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      },
+      "capture": {
+        "numeric_address": "/0/id"
+      }
+    },
+    {
+      "id": "numeric-quantity-decimal",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct",
+        "body": {
+          "payments": [
+            {
+              "address": "${numeric_address}",
+              "amount": {
+                "quantity": 2000000.0,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": 404
+    },
+    {
+      "id": "numeric-quantity-exponent",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct",
+        "body": {
+          "payments": [
+            {
+              "address": "${numeric_address}",
+              "amount": {
+                "quantity": 2e6,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": 404
+    },
+    {
+      "id": "numeric-quantity-fraction",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct",
+        "body": {
+          "payments": [
+            {
+              "address": "${numeric_address}",
+              "amount": {
+                "quantity": 2000000.0000000000000001,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "numeric-quantity-negative",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct",
+        "body": {
+          "payments": [
+            {
+              "address": "${numeric_address}",
+              "amount": {
+                "quantity": -1.0,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "numeric-quantity-overflow",
+      "operation": "constructTransaction",
+      "request": {
+        "method": "POST",
+        "path": "/wallets/0000000000000000000000000000000000000000/transactions-construct",
+        "body": {
+          "payments": [
+            {
+              "address": "${numeric_address}",
+              "amount": {
+                "quantity": 18446744073709551616,
+                "unit": "lovelace"
+              }
+            }
+          ]
+        }
+      },
+      "expected_status": 400
+    },
+    {
+      "id": "numeric-passphrase-unsupported-accept",
+      "operation": "putWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/wallets/${numeric_decimal}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "conformance-replacement-passphrase"
+        },
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "numeric-gap-exponent",
+      "operation": "postWallet",
+      "request": {
+        "method": "POST",
+        "path": "/wallets",
+        "body": {
+          "name": "numeric-exponent",
+          "mnemonic_sentence": "${mnemonic_peer}",
+          "passphrase": "${passphrase}",
+          "address_pool_gap": 2e1
+        }
+      },
+      "expected_status": 201,
+      "settle_wallet_state": true,
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/time": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/height/quantity": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/absolute_slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/slot_number": "per-service creation time or chain observation; readiness is asserted",
+        "/tip/epoch_number": "per-service creation time or chain observation; readiness is asserted"
+      },
+      "capture": {
+        "numeric_exponent": "/id"
+      },
+      "assertions": {
+        "/address_pool_gap": 20
+      }
+    },
+    {
+      "id": "family-shared-account-get",
+      "operation": "getAccountKeyShared",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/keys?format=extended"
+      },
+      "expected_status": 200,
+      "capture": {
+        "shared_peer_key": ""
+      }
+    },
+    {
+      "id": "family-shared-account-derive",
+      "operation": "postAccountKeyShared",
+      "request": {
+        "method": "POST",
+        "path": "/shared-wallets/${shared_active}/keys/0H",
+        "body": {
+          "passphrase": "${passphrase}",
+          "format": "extended"
+        }
+      },
+      "expected_status": 202,
+      "assertions": {
+        "": "${shared_peer_key}"
+      }
+    },
+    {
+      "id": "family-shared-soft-key",
+      "operation": "getSharedWalletKey",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_active}/keys/utxo_external/0"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "family-shared-before-invalid-template",
+      "operation": "listSharedWallets",
+      "request": {"method":"GET","path":"/shared-wallets"},
+      "expected_status": 200,
+      "assertions": {
+        "/0/id":"${shared_active}",
+        "/0/name":"shared-renamed",
+        "/0/state/status":"ready",
+        "/0/balance/total/quantity":0,
+        "/0/payment_script_template/cosigners/cosigner#0":"${shared_peer_key}"
+      },
+      "absent":["/1"],
+      "ignore": {
+        "/0/passphrase/last_updated_at":"per-service creation timestamp",
+        "/0/tip/time":"independently observed advancing chain tip",
+        "/0/tip/height/quantity":"independently observed advancing chain tip",
+        "/0/tip/absolute_slot_number":"independently observed advancing chain tip",
+        "/0/tip/slot_number":"independently observed advancing chain tip",
+        "/0/tip/epoch_number":"independently observed advancing chain tip"
+      }
+    },
+    {
+      "id":"family-shared-payment-missing-own-key",
+      "source":"Pinned2fc5c383 Address.Keys.Shared.validateScriptTemplates and Error.hs1191–1211: valid foreign-key script omits this wallet's own account key",
+      "operation":"postSharedWallet",
+      "request":{"method":"POST","path":"/shared-wallets","body":{
+        "name":"shared-invalid-payment-key","mnemonic_sentence":"${mnemonic_peer}","passphrase":"${passphrase}","account_index":"0H",
+        "payment_script_template":{"cosigners":{"cosigner#0":"${shared_peer_key}"},"template":{"all":["cosigner#0"]}}
+      }},
+      "expected_status":403,
+      "assertions":{"":{"code":"shared_wallet_script_template_invalid","message":"It looks like you've tried to create a shared wallet with a template script for payment credential that does not pass validation. The problem is: The wallet's account key must be always present for the script template."}}
+    },
+    {
+      "id":"family-shared-delegation-missing-own-key",
+      "source":"Pinned2fc5c383 Address.Keys.Shared.validateScriptTemplates and Error.hs1191–1211: valid payment self key, valid delegation foreign key",
+      "operation":"postSharedWallet",
+      "request":{"method":"POST","path":"/shared-wallets","body":{
+        "name":"shared-invalid-delegation-key","mnemonic_sentence":"${mnemonic_peer}","passphrase":"${passphrase}","account_index":"0H",
+        "payment_script_template":{"cosigners":{"cosigner#0":"self"},"template":{"all":["cosigner#0"]}},
+        "delegation_script_template":{"cosigners":{"cosigner#0":"${shared_peer_key}"},"template":{"all":["cosigner#0"]}}
+      }},
+      "expected_status":403,
+      "assertions":{"":{"code":"shared_wallet_script_template_invalid","message":"It looks like you've tried to create a shared wallet with a template script for delegation credential that does not pass validation. The problem is: The wallet's account key must be always present for the script template."}}
+    },
+    {
+      "id":"family-shared-after-invalid-template",
+      "operation":"listSharedWallets",
+      "request":{"method":"GET","path":"/shared-wallets"},
+      "expected_status":200,
+      "assertions":{
+        "/0/id":"${shared_active}",
+        "/0/name":"shared-renamed",
+        "/0/state/status":"ready",
+        "/0/balance/total/quantity":0,
+        "/0/payment_script_template/cosigners/cosigner#0":"${shared_peer_key}"
+      },
+      "absent":["/1"],
+      "ignore":{
+        "/0/passphrase/last_updated_at":"per-service creation timestamp",
+        "/0/tip/time":"independently observed advancing chain tip",
+        "/0/tip/height/quantity":"independently observed advancing chain tip",
+        "/0/tip/absolute_slot_number":"independently observed advancing chain tip",
+        "/0/tip/slot_number":"independently observed advancing chain tip",
+        "/0/tip/epoch_number":"independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-shared-pending-create",
+      "operation": "postSharedWallet",
+      "request": {
+        "method": "POST",
+        "path": "/shared-wallets",
+        "body": {
+          "name": "shared-pending",
+          "mnemonic_sentence": "${mnemonic_peer}",
+          "passphrase": "${passphrase}",
+          "account_index": "0H",
+          "payment_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0",
+                "cosigner#1"
+              ]
+            }
+          },
+          "delegation_script_template": {
+            "cosigners": {
+              "cosigner#0": "self"
+            },
+            "template": {
+              "all": [
+                "cosigner#0",
+                "cosigner#1"
+              ]
+            }
+          }
+        }
+      },
+      "expected_status": 201,
+      "capture": {
+        "shared_pending": "/id"
+      },
+      "assertions": {
+        "/state/status": "incomplete"
+      },
+      "absent": [
+        "/balance",
+        "/tip"
+      ]
+    },
+    {
+      "id": "family-shared-pending-addresses",
+      "operation": "listSharedAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_pending}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "family-shared-pending-payment-patch",
+      "operation": "patchSharedWalletInPayment",
+      "request": {
+        "method": "PATCH",
+        "path": "/shared-wallets/${shared_pending}/payment-script-template",
+        "body": {
+          "cosigner#1": "${shared_peer_key}"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/state/status": "incomplete",
+        "/payment_script_template/cosigners/cosigner#1": "${shared_peer_key}"
+      },
+      "absent": [
+        "/balance",
+        "/tip"
+      ]
+    },
+    {
+      "id": "family-shared-pending-delegation-patch",
+      "operation": "patchSharedWalletInDelegation",
+      "request": {
+        "method": "PATCH",
+        "path": "/shared-wallets/${shared_pending}/delegation-script-template",
+        "body": {
+          "cosigner#1": "${shared_peer_key}"
+        }
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/balance/total/quantity": 0,
+        "/delegation_script_template/cosigners/cosigner#1": "${shared_peer_key}"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/time": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/height/quantity": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/absolute_slot_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/slot_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/epoch_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/state/progress/quantity": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted"
+      }
+    },
+    {
+      "id": "family-shared-completed-ready",
+      "operation": "getSharedWallet",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_pending}"
+      },
+      "expected_status": 200,
+      "eventually_seconds": 30,
+      "assertions": {
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/time": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/height/quantity": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/absolute_slot_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/slot_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/tip/epoch_number": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted",
+        "/state/progress/quantity": "per-service timestamp, chain observation or asynchronous restoration progress; terminal readiness is asserted"
+      }
+    },
+    {
+      "id": "family-shared-completed-addresses",
+      "operation": "listSharedAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets/${shared_pending}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/0/state": "unused"
+      }
+    },
+    {
+      "id": "family-random-before-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_random_passphrase_before_rejection": "/passphrase"
+      },
+      "assertions": {
+        "/id": "${byron_random}",
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-random-addresses-before-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/addresses"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_random_addresses_before_rejection": ""
+      }
+    },
+    {
+      "id": "family-random-wrong-old-passphrase",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_random}/passphrase",
+        "body": {
+          "old_passphrase": "incorrect-passphrase",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_random}",
+          "info": {
+            "wallet_id": "${byron_random}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-random-after-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/id": "${byron_random}",
+        "/name": "renamed-random",
+        "/state/status": "ready",
+        "/balance/available/quantity": 0,
+        "/balance/total/quantity": 0,
+        "/passphrase": "${byron_random_passphrase_before_rejection}"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-random-addresses-after-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_random}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": "${byron_random_addresses_before_rejection}"
+      }
+    },
+    {
+      "id": "family-random-passphrase-unsupported-accept",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_random}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "conformance-byron-replacement"
+        },
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-icarus-before-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_icarus_passphrase_before_rejection": "/passphrase"
+      },
+      "assertions": {
+        "/id": "${byron_icarus}",
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-icarus-addresses-before-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/addresses"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_icarus_addresses_before_rejection": ""
+      }
+    },
+    {
+      "id": "family-icarus-wrong-old-passphrase",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_icarus}/passphrase",
+        "body": {
+          "old_passphrase": "incorrect-passphrase",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_icarus}",
+          "info": {
+            "wallet_id": "${byron_icarus}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-icarus-after-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/id": "${byron_icarus}",
+        "/name": "renamed-icarus",
+        "/state/status": "ready",
+        "/balance/available/quantity": 0,
+        "/balance/total/quantity": 0,
+        "/passphrase": "${byron_icarus_passphrase_before_rejection}"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-icarus-addresses-after-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_icarus}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": "${byron_icarus_addresses_before_rejection}"
+      }
+    },
+    {
+      "id": "family-icarus-passphrase-unsupported-accept",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_icarus}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "conformance-byron-replacement"
+        },
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-trezor-before-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_trezor_passphrase_before_rejection": "/passphrase"
+      },
+      "assertions": {
+        "/id": "${byron_trezor}",
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-trezor-addresses-before-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/addresses"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_trezor_addresses_before_rejection": ""
+      }
+    },
+    {
+      "id": "family-trezor-wrong-old-passphrase",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_trezor}/passphrase",
+        "body": {
+          "old_passphrase": "incorrect-passphrase",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_trezor}",
+          "info": {
+            "wallet_id": "${byron_trezor}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-trezor-after-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/id": "${byron_trezor}",
+        "/name": "renamed-trezor",
+        "/state/status": "ready",
+        "/balance/available/quantity": 0,
+        "/balance/total/quantity": 0,
+        "/passphrase": "${byron_trezor_passphrase_before_rejection}"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-trezor-addresses-after-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_trezor}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": "${byron_trezor_addresses_before_rejection}"
+      }
+    },
+    {
+      "id": "family-trezor-passphrase-unsupported-accept",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_trezor}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "conformance-byron-replacement"
+        },
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-ledger-before-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_ledger_passphrase_before_rejection": "/passphrase"
+      },
+      "assertions": {
+        "/id": "${byron_ledger}",
+        "/state/status": "ready",
+        "/balance/total/quantity": 0
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-ledger-addresses-before-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/addresses"
+      },
+      "expected_status": 200,
+      "capture": {
+        "byron_ledger_addresses_before_rejection": ""
+      }
+    },
+    {
+      "id": "family-ledger-wrong-old-passphrase",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_ledger}/passphrase",
+        "body": {
+          "old_passphrase": "incorrect-passphrase",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_ledger}",
+          "info": {
+            "wallet_id": "${byron_ledger}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-ledger-after-rejected-passphrase",
+      "operation": "getByronWallet",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/id": "${byron_ledger}",
+        "/name": "renamed-ledger",
+        "/state/status": "ready",
+        "/balance/available/quantity": 0,
+        "/balance/total/quantity": 0,
+        "/passphrase": "${byron_ledger_passphrase_before_rejection}"
+      },
+      "ignore": {
+        "/passphrase/last_updated_at": "per-service timestamp; unchanged metadata is asserted against this service's saved value",
+        "/tip/time": "independently observed advancing chain tip",
+        "/tip/height/quantity": "independently observed advancing chain tip",
+        "/tip/absolute_slot_number": "independently observed advancing chain tip",
+        "/tip/slot_number": "independently observed advancing chain tip",
+        "/tip/epoch_number": "independently observed advancing chain tip"
+      }
+    },
+    {
+      "id": "family-ledger-addresses-after-rejected-passphrase",
+      "operation": "listByronAddresses",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets/${byron_ledger}/addresses"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": "${byron_ledger_addresses_before_rejection}"
+      }
+    },
+    {
+      "id": "family-ledger-passphrase-unsupported-accept",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_ledger}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "conformance-byron-replacement"
+        },
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-random-obsolete-password-rejected",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_random}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_random}",
+          "info": {
+            "wallet_id": "${byron_random}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-random-new-password-authorizes-rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_random}/passphrase",
+        "body": {
+          "old_passphrase": "conformance-byron-replacement",
+          "new_passphrase": "conformance-byron-final-passphrase"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-icarus-obsolete-password-rejected",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_icarus}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_icarus}",
+          "info": {
+            "wallet_id": "${byron_icarus}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-icarus-new-password-authorizes-rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_icarus}/passphrase",
+        "body": {
+          "old_passphrase": "conformance-byron-replacement",
+          "new_passphrase": "conformance-byron-final-passphrase"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-trezor-obsolete-password-rejected",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_trezor}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_trezor}",
+          "info": {
+            "wallet_id": "${byron_trezor}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-trezor-new-password-authorizes-rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_trezor}/passphrase",
+        "body": {
+          "old_passphrase": "conformance-byron-replacement",
+          "new_passphrase": "conformance-byron-final-passphrase"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-ledger-obsolete-password-rejected",
+      "source": "Pinned2fc5c383 Wallet.hs1305–1344 and Error.hs331–341/879–881; rejected credentials do not authorize password rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_ledger}/passphrase",
+        "body": {
+          "old_passphrase": "${passphrase}",
+          "new_passphrase": "must-not-be-installed"
+        }
+      },
+      "expected_status": 403,
+      "assertions": {
+        "": {
+          "code": "wrong_encryption_passphrase",
+          "message": "The given encryption passphrase doesn't match the one I use to encrypt the root private key of the given wallet: ${byron_ledger}",
+          "info": {
+            "wallet_id": "${byron_ledger}"
+          }
+        }
+      }
+    },
+    {
+      "id": "family-ledger-new-password-authorizes-rotation",
+      "operation": "putByronWalletPassphrase",
+      "request": {
+        "method": "PUT",
+        "path": "/byron-wallets/${byron_ledger}/passphrase",
+        "body": {
+          "old_passphrase": "conformance-byron-replacement",
+          "new_passphrase": "conformance-byron-final-passphrase"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    }
+  ],
+  "cleanup": [
+    {
+      "id": "family-shared-completed-delete",
+      "operation": "deleteSharedWallet",
+      "request": {"method": "DELETE", "path": "/shared-wallets/${shared_pending}"},
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-random-delete-unsupported-accept",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${byron_random}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-icarus-delete-unsupported-accept",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${byron_icarus}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-trezor-delete-unsupported-accept",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${byron_trezor}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-ledger-delete-unsupported-accept",
+      "operation": "deleteByronWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/byron-wallets/${byron_ledger}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "family-shared-delete-unsupported-accept",
+      "operation": "deleteSharedWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/shared-wallets/${shared_active}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "numeric-decimal-delete-unsupported-accept",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${numeric_decimal}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    },
+    {
+      "id": "numeric-exponent-delete-unsupported-accept",
+      "operation": "deleteWallet",
+      "request": {
+        "method": "DELETE",
+        "path": "/wallets/${numeric_exponent}",
+        "headers": {
+          "Accept": "application/x-conformance-unsupported"
+        }
+      },
+      "expected_status": 204,
+      "expected_body_bytes": 0
+    }
+  ]
+}

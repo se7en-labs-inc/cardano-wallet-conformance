@@ -1,0 +1,16 @@
+submitExternalTx
+    :: Tracer IO TxSubmitLog
+    -> NetworkLayer IO block
+    -> TransactionLayer k ktype SealedTx
+    -> SealedTx
+    -> ExceptT ErrPostTx IO TxId
+submitExternalTx tr nw tl sealedTx = do
+    -- FIXME: We read the current era to constrain the @sealedTx@ **twice**:
+    -- once here for decodeTx, and once in postSealedTx before submitting.
+    era <- liftIO $ currentNodeEra nw
+    let tx = walletTx $ decodeTx tl era sealedTx
+        txid = tx ^. #txId
+    _ <- traceResult (MsgSubmitExternalTx txid >$< tr) $ do
+        postSealedTx nw sealedTx
+        pure sealedTx
+    pure txid

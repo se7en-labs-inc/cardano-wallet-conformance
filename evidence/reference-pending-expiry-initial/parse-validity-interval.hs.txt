@@ -1,0 +1,53 @@
+parseValidityInterval
+    :: TimeInterpreter (ExceptT PastHorizonException IO)
+    -> Maybe ApiValidityInterval
+    -> ExceptT ErrConstructTx IO (SlotNo, SlotNo)
+parseValidityInterval ti validityInterval = do
+    let isValidityBoundTimeNegative
+            (ApiValidityBoundAsTimeFromNow (Quantity sec)) = sec < 0
+        isValidityBoundTimeNegative _ = False
+
+    let isThereNegativeTime = case validityInterval of
+            Just (ApiValidityInterval (Just before') Nothing) ->
+                isValidityBoundTimeNegative before'
+            Just (ApiValidityInterval Nothing (Just hereafter')) ->
+                isValidityBoundTimeNegative hereafter'
+            Just (ApiValidityInterval (Just before') (Just hereafter')) ->
+                isValidityBoundTimeNegative before'
+                    || isValidityBoundTimeNegative hereafter'
+            Just (ApiValidityInterval Nothing Nothing) -> False
+            Nothing -> False
+
+    let fromValidityBound =
+            liftIO . \case
+                Left ApiValidityBoundUnspecified ->
+                    pure $ SlotNo 0
+                Right ApiValidityBoundUnspecified ->
+                    W.transactionExpirySlot ti Nothing
+                Right (ApiValidityBoundAsTimeFromNow (Quantity sec)) ->
+                    W.transactionExpirySlot ti (Just sec)
+                Left (ApiValidityBoundAsTimeFromNow (Quantity sec)) ->
+                    W.transactionExpirySlot ti (Just sec)
+                Right (ApiValidityBoundAsSlot (Quantity slot)) ->
+                    pure $ SlotNo slot
+                Left (ApiValidityBoundAsSlot (Quantity slot)) ->
+                    pure $ SlotNo slot
+
+    (before, hereafter) <- case validityInterval of
+        Nothing -> do
+            before' <- fromValidityBound (Left ApiValidityBoundUnspecified)
+            hereafter' <- fromValidityBound (Right ApiValidityBoundUnspecified)
+            pure (before', hereafter')
+        Just (ApiValidityInterval before' hereafter') -> do
+            before'' <- case before' of
+                Nothing -> fromValidityBound (Left ApiValidityBoundUnspecified)
+                Just val -> fromValidityBound (Left val)
+            hereafter'' <- case hereafter' of
+                Nothing -> fromValidityBound (Right ApiValidityBoundUnspecified)
+                Just val -> fromValidityBound (Right val)
+            pure (before'', hereafter'')
+
+    when (hereafter < before || isThereNegativeTime)
+        $ throwE ErrConstructTxWrongValidityBounds
+
+    pure (before, hereafter)

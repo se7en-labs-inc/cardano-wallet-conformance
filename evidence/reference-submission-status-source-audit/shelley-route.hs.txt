@@ -1,0 +1,8 @@
+                        txId
+                        (parseSimpleMetadataFlag simpleMetadataFlag)
+                 )
+            :<|> deleteTransaction shelley
+            :<|> postTransactionOld shelley (delegationAddressS @n)
+            :<|> postTransactionFeeOld shelley
+            :<|> balanceTransaction shelley
+            :<|> decodeTransaction shelley

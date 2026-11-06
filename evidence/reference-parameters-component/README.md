@@ -1,0 +1,11 @@
+# Real protocol-parameter update component
+
+All 95 registered checks passed against the pinned Haskell wallet and a fresh five-node Conway cluster. Assertion source: `7c6d60857e`; suite fingerprint: `bc34280b7ff540d52739af6862252b5fb160c0eb204d45ffedbba5302561f989`. The independent real-node faucet test passed after the registered workflow. Its first invocation used the wrong Cargo feature name and never executed a test; that diagnostic is retained separately.
+
+The owned committee authorized its hot key, proposed and voted for a real ledger update. The node enacted fee-per-byte 100→101, UTxO cost-per-byte 4310→4320 and desired pool count 3→4. Independent CBOR, body hashes, signatures, signer sets, certificates, proposal/vote bytes, conservation, fees and exact confirmed outputs were checked. The wallet exposed the updated mapped parameters. Fresh funded wallets before and after enactment verified minimum ADA 866310→868320 and exact signed payment fees using the independent wallet size estimator. Both payments were independently confirmed on the node.
+
+The component gate covers 26/643 obligations and correctly exits 1 for incomplete coverage. This component must not be merged with reports carrying another fingerprint. The latest complete coherent checkpoint remains 587/643 until a fresh combined replay. The generated `artifacts/behavioral-specification.parameters-component.draft.json` is an incomplete, non-authoritative review draft.
+
+All 134 other offline tests passed with the single known input-set parser failure explicitly filtered out. The full offline harness remains unresolved; no full Cargo test or Nix package pass is claimed. Focused harness tests, Clippy, formatting and isolated Nix Clippy/format checks passed. All three wallet family lists were empty before shutdown. The manual wallet, cluster and five observed node processes were stopped, reaped and verified absent. Private keys, logs and databases were not copied into evidence.
+
+The earlier standalone fixture audit is retained separately in `../reference-parameter-fixture-audit/`. Fixture setup alone receives no conformance credit. The twelve pending corrections in `docs/pending-reviews.md` remain unapplied. The older bounded pool confirmation proposal was already approved and implemented in `d94e88590f`; the latest reply reiterates that authorization.

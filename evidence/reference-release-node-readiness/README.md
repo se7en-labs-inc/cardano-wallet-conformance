@@ -1,0 +1,7 @@
+# Qualified Nix release node readiness
+
+All five affected real profiles pass in the actual packaged release executable: normal56, expiry47, Byron179, retry107 and checkpoint28, totaling417/417 checks. All completed final native integrations and owned cleanup pass. The separate real producer-control audit also passes (no wallet conformance credit); process absence is independently retained.
+
+The previous complete packaged632/644 failure and the [precise untraced diagnosis](diagnosis/README.md) remain preserved. Sourcebca2d4b5f3 waits only for asynchronous native database-directory creation under an existing canonical owned parent; all executable/PID/start/parent/group/key/config/topology checks are revalidated before adoption. Dangling links, escaping parents, missing config, partial keys and other I/O errors remain fatal. The original deadline and all wallet/native expectations are unchanged.
+
+Actual Nix packageylhzn9xyfvrsgp9xzznc1hn41i39lzs5, executableSHAf439b741c9464d3f573b9497f199130f0e605a8853ceab10a8704200a00304c2, fingerprint30be2251a305150fe92ba480f4ab9190ca667cceb361560465e452e740800d78. Corrected Haskell8fcb6fb0ee remains explicitly nonauthoritative; the original contract pin remains2fc5c383. All201 Rust tests, formatting, Clippy, Nix flake checks and sandboxed package checks pass. These component reports cannot be merged into any earlier combined gate; another fresh coherent37-report run remains required. No catalogue proposal is applied and all644 obligations remain required.

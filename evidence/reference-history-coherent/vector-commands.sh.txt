@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+run_vectors() {
+  local name="$1" oracle="$2"
+  shift 2
+  target/debug/wallet-conformance vectors --adapter "$oracle" --target http://127.0.0.1:18790/v2/ --environment source-2fc5c383-conway-node11.1.3-history --timeout-seconds 60 --report "evidence/reference-history-coherent/$name.json" "$@"
+}
+run_vectors internals /tmp/wc-haskell-roots-build/haskell-wallet-reference \
+ --corpus fixtures/vectors/primitives.json --corpus fixtures/vectors/primitive-boundaries.json --corpus fixtures/vectors/bip39-reference.json --corpus fixtures/vectors/cardano-wallet.json --corpus fixtures/vectors/passphrase-checks.json --corpus fixtures/vectors/signature-verification.json --corpus fixtures/vectors/coin-selection.json --corpus fixtures/vectors/generated-selection.json --corpus fixtures/vectors/haskell-selection.json --corpus fixtures/vectors/root-encryption.json \
+ --operation sha256 --operation sha512 --operation blake2b --operation ed25519.sign --operation ed25519.verify --operation passphrase.hash-pbkdf2 --operation passphrase.check-pbkdf2 --operation passphrase.check-scrypt --operation keys.verify-extended --operation coin-selection.select --operation coin-selection.haskell --operation root-key.parse --operation root-key.create-v2 --operation root-key.check-v2 --operation root-key.sign-v2 --operation root-key.change-v2 --operation root-key.derive-v2
+run_vectors keys /tmp/wc-keys-build/wallet-key-reference --corpus fixtures/vectors/haskell-keys.json --corpus fixtures/vectors/cardano-wallet.json --corpus fixtures/vectors/key-boundaries.json --operation keys.derive --operation keys.derive-public --operation keys.sign-extended --operation byron.generate-root
+run_vectors mnemonics target/debug/haskell-mnemonic-reference --adapter-arg /tmp/wc-mnemonic-build/wallet-mnemonic-reference --corpus fixtures/vectors/mnemonic-profiles.json --corpus fixtures/vectors/bip39-reference.json
+run_vectors addresses /tmp/wc-address-build/wallet-address-reference --corpus fixtures/vectors/address-profiles.json
+run_vectors credentials /tmp/wc-wallet-faults-build/wallet-credential-reference-final --corpus fixtures/vectors/wallet-credentials.json
+run_vectors ledger /tmp/wc-ledger-dijkstra-build/wallet-ledger-reference --corpus fixtures/vectors/ledger-profiles.json --corpus fixtures/vectors/reward-profiles.json
+run_vectors balance /tmp/wc-balance-build/wallet-balance-reference --corpus fixtures/vectors/balance-profiles.json
+run_vectors writer /tmp/wc-writer-build/wallet-writer-reference --corpus fixtures/vectors/writer-profiles.json
+run_vectors wallet-selection /tmp/wc-selection-wallet-build/wallet-selection-reference --corpus fixtures/vectors/wallet-selection.json
+run_vectors ledger-fees /tmp/wc-fee-build/wallet-fee-reference --corpus fixtures/vectors/ledger-fees.json
+run_vectors slotting /tmp/wc-slotting-build/wallet-slotting-reference --corpus fixtures/vectors/slotting-profiles.json
+run_vectors mnemonics-public target/debug/haskell-mnemonic-reference --adapter-arg /tmp/wc-mnemonic-build/wallet-mnemonic-reference --corpus fixtures/vectors/primitives.json --corpus fixtures/vectors/primitive-boundaries.json --corpus fixtures/vectors/haskell-keys.json --operation bip39.entropy-to-mnemonic --operation bip39.to-seed --operation address.enterprise
+run_vectors balancing /tmp/wc-ledger-dijkstra-build/wallet-ledger-reference --corpus fixtures/vectors/balancing-profiles.json
+run_vectors signed-size /tmp/wc-size-build/wallet-size-reference --corpus fixtures/vectors/signed-size-profiles.json

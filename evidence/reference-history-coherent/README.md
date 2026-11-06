@@ -1,0 +1,15 @@
+# Coherent history and confirmed-deletion checkpoint
+
+The coherent gate covers **582 of 643 mandatory obligations**, with **61 missing**. All **2,053 registered checks** passed: 490 differential HTTP checks, 1,223 actual Haskell internal cases and 340 real-node live checks. Independent node integration passed afterward. The 24 reports share one fingerprint, environment and target; no historical reports were combined. Gate exit 1 records incompleteness.
+
+Assertion source: `4d726f7259`. Suite: `a507142d88d529d34b9ac2d1245e3876ace4f281fef1edee32b61a32682995ea`. Environment: `source-2fc5c383-conway-node11.1.3-history`.
+
+**The full offline harness is not green.** The known many-input inspector regression still awaits approval. Its source and test hashes match the preserved failure. An optional harness run filtered that one test and passed the other 116 tests; this is not a full Cargo test or Nix package pass. See harness-status.json. Formatting, Clippy across all targets/features, the binaries build and isolated Nix Clippy/format checks passed for this source. This checkpoint updates conformance-report coverage; the older 581 checkpoint remains the last complete offline/Nix passing checkpoint.
+
+New evidence covers the exact confirmed-deletion 403 and preservation of history, wallet funds and node UTxOs. It also covers history time/order/count/address/withdrawal filters, binary metadata and auxiliary hashes, plus wallet disconnection, frozen state, catch-up and a signed payment. Pending/expired deletion, pending history, retry/expiry, restart/rollback, input limits and other domain/API cases remain missing. The nine proposals in PENDING-REVIEWS.md remain unapplied.
+
+A fresh Conway cluster used magic 42, pinned wallet source `2fc5c383`, node 11.1.3 and CLI 11.2.3.0. Two fresh services ran the nine HTTP suites sequentially before funding. All wallet-family lists were empty afterward. HTTP service A was then stopped and reaped; the same executable and URL were launched with a fresh owned database behind the node relay. This phase separation is not restart-persistence evidence. Service B remained the external signer. Live profiles included basic, disconnect, history, balance, collateral, assets, payments, shared and watch-only. Internal replay included reward and signed-size profiles through twelve Haskell helpers. Unchanged protocol parameters do not establish a parameter update or era transition.
+
+All owned wallets were cleaned up. Node integration ran last. The owned live service and relay were stopped, reaped and removed. Service B and the cluster received SIGTERM and exited with status 130. All eight externally observed process IDs are absent; no cardano-wallet process remains. Private databases and logs stay in the private scratch workspace. Public receipts retain signed transactions, metadata, node observations and runtime hashes; live mnemonics, passphrases and private keys were not copied.
+
+`artifacts/behavioral-specification.history-coherent.draft.json` remains an incomplete, non-authoritative review draft. This checkpoint does not establish exhaustive conformance.

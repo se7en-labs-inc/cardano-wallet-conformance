@@ -1,0 +1,54 @@
+diff --git a/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs b/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
+index 0a196c616b..c7b461ad48 100644
+--- a/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
++++ b/lib/api/src/Cardano/Wallet/Api/Http/Shelley/Server.hs
+@@ -4096,8 +4096,6 @@ submitTransaction
+     -> ApiSerialisedTransaction
+     -> Handler ApiTxId
+ submitTransaction ctx apiw@(ApiT wid) apitx = do
+-    -- TODO: revisit/possibly set proper ttls in ADP-1193
+-    ttl <- liftIO $ W.transactionExpirySlot ti Nothing
+     era <- liftIO $ NW.currentNodeEra nl
+ 
+     let sealedTx = getApiT . (view #serialisedTxSealed) $ apitx
+@@ -4107,6 +4105,10 @@ submitTransaction ctx apiw@(ApiT wid) apitx = do
+             ctx
+             apiw
+             (toApiDecodeTransactionPostData apitx)
++    ttl <- case apiDecoded ^. #validityInterval of
++        Just (ApiValidityIntervalExplicit interval) ->
++            pure $ SlotNo $ getQuantity $ interval ^. #invalidHereafter
++        Nothing -> liftIO $ W.transactionExpirySlot ti Nothing
+     when (isForeign apiDecoded)
+         $ liftHandler
+         $ throwE ErrSubmitTransactionForeignWallet
+@@ -4143,9 +4145,7 @@ submitTransaction ctx apiw@(ApiT wid) apitx = do
+         let wdrl = getOurWdrl acct path apiDecoded
+         let txCtx =
+                 defaultTransactionCtx
+-                    { -- TODO: [ADP-1193]
+-                      -- Get this from decodeTx:
+-                      txValidityInterval = (Nothing, ttl)
++                    { txValidityInterval = (Nothing, ttl)
+                     , txWithdrawal = wdrl
+                     }
+         txMeta <- handler $ W.constructTxMeta db txCtx ourInps ourOuts
+@@ -4246,7 +4246,6 @@ submitSharedTransaction
+     -> ApiSerialisedTransaction
+     -> Handler ApiTxId
+ submitSharedTransaction ctx apiw@(ApiT wid) apitx = do
+-    ttl <- liftIO $ W.transactionExpirySlot ti Nothing
+     era <- liftIO $ NW.currentNodeEra nl
+ 
+     let sealedTx = getApiT . (view #serialisedTxSealed) $ apitx
+@@ -4256,6 +4255,10 @@ submitSharedTransaction ctx apiw@(ApiT wid) apitx = do
+             ctx
+             apiw
+             (toApiDecodeTransactionPostData apitx)
++    ttl <- case apiDecoded ^. #validityInterval of
++        Just (ApiValidityIntervalExplicit interval) ->
++            pure $ SlotNo $ getQuantity $ interval ^. #invalidHereafter
++        Nothing -> liftIO $ W.transactionExpirySlot ti Nothing
+     when (isForeign apiDecoded)
+         $ liftHandler
+         $ throwE ErrSubmitTransactionForeignWallet

@@ -1,0 +1,18 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+error[E0624]: method `query` is private
+   --> src/pool_fixture.rs:653:20
+    |
+653 |     let tip = node.query(&["tip"], timeout)?;
+    |                    ^^^^^ private method
+    |
+   ::: src/node.rs:47:5
+    |
+ 47 |     fn query(&self, query: &[&str], timeout: Duration) -> Result<Value> {
+    |     ------------------------------------------------------------------- private method defined here
+
+For more information about this error, try `rustc --explain E0624`.
+error: could not compile `wallet-conformance` (lib) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `wallet-conformance` (lib test) due to 1 previous error

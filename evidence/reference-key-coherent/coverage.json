@@ -1,0 +1,539 @@
+{
+  "exhaustive": false,
+  "required": 643,
+  "covered": 444,
+  "missing": [
+    "crypto.ed25519.noncanonical",
+    "crypto.bip39.entropy",
+    "crypto.bip39.seed",
+    "crypto.bip39.checksum",
+    "crypto.icarus-root",
+    "crypto.shelley-root",
+    "crypto.byron-payload",
+    "crypto.ledger-root",
+    "crypto.trezor-root",
+    "crypto.root-key-encryption",
+    "address.shelley",
+    "address.byron",
+    "address.shared",
+    "address.network",
+    "address.encoding",
+    "address.cip129",
+    "script.native",
+    "script.policy-id",
+    "tx.serialization",
+    "tx.witnesses",
+    "tx.minimum-fee",
+    "tx.min-utxo",
+    "tx.validity-interval",
+    "tx.metadata",
+    "tx.mint-burn",
+    "tx.collateral",
+    "tx.delegation",
+    "tx.governance",
+    "tx.invalid-signature",
+    "tx.double-spend",
+    "selection.input-limits",
+    "selection.insufficient-funds",
+    "wallet.utxo-snapshot",
+    "wallet.discovery",
+    "wallet.restoration",
+    "wallet.rollback",
+    "wallet.restart",
+    "wallet.resubmission",
+    "wallet.concurrent-spend",
+    "wallet.shared-cosigners",
+    "wallet.byron-migration",
+    "wallet.hardware-watch-only",
+    "wallet.transaction-filtering",
+    "wallet.stake-pools",
+    "wallet.governance",
+    "chain.protocol-parameters",
+    "chain.era-boundaries",
+    "api.transport-errors",
+    "api.error-precedence",
+    "crypto.shared-root",
+    "api:balanceTransaction:positive",
+    "api:balanceTransaction:status:202",
+    "api:balanceTransaction:status:403",
+    "api:balanceTransaction:status:404",
+    "api:byronSelectCoins:positive",
+    "api:byronSelectCoins:status:200",
+    "api:byronSelectCoins:status:403",
+    "api:byronSelectCoins:status:404",
+    "api:constructSharedTransaction:positive",
+    "api:constructSharedTransaction:status:202",
+    "api:constructSharedTransaction:status:403",
+    "api:constructSharedTransaction:status:404",
+    "api:constructTransaction:status:403",
+    "api:createAddress:positive",
+    "api:createAddress:status:201",
+    "api:createAddress:status:403",
+    "api:createByronWalletMigrationPlan:positive",
+    "api:createByronWalletMigrationPlan:status:202",
+    "api:createByronWalletMigrationPlan:status:403",
+    "api:createByronWalletMigrationPlan:status:404",
+    "api:createShelleyWalletMigrationPlan:positive",
+    "api:createShelleyWalletMigrationPlan:status:202",
+    "api:createShelleyWalletMigrationPlan:status:403",
+    "api:createShelleyWalletMigrationPlan:status:404",
+    "api:decodeSharedTransaction:positive",
+    "api:decodeSharedTransaction:status:202",
+    "api:decodeSharedTransaction:status:403",
+    "api:decodeSharedTransaction:status:404",
+    "api:decodeTransaction:status:403",
+    "api:decodeTransaction:status:404",
+    "api:deleteByronTransaction:positive",
+    "api:deleteByronTransaction:status:204",
+    "api:deleteByronTransaction:status:403",
+    "api:deleteTransaction:positive",
+    "api:deleteTransaction:status:204",
+    "api:deleteTransaction:status:403",
+    "api:getAsset:positive",
+    "api:getAsset:status:200",
+    "api:getAssetDefault:positive",
+    "api:getAssetDefault:status:200",
+    "api:getByronAsset:positive",
+    "api:getByronAsset:status:200",
+    "api:getByronAssetDefault:positive",
+    "api:getByronAssetDefault:status:200",
+    "api:getByronTransaction:positive",
+    "api:getByronTransaction:status:200",
+    "api:getCurrentSmashHealth:status:400",
+    "api:getDRep:positive",
+    "api:getDRep:status:200",
+    "api:getDRep:status:404",
+    "api:getDelegationFee:positive",
+    "api:getDelegationFee:status:200",
+    "api:getDelegationFee:status:403",
+    "api:getPolicyKey:positive",
+    "api:getPolicyKey:status:200",
+    "api:getPolicyKey:status:403",
+    "api:getSharedTransaction:positive",
+    "api:getSharedTransaction:status:200",
+    "api:importAddress:positive",
+    "api:importAddress:status:204",
+    "api:importAddress:status:403",
+    "api:importAddresses:positive",
+    "api:importAddresses:status:204",
+    "api:importAddresses:status:403",
+    "api:joinDRep:positive",
+    "api:joinDRep:status:202",
+    "api:joinDRep:status:403",
+    "api:joinDRep:status:404",
+    "api:joinDRep:status:406",
+    "api:joinDRep:status:415",
+    "api:joinStakePool:positive",
+    "api:joinStakePool:status:202",
+    "api:joinStakePool:status:403",
+    "api:joinStakePool:status:404",
+    "api:joinStakePool:status:406",
+    "api:joinStakePool:status:415",
+    "api:listStakeKeys:positive",
+    "api:listStakeKeys:status:200",
+    "api:migrateByronWallet:positive",
+    "api:migrateByronWallet:status:202",
+    "api:migrateByronWallet:status:403",
+    "api:migrateByronWallet:status:404",
+    "api:migrateShelleyWallet:positive",
+    "api:migrateShelleyWallet:status:202",
+    "api:migrateShelleyWallet:status:403",
+    "api:migrateShelleyWallet:status:404",
+    "api:patchSharedWalletInDelegation:status:403",
+    "api:patchSharedWalletInDelegation:status:404",
+    "api:patchSharedWalletInPayment:status:403",
+    "api:patchSharedWalletInPayment:status:404",
+    "api:postByronTransaction:positive",
+    "api:postByronTransaction:status:202",
+    "api:postByronTransaction:status:403",
+    "api:postByronTransaction:status:404",
+    "api:postByronTransaction:status:425",
+    "api:postByronTransactionFee:positive",
+    "api:postByronTransactionFee:status:202",
+    "api:postByronTransactionFee:status:403",
+    "api:postByronTransactionFee:status:404",
+    "api:postByronWallet:status:409",
+    "api:postExternalTransaction:positive",
+    "api:postExternalTransaction:status:202",
+    "api:postExternalTransaction:status:425",
+    "api:postMaintenanceAction:positive",
+    "api:postMaintenanceAction:negative",
+    "api:postMaintenanceAction:status:204",
+    "api:postMaintenanceAction:status:404",
+    "api:postPolicyId:positive",
+    "api:postPolicyId:status:202",
+    "api:postPolicyId:status:403",
+    "api:postPolicyKey:positive",
+    "api:postPolicyKey:status:202",
+    "api:postSharedWallet:status:403",
+    "api:postSharedWallet:status:409",
+    "api:postTransaction:positive",
+    "api:postTransaction:status:202",
+    "api:postTransaction:status:403",
+    "api:postTransaction:status:404",
+    "api:postTransaction:status:425",
+    "api:postTransactionFee:positive",
+    "api:postTransactionFee:status:202",
+    "api:postTransactionFee:status:403",
+    "api:postTransactionFee:status:404",
+    "api:postWallet:status:409",
+    "api:putByronWallet:status:404",
+    "api:putByronWalletPassphrase:status:403",
+    "api:putByronWalletPassphrase:status:404",
+    "api:putSettings:positive",
+    "api:putSettings:status:204",
+    "api:putSharedWallet:status:404",
+    "api:putWallet:status:404",
+    "api:putWalletPassphrase:status:404",
+    "api:quitStakePool:positive",
+    "api:quitStakePool:status:202",
+    "api:quitStakePool:status:403",
+    "api:selectCoins:positive",
+    "api:selectCoins:status:200",
+    "api:selectCoins:status:403",
+    "api:selectCoins:status:404",
+    "api:signSharedTransaction:positive",
+    "api:signSharedTransaction:status:202",
+    "api:signSharedTransaction:status:403",
+    "api:signSharedTransaction:status:404",
+    "api:signTransaction:status:404",
+    "api:submitSharedTransaction:positive",
+    "api:submitSharedTransaction:status:202",
+    "api:submitSharedTransaction:status:403",
+    "api:submitSharedTransaction:status:404",
+    "api:submitTransaction:status:404"
+  ],
+  "unexecuted_cases": {
+    "address.byron": [
+      "address-byron-crc-rejection",
+      "address-byron-icarus",
+      "address-byron-network-attributes",
+      "address-byron-random"
+    ],
+    "address.cip129": [
+      "cip129-committee-cold",
+      "cip129-committee-hot",
+      "cip129-drep-key",
+      "cip129-drep-script",
+      "cip129-header-rejected"
+    ],
+    "address.encoding": [
+      "base58-leading-zero",
+      "base58-malformed",
+      "bech32-checksum-rejected",
+      "bech32-invalid-padding",
+      "bech32-mixed-case-rejected",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1"
+    ],
+    "address.network": [
+      "address-byron-protocol-magic",
+      "address-cross-network-api-rejected",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1"
+    ],
+    "address.shared": [
+      "address-shared-all",
+      "address-shared-any",
+      "address-shared-at-least",
+      "address-shared-timelock"
+    ],
+    "address.shelley": [
+      "address-base-key-script",
+      "address-base-script-key",
+      "address-base-script-script",
+      "address-pointer",
+      "address-reward-script",
+      "haskell-Shelley-0-0-0-enterprise-0",
+      "haskell-Shelley-0-0-0-enterprise-1",
+      "haskell-Shelley-0-0-19-enterprise-0",
+      "haskell-Shelley-0-0-19-enterprise-1",
+      "haskell-Shelley-0-0-2147483647-enterprise-0",
+      "haskell-Shelley-0-0-2147483647-enterprise-1"
+    ],
+    "api.error-precedence": [
+      "precedence:funds-output",
+      "precedence:media-body",
+      "precedence:path-body",
+      "precedence:wallet-passphrase"
+    ],
+    "api.transport-errors": [
+      "transport:malformed-json",
+      "transport:unknown-method",
+      "transport:unknown-path",
+      "transport:unsupported-accept",
+      "transport:unsupported-content-type"
+    ],
+    "chain.era-boundaries": [
+      "live:hard-fork-certificates",
+      "live:hard-fork-restore",
+      "live:hard-fork-submit"
+    ],
+    "chain.protocol-parameters": [
+      "chain:node-wallet-protocol-parameters",
+      "chain:protocol-parameter-update"
+    ],
+    "crypto.bip39.checksum": [
+      "bip39-bad-checksum",
+      "bip39-short-entropy"
+    ],
+    "crypto.bip39.entropy": [
+      "bip39-reference-entropy-0",
+      "bip39-reference-entropy-1",
+      "bip39-reference-entropy-10",
+      "bip39-reference-entropy-11",
+      "bip39-reference-entropy-12",
+      "bip39-reference-entropy-13",
+      "bip39-reference-entropy-14",
+      "bip39-reference-entropy-15",
+      "bip39-reference-entropy-16",
+      "bip39-reference-entropy-17",
+      "bip39-reference-entropy-18",
+      "bip39-reference-entropy-19",
+      "bip39-reference-entropy-2",
+      "bip39-reference-entropy-20",
+      "bip39-reference-entropy-21",
+      "bip39-reference-entropy-22",
+      "bip39-reference-entropy-23",
+      "bip39-reference-entropy-3",
+      "bip39-reference-entropy-4",
+      "bip39-reference-entropy-5",
+      "bip39-reference-entropy-6",
+      "bip39-reference-entropy-7",
+      "bip39-reference-entropy-8",
+      "bip39-reference-entropy-9",
+      "bip39-zero-entropy"
+    ],
+    "crypto.bip39.seed": [
+      "bip39-reference-seed-0",
+      "bip39-reference-seed-1",
+      "bip39-reference-seed-10",
+      "bip39-reference-seed-11",
+      "bip39-reference-seed-12",
+      "bip39-reference-seed-13",
+      "bip39-reference-seed-14",
+      "bip39-reference-seed-15",
+      "bip39-reference-seed-16",
+      "bip39-reference-seed-17",
+      "bip39-reference-seed-18",
+      "bip39-reference-seed-19",
+      "bip39-reference-seed-2",
+      "bip39-reference-seed-20",
+      "bip39-reference-seed-21",
+      "bip39-reference-seed-22",
+      "bip39-reference-seed-23",
+      "bip39-reference-seed-3",
+      "bip39-reference-seed-4",
+      "bip39-reference-seed-5",
+      "bip39-reference-seed-6",
+      "bip39-reference-seed-7",
+      "bip39-reference-seed-8",
+      "bip39-reference-seed-9",
+      "bip39-trezor-seed",
+      "bip39-unicode-composed",
+      "bip39-unicode-decomposed"
+    ],
+    "crypto.byron-payload": [
+      "byron-path-authentication-failure",
+      "byron-path-decrypt-golden",
+      "byron-path-encrypt-golden",
+      "byron-path-malformed-cbor"
+    ],
+    "crypto.ed25519.noncanonical": [
+      "ed25519-noncanonical-s",
+      "ed25519-small-order-public-key",
+      "ed25519-small-order-r"
+    ],
+    "crypto.icarus-root": [
+      "icarus-second-factor"
+    ],
+    "crypto.ledger-root": [
+      "ledger-child-golden",
+      "ledger-root-golden",
+      "ledger-root-unicode"
+    ],
+    "crypto.root-key-encryption": [
+      "root-migration-failure-preserves-v1"
+    ],
+    "crypto.shared-root": [
+      "shared-root-second-factor"
+    ],
+    "crypto.shelley-root": [
+      "shelley-second-factor"
+    ],
+    "crypto.trezor-root": [
+      "trezor-child-golden",
+      "trezor-root-golden",
+      "trezor-root-second-factor"
+    ],
+    "script.native": [
+      "native-script-after",
+      "native-script-all",
+      "native-script-any",
+      "native-script-at-least",
+      "native-script-before",
+      "native-script-unsatisfied"
+    ],
+    "script.policy-id": [
+      "asset-fingerprint",
+      "key-hash",
+      "native-policy-id"
+    ],
+    "selection.input-limits": [
+      "selection-maximum-inputs-boundary",
+      "selection-maximum-size-boundary"
+    ],
+    "selection.insufficient-funds": [
+      "haskell-selection-insufficient-fee",
+      "selection-insufficient-collateral"
+    ],
+    "tx.collateral": [
+      "collateral-eligibility",
+      "collateral-insufficient",
+      "collateral-percentage-rounding",
+      "collateral-return"
+    ],
+    "tx.delegation": [
+      "live:reward-withdrawal",
+      "live:stake-delegate",
+      "live:stake-deregister",
+      "live:stake-register",
+      "stake-deposit-refund"
+    ],
+    "tx.double-spend": [
+      "live:conflicting-spend"
+    ],
+    "tx.governance": [
+      "governance-certificate-golden",
+      "governance-era-rejection",
+      "live:vote-delegate"
+    ],
+    "tx.invalid-signature": [
+      "live:corrupt-witness-rejected"
+    ],
+    "tx.metadata": [
+      "metadata-bytes-64",
+      "metadata-cbor-golden",
+      "metadata-label-boundaries",
+      "metadata-oversize-rejected",
+      "metadata-text-64-bytes"
+    ],
+    "tx.min-utxo": [
+      "min-utxo-ada",
+      "min-utxo-datum",
+      "min-utxo-native-assets",
+      "min-utxo-protocol-change",
+      "min-utxo-reference-script"
+    ],
+    "tx.minimum-fee": [
+      "fee-execution-units",
+      "fee-linear-boundaries",
+      "fee-maximum-size",
+      "fee-rounding",
+      "fee-witness-count"
+    ],
+    "tx.mint-burn": [
+      "live:mint-invalid-witness-rejected",
+      "live:native-burn",
+      "live:native-mint",
+      "mint-burn-quantity-boundaries"
+    ],
+    "tx.serialization": [
+      "tx-cbor-allegra",
+      "tx-cbor-alonzo",
+      "tx-cbor-babbage",
+      "tx-cbor-byron",
+      "tx-cbor-conway",
+      "tx-cbor-duplicate-key-rejected",
+      "tx-cbor-indefinite",
+      "tx-cbor-mary",
+      "tx-cbor-shelley",
+      "tx-cbor-trailing-rejected"
+    ],
+    "tx.validity-interval": [
+      "live:expired-transaction-rejected",
+      "validity-lower-bound",
+      "validity-slot-time-boundary",
+      "validity-ttl"
+    ],
+    "tx.witnesses": [
+      "witness-bootstrap-golden",
+      "witness-duplicate",
+      "witness-invalid-key",
+      "witness-merge",
+      "witness-script-golden"
+    ],
+    "wallet.byron-migration": [
+      "live:byron-icarus-spend",
+      "live:byron-migrate",
+      "live:byron-random-spend"
+    ],
+    "wallet.concurrent-spend": [
+      "live:concurrent-construct",
+      "live:concurrent-submit"
+    ],
+    "wallet.discovery": [
+      "discovery-internal-change",
+      "discovery-random-byron",
+      "discovery-sequential-gap",
+      "discovery-shared-cosigners"
+    ],
+    "wallet.governance": [
+      "governance:drep-queries",
+      "governance:vote-state"
+    ],
+    "wallet.hardware-watch-only": [
+      "live:watch-only-external-witness"
+    ],
+    "wallet.restart": [
+      "state:restart-confirmed",
+      "state:restart-key-address-state",
+      "state:restart-pending"
+    ],
+    "wallet.restoration": [
+      "state:restore-from-checkpoint"
+    ],
+    "wallet.resubmission": [
+      "live:node-disconnect-reconnect",
+      "live:pending-expiry",
+      "live:pending-retry"
+    ],
+    "wallet.rollback": [
+      "live:rollback-reapply",
+      "state:rollback-balance-history",
+      "state:rollback-pending",
+      "state:rollback-spent-inputs"
+    ],
+    "wallet.shared-cosigners": [
+      "live:shared-fully-signed",
+      "shared:activate",
+      "shared:incomplete",
+      "shared:partial-sign"
+    ],
+    "wallet.stake-pools": [
+      "pools:maintenance",
+      "pools:metadata",
+      "pools:ranking",
+      "pools:retirement"
+    ],
+    "wallet.transaction-filtering": [
+      "history:binary-metadata",
+      "history:order",
+      "history:pagination",
+      "history:status",
+      "history:time-range"
+    ],
+    "wallet.utxo-snapshot": [
+      "live:multiasset-utxo-snapshot"
+    ]
+  },
+  "failures": []
+}

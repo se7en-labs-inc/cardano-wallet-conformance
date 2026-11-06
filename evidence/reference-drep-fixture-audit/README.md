@@ -1,0 +1,9 @@
+# Real owned DRep registration audit
+
+Fixture assertion source: `5a474328f5`; spec committed first as `2dbcb13a9e`. A fresh five-node Conway cluster registered a newly generated owned key DRep through an actual two-witness ledger transaction. The registration certificate was independently checked as `[16,[0,key_hash],500000000,null]`; key hashes, signatures, complete witness identities, body, input, change, fee, deposit and spent input were verified. The faucet funded 600000000 lovelace; registration took the node's actual 500000000 deposit. `registration.json` contains only public keys, signed public transaction data and node snapshots. No fixture setup receives conformance credit.
+
+The observed CLI node state is an array of credential/state pairs. Initially empty, it contained exactly the new key hash, deposit500000000, expiry22, null anchor and null undelegated stake after registration. The later lookup implementation independently checks this format strictly, and a real public node-state control is frozen in `fixtures/drep-node-control.json`.
+
+Read-only preflight confirmed the pinned Haskell cache behavior: the wallet retained its startup expiry while the node's dormant-epoch expiry advanced. The two preflight snapshots preserve that observation; no conformance assertion failed and no normalization was introduced. The diagnostic wallet was stopped/reaped before the automated lookup's distinct owned wallet started. The final verifier instead brackets fresh startup and exact reads within stable node state and epoch. See `../reference-drep-lookup-component/` for executed wallet evidence and final node integration/cleanup.
+
+The initial checks passed certificate and all34 harness tests, then Clippy found an unused import. That diagnostic and the successful corrected checks are retained. Private keys, logs and databases remain outside the repository. The master Haskell checkout's tracked files were unchanged.

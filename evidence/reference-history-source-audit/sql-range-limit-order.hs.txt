@@ -1,0 +1,16 @@
+filterMetas _ (Range Nothing Nothing) = []
+filterMetas True (Range (Just low) Nothing) = [TxMetaSlot >=. low]
+filterMetas False (Range (Just low) Nothing) = [TxMetaSlot >. low]
+filterMetas _ (Range Nothing (Just high)) = [TxMetaSlot <=. high]
+filterMetas b (Range low high) =
+    filterMetas b (Range Nothing high)
+        <> filterMetas b (Range low Nothing)
+
+limitMetas :: Maybe Natural -> [SelectOpt record]
+limitMetas Nothing = []
+limitMetas (Just l) = [LimitTo $ fromIntegral l]
+
+orderMetas :: SortOrder -> [SelectOpt TxMeta]
+orderMetas Ascending = [Asc TxMetaSlot, Asc TxMetaTxId]
+orderMetas Descending = [Desc TxMetaSlot, Asc TxMetaTxId]
+

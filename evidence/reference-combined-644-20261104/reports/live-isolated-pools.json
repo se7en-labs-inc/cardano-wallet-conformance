@@ -1,0 +1,1063 @@
+{
+  "format_version": 1,
+  "contract_reference_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "suite_sha256": "5ee88ddea23bbf9e91440bc90dcb66e74ee0dcee1e507c9c2be0f01c2625b6a4",
+  "unregistered_inputs": [],
+  "harness_self_test": false,
+  "environment": "source-2fc5c383-combined-644-20261104",
+  "target": "http://127.0.0.1:18792/v2/",
+  "evidence": [
+    {
+      "case": "transport:unknown-method",
+      "requirements": [
+        "api.transport-errors"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "transport:unknown-path",
+      "requirements": [
+        "api.transport-errors"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "transport:malformed-json",
+      "requirements": [
+        "api.transport-errors"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "transport:unsupported-content-type",
+      "requirements": [
+        "api.transport-errors"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "transport:unsupported-accept",
+      "requirements": [
+        "api.transport-errors"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "precedence:media-body",
+      "requirements": [
+        "api.error-precedence"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getNetworkInformation:eventually",
+      "requirements": [
+        "api:getNetworkInformation:positive",
+        "api:getNetworkInformation:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getNetworkInformation:eventually",
+      "requirements": [
+        "api:getNetworkInformation:positive",
+        "api:getNetworkInformation:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:block-production",
+      "requirements": [
+        "chain.block-production"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getBlocksLatestHeader",
+      "requirements": [
+        "api:getBlocksLatestHeader:positive",
+        "api:getBlocksLatestHeader:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:independent-latest-header",
+      "requirements": [
+        "chain.header-consistency"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getNetworkParameters",
+      "requirements": [
+        "api:getNetworkParameters:positive",
+        "api:getNetworkParameters:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:constructTransaction",
+      "requirements": [
+        "api:constructTransaction:positive",
+        "api:constructTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:selection-conservation",
+      "requirements": [
+        "selection.ada-conservation",
+        "selection.unique-inputs"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:decodeTransaction",
+      "requirements": [
+        "api:decodeTransaction:positive",
+        "api:decodeTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:submitTransaction",
+      "requirements": [
+        "api:submitTransaction:negative",
+        "api:submitTransaction:status:403"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:unsigned-submit-rejected",
+      "requirements": [
+        "tx.invalid-signature"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:negative",
+        "api:signTransaction:status:403"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:positive",
+        "api:signTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:independent-signature-verification",
+      "requirements": [
+        "tx.witnesses",
+        "tx.body-hash"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:decodeTransaction",
+      "requirements": [
+        "api:decodeTransaction:positive",
+        "api:decodeTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:submitTransaction",
+      "requirements": [
+        "api:submitTransaction:positive",
+        "api:submitTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:trusted-node-utxo-confirmation",
+      "requirements": [
+        "chain.node-utxo-confirmation"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:utxo-snapshot-statistics",
+      "requirements": [
+        "wallet.utxo-snapshot"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:confirmed-transfer",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200",
+        "chain.confirmation",
+        "tx.ledger-acceptance",
+        "wallet.balance-conservation",
+        "tx.payment-output",
+        "signing.wrong-passphrase"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postWallet",
+      "requirements": [
+        "api:postWallet:positive",
+        "api:postWallet:status:201"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getTransaction",
+      "requirements": [
+        "api:getTransaction:positive",
+        "api:getTransaction:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:restore-from-genesis",
+      "requirements": [
+        "wallet.restoration"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:workflow",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:constructTransaction",
+      "requirements": [
+        "api:constructTransaction:positive",
+        "api:constructTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:positive",
+        "api:signTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getAccountKey",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listTransactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getAccountKey",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listTransactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getNetworkInformation:eventually",
+      "requirements": [
+        "api:getNetworkInformation:positive",
+        "api:getNetworkInformation:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getAccountKey",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listTransactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWallet:eventually",
+      "requirements": [
+        "api:getWallet:positive",
+        "api:getWallet:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listAddresses",
+      "requirements": [
+        "api:listAddresses:positive",
+        "api:listAddresses:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getAccountKey",
+      "requirements": [
+        "api:getAccountKey:positive",
+        "api:getAccountKey:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getWalletUtxoSnapshot",
+      "requirements": [
+        "api:getWalletUtxoSnapshot:positive",
+        "api:getWalletUtxoSnapshot:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getUTxOsStatistics",
+      "requirements": [
+        "api:getUTxOsStatistics:positive",
+        "api:getUTxOsStatistics:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listTransactions",
+      "requirements": [
+        "api:listTransactions:positive",
+        "api:listTransactions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:signTransaction",
+      "requirements": [
+        "api:signTransaction:positive",
+        "api:signTransaction:status:202"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "state:restart-confirmed",
+      "requirements": [
+        "wallet.restart"
+      ],
+      "passed": true,
+      "detail": "{\"assertion\":\"exact persisted snapshots and deterministic signature after owned crash/restart\",\"confirmed_snapshots\":{\"1f6bc52cfdf9fa3d38c41a24686edfef7e3ae122\":{\"account_key\":\"acct_xvk1acjl58gmllzyfzyp0vyj446x9x9nkw7347p5xdk8s22dvfnpf6rdwnchg5s5w4g8wwrscf7yn57mawu96mf2u48vf54s2els3qk8y9s6q3ep9\",\"addresses\":[{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"0\"],\"id\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"1\",\"0\"],\"id\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"1\"],\"id\":\"addr_test1qpuqpfqjryppnyn09lzsqfea07s0c8pd40tyh32wa8ckwgvpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtfn73c\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"2\"],\"id\":\"addr_test1qzwdff4qw42eku9ffdhj6n209uaxmzd3dq0fdh0c2c2wnkypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq0meyw8\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"3\"],\"id\":\"addr_test1qrt6zdz8x3ltlsw4v6m7mrswj037kha749rl97yfzlg7x05pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqhevr6g\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"4\"],\"id\":\"addr_test1qq7vp8zhunt882js7ah4fqmkujgzsq80ksey3r4zm3963rupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqjln3n6\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"5\"],\"id\":\"addr_test1qqgsz78qecnx9dezfmmsvpl4au8j4jw0x7semaela2z29zypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqsdu07w\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"6\"],\"id\":\"addr_test1qrpufvan4pd9a4avfamz0yknhkdmcyflrnqt8nfd0sv7g0ypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqm7f909\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"7\"],\"id\":\"addr_test1qpa0v0r854yc5p08qdmryx0gd798ngmz6e6q2rrjv9dw6dypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq6pegc7\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"8\"],\"id\":\"addr_test1qplr0e3vxzjr2kcea272ah8uk6fs2f894ufunxj2su29mu5pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqg4q4k2\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"9\"],\"id\":\"addr_test1qzmfjfwn9xgt3w9sp90jwnxtptcklwedynfr8yntya5dmkypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq05z45n\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"10\"],\"id\":\"addr_test1qzfqa5a0pp567t6xfzemvhx8rckdjpval2mqk44nlje7m9upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqzvuhtg\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"11\"],\"id\":\"addr_test1qpqx0xna7anz2629yj2rzc7zuuk9dxpe2djcx950qev5xsypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq053udn\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"12\"],\"id\":\"addr_test1qrp8xhkxxytssv2w0vyxwjsmc6stdhumn799tmvh6x6xa3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqdfvthf\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"13\"],\"id\":\"addr_test1qq6x3vv0f8ghl6wt8f6850j76nsl4623rzsl6kv09ly98gypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqxy8uff\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"14\"],\"id\":\"addr_test1qqy3vqm9an44wpfyu3ulrjrhqm0we94gm74tndddgwwcleypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqfmcz4l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"15\"],\"id\":\"addr_test1qq2sq7eq8p0hgy2rglmpj342qzttewu4tv7vqyc4cvvsxnupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq2crek9\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"16\"],\"id\":\"addr_test1qpmv2gyh3uw08qswdglruwwaj4rcsfhnpcdka25dfx0xmn5pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqluu29y\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"17\"],\"id\":\"addr_test1qzvnz34fw73lh94klj472p48khuwm9yqf8dfs0rh8hduyrupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqds0x5s\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"18\"],\"id\":\"addr_test1qpylqpfqr06y6ld2wkuwk6arlwfw20y6787a9q75k95qr5ypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq0zz604\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"19\"],\"id\":\"addr_test1qztcsanm69uqdcqxy0mzuchhk0umqeq8pzjmx2qxkj66dgvpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqquuhdra\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"20\"],\"id\":\"addr_test1qpt8ah09j7p0uyyzl7v6rr0w7925p2m7kvezcak9grmhg8vpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqxccu4h\",\"state\":\"unused\"}],\"history\":[{\"amount\":{\"quantity\":2129500,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":38404,\"epoch_number\":320,\"slot_number\":4,\"time\":\"2026-11-04T23:27:39.8Z\"},\"fee\":{\"quantity\":129500,\"unit\":\"lovelace\"},\"id\":\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da\",\"inputs\":[{\"address\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2409,\"epoch_number\":20,\"height\":{\"quantity\":1165,\"unit\":\"block\"},\"slot_number\":9,\"time\":\"2026-11-04T21:27:40.8Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"amount\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]},{\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"incoming\",\"expires_at\":{\"absolute_slot_number\":6000000,\"epoch_number\":50000,\"slot_number\":0,\"time\":\"2026-11-18T18:39:39Z\"},\"fee\":{\"quantity\":999999900000000,\"unit\":\"lovelace\"},\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"inputs\":[{\"id\":\"727c5a1ea227b4098db4758abe7ad9f5117c5d08486bd88a6ab6960efb703065\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2398,\"epoch_number\":19,\"height\":{\"quantity\":1161,\"unit\":\"block\"},\"slot_number\":118,\"time\":\"2026-11-04T21:27:38.6Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]}],\"node_utxos\":{\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\":{\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da#1\":{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97870500}}}},\"statistics\":{\"distribution\":{\"10\":0,\"100\":0,\"1000\":0,\"10000\":0,\"100000\":0,\"1000000\":0,\"10000000\":0,\"100000000\":1,\"1000000000\":0,\"10000000000\":0,\"100000000000\":0,\"1000000000000\":0,\"10000000000000\":0,\"100000000000000\":0,\"1000000000000000\":0,\"10000000000000000\":0,\"45000000000000000\":0},\"scale\":\"log10\",\"total\":{\"quantity\":97870500,\"unit\":\"lovelace\"}},\"utxo\":{\"entries\":[{\"ada\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}]},\"wallet\":{\"address_pool_gap\":20,\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"reward\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":97870500,\"unit\":\"lovelace\"}},\"delegation\":{\"active\":{\"status\":\"not_delegating\"},\"next\":[]},\"id\":\"1f6bc52cfdf9fa3d38c41a24686edfef7e3ae122\",\"name\":\"conformance-sender\",\"passphrase\":{\"encryption_method\":\"argon2id-v2\",\"last_updated_at\":\"2026-11-04T21:27:37.733579074Z\"}}},\"dcf9b2d0b9861a608ae740663a63023054f9e3dd\":{\"account_key\":\"acct_xvk1g9kf2mew7j5lf4w5y0akaczaqpwjz7qtmpdq6a3u0knk3retynr0fktxcmrv2rfysn8jck4m28wsqkatfhgtrxt57ytezxqxjdt443spgpmlg\",\"addresses\":[{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"0\"],\"id\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"1\"],\"id\":\"addr_test1qphrf97y239gk77dwettgpdywdgr908hzjhjd2twkqnfhwnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpss50544\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"2\"],\"id\":\"addr_test1qpghdu0nayk99mqv09gptskr97ar74ea3rxmh5mgxx254cnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpse0dp6s\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"3\"],\"id\":\"addr_test1qzz5rzhwdfsk2vzkyyghq6ax72la82a9m8vs4545wqe05erm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsfuavj8\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"4\"],\"id\":\"addr_test1qplrfqnsye33tr8l8g5052jv6yphf6es083wcj53nc9jgdrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps5a0c6l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"5\"],\"id\":\"addr_test1qqghnezxy4xy3sutl6rzc5cxphk5ks4kfqzu64jcxxgzmvtm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsg67xln\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"6\"],\"id\":\"addr_test1qp42r9v4dcl0ratahmg7er8va2f8z5kh98mugw2thdje24nm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps04yswz\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"7\"],\"id\":\"addr_test1qp39yxdr67u999c987nk8dehxnl4zrp4amuhplcwcpm4hdnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsm58gum\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"8\"],\"id\":\"addr_test1qp7y8wz4v6zkvmc40pe225e8kemvpvv9qnl986dxlvaj3gtm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpss59z4n\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"9\"],\"id\":\"addr_test1qqneel0hxjnnj67qg44lpkhhqs00pmg7yz6ru2exjjkwalnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps4mgrh5\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"10\"],\"id\":\"addr_test1qp25t5vwj5dw3084gwaqqrgwalfzmkal48jrdnjsm2av3crm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsra7hma\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"11\"],\"id\":\"addr_test1qz807k8dqg8rhs3g8r2cnnsmv4vx954kmuje4hrq4hfxxsmm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsuefg7l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"12\"],\"id\":\"addr_test1qrdspzyylyescz2qw2nzsnypqnkkuj7ggc3g0ss7e65z7htm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsp7nkxm\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"13\"],\"id\":\"addr_test1qpxq57dum8np2dw60330xrmj2fk5xr6m7zlmjhm8dcxqnlnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsknwt3m\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"14\"],\"id\":\"addr_test1qz2pnct6a5wzwvldgpe3u8csga3um2aymdw8s78aa3y384mm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps0aul53\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"15\"],\"id\":\"addr_test1qq65ng482fuscw7tpyelhd5xm3tn0a4yvj4gkht39xyu0urm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpswh973d\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"16\"],\"id\":\"addr_test1qrelze5vjy5an2pel7ftsaupkvdyfn4vjfquvtyw6d07vztm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsp4ysrg\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"17\"],\"id\":\"addr_test1qr7rsal8fsle9n0nv2xh987a7m7990jt3uuulk0vg0ull5tm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsnkw0sl\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"18\"],\"id\":\"addr_test1qra5x79gnqyv7ajpjvztnctg2rdmfvyztgh57jnmfqnenerm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps58l948\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"19\"],\"id\":\"addr_test1qrh4dyjjm5aghlyvqw3q3jtvpcds6mgpgdaj3pkn5dp0xgrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsevawr0\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"20\"],\"id\":\"addr_test1qqamzhpeq4u7luym95hl0e9wfkyuxuva2gm283x288lepktm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsft9lzy\",\"state\":\"unused\"}],\"history\":[{\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"incoming\",\"expires_at\":{\"absolute_slot_number\":38404,\"epoch_number\":320,\"slot_number\":4,\"time\":\"2026-11-04T23:27:39.8Z\"},\"fee\":{\"quantity\":129500,\"unit\":\"lovelace\"},\"id\":\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da\",\"inputs\":[{\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2409,\"epoch_number\":20,\"height\":{\"quantity\":1165,\"unit\":\"block\"},\"slot_number\":9,\"time\":\"2026-11-04T21:27:40.8Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"amount\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]}],\"node_utxos\":{\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\":{\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da#0\":{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"statistics\":{\"distribution\":{\"10\":0,\"100\":0,\"1000\":0,\"10000\":0,\"100000\":0,\"1000000\":0,\"10000000\":1,\"100000000\":0,\"1000000000\":0,\"10000000000\":0,\"100000000000\":0,\"1000000000000\":0,\"10000000000000\":0,\"100000000000000\":0,\"1000000000000000\":0,\"10000000000000000\":0,\"45000000000000000\":0},\"scale\":\"log10\",\"total\":{\"quantity\":2000000,\"unit\":\"lovelace\"}},\"utxo\":{\"entries\":[{\"ada\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]}]},\"wallet\":{\"address_pool_gap\":20,\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"reward\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":2000000,\"unit\":\"lovelace\"}},\"delegation\":{\"active\":{\"status\":\"not_delegating\"},\"next\":[]},\"id\":\"dcf9b2d0b9861a608ae740663a63023054f9e3dd\",\"name\":\"conformance-recipient-restored\",\"passphrase\":{\"encryption_method\":\"argon2id-v2\",\"last_updated_at\":\"2026-11-04T21:27:42.941040814Z\"}}}},\"executable_sha256\":\"6ea82181d5ed0740f4b4eecfcf178e197ac95aafe26f74e1b4019103b9b9092d\",\"generation\":1,\"new_pid\":737805,\"node_after\":\"09e2740c1e716f6aa1e239ab74b18c65af901f2d6e350a509f2353bbf77c653d\",\"node_before\":\"50ea9754d1b904293bd381a0159d7ab1077e0634a52a2f3437295896facbbd83\",\"old_pid\":737471,\"signed_transaction\":{\"transaction\":\"hKUA2QECgYJYIAg+TlYdMsI28m38C9CBhVfihIdn3xXZEFZl9108MYPaAQGCglg5AEDCBPEVJLXQEbsOSfph6qTJ2I9oLC7OVFiYg7h70B+Nq4qLFtZ3jKakzGgFSi+FqIeq4dhbakSDGgAehICCWDkAVwyaOsUgbLoGV/StTKWcdfzSSqV8Qm01yyTHnIFGyRjGd2z/gYWYaYw76Z+B3jfcGiSn2Yd6OAAaBbTkSAIaAAH53AMZlhgIAKEA2QECgYJYIPwlXV5rofTQzoaJxnZYjBKI5GITNsUhS98ggio4Wd/dWEATeC+ibVZtw9ktVsxiLezt0MpOxhOboxrtV8vMMT5Kgm+W2Nib0oUQvg5oicCHsuYZkElo9zbPIyiMM1pWhdkL9fY=\"}}"
+    },
+    {
+      "case": "state:restart-key-address-state",
+      "requirements": [
+        "wallet.restart"
+      ],
+      "passed": true,
+      "detail": "{\"assertion\":\"exact persisted snapshots and deterministic signature after owned crash/restart\",\"confirmed_snapshots\":{\"1f6bc52cfdf9fa3d38c41a24686edfef7e3ae122\":{\"account_key\":\"acct_xvk1acjl58gmllzyfzyp0vyj446x9x9nkw7347p5xdk8s22dvfnpf6rdwnchg5s5w4g8wwrscf7yn57mawu96mf2u48vf54s2els3qk8y9s6q3ep9\",\"addresses\":[{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"0\"],\"id\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"1\",\"0\"],\"id\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"1\"],\"id\":\"addr_test1qpuqpfqjryppnyn09lzsqfea07s0c8pd40tyh32wa8ckwgvpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtfn73c\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"2\"],\"id\":\"addr_test1qzwdff4qw42eku9ffdhj6n209uaxmzd3dq0fdh0c2c2wnkypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq0meyw8\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"3\"],\"id\":\"addr_test1qrt6zdz8x3ltlsw4v6m7mrswj037kha749rl97yfzlg7x05pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqhevr6g\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"4\"],\"id\":\"addr_test1qq7vp8zhunt882js7ah4fqmkujgzsq80ksey3r4zm3963rupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqjln3n6\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"5\"],\"id\":\"addr_test1qqgsz78qecnx9dezfmmsvpl4au8j4jw0x7semaela2z29zypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqsdu07w\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"6\"],\"id\":\"addr_test1qrpufvan4pd9a4avfamz0yknhkdmcyflrnqt8nfd0sv7g0ypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqm7f909\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"7\"],\"id\":\"addr_test1qpa0v0r854yc5p08qdmryx0gd798ngmz6e6q2rrjv9dw6dypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq6pegc7\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"8\"],\"id\":\"addr_test1qplr0e3vxzjr2kcea272ah8uk6fs2f894ufunxj2su29mu5pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqg4q4k2\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"9\"],\"id\":\"addr_test1qzmfjfwn9xgt3w9sp90jwnxtptcklwedynfr8yntya5dmkypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq05z45n\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"10\"],\"id\":\"addr_test1qzfqa5a0pp567t6xfzemvhx8rckdjpval2mqk44nlje7m9upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqzvuhtg\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"11\"],\"id\":\"addr_test1qpqx0xna7anz2629yj2rzc7zuuk9dxpe2djcx950qev5xsypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq053udn\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"12\"],\"id\":\"addr_test1qrp8xhkxxytssv2w0vyxwjsmc6stdhumn799tmvh6x6xa3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqdfvthf\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"13\"],\"id\":\"addr_test1qq6x3vv0f8ghl6wt8f6850j76nsl4623rzsl6kv09ly98gypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqxy8uff\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"14\"],\"id\":\"addr_test1qqy3vqm9an44wpfyu3ulrjrhqm0we94gm74tndddgwwcleypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqfmcz4l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"15\"],\"id\":\"addr_test1qq2sq7eq8p0hgy2rglmpj342qzttewu4tv7vqyc4cvvsxnupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq2crek9\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"16\"],\"id\":\"addr_test1qpmv2gyh3uw08qswdglruwwaj4rcsfhnpcdka25dfx0xmn5pgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqluu29y\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"17\"],\"id\":\"addr_test1qzvnz34fw73lh94klj472p48khuwm9yqf8dfs0rh8hduyrupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqds0x5s\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"18\"],\"id\":\"addr_test1qpylqpfqr06y6ld2wkuwk6arlwfw20y6787a9q75k95qr5ypgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq0zz604\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"19\"],\"id\":\"addr_test1qztcsanm69uqdcqxy0mzuchhk0umqeq8pzjmx2qxkj66dgvpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqquuhdra\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"20\"],\"id\":\"addr_test1qpt8ah09j7p0uyyzl7v6rr0w7925p2m7kvezcak9grmhg8vpgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqxccu4h\",\"state\":\"unused\"}],\"history\":[{\"amount\":{\"quantity\":2129500,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"outgoing\",\"expires_at\":{\"absolute_slot_number\":38404,\"epoch_number\":320,\"slot_number\":4,\"time\":\"2026-11-04T23:27:39.8Z\"},\"fee\":{\"quantity\":129500,\"unit\":\"lovelace\"},\"id\":\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da\",\"inputs\":[{\"address\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[],\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2409,\"epoch_number\":20,\"height\":{\"quantity\":1165,\"unit\":\"block\"},\"slot_number\":9,\"time\":\"2026-11-04T21:27:40.8Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"amount\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]},{\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"incoming\",\"expires_at\":{\"absolute_slot_number\":6000000,\"epoch_number\":50000,\"slot_number\":0,\"time\":\"2026-11-18T18:39:39Z\"},\"fee\":{\"quantity\":999999900000000,\"unit\":\"lovelace\"},\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"inputs\":[{\"id\":\"727c5a1ea227b4098db4758abe7ad9f5117c5d08486bd88a6ab6960efb703065\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2398,\"epoch_number\":19,\"height\":{\"quantity\":1161,\"unit\":\"block\"},\"slot_number\":118,\"time\":\"2026-11-04T21:27:38.6Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qzl6wa5vdt36w4650kx9fu6cfvm349cp784p2fmq8u3rh3upgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqq8g6wu0\",\"amount\":{\"quantity\":100000000,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]}],\"node_utxos\":{\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\":{\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da#1\":{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":97870500}}}},\"statistics\":{\"distribution\":{\"10\":0,\"100\":0,\"1000\":0,\"10000\":0,\"100000\":0,\"1000000\":0,\"10000000\":0,\"100000000\":1,\"1000000000\":0,\"10000000000\":0,\"100000000000\":0,\"1000000000000\":0,\"10000000000000\":0,\"100000000000000\":0,\"1000000000000000\":0,\"10000000000000000\":0,\"45000000000000000\":0},\"scale\":\"log10\",\"total\":{\"quantity\":97870500,\"unit\":\"lovelace\"}},\"utxo\":{\"entries\":[{\"ada\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}]},\"wallet\":{\"address_pool_gap\":20,\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"reward\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":97870500,\"unit\":\"lovelace\"}},\"delegation\":{\"active\":{\"status\":\"not_delegating\"},\"next\":[]},\"id\":\"1f6bc52cfdf9fa3d38c41a24686edfef7e3ae122\",\"name\":\"conformance-sender\",\"passphrase\":{\"encryption_method\":\"argon2id-v2\",\"last_updated_at\":\"2026-11-04T21:27:37.733579074Z\"}}},\"dcf9b2d0b9861a608ae740663a63023054f9e3dd\":{\"account_key\":\"acct_xvk1g9kf2mew7j5lf4w5y0akaczaqpwjz7qtmpdq6a3u0knk3retynr0fktxcmrv2rfysn8jck4m28wsqkatfhgtrxt57ytezxqxjdt443spgpmlg\",\"addresses\":[{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"0\"],\"id\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"state\":\"used\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"1\"],\"id\":\"addr_test1qphrf97y239gk77dwettgpdywdgr908hzjhjd2twkqnfhwnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpss50544\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"2\"],\"id\":\"addr_test1qpghdu0nayk99mqv09gptskr97ar74ea3rxmh5mgxx254cnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpse0dp6s\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"3\"],\"id\":\"addr_test1qzz5rzhwdfsk2vzkyyghq6ax72la82a9m8vs4545wqe05erm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsfuavj8\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"4\"],\"id\":\"addr_test1qplrfqnsye33tr8l8g5052jv6yphf6es083wcj53nc9jgdrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps5a0c6l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"5\"],\"id\":\"addr_test1qqghnezxy4xy3sutl6rzc5cxphk5ks4kfqzu64jcxxgzmvtm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsg67xln\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"6\"],\"id\":\"addr_test1qp42r9v4dcl0ratahmg7er8va2f8z5kh98mugw2thdje24nm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps04yswz\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"7\"],\"id\":\"addr_test1qp39yxdr67u999c987nk8dehxnl4zrp4amuhplcwcpm4hdnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsm58gum\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"8\"],\"id\":\"addr_test1qp7y8wz4v6zkvmc40pe225e8kemvpvv9qnl986dxlvaj3gtm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpss59z4n\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"9\"],\"id\":\"addr_test1qqneel0hxjnnj67qg44lpkhhqs00pmg7yz6ru2exjjkwalnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps4mgrh5\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"10\"],\"id\":\"addr_test1qp25t5vwj5dw3084gwaqqrgwalfzmkal48jrdnjsm2av3crm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsra7hma\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"11\"],\"id\":\"addr_test1qz807k8dqg8rhs3g8r2cnnsmv4vx954kmuje4hrq4hfxxsmm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsuefg7l\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"12\"],\"id\":\"addr_test1qrdspzyylyescz2qw2nzsnypqnkkuj7ggc3g0ss7e65z7htm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsp7nkxm\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"13\"],\"id\":\"addr_test1qpxq57dum8np2dw60330xrmj2fk5xr6m7zlmjhm8dcxqnlnm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsknwt3m\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"14\"],\"id\":\"addr_test1qz2pnct6a5wzwvldgpe3u8csga3um2aymdw8s78aa3y384mm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps0aul53\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"15\"],\"id\":\"addr_test1qq65ng482fuscw7tpyelhd5xm3tn0a4yvj4gkht39xyu0urm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpswh973d\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"16\"],\"id\":\"addr_test1qrelze5vjy5an2pel7ftsaupkvdyfn4vjfquvtyw6d07vztm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsp4ysrg\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"17\"],\"id\":\"addr_test1qr7rsal8fsle9n0nv2xh987a7m7990jt3uuulk0vg0ull5tm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsnkw0sl\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"18\"],\"id\":\"addr_test1qra5x79gnqyv7ajpjvztnctg2rdmfvyztgh57jnmfqnenerm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps58l948\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"19\"],\"id\":\"addr_test1qrh4dyjjm5aghlyvqw3q3jtvpcds6mgpgdaj3pkn5dp0xgrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsevawr0\",\"state\":\"unused\"},{\"derivation_path\":[\"1852H\",\"1815H\",\"0H\",\"0\",\"20\"],\"id\":\"addr_test1qqamzhpeq4u7luym95hl0e9wfkyuxuva2gm283x288lepktm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjpsft9lzy\",\"state\":\"unused\"}],\"history\":[{\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"deposit_returned\":{\"quantity\":0,\"unit\":\"lovelace\"},\"deposit_taken\":{\"quantity\":0,\"unit\":\"lovelace\"},\"direction\":\"incoming\",\"expires_at\":{\"absolute_slot_number\":38404,\"epoch_number\":320,\"slot_number\":4,\"time\":\"2026-11-04T23:27:39.8Z\"},\"fee\":{\"quantity\":129500,\"unit\":\"lovelace\"},\"id\":\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da\",\"inputs\":[{\"id\":\"a27102ad8f19dce63f87261a238fbf687e245a8bcfc3ae1b9ac36229200c95c3\",\"index\":0}],\"inserted_at\":{\"absolute_slot_number\":2409,\"epoch_number\":20,\"height\":{\"quantity\":1165,\"unit\":\"block\"},\"slot_number\":9,\"time\":\"2026-11-04T21:27:40.8Z\"},\"metadata\":null,\"outputs\":[{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"amount\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]},{\"address\":\"addr_test1qqkrv4d3vfll9x9xtd43ucp68pshmqny3e00sjttahx3dxupgmy333nhdnlcrpvcdxxrh6vls80r0hq6yjnanpm68qqqtjhvum\",\"amount\":{\"quantity\":97870500,\"unit\":\"lovelace\"},\"assets\":[]}],\"pending_since\":null,\"script_validity\":\"valid\",\"status\":\"in_ledger\",\"withdrawals\":[]}],\"node_utxos\":{\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\":{\"083e4e561d32c236f26dfc0bd0818557e2848767df15d9105665f75d3c3183da#0\":{\"address\":\"addr_test1qpqvyp83z5jtt5q3hv8yn7npa2jvnky0dqkzanj5tzvg8wrm6q0cm2u23vtdvauv56jvc6q9fghct2y84tsaskm2gjps2ps3py\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":2000000}}}},\"statistics\":{\"distribution\":{\"10\":0,\"100\":0,\"1000\":0,\"10000\":0,\"100000\":0,\"1000000\":0,\"10000000\":1,\"100000000\":0,\"1000000000\":0,\"10000000000\":0,\"100000000000\":0,\"1000000000000\":0,\"10000000000000\":0,\"100000000000000\":0,\"1000000000000000\":0,\"10000000000000000\":0,\"45000000000000000\":0},\"scale\":\"log10\",\"total\":{\"quantity\":2000000,\"unit\":\"lovelace\"}},\"utxo\":{\"entries\":[{\"ada\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"assets\":[]}]},\"wallet\":{\"address_pool_gap\":20,\"assets\":{\"available\":[],\"total\":[]},\"balance\":{\"available\":{\"quantity\":2000000,\"unit\":\"lovelace\"},\"reward\":{\"quantity\":0,\"unit\":\"lovelace\"},\"total\":{\"quantity\":2000000,\"unit\":\"lovelace\"}},\"delegation\":{\"active\":{\"status\":\"not_delegating\"},\"next\":[]},\"id\":\"dcf9b2d0b9861a608ae740663a63023054f9e3dd\",\"name\":\"conformance-recipient-restored\",\"passphrase\":{\"encryption_method\":\"argon2id-v2\",\"last_updated_at\":\"2026-11-04T21:27:42.941040814Z\"}}}},\"executable_sha256\":\"6ea82181d5ed0740f4b4eecfcf178e197ac95aafe26f74e1b4019103b9b9092d\",\"generation\":1,\"new_pid\":737805,\"node_after\":\"09e2740c1e716f6aa1e239ab74b18c65af901f2d6e350a509f2353bbf77c653d\",\"node_before\":\"50ea9754d1b904293bd381a0159d7ab1077e0634a52a2f3437295896facbbd83\",\"old_pid\":737471,\"signed_transaction\":{\"transaction\":\"hKUA2QECgYJYIAg+TlYdMsI28m38C9CBhVfihIdn3xXZEFZl9108MYPaAQGCglg5AEDCBPEVJLXQEbsOSfph6qTJ2I9oLC7OVFiYg7h70B+Nq4qLFtZ3jKakzGgFSi+FqIeq4dhbakSDGgAehICCWDkAVwyaOsUgbLoGV/StTKWcdfzSSqV8Qm01yyTHnIFGyRjGd2z/gYWYaYw76Z+B3jfcGiSn2Yd6OAAaBbTkSAIaAAH53AMZlhgIAKEA2QECgYJYIPwlXV5rofTQzoaJxnZYjBKI5GITNsUhS98ggio4Wd/dWEATeC+ibVZtw9ktVsxiLezt0MpOxhOboxrtV8vMMT5Kgm+W2Nib0oUQvg5oicCHsuYZkElo9zbPIyiMM1pWhdkL9fY=\"}}"
+    },
+    {
+      "case": "live:restart-workflow",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getSettings",
+      "requirements": [
+        "api:getSettings:positive",
+        "api:getSettings:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:putSettings",
+      "requirements": [
+        "api:putSettings:positive",
+        "api:putSettings:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pools:ranking",
+      "requirements": [
+        "wallet.stake-pools"
+      ],
+      "passed": true,
+      "detail": "{\"distribution\":{\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\":{\"denominator\":134450610623087981,\"numerator\":156727921173068},\"pool1hvg5evmawhaq2fsr9rprtg76u226x0gt5e62t6c78etgu2j7xtn\":{\"denominator\":134450610623087981,\"numerator\":103541598692384},\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\":{\"denominator\":134450610623087981,\"numerator\":111694851656691}},\"node_tip_after\":{\"block\":1195,\"epoch\":20,\"era\":\"Conway\",\"hash\":\"6a64c2e64b032533d481bcbdc77cb8b7209224a02df4f4281693accb41f80339\",\"slot\":2476,\"slotInEpoch\":76,\"slotsToEpochEnd\":44,\"syncProgress\":\"100.00\"},\"node_tip_before\":{\"block\":1194,\"epoch\":20,\"era\":\"Conway\",\"hash\":\"d82004fa727aae3f26b979b91f8718af1d7004f2d540b50ef7082fed1ff49b00\",\"slot\":2472,\"slotInEpoch\":72,\"slotsToEpochEnd\":48,\"syncProgress\":\"100.00\"},\"parameters\":{\"collateralPercentage\":150,\"committeeMaxTermLength\":146,\"committeeMinSize\":1,\"costModels\":{\"PlutusV1\":[197209,0,1,1,396231,621,0,1,150000,1000,0,1,150000,32,2477736,29175,4,29773,100,29773,100,29773,100,29773,100,29773,100,29773,100,100,100,29773,100,150000,32,150000,32,150000,32,150000,1000,0,1,150000,32,150000,1000,0,8,148000,425507,118,0,1,1,150000,1000,0,8,150000,112536,247,1,150000,10000,1,136542,1326,1,1000,150000,1000,1,150000,32,150000,32,150000,32,1,1,150000,1,150000,4,103599,248,1,103599,248,1,145276,1366,1,179690,497,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,148000,425507,118,0,1,1,61516,11218,0,1,150000,32,148000,425507,118,0,1,1,148000,425507,118,0,1,1,2477736,29175,4,0,82363,4,150000,5000,0,1,150000,32,197209,0,1,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,3345831,1,1],\"PlutusV3\":[100788,420,1,1,1000,173,0,1,1000,59957,4,1,11183,32,201305,8356,4,16000,100,16000,100,16000,100,16000,100,16000,100,16000,100,100,100,16000,100,94375,32,132994,32,61462,4,72010,178,0,1,22151,32,91189,769,4,2,85848,123203,7305,-900,1716,549,57,85848,0,1,1,1000,42921,4,2,24548,29498,38,1,898148,27279,1,51775,558,1,39184,1000,60594,1,141895,32,83150,32,15299,32,76049,1,13169,4,22100,10,28999,74,1,28999,74,1,43285,552,1,44749,541,1,33852,32,68246,32,72362,32,7243,32,7391,32,11546,32,85848,123203,7305,-900,1716,549,57,85848,0,1,90434,519,0,1,74433,32,85848,123203,7305,-900,1716,549,57,85848,0,1,1,85848,123203,7305,-900,1716,549,57,85848,0,1,955506,213312,0,2,270652,22588,4,1457325,64566,4,20467,1,4,0,141992,32,100788,420,1,1,81663,32,59498,32,20142,32,24588,32,20744,32,25933,32,24623,32,43053543,10,53384111,14333,10,43574283,26308,10,16000,100,16000,100,962335,18,2780678,6,442008,1,52538055,3756,18,267929,18,76433006,8868,18,52948122,18,1995836,36,3227919,12,901022,1,166917843,4307,36,284546,36,158221314,26549,36,74698472,36,333849714,1,254006273,72,2174038,72,2261318,64571,4,207616,8310,4,1293828,28716,63,0,1,1006041,43623,251,0,1]},\"dRepActivity\":20,\"dRepDeposit\":500000000,\"dRepVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppEconomicGroup\":0,\"ppGovGroup\":0,\"ppNetworkGroup\":0,\"ppTechnicalGroup\":0,\"treasuryWithdrawal\":0,\"updateToConstitution\":0},\"executionUnitPrices\":{\"priceMemory\":5.77e-2,\"priceSteps\":7.21e-5},\"govActionDeposit\":1000000,\"govActionLifetime\":6,\"maxBlockBodySize\":239857,\"maxBlockExecutionUnits\":{\"memory\":50000000,\"steps\":40000000000},\"maxBlockHeaderSize\":1100,\"maxCollateralInputs\":3,\"maxTxExecutionUnits\":{\"memory\":10000000,\"steps\":10000000000},\"maxTxSize\":16384,\"maxValueSize\":5000,\"minFeeRefScriptCostPerByte\":15,\"minPoolCost\":0,\"monetaryExpansion\":2.0e-2,\"poolPledgeInfluence\":0.1,\"poolRetireMaxEpoch\":1000000,\"poolVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppSecurityGroup\":0},\"protocolVersion\":{\"major\":12,\"minor\":0},\"stakeAddressDeposit\":1000000,\"stakePoolDeposit\":0,\"stakePoolTargetNum\":3,\"treasuryCut\":0.1,\"txFeeFixed\":100000,\"txFeePerByte\":100,\"utxoCostPerByte\":4310},\"pool_state\":{\"b45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f2\":{\"futurePoolParams\":{\"spsAccountId\":{\"keyHash\":\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"f26e68d5d54121f878867dce74d3c8a482c31cd13be0f9b52ff0f63f679e6f9c\",\"url\":\"http://127.0.0.1:43083/bad.json\"},\"spsOwners\":[\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"3ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf833\"},\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"e72e33850e9c630b65366e3ce562370cd302674f111bfff74b0a5f3dd7f60ca1\",\"url\":\"http://localhost:40787/3.json\"},\"spsOwners\":[\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"3ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf833\"},\"retiring\":null},\"bb114cb37d75fa05260328c235a3dae295a33d0ba674a5eb1e3e568e\":{\"futurePoolParams\":null,\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"208e03eeeba466d54682f0e96240979248bd06d37bf8ce1b32958190\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"e376f46c67a310b399fa5ff8b7b9727556ea454a8c082dedfc9935c2c3fe6ec5\",\"url\":\"http://localhost:40787/4.json\"},\"spsOwners\":[\"208e03eeeba466d54682f0e96240979248bd06d37bf8ce1b32958190\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"b995d12487851041ba9be7bee1e2985eb9a982bd3d187954e916197e4cd8b377\"},\"retiring\":1000000},\"ec28f33dcbe6d6400a1e5e339bd0647c0973ca6c0cf9c2bbe6838dc6\":{\"futurePoolParams\":{\"spsAccountId\":{\"keyHash\":\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"4641bdea2d6caf1664ce42f9fcb6d98051347ea2c5673abe6622ebfd1c9ee563\",\"url\":\"http://127.0.0.1:43083/good.json\"},\"spsOwners\":[\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"],\"spsPledge\":150000000000000,\"spsRelays\":[],\"spsVrf\":\"abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a\"},\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"ef41266d9fad1f81480575231b735d75a483d5b03e5e5e67da5f07cd30c7c246\",\"url\":\"http://localhost:40787/1.json\"},\"spsOwners\":[\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"],\"spsPledge\":150000000000000,\"spsRelays\":[],\"spsVrf\":\"abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a\"},\"retiring\":null}},\"queries\":[{\"first\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":0,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":0,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}}],\"second\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":0,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":0,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}}],\"stake\":0},{\"first\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"second\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"stake\":100000000},{\"first\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":34907812,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":34905865,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"second\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":34907812,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":34905865,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":357,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"stake\":1000000000}]}"
+    },
+    {
+      "case": "live:putSettings",
+      "requirements": [
+        "api:putSettings:positive",
+        "api:putSettings:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:putSettings",
+      "requirements": [
+        "api:putSettings:positive",
+        "api:putSettings:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getSettings",
+      "requirements": [
+        "api:getSettings:positive",
+        "api:getSettings:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postMaintenanceAction",
+      "requirements": [
+        "api:postMaintenanceAction:positive",
+        "api:postMaintenanceAction:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getMaintenanceActions:eventually",
+      "requirements": [
+        "api:getMaintenanceActions:positive",
+        "api:getMaintenanceActions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:putSettings",
+      "requirements": [
+        "api:putSettings:positive",
+        "api:putSettings:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getSettings",
+      "requirements": [
+        "api:getSettings:positive",
+        "api:getSettings:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:postMaintenanceAction",
+      "requirements": [
+        "api:postMaintenanceAction:positive",
+        "api:postMaintenanceAction:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getMaintenanceActions:eventually",
+      "requirements": [
+        "api:getMaintenanceActions:positive",
+        "api:getMaintenanceActions:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pools:metadata",
+      "requirements": [
+        "wallet.stake-pools"
+      ],
+      "passed": true,
+      "detail": "{\"bad_requests\":1,\"fetched\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metadata\":{\"description\":\"Owned pool metadata fixture\",\"homepage\":\"https://example.com/valid\",\"name\":\"Conformance valid\",\"ticker\":\"CFM\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":477,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":357,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"good_requests\":1,\"hash_mismatch_after_advancement\":[[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metadata\":{\"description\":\"Owned pool metadata fixture\",\"homepage\":\"https://example.com/valid\",\"name\":\"Conformance valid\",\"ticker\":\"CFM\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":478,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":358,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metadata\":{\"description\":\"Owned pool metadata fixture\",\"homepage\":\"https://example.com/valid\",\"name\":\"Conformance valid\",\"ticker\":\"CFM\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":478,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":359,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metadata\":{\"description\":\"Owned pool metadata fixture\",\"homepage\":\"https://example.com/valid\",\"name\":\"Conformance valid\",\"ticker\":\"CFM\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":479,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":360,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}]],\"none\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":480,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":360,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"registrations\":[{\"certificate\":{\"cborHex\":\"8a03581cec28f33dcbe6d6400a1e5e339bd0647c0973ca6c0cf9c2bbe6838dc65820abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a1b0000886c98b7600000d81e82010a581de0006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4d9010281581c006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a480827820687474703a2f2f3132372e302e302e313a34333038332f676f6f642e6a736f6e58204641bdea2d6caf1664ce42f9fcb6d98051347ea2c5673abe6622ebfd1c9ee563\",\"description\":\"Stake Pool Registration Certificate\",\"type\":\"Certificate\"},\"counts_as_conformance_evidence\":false,\"fee\":192200,\"format_version\":1,\"funding_before\":{\"04958ed4fd36f097ab1f5d7ade216ac7c5204d42c3bd11bd68101509c0ac90b3#0\":{\"address\":\"addr_test1vqju4drckt5cqr4nael7u84qcsqd8mc89vdx9h7dmjnyf2cpdgcuw\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"kind\":\"local-cluster-pool-fixture\",\"operator\":{\"cborHex\":\"5820a12804d805eff46c691da5b11eb703cbf7463983e325621b41ac5b24e4b51887\",\"description\":\"Stake pool operator key\",\"type\":\"StakePoolVerificationKey_ed25519\"},\"owner\":{\"cborHex\":\"582033d45f088ad2a629902dafb223a97a439f82cf338b236c4c6e7ae810d0051311\",\"description\":\"Stake Verification Key\",\"type\":\"StakeVerificationKeyShelley_ed25519\"},\"payment\":{\"cborHex\":\"5820c0bb670903088ed4fd0d26485200c6420cb1f6ade7307bc9d34b7f3d104a669a\",\"description\":\"Payment Verification Key\",\"type\":\"PaymentVerificationKeyShelley_ed25519\"},\"payment_address\":\"addr_test1vqju4drckt5cqr4nael7u84qcsqd8mc89vdx9h7dmjnyf2cpdgcuw\",\"pool_id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"protocol_parameters\":{\"collateralPercentage\":150,\"committeeMaxTermLength\":146,\"committeeMinSize\":1,\"costModels\":{\"PlutusV1\":[197209,0,1,1,396231,621,0,1,150000,1000,0,1,150000,32,2477736,29175,4,29773,100,29773,100,29773,100,29773,100,29773,100,29773,100,100,100,29773,100,150000,32,150000,32,150000,32,150000,1000,0,1,150000,32,150000,1000,0,8,148000,425507,118,0,1,1,150000,1000,0,8,150000,112536,247,1,150000,10000,1,136542,1326,1,1000,150000,1000,1,150000,32,150000,32,150000,32,1,1,150000,1,150000,4,103599,248,1,103599,248,1,145276,1366,1,179690,497,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,148000,425507,118,0,1,1,61516,11218,0,1,150000,32,148000,425507,118,0,1,1,148000,425507,118,0,1,1,2477736,29175,4,0,82363,4,150000,5000,0,1,150000,32,197209,0,1,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,3345831,1,1],\"PlutusV3\":[100788,420,1,1,1000,173,0,1,1000,59957,4,1,11183,32,201305,8356,4,16000,100,16000,100,16000,100,16000,100,16000,100,16000,100,100,100,16000,100,94375,32,132994,32,61462,4,72010,178,0,1,22151,32,91189,769,4,2,85848,123203,7305,-900,1716,549,57,85848,0,1,1,1000,42921,4,2,24548,29498,38,1,898148,27279,1,51775,558,1,39184,1000,60594,1,141895,32,83150,32,15299,32,76049,1,13169,4,22100,10,28999,74,1,28999,74,1,43285,552,1,44749,541,1,33852,32,68246,32,72362,32,7243,32,7391,32,11546,32,85848,123203,7305,-900,1716,549,57,85848,0,1,90434,519,0,1,74433,32,85848,123203,7305,-900,1716,549,57,85848,0,1,1,85848,123203,7305,-900,1716,549,57,85848,0,1,955506,213312,0,2,270652,22588,4,1457325,64566,4,20467,1,4,0,141992,32,100788,420,1,1,81663,32,59498,32,20142,32,24588,32,20744,32,25933,32,24623,32,43053543,10,53384111,14333,10,43574283,26308,10,16000,100,16000,100,962335,18,2780678,6,442008,1,52538055,3756,18,267929,18,76433006,8868,18,52948122,18,1995836,36,3227919,12,901022,1,166917843,4307,36,284546,36,158221314,26549,36,74698472,36,333849714,1,254006273,72,2174038,72,2261318,64571,4,207616,8310,4,1293828,28716,63,0,1,1006041,43623,251,0,1]},\"dRepActivity\":20,\"dRepDeposit\":500000000,\"dRepVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppEconomicGroup\":0,\"ppGovGroup\":0,\"ppNetworkGroup\":0,\"ppTechnicalGroup\":0,\"treasuryWithdrawal\":0,\"updateToConstitution\":0},\"executionUnitPrices\":{\"priceMemory\":5.77e-2,\"priceSteps\":7.21e-5},\"govActionDeposit\":1000000,\"govActionLifetime\":6,\"maxBlockBodySize\":239857,\"maxBlockExecutionUnits\":{\"memory\":50000000,\"steps\":40000000000},\"maxBlockHeaderSize\":1100,\"maxCollateralInputs\":3,\"maxTxExecutionUnits\":{\"memory\":10000000,\"steps\":10000000000},\"maxTxSize\":16384,\"maxValueSize\":5000,\"minFeeRefScriptCostPerByte\":15,\"minPoolCost\":0,\"monetaryExpansion\":2.0e-2,\"poolPledgeInfluence\":0.1,\"poolRetireMaxEpoch\":1000000,\"poolVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppSecurityGroup\":0},\"protocolVersion\":{\"major\":12,\"minor\":0},\"stakeAddressDeposit\":1000000,\"stakePoolDeposit\":0,\"stakePoolTargetNum\":3,\"treasuryCut\":0.1,\"txFeeFixed\":100000,\"txFeePerByte\":100,\"utxoCostPerByte\":4310},\"registration_metadata\":{\"hash\":\"4641bdea2d6caf1664ce42f9fcb6d98051347ea2c5673abe6622ebfd1c9ee563\",\"url\":\"http://127.0.0.1:43083/good.json\"},\"signed_transaction\":{\"cborHex\":\"84a400d901028182582004958ed4fd36f097ab1f5d7ade216ac7c5204d42c3bd11bd68101509c0ac90b300018182581d6025cab478b2e9800eb3ee7fee1ea0c400d3ef072b1a62dfcddca644ab1a05f2f238021a0002eec804d90102818a03581cec28f33dcbe6d6400a1e5e339bd0647c0973ca6c0cf9c2bbe6838dc65820abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a1b0000886c98b7600000d81e82010a581de0006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4d9010281581c006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a480827820687474703a2f2f3132372e302e302e313a34333038332f676f6f642e6a736f6e58204641bdea2d6caf1664ce42f9fcb6d98051347ea2c5673abe6622ebfd1c9ee563a100d901028382582033d45f088ad2a629902dafb223a97a439f82cf338b236c4c6e7ae810d00513115840367c70ed7586ac38489432f3f6f70e720a93e273a6a395f8877f6a5cf0e0c7f014e5a68598520b7b4f1ccff02456359c3f404c9005c34584e649600fa3b9ea0e825820c0bb670903088ed4fd0d26485200c6420cb1f6ade7307bc9d34b7f3d104a669a5840e376cb41d697de9373b6d54f5147a435fcf41d5afc73c3e9945d6f1f69470c0ac1ee5f7dbb37cfac52da56fca52d75dd9933afbe81328caa77ff435636dc210c825820a12804d805eff46c691da5b11eb703cbf7463983e325621b41ac5b24e4b51887584066b2edb16e35247e694b061edf5dc16adff193f48c53d8dee4448969320e4525ba7de10e5189c54507dd9ee4ea2dc8e04339358d27769d2e4d40f4b230e9db03f5f6\",\"description\":\"Ledger Cddl Format\",\"type\":\"Tx ConwayEra\"},\"suite_sha256\":\"5ee88ddea23bbf9e91440bc90dcb66e74ee0dcee1e507c9c2be0f01c2625b6a4\",\"transaction_id\":\"0bf9367e938200a66800a4e2fc37dcfefa12901a74d6f3af9f407ab196da84b4\",\"utxos_after\":{\"0bf9367e938200a66800a4e2fc37dcfefa12901a74d6f3af9f407ab196da84b4#0\":{\"address\":\"addr_test1vqju4drckt5cqr4nael7u84qcsqd8mc89vdx9h7dmjnyf2cpdgcuw\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807800}}},\"vrf\":{\"cborHex\":\"5820f55ee7cdddb41e864089a64bd69f4ffe1edcdf9828937a6ee5d1fe300b50accf\",\"description\":\"VRF Verification Key\",\"type\":\"VrfVerificationKey_PraosVRF\"},\"wallet_pool\":{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":472,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}}},{\"certificate\":{\"cborHex\":\"8a03581cb45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f258203ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf8331b00005af3107a400000d81e82010a581de02d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408ed9010281581c2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e8082781f687474703a2f2f3132372e302e302e313a34333038332f6261642e6a736f6e5820f26e68d5d54121f878867dce74d3c8a482c31cd13be0f9b52ff0f63f679e6f9c\",\"description\":\"Stake Pool Registration Certificate\",\"type\":\"Certificate\"},\"counts_as_conformance_evidence\":false,\"fee\":192100,\"format_version\":1,\"funding_before\":{\"1b168f86ba1a333705327b5210b3a9c44496619dd0956711be664b6c41566fbf#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":100000000}}},\"kind\":\"local-cluster-pool-fixture\",\"operator\":{\"cborHex\":\"5820c7383d89aa33656464a7796b06616c4590d6db018b2f73640be985794db0702d\",\"description\":\"Stake pool operator key\",\"type\":\"StakePoolVerificationKey_ed25519\"},\"owner\":{\"cborHex\":\"58201c7ee256ad342810ce2d6f0ee01370973f38540add2abce520e59703982d12d8\",\"description\":\"Stake Verification Key\",\"type\":\"StakeVerificationKeyShelley_ed25519\"},\"payment\":{\"cborHex\":\"5820646bbcea02afc6a1591b0efd3e3c717b8ac9b360d967312c98b48829995d1dc1\",\"description\":\"Payment Verification Key\",\"type\":\"PaymentVerificationKeyShelley_ed25519\"},\"payment_address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"pool_id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"protocol_parameters\":{\"collateralPercentage\":150,\"committeeMaxTermLength\":146,\"committeeMinSize\":1,\"costModels\":{\"PlutusV1\":[197209,0,1,1,396231,621,0,1,150000,1000,0,1,150000,32,2477736,29175,4,29773,100,29773,100,29773,100,29773,100,29773,100,29773,100,100,100,29773,100,150000,32,150000,32,150000,32,150000,1000,0,1,150000,32,150000,1000,0,8,148000,425507,118,0,1,1,150000,1000,0,8,150000,112536,247,1,150000,10000,1,136542,1326,1,1000,150000,1000,1,150000,32,150000,32,150000,32,1,1,150000,1,150000,4,103599,248,1,103599,248,1,145276,1366,1,179690,497,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,148000,425507,118,0,1,1,61516,11218,0,1,150000,32,148000,425507,118,0,1,1,148000,425507,118,0,1,1,2477736,29175,4,0,82363,4,150000,5000,0,1,150000,32,197209,0,1,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,3345831,1,1],\"PlutusV3\":[100788,420,1,1,1000,173,0,1,1000,59957,4,1,11183,32,201305,8356,4,16000,100,16000,100,16000,100,16000,100,16000,100,16000,100,100,100,16000,100,94375,32,132994,32,61462,4,72010,178,0,1,22151,32,91189,769,4,2,85848,123203,7305,-900,1716,549,57,85848,0,1,1,1000,42921,4,2,24548,29498,38,1,898148,27279,1,51775,558,1,39184,1000,60594,1,141895,32,83150,32,15299,32,76049,1,13169,4,22100,10,28999,74,1,28999,74,1,43285,552,1,44749,541,1,33852,32,68246,32,72362,32,7243,32,7391,32,11546,32,85848,123203,7305,-900,1716,549,57,85848,0,1,90434,519,0,1,74433,32,85848,123203,7305,-900,1716,549,57,85848,0,1,1,85848,123203,7305,-900,1716,549,57,85848,0,1,955506,213312,0,2,270652,22588,4,1457325,64566,4,20467,1,4,0,141992,32,100788,420,1,1,81663,32,59498,32,20142,32,24588,32,20744,32,25933,32,24623,32,43053543,10,53384111,14333,10,43574283,26308,10,16000,100,16000,100,962335,18,2780678,6,442008,1,52538055,3756,18,267929,18,76433006,8868,18,52948122,18,1995836,36,3227919,12,901022,1,166917843,4307,36,284546,36,158221314,26549,36,74698472,36,333849714,1,254006273,72,2174038,72,2261318,64571,4,207616,8310,4,1293828,28716,63,0,1,1006041,43623,251,0,1]},\"dRepActivity\":20,\"dRepDeposit\":500000000,\"dRepVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppEconomicGroup\":0,\"ppGovGroup\":0,\"ppNetworkGroup\":0,\"ppTechnicalGroup\":0,\"treasuryWithdrawal\":0,\"updateToConstitution\":0},\"executionUnitPrices\":{\"priceMemory\":5.77e-2,\"priceSteps\":7.21e-5},\"govActionDeposit\":1000000,\"govActionLifetime\":6,\"maxBlockBodySize\":239857,\"maxBlockExecutionUnits\":{\"memory\":50000000,\"steps\":40000000000},\"maxBlockHeaderSize\":1100,\"maxCollateralInputs\":3,\"maxTxExecutionUnits\":{\"memory\":10000000,\"steps\":10000000000},\"maxTxSize\":16384,\"maxValueSize\":5000,\"minFeeRefScriptCostPerByte\":15,\"minPoolCost\":0,\"monetaryExpansion\":2.0e-2,\"poolPledgeInfluence\":0.1,\"poolRetireMaxEpoch\":1000000,\"poolVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppSecurityGroup\":0},\"protocolVersion\":{\"major\":12,\"minor\":0},\"stakeAddressDeposit\":1000000,\"stakePoolDeposit\":0,\"stakePoolTargetNum\":3,\"treasuryCut\":0.1,\"txFeeFixed\":100000,\"txFeePerByte\":100,\"utxoCostPerByte\":4310},\"registration_metadata\":{\"hash\":\"f26e68d5d54121f878867dce74d3c8a482c31cd13be0f9b52ff0f63f679e6f9c\",\"url\":\"http://127.0.0.1:43083/bad.json\"},\"signed_transaction\":{\"cborHex\":\"84a400d90102818258201b168f86ba1a333705327b5210b3a9c44496619dd0956711be664b6c41566fbf00018182581d60b1420918b7edda1352c4e35e736af82b3cfe77075282f9198f0fd61c1a05f2f29c021a0002ee6404d90102818a03581cb45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f258203ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf8331b00005af3107a400000d81e82010a581de02d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408ed9010281581c2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e8082781f687474703a2f2f3132372e302e302e313a34333038332f6261642e6a736f6e5820f26e68d5d54121f878867dce74d3c8a482c31cd13be0f9b52ff0f63f679e6f9ca100d90102838258201c7ee256ad342810ce2d6f0ee01370973f38540add2abce520e59703982d12d8584079b8b0e90d0aebe8fff4d8e0cf2691743fbe9f2bd00930021cba038b31256649583a46c56179aa5f8530e3e1191cd4c8cb1341827bbc08c793a95329b1460d06825820646bbcea02afc6a1591b0efd3e3c717b8ac9b360d967312c98b48829995d1dc158404df0a640ebde1cb80954e73b87498a6fabe920ebef09500eb190cd4152158b11a9d8f83194d351011dabef8382101d440d20b745ac13904c98bbdca88f19510c825820c7383d89aa33656464a7796b06616c4590d6db018b2f73640be985794db0702d5840b51be14cad5849cab1d1a8e27229525c92a932f18d867622bfabf576398092ac9f714ae251a5d325f59cddeb41c08dd445f00f284a5f2e6cc96098fd750f5106f5f6\",\"description\":\"Ledger Cddl Format\",\"type\":\"Tx ConwayEra\"},\"suite_sha256\":\"5ee88ddea23bbf9e91440bc90dcb66e74ee0dcee1e507c9c2be0f01c2625b6a4\",\"transaction_id\":\"7ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c6\",\"utxos_after\":{\"7ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c6#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807900}}},\"vrf\":{\"cborHex\":\"58205c594fdee13c3f3beb09b51f62705055330358a9d1a3b60c94c8e987cdd54b3b\",\"description\":\"VRF Verification Key\",\"type\":\"VrfVerificationKey_PraosVRF\"},\"wallet_pool\":{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":356,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}}]}"
+    },
+    {
+      "case": "pools:maintenance",
+      "requirements": [
+        "wallet.stake-pools"
+      ],
+      "passed": true,
+      "detail": "{\"observations\":[{\"node_utxos\":[{\"0bf9367e938200a66800a4e2fc37dcfefa12901a74d6f3af9f407ab196da84b4#0\":{\"address\":\"addr_test1vqju4drckt5cqr4nael7u84qcsqd8mc89vdx9h7dmjnyf2cpdgcuw\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807800}}},{\"7ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c6#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807900}}}],\"pools\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metadata\":{\"description\":\"Owned pool metadata fixture\",\"homepage\":\"https://example.com/valid\",\"name\":\"Conformance valid\",\"ticker\":\"CFM\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":479,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":360,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"source\":\"direct\",\"status\":{\"gc_stake_pools\":{\"status\":\"not_applicable\"}}},{\"node_utxos\":[{\"0bf9367e938200a66800a4e2fc37dcfefa12901a74d6f3af9f407ab196da84b4#0\":{\"address\":\"addr_test1vqju4drckt5cqr4nael7u84qcsqd8mc89vdx9h7dmjnyf2cpdgcuw\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807800}}},{\"7ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c6#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807900}}}],\"pools\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":480,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":360,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"}}],\"source\":\"none\",\"status\":{\"gc_stake_pools\":{\"status\":\"not_applicable\"}}}]}"
+    },
+    {
+      "case": "live:listStakePools",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:listStakePools:eventually",
+      "requirements": [
+        "api:listStakePools:positive",
+        "api:listStakePools:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "pools:retirement",
+      "requirements": [
+        "wallet.stake-pools"
+      ],
+      "passed": true,
+      "detail": "{\"activated_tip\":{\"block\":1328,\"epoch\":23,\"era\":\"Conway\",\"hash\":\"4dd49ae2762aa82ac808b0eabc326f332fe061e289d261e415f47ec9e491e7d6\",\"slot\":2760,\"slotInEpoch\":0,\"slotsToEpochEnd\":120,\"syncProgress\":\"100.00\"},\"expected_slot\":2760,\"node_active_pools\":[\"pool1hvg5evmawhaq2fsr9rprtg76u226x0gt5e62t6c78etgu2j7xtn\",\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\"],\"retirement\":{\"certificate\":{\"cborHex\":\"8304581cb45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f217\",\"description\":\"Stake Pool Retirement Certificate\",\"type\":\"Certificate\"},\"counts_as_conformance_evidence\":false,\"epoch\":23,\"fee\":153700,\"format_version\":1,\"funding_before\":{\"7ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c6#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99807900}}},\"kind\":\"owned-pool-retirement-fixture\",\"pool_id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"protocol_parameters\":{\"collateralPercentage\":150,\"committeeMaxTermLength\":146,\"committeeMinSize\":1,\"costModels\":{\"PlutusV1\":[197209,0,1,1,396231,621,0,1,150000,1000,0,1,150000,32,2477736,29175,4,29773,100,29773,100,29773,100,29773,100,29773,100,29773,100,100,100,29773,100,150000,32,150000,32,150000,32,150000,1000,0,1,150000,32,150000,1000,0,8,148000,425507,118,0,1,1,150000,1000,0,8,150000,112536,247,1,150000,10000,1,136542,1326,1,1000,150000,1000,1,150000,32,150000,32,150000,32,1,1,150000,1,150000,4,103599,248,1,103599,248,1,145276,1366,1,179690,497,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,148000,425507,118,0,1,1,61516,11218,0,1,150000,32,148000,425507,118,0,1,1,148000,425507,118,0,1,1,2477736,29175,4,0,82363,4,150000,5000,0,1,150000,32,197209,0,1,1,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,150000,32,3345831,1,1],\"PlutusV3\":[100788,420,1,1,1000,173,0,1,1000,59957,4,1,11183,32,201305,8356,4,16000,100,16000,100,16000,100,16000,100,16000,100,16000,100,100,100,16000,100,94375,32,132994,32,61462,4,72010,178,0,1,22151,32,91189,769,4,2,85848,123203,7305,-900,1716,549,57,85848,0,1,1,1000,42921,4,2,24548,29498,38,1,898148,27279,1,51775,558,1,39184,1000,60594,1,141895,32,83150,32,15299,32,76049,1,13169,4,22100,10,28999,74,1,28999,74,1,43285,552,1,44749,541,1,33852,32,68246,32,72362,32,7243,32,7391,32,11546,32,85848,123203,7305,-900,1716,549,57,85848,0,1,90434,519,0,1,74433,32,85848,123203,7305,-900,1716,549,57,85848,0,1,1,85848,123203,7305,-900,1716,549,57,85848,0,1,955506,213312,0,2,270652,22588,4,1457325,64566,4,20467,1,4,0,141992,32,100788,420,1,1,81663,32,59498,32,20142,32,24588,32,20744,32,25933,32,24623,32,43053543,10,53384111,14333,10,43574283,26308,10,16000,100,16000,100,962335,18,2780678,6,442008,1,52538055,3756,18,267929,18,76433006,8868,18,52948122,18,1995836,36,3227919,12,901022,1,166917843,4307,36,284546,36,158221314,26549,36,74698472,36,333849714,1,254006273,72,2174038,72,2261318,64571,4,207616,8310,4,1293828,28716,63,0,1,1006041,43623,251,0,1]},\"dRepActivity\":20,\"dRepDeposit\":500000000,\"dRepVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppEconomicGroup\":0,\"ppGovGroup\":0,\"ppNetworkGroup\":0,\"ppTechnicalGroup\":0,\"treasuryWithdrawal\":0,\"updateToConstitution\":0},\"executionUnitPrices\":{\"priceMemory\":5.77e-2,\"priceSteps\":7.21e-5},\"govActionDeposit\":1000000,\"govActionLifetime\":6,\"maxBlockBodySize\":239857,\"maxBlockExecutionUnits\":{\"memory\":50000000,\"steps\":40000000000},\"maxBlockHeaderSize\":1100,\"maxCollateralInputs\":3,\"maxTxExecutionUnits\":{\"memory\":10000000,\"steps\":10000000000},\"maxTxSize\":16384,\"maxValueSize\":5000,\"minFeeRefScriptCostPerByte\":15,\"minPoolCost\":0,\"monetaryExpansion\":2.0e-2,\"poolPledgeInfluence\":0.1,\"poolRetireMaxEpoch\":1000000,\"poolVotingThresholds\":{\"committeeNoConfidence\":0,\"committeeNormal\":0,\"hardForkInitiation\":0,\"motionNoConfidence\":0,\"ppSecurityGroup\":0},\"protocolVersion\":{\"major\":12,\"minor\":0},\"stakeAddressDeposit\":1000000,\"stakePoolDeposit\":0,\"stakePoolTargetNum\":3,\"treasuryCut\":0.1,\"txFeeFixed\":100000,\"txFeePerByte\":100,\"utxoCostPerByte\":4310},\"signed_transaction\":{\"cborHex\":\"84a400d90102818258207ac5692a9de79d316eba5c41720fa0dd4b2eca4815318167e3241603e220c6c600018182581d60b1420918b7edda1352c4e35e736af82b3cfe77075282f9198f0fd61c1a05f09a38021a0002586404d90102818304581cb45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f217a100d9010282825820646bbcea02afc6a1591b0efd3e3c717b8ac9b360d967312c98b48829995d1dc158407087c59653e8b663890931e118eb8de17608a708c2d2b6a56239503a021dadb3b02c79397ac63cf84895ef0bab60d93fb76166591d542f13bec4aa308ccccb09825820c7383d89aa33656464a7796b06616c4590d6db018b2f73640be985794db0702d5840ec55ff2157d7329966b17b6d8e6f94b5676426b4b883af46926ca9799136a5e280d0229f86c1189b1037164346062beaed671010737c7bddd6d47fc7cdf8320cf5f6\",\"description\":\"Ledger Cddl Format\",\"type\":\"Tx ConwayEra\"},\"suite_sha256\":\"5ee88ddea23bbf9e91440bc90dcb66e74ee0dcee1e507c9c2be0f01c2625b6a4\",\"transaction_id\":\"341434d42f4d0d288170451e58b63ecf68f13cdacafc401a356abcfe4c77d304\",\"utxos_after\":{\"341434d42f4d0d288170451e58b63ecf68f13cdacafc401a356abcfe4c77d304#0\":{\"address\":\"addr_test1vzc5yzgcklka5y6jcn34uum2lq4nelnhqafg97ge3u8av8qtahept\",\"datum\":null,\"datumhash\":null,\"inlineDatum\":null,\"inlineDatumRaw\":null,\"referenceScript\":null,\"value\":{\"lovelace\":99654200}}}},\"scheduled_node\":{\"b45768c1a2da4bd13ebcaa1ea51408eda31dcc21765ccbd407cda9f2\":{\"futurePoolParams\":{\"spsAccountId\":{\"keyHash\":\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"f26e68d5d54121f878867dce74d3c8a482c31cd13be0f9b52ff0f63f679e6f9c\",\"url\":\"http://127.0.0.1:43083/bad.json\"},\"spsOwners\":[\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"3ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf833\"},\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"e72e33850e9c630b65366e3ce562370cd302674f111bfff74b0a5f3dd7f60ca1\",\"url\":\"http://localhost:40787/3.json\"},\"spsOwners\":[\"2d529d839bfa2386a2a393a5c1df10fa5ce087b9b63509b01a7a408e\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"3ae904631aaa4102e25fec7efa4b534699227504d0083c249bb66fe0d8cbf833\"},\"retiring\":23},\"bb114cb37d75fa05260328c235a3dae295a33d0ba674a5eb1e3e568e\":{\"futurePoolParams\":null,\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"208e03eeeba466d54682f0e96240979248bd06d37bf8ce1b32958190\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"e376f46c67a310b399fa5ff8b7b9727556ea454a8c082dedfc9935c2c3fe6ec5\",\"url\":\"http://localhost:40787/4.json\"},\"spsOwners\":[\"208e03eeeba466d54682f0e96240979248bd06d37bf8ce1b32958190\"],\"spsPledge\":100000000000000,\"spsRelays\":[],\"spsVrf\":\"b995d12487851041ba9be7bee1e2985eb9a982bd3d187954e916197e4cd8b377\"},\"retiring\":1000000},\"ec28f33dcbe6d6400a1e5e339bd0647c0973ca6c0cf9c2bbe6838dc6\":{\"futurePoolParams\":{\"spsAccountId\":{\"keyHash\":\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"4641bdea2d6caf1664ce42f9fcb6d98051347ea2c5673abe6622ebfd1c9ee563\",\"url\":\"http://127.0.0.1:43083/good.json\"},\"spsOwners\":[\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"],\"spsPledge\":150000000000000,\"spsRelays\":[],\"spsVrf\":\"abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a\"},\"poolParams\":{\"spsAccountId\":{\"keyHash\":\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"},\"spsCost\":0,\"spsDelegators\":[],\"spsDeposit\":0,\"spsMargin\":0.1,\"spsMetadata\":{\"hash\":\"ef41266d9fad1f81480575231b735d75a483d5b03e5e5e67da5f07cd30c7c246\",\"url\":\"http://localhost:40787/1.json\"},\"spsOwners\":[\"006854bcb47b13475e9ed026760de899ffefc33ac4baf73d0fdc85a4\"],\"spsPledge\":150000000000000,\"spsRelays\":[],\"spsVrf\":\"abf03bfcb1894e1affc5bb1e88014d93d3f3974b4f3814746717933a0d0d386a\"},\"retiring\":null}},\"scheduled_wallet\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490781,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":480,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.12,\"unit\":\"percent\"},\"saturation\":3.497074214391583e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}},{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1k3tk3sdzmf9az04u4g0229qgak33mnppwewvh4q8ek5ly09nqjm\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3490586,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":362,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":8.0e-2,\"unit\":\"percent\"},\"saturation\":2.4922501535484436e-3},\"pledge\":{\"quantity\":100000000000000,\"unit\":\"lovelace\"},\"retirement\":{\"epoch_number\":23,\"epoch_start_time\":\"2026-11-04T21:28:51Z\"}}],\"timestamp_node_slot\":2760,\"wallet_after\":[{\"cost\":{\"quantity\":0,\"unit\":\"lovelace\"},\"flags\":[],\"id\":\"pool1as50x0wtumtyqzs7tceeh5ry0syh8jnvpnuu9wlxswxuv48sw4w\",\"margin\":{\"quantity\":10,\"unit\":\"percent\"},\"metrics\":{\"non_myopic_member_rewards\":{\"quantity\":3334389,\"unit\":\"lovelace\"},\"produced_blocks\":{\"quantity\":532,\"unit\":\"block\"},\"relative_stake\":{\"quantity\":0.13,\"unit\":\"percent\"},\"saturation\":3.953740108090414e-3},\"pledge\":{\"quantity\":150000000000000,\"unit\":\"lovelace\"}}]}"
+    },
+    {
+      "case": "live:putSettings",
+      "requirements": [
+        "api:putSettings:positive",
+        "api:putSettings:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:getSettings",
+      "requirements": [
+        "api:getSettings:positive",
+        "api:getSettings:status:200"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:pools-workflow",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:deleteWallet",
+      "requirements": [
+        "api:deleteWallet:positive",
+        "api:deleteWallet:status:204"
+      ],
+      "passed": true,
+      "detail": "passed"
+    },
+    {
+      "case": "live:cleanup-owned-wallet",
+      "requirements": [],
+      "passed": true,
+      "detail": "passed"
+    }
+  ]
+}

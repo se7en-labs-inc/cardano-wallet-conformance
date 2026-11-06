@@ -1,0 +1,474 @@
+[
+  {
+    "id": "metadata-cip83-note-before-msg-encrypt",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.encrypt",
+    "input": {
+      "passphrase_hex": "7075626c69632d70617373776f7264",
+      "salt_hex": "0000000000000000",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "type": "map",
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "public-message"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "entries": [
+          {
+            "label": 674,
+            "value": {
+              "entries": [
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "note"
+                  },
+                  "value": {
+                    "type": "number",
+                    "value": 42
+                  }
+                },
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "msg"
+                  },
+                  "value": {
+                    "items": [
+                      {
+                        "type": "text",
+                        "value": "U2FsdGVkX18AAAAAAAAAAPzYasY3io+fHw6tWqKEgQnbEc4KsoS8K5LKvdul+uXb"
+                      }
+                    ],
+                    "type": "list"
+                  }
+                },
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "enc"
+                  },
+                  "value": {
+                    "type": "text",
+                    "value": "basic"
+                  }
+                }
+              ],
+              "type": "map"
+            }
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "metadata-cip83-msg-before-note-encrypt",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.encrypt",
+    "input": {
+      "passphrase_hex": "7075626c69632d70617373776f7264",
+      "salt_hex": "0000000000000000",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "type": "map",
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "public-message"
+                    }
+                  ]
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "entries": [
+          {
+            "label": 674,
+            "value": {
+              "entries": [
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "msg"
+                  },
+                  "value": {
+                    "items": [
+                      {
+                        "type": "text",
+                        "value": "U2FsdGVkX18AAAAAAAAAAPzYasY3io+fHw6tWqKEgQnbEc4KsoS8K5LKvdul+uXb"
+                      }
+                    ],
+                    "type": "list"
+                  }
+                },
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "enc"
+                  },
+                  "value": {
+                    "type": "text",
+                    "value": "basic"
+                  }
+                },
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "note"
+                  },
+                  "value": {
+                    "type": "number",
+                    "value": 42
+                  }
+                }
+              ],
+              "type": "map"
+            }
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "metadata-cip83-note-before-msg-decrypt",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.decrypt",
+    "input": {
+      "passphrase_hex": "7075626c69632d70617373776f7264",
+      "salt_hex": "0000000000000000",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "U2FsdGVkX18AAAAAAAAAAPzYasY3io+fHw6tWqKEgQnbEc4KsoS8K5LKvdul+uXb"
+                    }
+                  ],
+                  "type": "list"
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "enc"
+                },
+                "value": {
+                  "type": "text",
+                  "value": "basic"
+                }
+              }
+            ],
+            "type": "map"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "entries": [
+          {
+            "label": 674,
+            "value": {
+              "entries": [
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "note"
+                  },
+                  "value": {
+                    "type": "number",
+                    "value": 42
+                  }
+                },
+                {
+                  "key": {
+                    "type": "text",
+                    "value": "msg"
+                  },
+                  "value": {
+                    "items": [
+                      {
+                        "type": "text",
+                        "value": "public-message"
+                      }
+                    ],
+                    "type": "list"
+                  }
+                }
+              ],
+              "type": "map"
+            }
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "metadata-cip83-msg-before-note-decrypt",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.decrypt",
+    "input": {
+      "passphrase_hex": "7075626c69632d70617373776f7264",
+      "salt_hex": "0000000000000000",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "U2FsdGVkX18AAAAAAAAAAPzYasY3io+fHw6tWqKEgQnbEc4KsoS8K5LKvdul+uXb"
+                    }
+                  ],
+                  "type": "list"
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "enc"
+                },
+                "value": {
+                  "type": "text",
+                  "value": "basic"
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              }
+            ],
+            "type": "map"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "class": "ErrorCall",
+        "code": "haskell_error_call",
+        "message": "we have checked already in composePayload that there is enough elements in decrypedList"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "metadata-cip83-wrong-password",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.decrypt",
+    "input": {
+      "passphrase_hex": "77726f6e67",
+      "salt_hex": "0000000000000000",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "U2FsdGVkX18AAAAAAAAAAPzYasY3io+fHw6tWqKEgQnbEc4KsoS8K5LKvdul+uXb"
+                    }
+                  ],
+                  "type": "list"
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "enc"
+                },
+                "value": {
+                  "type": "text",
+                  "value": "basic"
+                }
+              }
+            ],
+            "type": "map"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "ErrCannotDecryptPayload EmptyPayload"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "metadata-cip83-invalid-salt",
+    "requirements": [
+      "tx.metadata"
+    ],
+    "source": "Pinned wallet2fc5c383c94bb907deaa0cd27b1b407f86224b6c MetadataEncryption toMetadataEncrypted/fromMetadataEncrypted, fixed eight-byte salt; actual source-built adapter binary 1074db41c1ce6c5e1347ce94c4e1c4b79a602361d3a503e548c5cca4e4bb9054, driver 54bfb1f6020ac994a4d4833fb4afd8d33fac3ff715e70642284d0a8444ac03d3; published test password only; ordered metadata arrays retained; independent OpenSSL live control remains required",
+    "operation": "metadata.encrypt",
+    "input": {
+      "passphrase_hex": "7075626c69632d70617373776f7264",
+      "salt_hex": "00",
+      "entries": [
+        {
+          "label": 674,
+          "value": {
+            "type": "map",
+            "entries": [
+              {
+                "key": {
+                  "type": "text",
+                  "value": "note"
+                },
+                "value": {
+                  "type": "number",
+                  "value": 42
+                }
+              },
+              {
+                "key": {
+                  "type": "text",
+                  "value": "msg"
+                },
+                "value": {
+                  "type": "list",
+                  "items": [
+                    {
+                      "type": "text",
+                      "value": "public-message"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  }
+]

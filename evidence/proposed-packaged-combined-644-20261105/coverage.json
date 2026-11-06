@@ -1,0 +1,41 @@
+{
+  "exhaustive": false,
+  "required": 644,
+  "covered": 632,
+  "missing": [
+    "wallet.restoration",
+    "wallet.restart",
+    "wallet.resubmission",
+    "wallet.transaction-filtering",
+    "api:deleteByronTransaction:positive",
+    "api:deleteByronTransaction:status:204",
+    "api:deleteByronTransaction:status:403",
+    "api:deleteTransaction:positive",
+    "api:deleteTransaction:status:204",
+    "api:postByronTransaction:status:500",
+    "api:postSharedWallet:status:500",
+    "api:postTransaction:status:500"
+  ],
+  "unexecuted_cases": {
+    "wallet.restart": [
+      "state:restart-pending"
+    ],
+    "wallet.restoration": [
+      "state:restore-from-checkpoint"
+    ],
+    "wallet.resubmission": [
+      "live:pending-expiry",
+      "live:pending-retry"
+    ],
+    "wallet.transaction-filtering": [
+      "history:status"
+    ]
+  },
+  "failures": [
+    "pending:workflow",
+    "pending:workflow",
+    "pending:workflow",
+    "pending:workflow",
+    "pending:workflow"
+  ]
+}

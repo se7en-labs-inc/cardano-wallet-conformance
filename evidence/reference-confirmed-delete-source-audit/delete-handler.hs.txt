@@ -1,0 +1,13 @@
+deleteTransaction
+    :: forall ctx s
+     . ctx ~ ApiLayer s
+    => ctx
+    -> ApiT WalletId
+    -> ApiTxId
+    -> Handler NoContent
+deleteTransaction ctx (ApiT wid) (ApiTxId (ApiT (tid))) = do
+    withWorkerCtx ctx wid liftE liftE $ \wrk ->
+        liftHandler
+            $ W.forgetTx wrk tid
+    return NoContent
+

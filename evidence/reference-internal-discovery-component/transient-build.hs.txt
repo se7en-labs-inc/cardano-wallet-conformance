@@ -1,0 +1,55 @@
+buildTransaction
+    :: forall s era
+     . ( WalletFlavor s
+       , Write.IsRecentEra era
+       , AddressBookIso s
+       , HasSNetworkId (NetworkOf s)
+       , Excluding '[SharedKey] (KeyOf s)
+       )
+    => Write.RecentEra era
+    -> DBLayer IO s
+    -> TimeTranslation
+    -> ChangeAddressGen s
+    -> Write.PParams era
+    -> TransactionCtx
+    -> [TxOut]
+    -- ^ payment outputs
+    -> IO (Write.Tx era, Wallet s)
+buildTransaction
+    _era
+    DBLayer{..}
+    timeTranslation
+    changeAddrGen
+    protocolParameters
+    txCtx
+    paymentOuts = do
+        stdGen <- initStdGen
+        atomically $ do
+            wallet <- readDBVar walletState <&> WalletState.getLatest
+
+            pendingTxs <-
+                Set.fromList . fmap fromTransactionInfo
+                    <$> readTransactions
+                        Nothing
+                        Descending
+                        Range.everything
+                        (Just Pending)
+                        Nothing
+                        Nothing
+
+            let utxo = availableUTxO @s pendingTxs wallet
+
+            fmap (\s' -> wallet{getState = s'})
+                <$> buildTransactionPure @s
+                    wallet
+                    timeTranslation
+                    utxo
+                    changeAddrGen
+                    protocolParameters
+                    PreSelection{outputs = paymentOuts}
+                    txCtx
+                & runExceptT
+                    . withExceptT
+                        (either ExceptionBalanceTx ExceptionConstructTx)
+                & (`evalRand` stdGen)
+                & either (liftIO . throwIO) pure

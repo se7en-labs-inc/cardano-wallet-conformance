@@ -1,0 +1,7 @@
+                    ]
+
+instance IsServerError ErrSubmitTx where
+    toServerError = \case
+        ErrSubmitTxNetwork e -> toServerError e
+        ErrSubmitTxImpossible e -> toServerError e
+

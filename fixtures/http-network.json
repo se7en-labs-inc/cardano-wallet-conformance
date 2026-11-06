@@ -1,0 +1,169 @@
+{
+  "name": "Live node and read-only service APIs",
+  "cases": [
+    {
+      "id": "network-information",
+      "align_network_epoch": true,
+      "operation": "getNetworkInformation",
+      "request": {
+        "method": "GET",
+        "path": "/network/information"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "/sync_progress/status": "ready",
+        "/wallet_mode": "node",
+        "/network_info/network_id": "testnet"
+      },
+      "ignore": {
+        "/node_tip/absolute_slot_number": "separate observations of a live chain",
+        "/node_tip/epoch_number": "separate observations of a live chain",
+        "/node_tip/slot_number": "separate observations of a live chain",
+        "/node_tip/time": "separate observations of a live chain",
+        "/node_tip/height/quantity": "separate observations of a live chain",
+        "/network_tip/absolute_slot_number": "separate observations of a live chain",
+        "/network_tip/epoch_number": "separate observations of a live chain",
+        "/network_tip/slot_number": "separate observations of a live chain",
+        "/network_tip/time": "separate observations of a live chain"
+      }
+    },
+    {
+      "id": "network-parameters",
+      "operation": "getNetworkParameters",
+      "request": {
+        "method": "GET",
+        "path": "/network/parameters"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "network-clock",
+      "operation": "getNetworkClock",
+      "request": {
+        "method": "GET",
+        "path": "/network/clock"
+      },
+      "expected_status": 200,
+      "ignore": {
+        "/offset/quantity": "independent per-service NTP measurement; status, unit and schema remain checked"
+      }
+    },
+    {
+      "id": "latest-block-header",
+      "operation": "getBlocksLatestHeader",
+      "request": {
+        "method": "GET",
+        "path": "/blocks/latest/header"
+      },
+      "expected_status": 200,
+      "ignore": {
+        "/block_height/quantity": "separate observations of a live advancing chain",
+        "/slot_no/quantity": "separate observations of a live advancing chain",
+        "/header_hash": "latest header can change between requests; authentic chain confirmation is independently tested by the live node workflow"
+      },
+      "assertions": {
+        "/block_height/unit": "block",
+        "/slot_no/unit": "slot"
+      }
+    },
+    {
+      "id": "stake-pool-list",
+      "operation": "listStakePools",
+      "request": {
+        "method": "GET",
+        "path": "/stake-pools?stake=1000000"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "pool-maintenance-status",
+      "operation": "getMaintenanceActions",
+      "request": {
+        "method": "GET",
+        "path": "/stake-pools/maintenance-actions"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "smash-health",
+      "operation": "getCurrentSmashHealth",
+      "request": {
+        "method": "GET",
+        "path": "/smash/health"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "settings-read",
+      "operation": "getSettings",
+      "request": {
+        "method": "GET",
+        "path": "/settings"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "wallet-list",
+      "operation": "listWallets",
+      "request": {
+        "method": "GET",
+        "path": "/wallets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "byron-wallet-list",
+      "operation": "listByronWallets",
+      "request": {
+        "method": "GET",
+        "path": "/byron-wallets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "shared-wallet-list",
+      "operation": "listSharedWallets",
+      "request": {
+        "method": "GET",
+        "path": "/shared-wallets"
+      },
+      "expected_status": 200,
+      "assertions": {
+        "": []
+      }
+    },
+    {
+      "id": "drep-list",
+      "operation": "listDReps",
+      "request": {
+        "method": "GET",
+        "path": "/dreps"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "drep-summary",
+      "operation": "getDRepSummary",
+      "request": {
+        "method": "GET",
+        "path": "/dreps/summary"
+      },
+      "expected_status": 200
+    },
+    {
+      "id": "drep-suggestions",
+      "operation": "suggestedDReps",
+      "request": {
+        "method": "GET",
+        "path": "/dreps/suggested"
+      },
+      "expected_status": 200
+    }
+  ]
+}

@@ -1,0 +1,2097 @@
+[
+  {
+    "id": "collateral-percentage-rounding",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-eligibility",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 1,
+          "coin": 1000000000,
+          "collateral": true,
+          "id": 3,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 1000000000,
+          "collateral": false,
+          "id": 4,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-insufficient",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300001,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "insufficient_collateral",
+        "largest_available": [
+          2
+        ],
+        "minimum_collateral": 300002
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "selection-insufficient-collateral",
+    "requirements": [
+      "selection.insufficient-funds"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300001,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "insufficient_collateral",
+        "largest_available": [
+          2
+        ],
+        "minimum_collateral": 300002
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-zero-cap",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 0,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "insufficient_collateral",
+        "largest_available": [],
+        "minimum_collateral": 300002
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-one-input-limit",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 150001,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 150001,
+          "collateral": true,
+          "id": 3,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "insufficient_collateral",
+        "largest_available": [
+          2
+        ],
+        "minimum_collateral": 300002
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-two-input-boundary",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 2,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 150001,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 150001,
+          "collateral": true,
+          "id": 3,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2,
+          3
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-overlap-ordinary-input",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": true,
+          "id": 1,
+          "inputs": true
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          1
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-not-required",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": false,
+      "maximum_collateral_inputs": 0,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-percent-zero",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 0,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 1000000,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-percent-one",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 1,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 1000000,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-percent-100",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 100,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 1000000,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-percent-200",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 200,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 1000000,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-seed-1",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 1,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-seed-18446744073709551615",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 18446744073709551615,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "collateral-optimal-strategy",
+    "requirements": [
+      "tx.collateral"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "optimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-0",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-0",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-1",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 1,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 1,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-1",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 1,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 1,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-23",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 23,
+      "outputs": [
+        {
+          "asset_quantity": 11,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 12,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 11,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-23",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 23,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 23,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-24",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 24,
+      "outputs": [
+        {
+          "asset_quantity": 12,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 12,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 12,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-24",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 24,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 24,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-4294967295",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 4294967295,
+      "outputs": [
+        {
+          "asset_quantity": 2147483647,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 2147483648,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 2147483647,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-4294967295",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 4294967295,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 4294967295,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "mint-burn-quantity-boundaries",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 9223372036854775807,
+      "outputs": [
+        {
+          "asset_quantity": 4611686018427387903,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 4611686018427387904,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 4611686018427387903,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-9223372036854775807",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 9223372036854775807,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 9223372036854775807,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-mint-quantity-9223372036854775808",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 9223372036854775808,
+      "outputs": [
+        {
+          "asset_quantity": 4611686018427387904,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 4611686018427387904,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 4611686018427387904,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-burn-quantity-9223372036854775808",
+    "requirements": [
+      "tx.mint-burn"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 9223372036854775808,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 9223372036854775808,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "result": {
+        "change": [
+          {
+            "asset_quantity": 0,
+            "coin": 8799999
+          }
+        ],
+        "collateral": [
+          2
+        ],
+        "fee": 200001,
+        "inputs": [
+          1
+        ],
+        "outputs": [
+          {
+            "asset_quantity": 0,
+            "coin": 1000000
+          }
+        ]
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-selection-empty-with-payment",
+    "requirements": [
+      "selection.insufficient-funds"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "balance_insufficient"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-selection-empty",
+    "requirements": [
+      "selection.insufficient-funds"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": false,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 0,
+      "mint_quantity": 0,
+      "outputs": [],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 10000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": false
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "empty_utxo"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-selection-insufficient-output",
+    "requirements": [
+      "selection.insufficient-funds"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 900000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "balance_insufficient"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "wallet-selection-insufficient-fee",
+    "requirements": [
+      "selection.insufficient-funds"
+    ],
+    "source": "Wallet2fc5c383 actual cardano-balance-tx8975773 wallet performSelection/asCollateral with declared constant-cost callbacks and seeded MonadRandom; SelectionAdapter binary sha256:08406fef161c9722fe5407774133e10708cfdea5273ba4fe32b96475b406871e; independent Rust conservation/eligibility/cap/ceil laws",
+    "operation": "selection.wallet",
+    "input": {
+      "burn_quantity": 0,
+      "collateral_percentage": 150,
+      "collateral_required": true,
+      "maximum_collateral_inputs": 1,
+      "minimum_change_coin": 0,
+      "minimum_fee": 200001,
+      "mint_quantity": 0,
+      "outputs": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000
+        }
+      ],
+      "seed": 0,
+      "strategy": "minimal",
+      "utxos": [
+        {
+          "asset_quantity": 0,
+          "coin": 1000000,
+          "collateral": false,
+          "id": 1,
+          "inputs": true
+        },
+        {
+          "asset_quantity": 0,
+          "coin": 300002,
+          "collateral": true,
+          "id": 2,
+          "inputs": false
+        }
+      ]
+    },
+    "expected": {
+      "error": {
+        "code": "unable_to_construct_change"
+      }
+    },
+    "selection_invariants": false
+  }
+]

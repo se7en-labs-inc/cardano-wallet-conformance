@@ -1,0 +1,12 @@
+type ListTransactions n =
+    "wallets"
+        :> Capture "walletId" (ApiT WalletId)
+        :> "transactions"
+        :> QueryParam "minWithdrawal" MinWithdrawal
+        :> QueryParam "start" Iso8601Time
+        :> QueryParam "end" Iso8601Time
+        :> QueryParam "order" (ApiT SortOrder)
+        :> QueryParam "max_count" ApiLimit
+        :> QueryParam "address" (ApiAddressIdT n)
+        :> QueryFlag "simple-metadata"
+        :> Get '[JSON] [ApiTransactionT n]

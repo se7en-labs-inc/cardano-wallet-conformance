@@ -1,0 +1,1816 @@
+[
+  {
+    "id": "validity-slot-time-boundary",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 0,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-0-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-1--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 199999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-1-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 200000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 1,
+        "floor_time_picos": 200000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-1-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 200000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 200000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-2--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 399999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 200000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-2-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 400000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 2,
+        "floor_time_picos": 400000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-2-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 400000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 3,
+        "floor_slot": 2,
+        "floor_time_picos": 400000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-119--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 23799999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 118,
+        "floor_time_picos": 23600000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-119-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 23800000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 119,
+        "floor_time_picos": 23800000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-119-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 23800000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 23800000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-120--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 23999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 23800000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-120-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 24000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 120,
+        "floor_time_picos": 24000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-120-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 24000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 24000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-121--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 24199999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 24000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-121-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 24200000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 121,
+        "floor_time_picos": 24200000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-121-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 24200000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 122,
+        "floor_slot": 121,
+        "floor_time_picos": 24200000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-21600--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 4319999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21599,
+        "floor_time_picos": 4319800000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-21600-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 4320000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21600,
+        "floor_time_picos": 4320000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-200000000000-21600-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 4320000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21601,
+        "floor_slot": 21600,
+        "floor_time_picos": 4320000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-0-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 0,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-0-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-1--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-1-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 1,
+        "floor_time_picos": 1000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-1-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 1000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-2--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 1000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-2-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 2000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 2,
+        "floor_time_picos": 2000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-2-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 2000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 3,
+        "floor_slot": 2,
+        "floor_time_picos": 2000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-119--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 118999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 118,
+        "floor_time_picos": 118000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-119-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 119000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 119,
+        "floor_time_picos": 119000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-119-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 119000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 119000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-120--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 119999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 119000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-120-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 120000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 120,
+        "floor_time_picos": 120000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-120-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 120000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 120000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-121--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 120999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 120000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-121-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 121000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 121,
+        "floor_time_picos": 121000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-121-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 121000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 122,
+        "floor_slot": 121,
+        "floor_time_picos": 121000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-21600--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 21599999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21599,
+        "floor_time_picos": 21599000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-21600-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 21600000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21600,
+        "floor_time_picos": 21600000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1000000000000-21600-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 21600000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21601,
+        "floor_slot": 21600,
+        "floor_time_picos": 21600000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-0-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 0,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-0-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-1--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1499999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-1-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1500000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 1,
+        "floor_time_picos": 1500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-1-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1500000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 1500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-2--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 2999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 1500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-2-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 3000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 2,
+        "floor_time_picos": 3000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-2-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 3000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 3,
+        "floor_slot": 2,
+        "floor_time_picos": 3000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-119--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 178499999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 118,
+        "floor_time_picos": 177000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-119-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 178500000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 119,
+        "floor_time_picos": 178500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-119-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 178500000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 178500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-120--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 179999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 178500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-120-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 180000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 120,
+        "floor_time_picos": 180000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-120-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 180000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 180000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-121--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 181499999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 180000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-121-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 181500000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 121,
+        "floor_time_picos": 181500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-121-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 181500000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 122,
+        "floor_slot": 121,
+        "floor_time_picos": 181500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-21600--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 32399999999999999,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21599,
+        "floor_time_picos": 32398500000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-21600-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 32400000000000000,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21600,
+        "floor_time_picos": 32400000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-1500000000000-21600-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 32400000000000001,
+      "epoch_length": 120,
+      "slot_length_picos": 1500000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21601,
+        "floor_slot": 21600,
+        "floor_time_picos": 32400000000000000
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-0-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 0,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-0-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 1,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-1--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 333333333332,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 0,
+        "floor_time_picos": 0
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-1-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 333333333333,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 1,
+        "floor_slot": 1,
+        "floor_time_picos": 333333333333
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-1-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 333333333334,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 333333333333
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-2--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 666666666665,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 1,
+        "floor_time_picos": 333333333333
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-2-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 666666666666,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 2,
+        "floor_slot": 2,
+        "floor_time_picos": 666666666666
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-2-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 666666666667,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 3,
+        "floor_slot": 2,
+        "floor_time_picos": 666666666666
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-119--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39666666666626,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 118,
+        "floor_time_picos": 39333333333294
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-119-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39666666666627,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 119,
+        "floor_slot": 119,
+        "floor_time_picos": 39666666666627
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-119-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39666666666628,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 39666666666627
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-120--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39999999999959,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 119,
+        "floor_time_picos": 39666666666627
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-120-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39999999999960,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 120,
+        "floor_slot": 120,
+        "floor_time_picos": 39999999999960
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-120-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 39999999999961,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 39999999999960
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-121--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 40333333333292,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 120,
+        "floor_time_picos": 39999999999960
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-121-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 40333333333293,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 121,
+        "floor_slot": 121,
+        "floor_time_picos": 40333333333293
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-121-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 40333333333294,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 122,
+        "floor_slot": 121,
+        "floor_time_picos": 40333333333293
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-21600--1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 7199999999992799,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21599,
+        "floor_time_picos": 7199666666659467
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-21600-0",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 7199999999992800,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21600,
+        "floor_slot": 21600,
+        "floor_time_picos": 7199999999992800
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-333333333333-21600-1",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 7199999999992801,
+      "epoch_length": 120,
+      "slot_length_picos": 333333333333
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 21601,
+        "floor_slot": 21600,
+        "floor_time_picos": 7199999999992800
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-negative-time",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": -1,
+      "epoch_length": 120,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-zero-slot",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120,
+      "slot_length_picos": 0
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-zero-epoch",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 0,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-huge-epoch",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 4294967296,
+      "slot_length_picos": 200000000000
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-slot-overflow",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 18446744073709551615,
+      "epoch_length": 120,
+      "slot_length_picos": 1
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-missing-field",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 0,
+      "epoch_length": 120
+    },
+    "expected": {
+      "error": {
+        "code": "invalid_input"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "slot-time-upper-time",
+    "requirements": [
+      "tx.validity-interval"
+    ],
+    "source": "Wallet2fc5c383 actual Primitive.Slotting mkSingleEraInterpreter/ongoingSlotAt/ceilingSlotAt/slotToUTCTime; picosecond-exact single-era wrapper, not a hard-fork claim; SlottingAdapter sha256:c86c3e29e91f1110891681cc62802101f0d03fccc5c451eb5d4ef0a8332092af; independent Rust quotient/remainder/ceiling laws",
+    "operation": "time.slot-boundary",
+    "input": {
+      "elapsed_picos": 18446744073709551615,
+      "epoch_length": 120,
+      "slot_length_picos": 1000000000000
+    },
+    "expected": {
+      "result": {
+        "ceiling_slot": 18446745,
+        "floor_slot": 18446744,
+        "floor_time_picos": 18446744000000000000
+      }
+    },
+    "selection_invariants": false
+  }
+]

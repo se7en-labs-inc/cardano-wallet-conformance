@@ -1,0 +1,958 @@
+[
+  {
+    "id": "fee-linear-boundaries",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 0,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 0,
+        "execution_fee": 0,
+        "linear_fee": 0,
+        "total_fee": 155381,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-linear-byte-one",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 1,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 1,
+        "execution_fee": 0,
+        "linear_fee": 44,
+        "total_fee": 155425,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-linear-u32-max",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 4294967295,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 4294967295,
+        "execution_fee": 0,
+        "linear_fee": 188978560980,
+        "total_fee": 188978716361,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-zero-coefficients",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 0,
+      "constant": 0,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 100,
+        "execution_fee": 0,
+        "linear_fee": 0,
+        "total_fee": 0,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-witness-count",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 1
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 205,
+        "execution_fee": 0,
+        "linear_fee": 9020,
+        "total_fee": 164401,
+        "vkey_witness_bytes": 105,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-witness-count-23",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 23
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 2427,
+        "execution_fee": 0,
+        "linear_fee": 106788,
+        "total_fee": 262169,
+        "vkey_witness_bytes": 2327,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-witness-count-24",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 24
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 2528,
+        "execution_fee": 0,
+        "linear_fee": 111232,
+        "total_fee": 266613,
+        "vkey_witness_bytes": 2428,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-bootstrap-witness-count",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 1,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 184,
+        "estimated_bytes": 284,
+        "execution_fee": 0,
+        "linear_fee": 12496,
+        "total_fee": 167877,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-mixed-many-witnesses",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 64,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 64
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 11524,
+        "estimated_bytes": 18092,
+        "execution_fee": 0,
+        "linear_fee": 796048,
+        "total_fee": 951429,
+        "vkey_witness_bytes": 6468,
+        "within_size_limit": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-execution-units",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 14000000,
+      "execution_steps": 10000000000,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 100,
+        "execution_fee": 1528800,
+        "linear_fee": 4400,
+        "total_fee": 1688581,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-rounding",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 1,
+      "execution_steps": 1,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "step_price": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 100,
+        "execution_fee": 1,
+        "linear_fee": 4400,
+        "total_fee": 159782,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-rounding-up",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 1,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 3,
+        "numerator": 1
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 100,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 100,
+        "execution_fee": 1,
+        "linear_fee": 4400,
+        "total_fee": 159782,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-maximum-size",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 16384,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 16384,
+        "execution_fee": 0,
+        "linear_fee": 720896,
+        "total_fee": 876277,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-size-over-maximum",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 16385,
+      "vkey_witnesses": 0
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 16385,
+        "execution_fee": 0,
+        "linear_fee": 720940,
+        "total_fee": 876321,
+        "vkey_witness_bytes": 0,
+        "within_size_limit": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-size-with-witness-exact",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 16279,
+      "vkey_witnesses": 1
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 16384,
+        "execution_fee": 0,
+        "linear_fee": 720896,
+        "total_fee": 876277,
+        "vkey_witness_bytes": 105,
+        "within_size_limit": true
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "fee-size-with-witness-over",
+    "requirements": [
+      "tx.minimum-fee"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "fee.components",
+    "input": {
+      "bootstrap_witnesses": 0,
+      "coefficient": 44,
+      "constant": 155381,
+      "execution_memory": 0,
+      "execution_steps": 0,
+      "maximum_transaction_bytes": 16384,
+      "memory_price": {
+        "denominator": 10000,
+        "numerator": 577
+      },
+      "step_price": {
+        "denominator": 10000000,
+        "numerator": 721
+      },
+      "transaction_bytes": 16280,
+      "vkey_witnesses": 1
+    },
+    "expected": {
+      "result": {
+        "bootstrap_witness_bytes": 0,
+        "estimated_bytes": 16385,
+        "execution_fee": 0,
+        "linear_fee": 720940,
+        "total_fee": 876321,
+        "vkey_witness_bytes": 105,
+        "within_size_limit": false
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-ada",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000f4240"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": false,
+        "minimum_coin": 849070,
+        "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000f4240",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-native-assets",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d6011111111111111111111111111111111111111111111111111111111821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 1150770,
+        "output_cbor_hex": "82581d6011111111111111111111111111111111111111111111111111111111821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17",
+        "wallet_minimum_coin": 1168010,
+        "wallet_output_cbor_hex": "82581d6011111111111111111111111111111111111111111111111111111111821b009fdf42f6e48000a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-datum",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011a000f4240028201d81842182a"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": false,
+        "minimum_coin": 892170,
+        "output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011a000f4240028201d81842182a",
+        "wallet_minimum_coin": 909410,
+        "wallet_output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011b009fdf42f6e48000028201d81842182a"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-reference-script",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011a000f424003d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 1025780,
+        "output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011a000f424003d818582282008200581c33333333333333333333333333333333333333333333333333333333",
+        "wallet_minimum_coin": 1043020,
+        "wallet_output_cbor_hex": "a300581d6011111111111111111111111111111111111111111111111111111111011b009fdf42f6e4800003d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-protocol-change",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 5000,
+      "output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 1580000,
+        "output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333",
+        "wallet_minimum_coin": 1600000,
+        "wallet_output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821b009fdf42f6e48000a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-combined",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 1361960,
+        "output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821a000f4240a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333",
+        "wallet_minimum_coin": 1379200,
+        "wallet_output_cbor_hex": "a400581d601111111111111111111111111111111111111111111111111111111101821b009fdf42f6e48000a1581c22222222222222222222222222222222222222222222222222222222a240015820abababababababababababababababababababababababababababababababab17028201d81842182a03d818582282008200581c33333333333333333333333333333333333333333333333333333333"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-zero-cost",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 0,
+      "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111100"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": false,
+        "minimum_coin": 0,
+        "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111100",
+        "wallet_minimum_coin": 0,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-zero-coin",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111100"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 831830,
+        "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111100",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-coin-23",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111117"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 831830,
+        "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111117",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-coin-24",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111818"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 836140,
+        "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111818",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-coin-255",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111118ff"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 836140,
+        "output_cbor_hex": "82581d601111111111111111111111111111111111111111111111111111111118ff",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-coin-256",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d6011111111111111111111111111111111111111111111111111111111190100"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 840450,
+        "output_cbor_hex": "82581d6011111111111111111111111111111111111111111111111111111111190100",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-coin-maximum",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": false,
+        "minimum_coin": 866310,
+        "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-at-minimum",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000cf4ae"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": false,
+        "minimum_coin": 849070,
+        "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000cf4ae",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-below-minimum",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000cf4ad"
+    },
+    "expected": {
+      "result": {
+        "below_minimum": true,
+        "minimum_coin": 849070,
+        "output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111a000cf4ad",
+        "wallet_minimum_coin": 866310,
+        "wallet_output_cbor_hex": "82581d60111111111111111111111111111111111111111111111111111111111b009fdf42f6e48000"
+      }
+    },
+    "selection_invariants": false
+  },
+  {
+    "id": "min-utxo-malformed-rejected",
+    "requirements": [
+      "tx.min-utxo"
+    ],
+    "source": "Wallet2fc5c383; actual cardano-balance-tx8975773 fee/witness-size/minimum-coin helpers and ledger decoder/getMinCoinTxOut; BalanceAdapter binary sha256:e93a25718344e23de66cad102e3b65409c9e47282039e1935a3272a66e640cd2; independent Rust integer/CBOR-length laws",
+    "operation": "minimum-utxo",
+    "input": {
+      "coins_per_byte": 4310,
+      "output_cbor_hex": "ff"
+    },
+    "expected": {
+      "error": {
+        "code": "decode_failed"
+      }
+    },
+    "selection_invariants": false
+  }
+]

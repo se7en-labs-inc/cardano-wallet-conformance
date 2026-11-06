@@ -1,0 +1,58 @@
+warning: Git tree '/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance' is dirty
+evaluation warning: crane requires at least nixpkgs-26.05, supplied nixpkgs-25.11
+   Compiling wallet-conformance v0.1.0 (/home/sam/work/iohk/cardano-wallet/70007-wallet-conformance)
+error[E0507]: cannot move out of `other`, a captured variable in an `FnMut` closure
+   --> src/node.rs:223:24
+    |
+217 |         let other = format!("{}#0", "cd".repeat(32));
+    |             ----- captured outer variable
+...
+220 |         wait_payment_with(&id, "recipient", 2_000_000, Duration::from_secs(2), |_| {
+    |                                                                                --- captured by this `FnMut` closure
+...
+223 |                 json!({other:{"address":"recipient","value":{"lovelace":2_000_000}}})
+    |                 -------^^^^^---------------------------------------------------------
+    |                 |      |
+    |                 |      move occurs because `other` has type `std::string::String`, which does not implement the `Copy` trait
+    |                 `other` moved due to this method call
+    |
+help: `Fn` and `FnMut` closures require captured values to be able to be consumed multiple times, but `FnOnce` closures may consume them only once
+   --> src/node.rs:180:21
+    |
+180 |     mut query: impl FnMut(Duration) -> Result<Value>,
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: consider cloning the value if the performance cost is acceptable
+    |
+223 |                 json!({other.clone():{"address":"recipient","value":{"lovelace":2_000_000}}})
+    |                             ++++++++
+
+error[E0507]: cannot move out of `exact`, a captured variable in an `FnMut` closure
+   --> src/node.rs:225:24
+    |
+218 |         let exact = format!("{id}#0");
+    |             ----- captured outer variable
+219 |         let mut calls = 0;
+220 |         wait_payment_with(&id, "recipient", 2_000_000, Duration::from_secs(2), |_| {
+    |                                                                                --- captured by this `FnMut` closure
+...
+225 |                 json!({exact:{"address":"recipient","value":{"lovelace":2_000_000}}})
+    |                 -------^^^^^---------------------------------------------------------
+    |                 |      |
+    |                 |      move occurs because `exact` has type `std::string::String`, which does not implement the `Copy` trait
+    |                 `exact` moved due to this method call
+    |
+help: `Fn` and `FnMut` closures require captured values to be able to be consumed multiple times, but `FnOnce` closures may consume them only once
+   --> src/node.rs:180:21
+    |
+180 |     mut query: impl FnMut(Duration) -> Result<Value>,
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+note: `std::convert::Into::into` takes ownership of the receiver `self`, which moves `exact`
+   --> /rustc/58cf8f9c35b355199727627d07ae34a4e2846d67/library/core/src/convert/mod.rs:456:12
+help: consider cloning the value if the performance cost is acceptable
+    |
+225 |                 json!({exact.clone():{"address":"recipient","value":{"lovelace":2_000_000}}})
+    |                             ++++++++
+
+For more information about this error, try `rustc --explain E0507`.
+error: could not compile `wallet-conformance` (lib test) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...

@@ -1,0 +1,27 @@
+instance IsServerError ErrRemoveTx where
+    toServerError = \case
+        ErrRemoveTxNoSuchTransaction (ErrNoSuchTransaction tid) ->
+            flip (apiError err404) message
+                $ NoSuchTransaction
+                    ApiErrorNoSuchTransaction{transactionId = ApiT tid}
+          where
+            message =
+                mconcat
+                    [ "I couldn't find a transaction with the given id: "
+                    , toText tid
+                    ]
+        ErrRemoveTxAlreadyInLedger tid ->
+            flip (apiError err403) message
+                $ TransactionAlreadyInLedger
+                    ApiErrorTransactionAlreadyInLedger{transactionId = ApiT tid}
+          where
+            message =
+                mconcat
+                    [ "The transaction with id: "
+                    , toText tid
+                    , " cannot be forgotten as it is already in the ledger."
+                    ]
+
+instance IsServerError ErrPostTx where
+    toServerError = \case
+        ErrPostTxValidationError err ->

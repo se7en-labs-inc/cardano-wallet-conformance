@@ -1,0 +1,5 @@
+# Genuine pending Byron deletion: confirmed-deletion follow-up failure
+
+Sourceb784bf71d8, original Haskell2fc5c383, a fresh owned cluster and wallet. The56-check run has54 passing checks and two failure records for the same confirmed-deletion assertion. Random Byron funding, producer pause, pending node admission, DELETE204/exact404, baseline restoration/native mempool preservation and same-transaction ledger reappearance pass. Deleting that previously forgotten, rediscovered confirmed transaction returns404 rather than the expected403. Exact public admitted/forgotten phase proofs remain in live.json. Icarus was not reached. The report is a failed component and earns no all-passing workflow claim.
+
+All owned wallets, wallet process and cluster stop/reap checks pass; pinned procps confirms no owned runtime process remains. Independent node integration-last does not run after a failed workflow. The user requested a combined checkpoint before further implementation, so the fixture/handler distinction remains a recorded blind spot for that report; no expectation is weakened during the frozen run.

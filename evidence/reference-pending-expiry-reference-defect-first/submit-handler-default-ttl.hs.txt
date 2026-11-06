@@ -1,0 +1,68 @@
+    -> ApiSerialisedTransaction
+    -> Handler ApiTxId
+submitTransaction ctx apiw@(ApiT wid) apitx = do
+    -- TODO: revisit/possibly set proper ttls in ADP-1193
+    ttl <- liftIO $ W.transactionExpirySlot ti Nothing
+    era <- liftIO $ NW.currentNodeEra nl
+
+    let sealedTx = getApiT . (view #serialisedTxSealed) $ apitx
+
+    apiDecoded <-
+        decodeTransaction @s @n
+            ctx
+            apiw
+            (toApiDecodeTransactionPostData apitx)
+    when (isForeign apiDecoded)
+        $ liftHandler
+        $ throwE ErrSubmitTransactionForeignWallet
+    let ourOuts = getOurOuts apiDecoded
+    let ourInps = getOurInps apiDecoded
+
+    -- TODO: when partial signing is switched on we will need to revise this.
+    -- The following needs to be taken into account. Wits could come from:
+    -- (a) our wallet
+    -- (b) other parties
+    -- (c) script inputs
+    -- With (b) not supported we can now filter our inputs and look for the unique payment keys
+    -- Also with multisig switched on the input would need more than 1 wits
+    let witsRequiredForInputs =
+            length
+                $ L.nubBy samePaymentKey
+                $ filter isInpOurs
+                $ (apiDecoded ^. #inputs) ++ (apiDecoded ^. #collateral)
+    let totalNumberOfWits = sealedTxWitnessCount sealedTx
+
+    when (countJoinsQuits (apiDecoded ^. #certificates) > 1)
+        $ liftHandler
+        $ throwE ErrSubmitTransactionMultidelegationNotSupported
+
+    liftHandler
+        $ validateWitnessCounts witsRequiredForInputs totalNumberOfWits
+
+    void $ withWorkerCtx ctx wid liftE liftE $ \wrk -> do
+        let tx = walletTx $ decodeTx tl era sealedTx
+        let db = wrk ^. dbLayer
+        (acct, _, path) <-
+            liftHandler
+                $ W.shelleyOnlyReadRewardAccount @s db
+        let wdrl = getOurWdrl acct path apiDecoded
+        let txCtx =
+                defaultTransactionCtx
+                    { -- TODO: [ADP-1193]
+                      -- Get this from decodeTx:
+                      txValidityInterval = (Nothing, ttl)
+                    , txWithdrawal = wdrl
+                    }
+        txMeta <- handler $ W.constructTxMeta db txCtx ourInps ourOuts
+        liftHandler
+            $ W.submitTx
+                (wrk ^. logger)
+                db
+                nl
+                BuiltTx
+                    { builtTx = tx
+                    , builtTxMeta = txMeta
+                    , builtSealedTx = sealedTx
+                    }
+    pure $ ApiTxId (apiDecoded ^. #id)
+  where

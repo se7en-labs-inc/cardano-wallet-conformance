@@ -1,0 +1,7 @@
+  where
+    g = maybe defaultAddressPoolGap getApiT (body ^. #addressPoolGap)
+    wName = getApiT (body ^. #name)
+    (ApiAccountPublicKey accXPubApiT) = body ^. #accountPublicKey
+    accXPub = getApiT accXPubApiT
+    wid = WalletId $ digest (keyFlavorFromState @s) (liftKey accXPub)
+    (genesisBlock, networkParams) = netParams ctx

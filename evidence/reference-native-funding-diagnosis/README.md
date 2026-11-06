@@ -1,0 +1,7 @@
+# Diagnostic only: native fixture funding orphan
+
+This is not wallet conformance credit. The combined rollback workflow stopped during independent native funding, before any fork/wallet rollback assertions. The actual signed funding transaction87f0f76d... was admitted by native peers around competing slot309 blocks785e2644... and9707ffaf..., followed by native rollback. The public trace and independent Rust signature/body inspection are retained.
+
+All original native nodes were already stopped/reaped. A copy of the closed relay database was opened by a separately owned relay with no peers or producer keys, preserving the failed original database. At recovered tip571/1203, the original input49b34278...#1 remains unspent with2899863800lovelace; the requested87f0f76d...#0 output is absent. Submitting the exact unchanged signed envelope to this isolated recovered node succeeds and its mempool reports the exact ID present. This substantiates valid fixture funding lost from the selected native chain/mempool. It does not prove a wallet rollback defect or ledger confirmation of the diagnostic replay. The isolated relay was stopped/reaped after inspection.
+
+The future fixture correction is bounded identical-byte replay under independently verified absent-output/unspent-input/absent-mempool guards. It must not alter automatic resubmission assertions for wallet transactions. No private keys, wallets or databases are copied into public evidence.

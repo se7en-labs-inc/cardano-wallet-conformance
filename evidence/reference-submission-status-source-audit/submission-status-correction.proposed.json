@@ -1,0 +1,14 @@
+{
+  "id": "unreachable-submission-mempool-full",
+  "status": "proposed-unapplied",
+  "source_revision": "2fc5c383c94bb907deaa0cd27b1b407f86224b6c",
+  "original_openapi_sha256": "653f358b3937304f6c63ec642d4ac6b7f1fa0e2d04afd4a9866403a3a97039e0",
+  "operations": ["postTransaction", "postByronTransaction", "postExternalTransaction"],
+  "source_finding": "Every production SubmitFail becomes ErrPostTxValidationError (HTTP500). ErrPostTxMempoolFull (HTTP425) is never constructed; the submission queue is unbounded.",
+  "proposal": "Preserve original OpenAPI and add hash-guarded corrections replacing only these three unreachable425 response slots with500 application/json created_invalid_transaction. Extend the generic documented-status inventory through500, consistently with the separate pending shared-decryption proposal. Keep643 mandatory obligations and all reachable original statuses. No credit until strict real-node HTTP rejection cases execute successfully under one coherent fingerprint.",
+  "related_observation": {"operation": "submitTransaction", "status": 500, "code": "created_invalid_transaction", "ledger_cause": "InvalidWitnesses", "coherent_evidence": "../reference-byron-password-coherent/live.json", "supplemental_case": "live:mint-invalid-witness-rejected", "counts_as_any_replacement_operation": false},
+  "not_yet_observed": ["postTransaction real-node validation rejection", "postByronTransaction real-node validation rejection", "postExternalTransaction real-node validation rejection"],
+  "provenance_correction": "The initial audit misattributed the wallet submission rejection to the external proxy; the proxy was used for the later valid positive control. All three replacement statuses require new real-node evidence.",
+  "required_work_before_credit": ["Commit specification and plan before implementation", "Regression proving exactly643 obligations and precisely three425-to500 substitutions, or four substitutions when the separately approved shared-decode correction is included", "Strict operation-specific JSON schemas with created_invalid_transaction code and no unrelated weakening", "Genuine owned-node rejection controls for both deprecated creation routes, with source-derived dynamic ledger cause checks and positive controls", "Independent transaction, signatures, funding, pending/history and spent-input checks where applicable", "Coherent replay and retained historical evidence"],
+  "excluded": ["Changing wallet source", "Mocking node admission", "Counting a direct dead-error-mapping unit test as live HTTP coverage", "Crediting source inspection as an executed test", "Applying any other pending proposal without its approval"]
+}

@@ -1,0 +1,3 @@
+    _knownPools :: IO (Set PoolId)
+    _knownPools = Set.fromList <$> liftIO (atomically listRegisteredPools)
+

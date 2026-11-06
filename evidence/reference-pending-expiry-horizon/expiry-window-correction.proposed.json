@@ -1,0 +1,8 @@
+{
+  "approved": false,
+  "failure": "Fresh28-check expiry run passes actual signed pending admission and exact validity/genesis/history/accounting checks, then times out waiting for native tip beyond expiry. All cleanup passes.",
+  "evidence": "Native CurrentSlotUnknown after resume; independent native slot-number query reports PastHorizon and StandardSafeZone60. Public genesis securityParam10/activeSlotsCoeff0.5/slotLength0.2 confirms60slots=12seconds; the30second pause overshoots the forecasting window.",
+  "proposed_change": "Use8seconds instead of30 for the dedicated fixture's absolute expiry window. Derive conservative safe slots from public3k/f and require the encoded upper limit plus a slot to lie strictly within that window from the stabilized paused native tip before submission. Fail rather than continue if admission/setup consumes the available time.",
+  "regression": "Reject a30second window or stale stable tip outside the horizon; accept8seconds inside60slots. Keep independently computed exact signed upper andSome(0) lower, reported expiry fields, actual pending admission, node advancement beyond expiry and every history/state assertion.",
+  "preserved": ["644 obligations", "real signatures and node mempool admission", "exact expiry slot/timestamp", "actual post-expiry chain advancement", "expired status/stable fields", "unspent funding and absent outputs", "restored accounting and keys", "mempool removal", "expired deletion204/exact404", "all original failures"]
+}

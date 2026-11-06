@@ -1,0 +1,23 @@
+    => ApiLayer s
+    -> ApiT WalletId
+    -> ApiSignTransactionPostData
+    -> Handler ApiSerialisedTransaction
+signTransaction ctx (ApiT wid) body = do
+    let pwd = coerce $ body ^. #passphrase . #getApiT
+        wF = walletFlavor @s
+    sealedTx' <- withWorkerCtx ctx wid liftE liftE $ \wrk -> liftHandler $ do
+        let
+            db = wrk ^. W.dbLayer @IO @s
+            tl = wrk ^. W.transactionLayer @k
+            nl = wrk ^. W.networkLayer
+        db & \W.DBLayer{atomically, readCheckpoint} ->
+            W.withRootKey @s nullTracer db wid pwd ErrWitnessTxWithRootKey
+                $ \case
+                    W.RootKeyAccessV2 ekey _mPayload userPwd -> do
+                        cp <- lift $ atomically readCheckpoint
+                        era <- liftIO $ NW.currentNodeEra nl
+                        let sealedTxIn = body ^. #transaction . #getApiT
+                            utxo = totalUTxO mempty cp
+                        mSigned <-
+                            liftIO
+                                $ signTransactionV2

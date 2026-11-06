@@ -1,0 +1,42 @@
+    -> Either ErrMetadataDecryption TxMetadata
+fromMetadataEncrypted pwd metadata =
+    composePayload metadata
+        >>= mapM decrypt
+        >>= adjust metadata
+  where
+    checkPresenceOfMethod value =
+        let presentPair (TxMetaText k, TxMetaText v) =
+                k == cip83EncryptMethodKey && v == cip83EncryptPayloadValue
+            presentPair _ = False
+        in  case value of
+                TxMetaMap list -> not (any presentPair list)
+                _ -> True
+    getEncryptedPayload value =
+        let presentPair (TxMetaText k, TxMetaList _) =
+                k == cip83EncryptPayloadKey
+            presentPair _ = False
+        in  case value of
+                TxMetaMap list -> snd <$> filter presentPair list
+                _ -> []
+    extractTxt (TxMetaText txt) = Just txt
+    extractTxt _ = Nothing
+    extractPayload (TxMetaList chunks) =
+        let extractedTxts = extractTxt <$> chunks
+        in  if any isNothing extractedTxts
+                then
+                    T.empty
+                else
+                    -- we are sure there is not Nothing in the extractedTxts
+                    foldl T.append T.empty $ fromJust <$> extractedTxts
+    extractPayload _ = T.empty
+    composePayload (TxMetadata themap) = do
+        validValue <- case Map.lookup cip20MetadataKey themap of
+            Nothing -> Left ErrMissingMetadataKey
+            Just v -> pure v
+        when (checkPresenceOfMethod validValue)
+            $ Left ErrMissingEncryptionMethod
+        let payloads = getEncryptedPayload validValue
+        if null payloads
+            then
+                Left ErrMissingValidEncryptionPayload
+            else do

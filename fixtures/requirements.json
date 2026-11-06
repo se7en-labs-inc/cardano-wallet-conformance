@@ -1,0 +1,333 @@
+[
+  {
+    "id": "crypto.sha256.basic",
+    "description": "SHA-256 known answers"
+  },
+  {
+    "id": "crypto.sha512.basic",
+    "description": "SHA-512 known answers"
+  },
+  {
+    "id": "crypto.hash-boundaries",
+    "description": "Empty, long, block-boundary and malformed hash inputs"
+  },
+  {
+    "id": "crypto.blake2b-224.basic",
+    "description": "Blake2b-224 known answers (not truncated Blake2b-512)"
+  },
+  {
+    "id": "crypto.blake2b-256.basic",
+    "description": "Blake2b-256 known answers (not truncated Blake2b-512)"
+  },
+  {
+    "id": "crypto.ed25519.sign",
+    "description": "RFC 8032 Ed25519 signing known answers"
+  },
+  {
+    "id": "crypto.ed25519.verify",
+    "description": "Valid, altered-message, altered-key and altered-signature verification"
+  },
+  {
+    "id": "crypto.ed25519.noncanonical",
+    "description": "Profile-specific acceptance/rejection of noncanonical scalars, low-order points and malformed sizes"
+  },
+  {
+    "id": "crypto.extended-ed25519",
+    "description": "Cardano extended Ed25519 exact signing and public key vectors"
+  },
+  {
+    "id": "crypto.bip39.entropy",
+    "description": "BIP39 entropy and mnemonic known answers"
+  },
+  {
+    "id": "crypto.bip39.seed",
+    "description": "BIP39 seed including Unicode normalization"
+  },
+  {
+    "id": "crypto.bip39.checksum",
+    "description": "Malformed word counts, word lists, checksums and entropy sizes"
+  },
+  {
+    "id": "crypto.icarus-root",
+    "description": "Icarus root generation with and without second factor"
+  },
+  {
+    "id": "crypto.shelley-root",
+    "description": "Shelley CIP-1852 root and account key derivation known answers"
+  },
+  {
+    "id": "crypto.byron-root",
+    "description": "Byron legacy root generation exact pinned Haskell vectors"
+  },
+  {
+    "id": "crypto.byron-payload",
+    "description": "Byron derivation-path payload encryption, decryption and malformed CBOR"
+  },
+  {
+    "id": "crypto.ledger-root",
+    "description": "Ledger hardware-wallet root derivation known answers"
+  },
+  {
+    "id": "crypto.trezor-root",
+    "description": "Trezor hardware-wallet root derivation known answers"
+  },
+  {
+    "id": "crypto.derivation-boundaries",
+    "description": "Soft/hardened index boundaries, all roles and account paths"
+  },
+  {
+    "id": "crypto.public-private-derivation",
+    "description": "Public child equals public extraction of private child for soft paths"
+  },
+  {
+    "id": "crypto.passphrase-pbkdf2",
+    "description": "Pinned wallet passphrase hashing, checking and wrong-password rejection"
+  },
+  {
+    "id": "crypto.passphrase-scrypt",
+    "description": "Legacy scrypt checking and migration semantics"
+  },
+  {
+    "id": "crypto.root-key-encryption",
+    "description": "V1/V2 root-key encryption, authentication and passphrase change through domain adapter"
+  },
+  {
+    "id": "address.shelley",
+    "description": "Base, enterprise, pointer and reward address vectors"
+  },
+  {
+    "id": "address.byron",
+    "description": "Byron random/Icarus/HD payload, CRC and network attributes"
+  },
+  {
+    "id": "address.shared",
+    "description": "Shared-wallet script address construction and cosigner templates"
+  },
+  {
+    "id": "address.network",
+    "description": "Network tags, protocol magic and cross-network rejection"
+  },
+  {
+    "id": "address.encoding",
+    "description": "Bech32/base58 roundtrip, checksum, length and noncanonical rejection"
+  },
+  {
+    "id": "address.cip129",
+    "description": "DRep and governance credential encodings"
+  },
+  {
+    "id": "script.native",
+    "description": "Script hashes and all/any/at-least/timelock satisfaction"
+  },
+  {
+    "id": "script.policy-id",
+    "description": "Policy IDs, key hashes, asset fingerprints and metadata signatures"
+  },
+  {
+    "id": "tx.serialization",
+    "description": "Canonical CBOR roundtrips and malformed/trailing/duplicate-key rejection across eras"
+  },
+  {
+    "id": "tx.body-hash",
+    "description": "Exact transaction body hashes and IDs"
+  },
+  {
+    "id": "tx.witnesses",
+    "description": "VKey/bootstrap/script witness construction, validation and merging"
+  },
+  {
+    "id": "tx.ledger-acceptance",
+    "description": "Signed constructed transaction accepted and confirmed by a real node"
+  },
+  {
+    "id": "tx.payment-output",
+    "description": "Confirmed output pays the requested address and exact asset quantities"
+  },
+  {
+    "id": "tx.minimum-fee",
+    "description": "Fee coefficients, witness size, script execution, rounding and size boundaries"
+  },
+  {
+    "id": "tx.min-utxo",
+    "description": "Minimum ADA for outputs and native assets under pinned protocol parameters"
+  },
+  {
+    "id": "tx.validity-interval",
+    "description": "TTL, validity lower bound, slot conversion and expiry rejection"
+  },
+  {
+    "id": "tx.metadata",
+    "description": "Metadata CBOR, size limits, labels and text/byte encodings"
+  },
+  {
+    "id": "tx.mint-burn",
+    "description": "Native token mint/burn quantities, witnesses and supply conservation"
+  },
+  {
+    "id": "tx.collateral",
+    "description": "Eligibility, collateral percentage, total collateral and return"
+  },
+  {
+    "id": "tx.delegation",
+    "description": "Registration, delegation, deposits, retirement and reward withdrawal"
+  },
+  {
+    "id": "tx.governance",
+    "description": "Vote delegation, DRep operations and era-specific certificates"
+  },
+  {
+    "id": "tx.invalid-signature",
+    "description": "Ledger rejects corrupted or missing witnesses"
+  },
+  {
+    "id": "tx.double-spend",
+    "description": "Conflicting input submissions cannot both confirm"
+  },
+  {
+    "id": "selection.ada-conservation",
+    "description": "Selected ADA equals requested outputs plus fee and change"
+  },
+  {
+    "id": "selection.asset-conservation",
+    "description": "Every native asset conserved through selection and change"
+  },
+  {
+    "id": "selection.unique-inputs",
+    "description": "Input identifiers unique and drawn only from available eligible UTxOs"
+  },
+  {
+    "id": "selection.minimum-change",
+    "description": "Change meets minimum ADA and does not discard assets"
+  },
+  {
+    "id": "selection.input-limits",
+    "description": "Input count and transaction size limits"
+  },
+  {
+    "id": "selection.insufficient-funds",
+    "description": "Insufficient ADA, asset, fee and collateral failures"
+  },
+  {
+    "id": "selection.seeded-oracle",
+    "description": "Pinned Haskell algorithm outputs with explicit random seeds and strategy"
+  },
+  {
+    "id": "selection.large-quantities",
+    "description": "Checked arithmetic at coin and token bounds"
+  },
+  {
+    "id": "selection.multi-output",
+    "description": "Multiple outputs, asset bundles, split change and dust"
+  },
+  {
+    "id": "wallet.balance-conservation",
+    "description": "Sender and recipient confirmed balances conserve payment and fee"
+  },
+  {
+    "id": "wallet.utxo-snapshot",
+    "description": "UTxO snapshots, statistics and balance agree with chain history"
+  },
+  {
+    "id": "wallet.discovery",
+    "description": "Sequential, random and shared discovery, gap limits, internal/external roles"
+  },
+  {
+    "id": "wallet.restoration",
+    "description": "Restore from genesis/checkpoint matches uninterrupted history"
+  },
+  {
+    "id": "wallet.rollback",
+    "description": "Rollback restores spent inputs, balance, history and pending state"
+  },
+  {
+    "id": "wallet.restart",
+    "description": "Persist/restart preserves wallet identity, addresses, keys and pending transactions"
+  },
+  {
+    "id": "wallet.resubmission",
+    "description": "Pending, expiry, retry and node disconnect/reconnect behavior"
+  },
+  {
+    "id": "wallet.concurrent-spend",
+    "description": "Concurrent selection/signing/submission cannot reserve or spend inputs inconsistently"
+  },
+  {
+    "id": "wallet.shared-cosigners",
+    "description": "Incomplete, active, partially signed and fully signed shared-wallet workflows"
+  },
+  {
+    "id": "wallet.byron-migration",
+    "description": "Byron random and Icarus restore, spend and migrate through public API"
+  },
+  {
+    "id": "wallet.hardware-watch-only",
+    "description": "Public-key wallets derive correct addresses and reject unavailable signing"
+  },
+  {
+    "id": "wallet.transaction-filtering",
+    "description": "Time/order filters, pending/expired/confirmed history consistency, result limits and binary metadata representation"
+  },
+  {
+    "id": "wallet.stake-pools",
+    "description": "Pool metadata, ranking, retirement and maintenance API state"
+  },
+  {
+    "id": "wallet.governance",
+    "description": "Governance query and voting state consistent with the chain"
+  },
+  {
+    "id": "signing.wrong-passphrase",
+    "description": "Wrong signing passphrase fails without state change"
+  },
+  {
+    "id": "chain.block-production",
+    "description": "Observe real node tip height advance during this run"
+  },
+  {
+    "id": "chain.confirmation",
+    "description": "Same payment ID confirmed in sender and recipient histories"
+  },
+  {
+    "id": "chain.protocol-parameters",
+    "description": "Fees, min-UTxO and slotting use actual node parameters"
+  },
+  {
+    "id": "chain.era-boundaries",
+    "description": "Pre/post hard-fork restoration, transaction and certificate boundaries"
+  },
+  {
+    "id": "api.transport-errors",
+    "description": "Malformed JSON, methods, media types, headers, unknown paths and invalid parameters"
+  },
+  {
+    "id": "api.error-precedence",
+    "description": "Status/error code/message precedence agrees with the pinned Haskell wallet"
+  },
+  {
+    "id": "crypto.shared-root",
+    "description": "CIP-1854 shared wallet root and account derivation"
+  },
+  {
+    "id": "selection.replay",
+    "description": "Identical selection results for repeated requests with the same explicit seed"
+  },
+  {
+    "id": "chain.node-utxo-confirmation",
+    "description": "Trusted independent node query finds the submitted transaction recipient output with its exact address and ADA amount"
+  },
+  {
+    "id": "api.differential-reference",
+    "description": "Every committed HTTP scenario case also passes against a distinct independent reference, comparing stable fields, statuses, media types and error bodies"
+  },
+  {
+    "id": "chain.header-consistency",
+    "description": "Wallet latest header hash, slot and height match an independently observed recent node tip",
+    "required_cases": [
+      "live:independent-latest-header"
+    ]
+  },
+  {
+    "id": "crypto.wallet-verification-profile",
+    "description": "Exact cardano-crypto 1.3.0 extended-verification semantics, including canonical/tampered signatures, chain code, identity points, S+L and malformed lengths"
+  }
+]

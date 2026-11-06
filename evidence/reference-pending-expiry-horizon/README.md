@@ -1,0 +1,5 @@
+# Actual pending admission; native forecast horizon failure
+
+Source5bb9d46afc/fingerprinta4db7f294b1d6904c59ffeaa1e807a2a5db92214fda3743915109eb6fd8d4d0a. Fresh28 checks/27PASS/one native-advancement failure. Exact signed validity, genesis/expiry timestamp, actual pending admission, mempool identity, unspent funding and pending history/accounting checks pass. After30-second pause, the resumed node reports CurrentSlotUnknown; read-only CLI diagnosis independently reports PastHorizon with60-slot safe zone. Public0.2-second slots make this pause exceed the12-second safe zone. No expiry conformance credit, no wallet bug conclusion, no timeout increase or altered assertion.
+
+All wallet/cluster cleanup checks pass. All observed owned cluster/node PIDs are independently verified absent before starting the next workflow. Private logs/keys/DB are excluded; only the specific public native diagnostic line is retained. Proposed8-second fixture correction and explicit horizon guard await review. Original failed reports remain unchanged.

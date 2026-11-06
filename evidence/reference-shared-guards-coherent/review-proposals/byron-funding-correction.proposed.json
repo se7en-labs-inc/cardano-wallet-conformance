@@ -1,0 +1,8 @@
+{
+  "problem": "Pinned local-cluster faucet unconditionally renders funding destinations with Cardano.Address.bech32; cardano-cli rejects a Byron destination in that representation.",
+  "failed_report": "evidence/reference-families-coherent/live.json",
+  "observed_result": "Baseline486 HTTP and1059 internals pass; basic live transfer/restoration pass; families fails on initial Icarus faucet funding; all owned wallets cleaned up.",
+  "proposal": "For Byron sources only, create a fresh owned Shelley funding wallet, fund its valid Shelley address through the existing real faucet, construct/sign/submit an exact100000000-lovelace payment to the original base58 Byron destination, verify body/witnesses independently and confirm exact Byron output through node UTxO query. Then execute the unchanged funded legacy payment/migration assertions.",
+  "unchanged": ["Pinned wallet/node/faucet source", "Expected statuses and response schemas", "Exact100000000-lovelace Byron starting balance", "Payment/migration conservation and fees", "Independent node UTxO admission proof", "Historical failed reports"],
+  "reason_for_approval": "Personal working agreement requires review before a different approach after a failed test; replacing direct faucet funding with a real on-chain Shelley-to-Byron bridge changes the funding approach."
+}
