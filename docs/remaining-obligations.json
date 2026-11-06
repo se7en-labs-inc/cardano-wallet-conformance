@@ -1,0 +1,188 @@
+{
+  "audit_version": 1,
+  "audited_source": "63f48425e9",
+  "baseline": "evidence/reference-network-guard-coherent/coverage.json",
+  "baseline_required": 643,
+  "baseline_covered": 587,
+  "baseline_missing": 56,
+  "is_conformance_evidence": false,
+  "promotes_specification": false,
+  "pending_reviews": "docs/pending-reviews.md",
+  "groups": [
+    {
+      "obligations": ["tx.validity-interval"],
+      "reviews": [6, 11],
+      "work": "Correct the independently sampled admission-slot bracket after review6 and rerun lower-bound, TTL and expired rejection controls. Pending expiry remains distinct and needs owned chain control; approval alone earns no evidence."
+    },
+    {
+      "obligations": ["tx.delegation"],
+      "reviews": [7, 15],
+      "work": "Replay stake registration/deregistration after the owned vote-certificate correction. Implement reusable stake-delegate and nonzero reward-withdrawal cases with native certificates, signatures, stake state and accounting; the old reward audit alone is not registered semantic evidence."
+    },
+    {
+      "obligations": ["tx.governance"],
+      "reviews": [7],
+      "work": "Run the existing vote-delegate profile through its unchanged exact node certificate, witness, deposit and wallet-state checks after correcting only the observed certificate schema."
+    },
+    {
+      "obligations": ["tx.double-spend", "wallet.concurrent-spend"],
+      "reviews": [2],
+      "work": "Replay concurrent construction/submission and the actual node conflicting-spend rejection with independently spent-input proof and exact final accounting."
+    },
+    {
+      "obligations": ["selection.input-limits"],
+      "reviews": [8],
+      "work": "Correct canonical indefinite input-set parsing after review, then replay both named maximum-input and maximum-size controls with structural/signature/conservation checks. Also rerun the full previously failing offline harness."
+    },
+    {
+      "obligations": ["wallet.discovery"],
+      "reviews": [1, 13],
+      "component_reports": ["evidence/reference-internal-discovery-component/live.json"],
+      "component_cases": ["discovery-sequential-gap", "discovery-internal-change"],
+      "work": "Replay the independently passing sequential/internal cases together with shared cosigner discovery and funded random-Byron discovery. The current family funding failure still requires review1."
+    },
+    {
+      "obligations": ["wallet.restoration"],
+      "reviews": [9, 11],
+      "work": "Implement and independently prove state:restore-from-checkpoint. Existing genesis restoration and crash/restart are different cases; neither substitutes for checkpoint restoration."
+    },
+    {
+      "obligations": ["wallet.rollback"],
+      "reviews": [11],
+      "work": "Owned producer-control repair is a prerequisite, not rollback proof. Implement an actual fork/rollback/reapply fixture and all four named spent-input, pending, balance/history and reapply cases with independently observed node branches. No rollback implementation currently records these cases."
+    },
+    {
+      "obligations": ["wallet.restart"],
+      "reviews": [9, 11],
+      "work": "Repair the incorrect mnemonic/account identity equality and rerun confirmed/key-address persistence. Add state:restart-pending under actual controlled pending state, retaining exact DB/signature/UTxO/history checks."
+    },
+    {
+      "obligations": ["wallet.resubmission"],
+      "reviews": [11, 13],
+      "work": "Retain the passing node-disconnect/reconnect behavior and correct combined scheduling only after review13. Implement actual pending retry and expiry using owned chain controls; socket outage alone is not pending replay proof."
+    },
+    {
+      "obligations": ["wallet.byron-migration"],
+      "reviews": [1],
+      "work": "Replay random/icarus actual signed spends and migration after the independently confirmed owned bridge correction, including all node outputs and exact family accounting."
+    },
+    {
+      "obligations": ["wallet.transaction-filtering"],
+      "reviews": [11],
+      "work": "Implement history:status with genuine pending/expired and confirmed records. The public API has no status query parameter; retain supported time/order/max_count/address/minWithdrawal controls without inventing a selector."
+    },
+    {
+      "obligations": ["wallet.stake-pools"],
+      "reviews": [12],
+      "work": "Correct CLI-registration versus wallet-negative-fetch metadata phases after review; rerun all exact metadata/hash rejection, ranking arithmetic, maintenance and real retirement activation cases."
+    },
+    {
+      "obligations": ["wallet.governance"],
+      "reviews": [7],
+      "component_reports": ["evidence/reference-drep-lookup-component/lookup.json"],
+      "work": "The DRep detail/list/summary component passes API checks but does not record governance:drep-queries. Complete and bind the semantic query contract plus actual governance:vote-state; do not relabel API success as both cases."
+    },
+    {
+      "obligations": ["chain.protocol-parameters"],
+      "reviews": [13],
+      "component_reports": ["evidence/reference-parameters-component/live.json"],
+      "component_cases": ["chain:node-wallet-protocol-parameters", "chain:protocol-parameter-update"],
+      "all_named_cases_passed_in_separate_component": true,
+      "work": "Fresh coherent replay of actual committee enactment and pre/post signed fee/min-ADA behavior. The later combined cohort has a disconnection scheduling failure and cannot replace the passing baseline."
+    },
+    {
+      "obligations": ["chain.era-boundaries"],
+      "reviews": [14],
+      "work": "Use the supported compatible Babbage constructor only after review, then execute wallet restoration/submission/certificates across the real continuous scheduled fork. The already passing node-only fork audit earns no wallet credit."
+    },
+    {
+      "obligations": ["api.error-precedence"],
+      "reviews": [5],
+      "work": "Replay all named path/body, wallet/passphrase and funded/empty output precedence cases with advancing depth independently bracketed by node heights, retaining exact stable history fields."
+    },
+    {
+      "obligations": ["api:byronSelectCoins:positive", "api:byronSelectCoins:status:200", "api:createByronWalletMigrationPlan:positive", "api:createByronWalletMigrationPlan:status:202", "api:getByronTransaction:positive", "api:getByronTransaction:status:200", "api:migrateByronWallet:positive", "api:migrateByronWallet:status:202", "api:postByronTransaction:positive", "api:postByronTransaction:status:202", "api:postByronTransactionFee:positive", "api:postByronTransactionFee:status:202"],
+      "reviews": [1],
+      "work": "Funded family selection, migration planning/submission, transaction read, spend and fee workflows with independently confirmed bridge and node accounting."
+    },
+    {
+      "obligations": ["api:getByronAsset:positive", "api:getByronAsset:status:200", "api:getByronAssetDefault:positive", "api:getByronAssetDefault:status:200"],
+      "reviews": [1],
+      "work": "Add actual confirmed native-asset ownership to funded Byron controls and prove both named/default asset reads against exact ledger asset identifiers, quantities and fingerprints. ADA-only family funding cannot close these."
+    },
+    {
+      "obligations": ["api:deleteByronTransaction:positive", "api:deleteByronTransaction:status:204"],
+      "reviews": [1, 11],
+      "work": "Genuine funded pending Byron transaction deletion, with exact response and independent input/transaction/history/accounting controls. Confirmed deletion rejection is not a positive control."
+    },
+    {
+      "obligations": ["api:deleteByronTransaction:status:403"],
+      "reviews": [1],
+      "work": "Attempt forgetting an actual confirmed owned Byron transaction and prove the exact transaction-already-in-ledger error and unchanged wallet/node state."
+    },
+    {
+      "obligations": ["api:deleteTransaction:positive", "api:deleteTransaction:status:204"],
+      "reviews": [11],
+      "work": "Genuine controlled pending Shelley transaction deletion with independent state proof; the existing confirmed403 case is insufficient. Modern submitTx inserts locally only after node acceptance."
+    },
+    {
+      "obligations": ["api:decodeSharedTransaction:status:403"],
+      "reviews": [4],
+      "work": "After review, replace only the unconstructed documented403 slot with actual shared decryption TODO500 and execute its exact response/media behavior. Preserve643 total and the original OpenAPI."
+    },
+    {
+      "obligations": ["api:getDRep:positive", "api:getDRep:status:200"],
+      "reviews": [13],
+      "component_reports": ["evidence/reference-drep-lookup-component/lookup.json"],
+      "all_listed_api_obligations_passed_in_separate_component": true,
+      "work": "Fresh same-fingerprint replay with genuine pre-start registered DRep and stable independent node/cache bracket. No cached-state or old-fingerprint merge."
+    },
+    {
+      "obligations": ["api:getDelegationFee:positive", "api:getDelegationFee:status:200"],
+      "reviews": [13],
+      "component_reports": ["evidence/reference-delegation-fees-component/live.json"],
+      "all_listed_api_obligations_passed_in_separate_component": true,
+      "work": "Fresh coherent replay of the exact no-certificate signed-size fee/deposit control and unchanged wallet/node state."
+    },
+    {
+      "obligations": ["api:joinDRep:status:403", "api:quitStakePool:status:403"],
+      "reviews": [13],
+      "component_reports": ["evidence/reference-empty-delegation-component/http-extended.json"],
+      "all_listed_api_obligations_passed_in_separate_component": true,
+      "work": "Fresh coherent differential85-case HTTP replay retaining exact empty-vote/not-delegating error objects and complete unchanged snapshots."
+    },
+    {
+      "obligations": ["api:joinDRep:positive", "api:joinDRep:status:202", "api:quitStakePool:positive", "api:quitStakePool:status:202"],
+      "reviews": [7],
+      "work": "Funded vote, re-vote and deregistration/refund replay through the corrected exact owned certificate schema with unchanged ledger/witness/accounting assertions."
+    },
+    {
+      "obligations": ["api:joinStakePool:positive", "api:joinStakePool:status:202"],
+      "reviews": [7, 15],
+      "work": "Implement reusable actual known-pool delegation with full native certificate, signatures, stake-state activation and fees/deposit accounting; fixture registration or vote-only delegation is insufficient."
+    },
+    {
+      "obligations": ["api:joinStakePool:status:403"],
+      "reviews": [15],
+      "failed_report": "evidence/reference-pool-join-guard-component/live.json",
+      "work": "Establish the same selected pool's actual registered wallet-visible state via the reviewed fixture setup, then rerun the unchanged exact empty-wallet guard. The current failure occurred before any join request."
+    },
+    {
+      "obligations": ["api:postByronTransaction:status:425", "api:postExternalTransaction:status:425", "api:postTransaction:status:425"],
+      "reviews": [10],
+      "work": "After review, replace only these unreachable425 slots by actual500 branches, retaining643 obligations. Execute all three operations independently against the real node. External proxy500 is not established by wallet-submit500; funded Byron also depends on review1."
+    }
+  ],
+  "required_work_outside_missing_labels": [
+    {
+      "task": "T040",
+      "reviews": [3, 4],
+      "work": "Complete reusable CIP83 encrypted-metadata success and ordered-map failure profiles, independent OpenSSL decryption and exact CBOR/history. A covered broad tx.metadata label does not finish the explicit task."
+    },
+    {
+      "task": "T032",
+      "reviews": [8, 13],
+      "work": "Run the full unfiltered required Cargo/Nix checks and fresh complete HTTP/internal/live evidence cohort under one fingerprint/source contract with no failures, missing cases, unregistered inputs or secret leakage. Generate and audit the reviewable specification draft from that cohort. Never sum component coverage."
+    }
+  ]
+}
