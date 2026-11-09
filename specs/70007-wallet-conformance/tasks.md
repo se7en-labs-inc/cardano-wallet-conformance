@@ -120,3 +120,7 @@ T011/T030/T032/T069/T098/T106 completion is backed by evidence/reviewed-executab
 - [x] T105 After packaged history qualification, execute a fresh frozen37-report unchanged644 cohort; preserve actual gate/draft/timing/provenance/native controls/cleanup and update the report without historical merging or applying unanswered contract policy.
 
 T029/T031/T046/T104/T105 completion is backed by evidence/proposed-history-combined-644-20261105:37 fresh reports,3810/3810checksPASS,643/644strictgateFAIL only original shared-creation500, no unexecuted semantic cases. Full203 Rust/Nix checks and79-check packaged history qualification pass. Actual native integrations/owned cleanup pass. Corrected8fcb target remains nonauthoritative versus original2fc contract/oracles. T011/T030/T032/T069/T092/T098 remain open; no complete-contract or source-authority approval is inferred.
+
+- [x] T107 Remove the hardcoded rollback/capture key-helper executable checksum as explicitly requested; retain measured identity, unchanged-during-call checks, accurate capture provenance, source pin and behavioral assertions; update docs and verify regression/full required Rust checks without relabeling historical live evidence.
+
+T107 validation: `nix --quiet develop --command cargo fmt --check`, `cargo clippy --all-targets -- -D warnings` and `cargo test` all pass (211 tests). This is harness validation; no actual Haskell rebuild/reference comparison or live rollback was run. Historical vector provenance and live evidence remain unchanged.

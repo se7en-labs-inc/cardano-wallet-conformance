@@ -5,15 +5,9 @@ use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
 use std::{path::Path, time::Duration};
 
-const ORACLE: &str = "9326e291df8ccb064cd77740a3a7063cf84cc382d5dc4481be28a47680d44114";
-
-pub fn verify_oracle(binary: &Path) -> Result<String> {
-    let digest = hex::encode(Sha256::digest(std::fs::read(binary)?));
-    ensure!(
-        digest == ORACLE,
-        "key adapter differs from pinned source-built oracle"
-    );
-    Ok(digest)
+/// Record executable identity without requiring reproducible compiler/linker output.
+pub fn oracle_sha256(binary: &Path) -> Result<String> {
+    Ok(hex::encode(Sha256::digest(std::fs::read(binary)?)))
 }
 
 /// Actual-Haskell public derivation; callers independently check the address credentials.
@@ -27,18 +21,21 @@ pub fn derive_public(
         parent.len() == 64 && path.len() <= 5 && path.iter().all(|index| *index < 0x80000000),
         "invalid live public derivation key/path"
     );
-    verify_oracle(binary)?;
+    let digest = oracle_sha256(binary)?;
     let vector = Vector {
         id: "live-account-public-derivation".into(),
         requirements: Vec::new(),
-        source: format!("actual pinned Haskell key adapter sha256:{ORACLE}"),
+        source: format!("actual Haskell key adapter sha256:{digest}"),
         operation: "keys.derive-public".into(),
         input: json!({"style":"Shelley","parent_xpub_hex":hex::encode(parent),"path":path}),
         expected: None,
         selection_invariants: false,
     };
     let result = adapter::invoke(binary, &[], &vector, timeout)?;
-    verify_oracle(binary)?;
+    ensure!(
+        oracle_sha256(binary)? == digest,
+        "key adapter changed during public derivation"
+    );
     validate(&vector, &result)?;
     let public = hex::decode(
         result
@@ -259,13 +256,17 @@ pub fn requests() -> Result<Vec<Vector>> {
 }
 
 pub fn capture(binary: &Path) -> Result<Vec<Vector>> {
-    verify_oracle(binary)?;
+    let digest = oracle_sha256(binary)?;
     let mut vectors = requests()?;
     for vector in &mut vectors {
         let actual = adapter::invoke(binary, &[], vector, Duration::from_secs(30))?;
         ensure!(
             actual == adapter::invoke(binary, &[], vector, Duration::from_secs(30))?,
             "key oracle is not reproducible"
+        );
+        ensure!(
+            oracle_sha256(binary)? == digest,
+            "key adapter changed during capture"
         );
         validate(vector, &actual)?;
         if let Some(expected) = &vector.expected {
@@ -291,7 +292,7 @@ pub fn capture(binary: &Path) -> Result<Vec<Vector>> {
             );
         }
         vector.expected = Some(actual);
-        vector.source = format!("Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:{ORACLE}; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check");
+        vector.source = format!("Wallet source 2fc5c383c94bb907deaa0cd27b1b407f86224b6c; actual wallet root generators and cardano-addresses derivation/signing; reference/KeyAdapter.hs; binary sha256:{digest}; Byron encrypted root independently matches ByronSpec.hs generateTest2; strict Rust signature verification and pinned public-key cross-check");
     }
     Ok(vectors)
 }
@@ -312,12 +313,14 @@ mod live_public_derivation_tests {
         }
     }
     #[test]
-    fn live_public_derivation_never_executes_an_unpinned_oracle() {
+    fn oracle_identity_records_rebuilt_bytes_without_a_historical_pin() {
         let file = tempfile::NamedTempFile::new().unwrap();
-        std::fs::write(file.path(), b"not-the-reference").unwrap();
-        assert!(verify_oracle(file.path()).is_err());
-        let error =
-            derive_public(file.path(), &[0; 64], &[1, 0], Duration::from_secs(1)).unwrap_err();
-        assert!(error.to_string().contains("differs from pinned"));
+        std::fs::write(file.path(), b"first-build").unwrap();
+        let first = oracle_sha256(file.path()).unwrap();
+        assert_eq!(first, hex::encode(Sha256::digest(b"first-build")));
+        std::fs::write(file.path(), b"rebuilt-helper").unwrap();
+        let rebuilt = oracle_sha256(file.path()).unwrap();
+        assert_eq!(rebuilt, hex::encode(Sha256::digest(b"rebuilt-helper")));
+        assert_ne!(first, rebuilt);
     }
 }

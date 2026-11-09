@@ -644,7 +644,7 @@ impl Session<'_> {
         let internal = crate::keys::derive_public(oracle, &account_key, &[1, 0], self.timeout)?;
         let stake = crate::keys::derive_public(oracle, &account_key, &[2, 0], self.timeout)?;
         ensure!(hex::encode(&external[..32])==tx.verification_keys[0] && transaction::blake2b(&internal[..32],28)?==change_bytes[1..29] && transaction::blake2b(&stake[..32],28)?==change_bytes[29..],"rollback input/change/stake credentials differ from independent pinned Haskell public derivation");
-        let public_derivation = json!({"account_xpub_hex":hex::encode(&account_key),"source_path":[0,0],"source_xpub_hex":hex::encode(external),"change_path":[1,0],"change_xpub_hex":hex::encode(internal),"stake_path":[2,0],"stake_xpub_hex":hex::encode(stake),"oracle_sha256":crate::keys::verify_oracle(oracle)?});
+        let public_derivation = json!({"account_xpub_hex":hex::encode(&account_key),"source_path":[0,0],"source_xpub_hex":hex::encode(external),"change_path":[1,0],"change_xpub_hex":hex::encode(internal),"stake_path":[2,0],"stake_xpub_hex":hex::encode(stake),"oracle_sha256":crate::keys::oracle_sha256(oracle)?});
         ensure!(
             transaction::certificates(&encoded)?.is_empty(),
             "rollback payment has certificates"
@@ -1141,7 +1141,7 @@ pub fn run(api: &Api, contract: &Contract, environment: &str, options: Options<'
     let observer = Observer::default();
     let result = (|| -> Result<Value> {
         crate::owned_process::require_unused_listener(&api.label)?;
-        let oracle_sha = crate::keys::verify_oracle(options.key_oracle)?;
+        let oracle_sha = crate::keys::oracle_sha256(options.key_oracle)?;
         ensure!(
             options.workspace.is_absolute(),
             "rollback workspace must be absolute"
